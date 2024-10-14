@@ -4,6 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>네이버요약뉴스 2024.10.</title>
+
+    <style>
+      header {
+        /* 
+        선택자 {
+          속성: 값;
+        }
+        -> 선택자는 기본적으로 '요소명 / 아이디명 / 클래스명'
+        */
+        border: 1px solid red;
+      }
+      .part {
+        width: 1066px;
+        padding: 10px;
+        border: 1px solid red;
+        background-color: #e1e1e1;
+      }
+    </style>
   </head>
   <body>
     <!-- 1. 상단영역 -->
@@ -13,18 +31,23 @@
          <!-- 1-2. 메뉴 -->
          <nav class="menu">
             <a href="index.html">
-                <img src="images/naver_logo.png" alt="네이버로고">
+                <img 
+                src="images/naver_logo.png" 
+                alt="네이버로고"
+                style="
+                width: 30px; 
+                vertical-align: middle;">
             </a>
             <span> | </span>
-            <a href="sub.html">정치</a>
+            <a href="sub1.html">정치</a>
             <span> | </span>
-            <a href="sub.html">경제</a>
+            <a href="sub2.html">경제</a>
             <span> | </span>
-            <a href="sub.html">사회</a>
+            <a href="sub3.html">사회</a>
             <span> | </span>
-            <a href="sub.html">IT/과학</a>
+            <a href="sub4.html">IT/과학</a>
             <span> | </span>
-            <a href="sub.html">TV/연예</a>
+            <a href="sub5.html">TV/연예</a>
          </nav>
     </header>
     <!-- <div id="header"></div> -->
@@ -64,6 +87,16 @@
             1) src : 이미지경로
             2) alt : 대체텍스트(웹접근성 필수)
             -> alternative text
+
+        [  요소의 구성  ]
+        1. 요소명 - 요소별 특징을 구분하는 이름
+        2. 속성 - 요소가 가지는 개별 세팅값을 저장함
+        표기) <요소명 속성="값">
+
+        [  요소 공통속성  ]
+        1. style 속성 : 요소에 인라인으로 CSS속성 값을 세팅함
+        예) <요소명 style="속성:값; 속성:값;">
+        2. title 속성 : 툴 팁 제공 속성(마우스 오버 시 등장)
 -->
   </body>
 </html>
