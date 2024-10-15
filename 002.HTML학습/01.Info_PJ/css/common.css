@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+/* Info PJ 공통 CSS - common.css */
+
+#top-area {
+  /* 중앙정렬 */
+  text-align: center;
+  /* 배경색 */
+  background-color: #e8ffb8;
+}
+#top-area h1 {
+  font-family: "Black And White Picture",
+    sans-serif;
+  font-size: 44px;
+  color: #5ec79a;
+  text-shadow: 5px 5px 3px
+    rgba(131, 131, 131, 0.8);
+}
+.menu {
+  font-family: "Bagel Fat One",
+    sans-serif;
+}
+.menu > a {
+  color: darkcyan;
+  font-size: 20px;
+  text-decoration: none;
+}
+.menu span + a:hover {
+  color: hotpink;
+  text-decoration: overline;
+  text-decoration-style: wavy;
+}
+.menu span + a {
+  /* 앞에 span형제 요소가 있는 a만 선택 (+는 형제선택자) */
+  margin: 4px;
+}
+.menu > span {
+  color: #c2c2c2;
+}
+.part {
+  /* width: 1280px; */
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 3px dashed lightgreen;
+  border-radius: 15px;
+}
+#main-area {
+  /* margin-top: 15px;
+        margin-bottom: 15px; */
+  margin: 15px auto;
+}
+address {
+  font-family: "Diphylleia", sans-serif;
+  font-style: normal;
+  text-align: center;
+}
+#info-area {
+  background-color: #ccc;
+}
