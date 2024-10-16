@@ -1,4 +1,5 @@
 @charset "utf-8";
+/* CSS외부파일 연결 시 반드시 최상단에 입력한다 */
 
 /* Info PJ 공통 CSS - common.css */
 
@@ -13,8 +14,7 @@
     sans-serif;
   font-size: 44px;
   color: #5ec79a;
-  text-shadow: 5px 5px 3px
-    rgba(131, 131, 131, 0.8);
+  text-shadow: 2px 2px 2px #0000008f;
 }
 .menu {
   font-family: "Bagel Fat One",
@@ -49,6 +49,9 @@
   /* margin-top: 15px;
         margin-bottom: 15px; */
   margin: 15px auto;
+}
+#main-area > img {
+  width: 100%;
 }
 address {
   font-family: "Diphylleia", sans-serif;

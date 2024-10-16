@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>
+      네이버요약뉴스 - IT/과학 뉴스
+    </title>
+    <!-- 웹폰트 CDN 방식 호출 -->
+    <!-- Content Delivery Network : 네트워크로 컨텐트 불러오기 -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Black+And+White+Picture&family=Diphylleia&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="./css/common.css"
+    />
+  </head>
+  <body>
+    <!-- 1. 상단영역 -->
+    <header id="top-area" class="part">
+      <!-- 1-1. 타이틀 -->
+      <h1>네이버 요약뉴스</h1>
+      <!-- 1-2. 메뉴 -->
+      <nav class="menu">
+        <a href="index.html">
+          <img
+            src="images/naver_logo.png"
+            alt="네이버로고"
+            style="
+              width: 30px;
+              vertical-align: middle;
+            "
+          />
+        </a>
+        <span> | </span>
+        <a href="sub1.html">정치</a>
+        <span> | </span>
+        <a href="sub2.html">경제</a>
+        <span> | </span>
+        <a href="sub3.html">사회</a>
+        <span> | </span>
+        <a href="sub4.html">IT/과학</a>
+        <span> | </span>
+        <a href="sub5.html">TV/연예</a>
+      </nav>
+    </header>
+    <!-- <div id="header"></div> -->
+
+    <!-- 2. 메인영역 -->
+    <main
+      id="main-area"
+      class="main-area part"
+    >
+      <!-- 2-1. subtitle -->
+      <h2 class="sub-title">
+        IT/과학 뉴스
+      </h2>
+      <!-- 2-2. 언론사로고 -->
+      <div class="press-logo">
+        <img
+          src="./images/press-logo.png"
+          alt="언론사로고"
+        />
+      </div>
+
+      <!-- 2-3. 기사제목 -->
+      <h3 class="article-title">
+        사랑스러운데
+        똑똑하기까지…병코돌고래, 진짜
+        ‘미소’ 지을 줄 안다[핵잼
+        사이언스]
+      </h3>
+
+      <!-- 2-4. 기사이미지 -->
+      <!-- figure : 사진, 그림 넣는 블록박스 -->
+      <figure class="article-picture">
+        <img
+          src="./images/figure-news.jpg"
+          alt="병코돌고래사진"
+        />
+      </figure>
+      <!-- 2-5. 기사내용 -->
+      <section class="contents">
+        <p>귀여운 외모로 사랑받는 병코돌고래가 실제로 ‘미소’를 지을 수 있다는 내용의 연구결과가 나왔다고 영국 BBC 등 외신이 3일(이하 현지시간) 보도했다.
+
+          이탈리아 피사대학 연구진은 병코 돌고래 22마리가 조련사와 함께 있는 모습을 분석한 결과, 병코돌고래는 ‘친구’들과 놀이시간을 가질 때 의사소통을 위해 미소와 비슷한 입을 벌리는 표정을 짓는다는 사실을 확인했다.
+          
+          다른 병코돌고래가 시야에 있을 때에는 거의 대부분 ‘웃는’ 얼굴 표정을 지었지만, 사람(조련사) 등과 함께 있거나 홀로 있을 때에는 이러한 표정이 나오지 않았다.
+          
+          또 다른 병코돌고래가 자신의 시야에 있을뿐만 아니라 얼굴을 마주볼 수 있을 때에는 미소짓는 표정을 더욱 자주 사용하는 것으로 확인됐다.
+          </p>
+      </section>
+    </main>
+    <!-- <div id="main"></div> -->
+
+    <!-- 3. 하단영역 -->
+    <footer id="info-area" class="part">
+      <address>
+        서울시 강남구 역삼동 119 대호B
+        8F <br />
+        대표: Min Ji Lee <br />
+        전화: 010-2222-3333
+      </address>
+    </footer>
+    <!-- <div id="footer"></div> -->
+
+    <!-- 
+    [ HTML5에서 등장한 div 친구들 ]
+        - div에 내용을 구분하는 이름을 지어줌
+        - 의미가 있는요소를 시멘틱(sementic)태그라고 함!
+        1. header : 머릿부분
+        2. footer : 아랫부분
+        3. main : 메인부분(한번만 사용가능!)
+        4. nav : 네비게이션 부분
+        5. aside : 부가정보
+        6. section : 내용구분파트
+        7. article : 독립된 내용구분파트
+        ( section/article 내부에 h1~h6 태그사용권고)     
+         
+        [ 요소 명명법 ]
+        1. 아이디는 #, 클래스는 . (약어로만들기)
+        2. 이름은 구체적으로 만들고
+        단어마다 데쉬(-)를 사용함(케밥케이스)
+        3. 아이디는 유일함, 클래스는 다중적용가능
+        예) <div class="aa bb cc" id="ee"></div>
+
+
+        [ img 요소 ]
+        - img 는 이미지를 불러오는 요소
+        - 필수속성
+            1) src : 이미지경로
+            2) alt : 대체텍스트(웹접근성 필수)
+            -> alternative text
+
+        [  요소의 구성  ]
+        1. 요소명 - 요소별 특징을 구분하는 이름
+        2. 속성 - 요소가 가지는 개별 세팅값을 저장함
+        표기) <요소명 속성="값">
+
+        [  요소 공통속성  ]
+        1. style 속성 : 요소에 인라인으로 CSS속성 값을 세팅함
+        예) <요소명 style="속성:값; 속성:값;">
+        2. title 속성 : 툴 팁 제공 속성(마우스 오버 시 등장)
+-->
+  </body>
+</html>
