@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+/* 서브페이지 공통 CSS - sub.css */
+
+/* 2-1. subtitle */
+main > h2.sub-title { 
+  font-size: 38px;
+  font-weight: normal;
+  text-align: center;
+  background-color: aquamarine;
+}
+
+
+/* 2-2. 언론사로고 */
+/* 2-3. 기사제목 */
+/* 2-4. 기사이미지 */
+/* 2-5. 기사내용 */
+/* 2-5.5 인용블록영역 */
+/* 2-6. 기자정보 */
+/* 2-7. 기사원문 */
+/* 2-8. 주해영역 */
+/* 2-9. 오늘의 작품 & 느낌 */
+
+
+
+
