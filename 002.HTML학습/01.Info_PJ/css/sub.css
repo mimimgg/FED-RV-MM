@@ -1,26 +1,118 @@
 @charset "utf-8";
 
 /* 서브페이지 공통 CSS - sub.css */
+/* 
+  [ 선택자의 종류 ]
+  1) 타입선택자: 요소명 
+    예) h1{}, div{}
+  2) 자손선택자: 띄어쓰기 
+    예) h1 a{}, div span{}
+  3) 아이디선택자: #
+  4) 클래스선택자: .
+  5) 직계자식선택자: > 
+    예) #my > div{} "자기 부모의 바로 밑에 자식 선택"
+  6) 그룹선택자: , 
+    "동일한 속성 값을 입력하고자 할 때 사용"
+  7) 종속선택자: 태그명+아이디/클래스선택자
+    예) h1#logo{}, main.cont{}
+  8) 속성선택자: []
+    예) [target="_blank"], a[href="index.html"]
+  9) 형제선택자: + 
+      예) li+li , tr+tr 앞에 다른형제가 있는 요소를 선택함
+  10) 다중형제선택자: ~
+      예) li:nth-child(4)~li -> 4번째 li이후 모든 형제선택
+
+*/
 
 /* 2-1. subtitle */
-main > h2.sub-title { 
+h2.sub-title {
+  font-family: "Bagel Fat One",
+    sans-serif;
+  color: #fff;
   font-size: 38px;
   font-weight: normal;
+  text-shadow: 2px 2px 2px orange;
   text-align: center;
   background-color: aquamarine;
+
+  padding: 10px;
+  border-radius: 20px;
+  background: url(../images/titbg4.jpg)
+    no-repeat center/cover;
+
+  /* 박스그림자 
+    box-shadow:
+    (내부그림자 inset) x축 y축 블러 (확장) 색
+    -> 블러 뒤에 확장옵션에 px값을 주면 그림자가 더 커진다.
+
+    콤마로 연결하면 글자 그림자든 박스 그림자든 모두 다중 그림자로 적용할 수 있음
+  */
+  box-shadow: 
+    /* 내부그림자 */
+    inset 0 0 10px rgb(112, 99, 99),
+    /* 외부그림자 */
+    0 0 10px 10px skyblue;
 }
 
+/* [ CSS 적용우선 순위 ] 
+  0. 속성값 안에 !important 라고 쓰면 가장 최우선 적용
+  1. 인라인 : 태그 안에 style 속성 세팅
+  2. 종속선택 : 태그명#아이디명 / 태그명.클래스명
+  3. 아이디 요소 : #
+  4. 클래스 요소 : .
+  5. 요소명 : 태그명
+*/
+
+/* 페이지별 타이틀 박스 디자인 변화 */
+h2.politics {
+  background-image: url(../images/titbg1.jpg);
+  color: darkred;
+}
+h2.economics {
+  background-image: url(../images/titbg2.jpg);
+  color: lavenderblush;
+}
+h2.social {
+  background-image: url(../images/titbg3.jpg);
+  color: paleturquoise;
+}
+h2.it {
+  background-image: url(../images/titbg4.jpg);
+  color: darkorchid;
+}
+h2.tv {
+  background-image: url(../images/titbg5.jpg);
+  color: seagreen;
+}
 
 /* 2-2. 언론사로고 */
+.press-logo img {
+  /* 이미지 높이값 고정 */
+  height: 32px;
+}
+
 /* 2-3. 기사제목 */
+.article-title {
+  font-size: 30px;
+  color: #1e1e23;
+}
 /* 2-4. 기사이미지 */
+.article-picture {
+  margin: 0;
+}
+.article-picture img {
+  width: 100%;
+}
+.article-picture figcaption {
+  text-align: center;
+}
 /* 2-5. 기사내용 */
+.contents p {
+  font-size: 20px;
+  line-height: 1.8;
+}
 /* 2-5.5 인용블록영역 */
 /* 2-6. 기자정보 */
 /* 2-7. 기사원문 */
 /* 2-8. 주해영역 */
 /* 2-9. 오늘의 작품 & 느낌 */
-
-
-
-
