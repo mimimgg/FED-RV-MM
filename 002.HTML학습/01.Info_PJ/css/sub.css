@@ -103,16 +103,86 @@ h2.tv {
 .article-picture img {
   width: 100%;
 }
+/* 이미지설명 */
 .article-picture figcaption {
   text-align: center;
 }
+.article-picture figcaption small {
+  font-size: 15px;
+}
 /* 2-5. 기사내용 */
 .contents p {
+  margin: 0;
+  margin-bottom: 25px;
   font-size: 20px;
   line-height: 1.8;
+  color: #303038;
+}
+.contents p strong {
+  color: hotpink;
+}
+.contents p em {
+  color: lightseagreen;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.165);
+  text-decoration: underline wavy;
+}
+
+/* 공통 보더박스 디자인 (.bd-box)*/
+
+.bd-box {
+  border-top: 2px dashed #303038;
+  margin-top: 25px;
+}
+/* 타이틀 */
+.bd-box h4 {
+  display: inline-block;
+  border-radius: 15px;
+  padding: 10px 15px;
+  border: 2px solid #303038;
+  background: #e6e6e6;
+  font-size: 30px;
+  box-shadow: inset 0 0 5px #1818186f, 0 0 10px rgba(0, 0, 0, 0.445);
+}
+/* 인용구박스 : blockquote */
+.quote-box blockquote {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.8;
+  text-align: justify;
+  /* 양쪽정렬시 영어단어 깨서 중앙 공백 없애기 : word-break: break-all */
+  word-break: break-all;
+  text-indent: 20px;
+}
+.quote-box blockquote img {
+  width: 150px;
+  float: right;
+  margin: 4px 0 0 15px;
+  border-radius: 10px;
 }
 /* 2-5.5 인용블록영역 */
 /* 2-6. 기자정보 */
 /* 2-7. 기사원문 */
+.article-link {
+  /* 우측정렬 */
+  text-align: right;
+}
+.article-link a {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 100px;
+  border: 2px solid darkcyan;
+  border-radius: 50%;
+  background-color: lightcyan;
+  color: darkcyan;
+  font-size: 20px;
+  text-decoration: none;
+}
+.article-link a:hover {
+  color: white;
+  background-color: navy;
+}
 /* 2-8. 주해영역 */
 /* 2-9. 오늘의 작품 & 느낌 */
