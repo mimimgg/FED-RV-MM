@@ -463,6 +463,68 @@
           </dd>
         </dl>
       </article>
+
+      <!-- 
+        [ 테이블 요소 : table ]
+        table > tbody > tr > td
+
+        -> tbody는 안쓰고 tr부터 구현해도
+        브라우저가 자동으로 그려준다!
+
+        주의) table > tr 로 직계선택하게 되면
+        위와 같은 구조적인 이유로 선택되지 않는다!
+
+        _______________________________
+
+        ((간단한 테이블 작성시 필수요소 3가지!))
+        table : 테이블 박스 부모요소
+        tr : 테이블 행요소(table row)
+        td : 테이블 데이터요소(table data)
+      -->
+
+      <!-- 사진뉴스 : table -->
+      <article class="photo-news news-box">
+        <h3>사진뉴스</h3>
+        <table>
+          <!-- 1 -->
+          <tr>
+            <td>1</td>
+            <td>
+              <a href="https://n.news.naver.com/mnews/article/008/0005104454" target="_blank">"1년만 다녀도 22개월 위로금"…엔씨 희망퇴직 '파격적'</a>
+          </td>
+            <td>
+              <a href="https://n.news.naver.com/mnews/article/008/0005104454" target="_blank">
+                <img src="./images/photonews01.jpg" alt="포토뉴스1">
+              </a>
+            </td>
+          </tr>
+          <!-- 2 -->
+          <tr>
+            <td>2</td>
+            <td>
+              <a href="https://n.news.naver.com/mnews/article/008/0005104445" target="_blank">화재 경보 96%가 오작동…불필요한 소방 신고 줄일 'AI 센서' 나왔다</a>
+          </td>
+            <td>
+              <a href="https://n.news.naver.com/mnews/article/008/0005104445" target="_blank">
+                <img src="./images/photonews02.jpg" alt="포토뉴스2">
+              </a>
+            </td>
+          </tr>
+          <!-- 3 -->
+          <tr>
+            <td>3</td>
+            <td>
+              <a href="https://n.news.naver.com/mnews/article/018/0005866291" target="_blank">엔비디아 "카카오 AI 전환 지원…데이터센터도 협업"</a>
+          </td>
+            <td>
+              <a href="https://n.news.naver.com/mnews/article/018/0005866291" target="_blank">
+                <img src="./images/photonews03.jpg" alt="포토뉴스3">
+              </a>
+            </td>
+          </tr>
+        </table>
+      </article>
+      
     </main>
     <!-- <div id="main"></div> -->
 

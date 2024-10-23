@@ -383,11 +383,17 @@ h2.tv {
   background: lightpink;
   border: 4px dashed coral;
   color: navy;
-  margin-top: 20px;
 }
 .sec-news dt:last-of-type {
   background: rgb(203, 255, 203);
   border: 4px dashed green;
   color: #e83f03;
+}
+/* 두번째 dt부터 margin-top 주기 */
+/* 
+  dt 앞에 dd가 있는 모든 dt를 선택한다.
+  형제선택자 사용 "+" 사용함 : dd+dt
+*/
+.sec-news dd+dt {
   margin-top: 20px;
 }
