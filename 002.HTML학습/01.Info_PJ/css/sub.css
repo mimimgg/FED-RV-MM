@@ -397,3 +397,66 @@ h2.tv {
 .sec-news dd+dt {
   margin-top: 20px;
 }
+
+/* 사진뉴스 테이블 */
+.photo-news table {
+  max-width: 500px;
+  margin: 0 auto;
+  
+  /* 테이블 기본 간격 없애기(정확한 수치화를 위해) */
+  border-collapse: collapse;
+  /* 
+  separate가 기본값 
+  -> table 태그에서 border="1" 설정으로 확인
+  */
+
+  /* 테두리 설정 */
+  border: 2px solid #ccc;
+}
+.photo-news h2 {
+  font-family: "Black And White Picture", sans-serif;
+  font-weight: normal;
+  font-size: 40px;
+  text-align: center;
+}
+.photo-news h2::after {
+  content: '📺';
+}
+.photo-news h2::before {
+  content: '📷';
+}
+/* 첫번째 td : 숫자데이터 */
+.photo-news td:first-child {
+  width: 50px;
+  height: 84px;
+  text-align: center;
+  background-color: #ccc;
+}
+/* 두번째 td : 기사제목링크 */
+.photo-news td:nth-child(2) {
+  padding: 0 10px;
+  background-color: #e4e4e4;
+}
+/* 세번째 td : 기사사진 */
+.photo-news td:last-child {
+  background-color: #e4e4e4;
+  vertical-align: middle;
+}
+.photo-news img {
+  width: 100px;
+  height: 70px;
+  vertical-align: middle;
+}
+.photo-news tr+tr td {
+  border-top: 2px solid #ccc
+}
+/* 사진뉴스 a요소 세팅 */
+.photo-news table a {
+  /* 줄바꿈방지 설정 해제 */
+  white-space: normal;
+}
+/* 사진뉴스 이미지 */
+.photo-news table img {
+  width: 100px;
+  height: 70px;
+}
