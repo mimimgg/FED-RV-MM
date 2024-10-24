@@ -111,6 +111,9 @@ h2.tv {
   font-size: 15px;
 }
 /* 2-5. 기사내용 */
+.contents {
+  margin: 40px 0;
+}
 .contents p {
   margin: 0;
   margin-bottom: 25px;
@@ -127,6 +130,31 @@ h2.tv {
     rgba(0, 0, 0, 0.165);
   text-decoration: underline wavy;
 }
+.contents strong {
+  font-size: 20px;
+  line-height: 1.5;
+}
+.contents span {
+  color: blue;
+  font-size: 18px;
+}
+
+/* 카피라이트 */
+div.copyright {
+  margin: 20px 0;
+  color: #999;
+}
+div.copyright p {
+  font-size: 14px;
+  margin: 8px 0;
+}
+div.copyright span {
+  font-size: 20px;
+}
+div.copyright span::before {
+  content: '⚠️';
+}
+
 
 /* 공통 보더박스 디자인 (.bd-box)*/
 
@@ -180,6 +208,7 @@ h2.tv {
 .article-link {
   /* 우측정렬 */
   text-align: right;
+  padding: 20px;
 }
 .article-link a {
   display: inline-block;
@@ -460,3 +489,4 @@ h2.tv {
   width: 100px;
   height: 70px;
 }
+

@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="utf-8">
+	<meta name="title" content="스포츠조선">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta name="description" content="가뜩이나 복잡한 세상, 골치아픈 뉴스들에 짜증나셨죠? 그래서 재미있는 뉴스만을 모았습니다.스포츠신문 발행부수-열독률 1위인 ‘스포츠-연예의 절대강자’ 스포츠조선이 있습니다.">
+	<meta name="news_keywords" content="모바일 스포츠조선,스포츠조선,스포츠조선닷컴,sportschosun,야구,스포츠,농구,배구,골프,게임,e스포츠,연예,엔터테인먼트,축구,해외축구,EPL, WBC, MLB, NPB, KBO, K-POP, KBL, Newspaper, Korea, South Korea">
+	<meta property="og:image" content="https://sports.chosun.com/img/thum_sns.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="unsafe-url">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<title>스포츠조선</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://sports.chosun.com/img/favicon.ico" type="image/x-icon">
+	<!-- Favicon -->
+	<link rel="icon" href="https://sports.chosun.com/img/favicon.ico" type="image/x-icon">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="https://sports.chosun.com/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="https://sports.chosun.com/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="https://sports.chosun.com/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://sports.chosun.comlib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="https://sports.chosun.com/css/style2025.css" rel="stylesheet">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-PLW3PS2D');</script>
+	<!-- End Google Tag Manager -->		
+	<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+	<script>
+	  window.googletag = window.googletag || {cmd: []};
+	  googletag.cmd.push(function() {
+		googletag.defineSlot('/195060224/SC_PC_Main_midlle_970250', [[960, 90], [950, 90], [980, 90], [970, 66], [930, 180], [970, 90], [970, 250], [980, 120]], 'div-gpt-ad-1702516960444-0').addService(googletag.pubads());
+		googletag.pubads().enableSingleRequest();
+		googletag.enableServices();
+	  });
+	</script>
+</head>
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLW3PS2D"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<!-- ##### Header Area Start ##### -->
+    <!-- ##### Header Area Start ##### -->
+<!-- 상단로고 및 검색 -->
+<div class="container header">
+		<div class="align-items-center">
+			<h1 class="logo">
+				<a href="https://sports.chosun.com"><img src="https://sports.chosun.com/img/logo.svg" alt="스포츠조선"/></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			</h1>
+		</div>
+	</div>
+	<!-- 전체메뉴 -->
+	<div class="container">
+		<!--메뉴-->
+		<nav class="navbar bg-body-tertiary navbar-expand-lg p-lg-0" style="position: relative;">
+			<!--좌측메뉴X 모바일 메뉴-->
+			<div class="navbar-nav d-none d-lg-block">
+				<ul>
+					<li><a href="https://sports.chosun.com/latest/?action=all" >뉴스</a></li>
+					<li><a href="https://sports.chosun.com/baseball/?action=baseball" >야구</a></li>
+					<li><a href="https://sports.chosun.com/football/?action=football" >축구</a></li>
+					<li><a href="https://sports.chosun.com/basketball/?action=basketball" >농구</a></li>
+					<li><a href="https://sports.chosun.com/golf/?action=golf" >골프</a></li>
+					<li><a href="https://sports.chosun.com/volleyball/?action=volleyball" >배구</a></li>
+					<li><a href="https://sports.chosun.com/sports-news/?action=news" >종합</a></li>
+					<li><a href="https://sports.chosun.com/entertainment/?action=entertainment" >연예</a></li>
+					<li><a href="https://sports.chosun.com/life/?action=life" >라이프</a></li>
+					<li><a href="https://sports.chosun.com/cartoon/" rel="nofollow" >무료만화</a></li>
+					<li><a href="https://sports.chosun.com/photo-news/" >포토</a></li>
+					<li><a href="https://sports.chosun.com/tv/" >TV</a></li>
+					<li><a href="https://sports.chosun.com/diva/" >Diva</a></li>
+				</ul>
+			</div>
+			<!--//좌측메뉴X 모바일 메뉴-->
+			<!--우측메뉴 -->
+			<div class="ms-auto d-none d-lg-block">
+				<ul class="subMenu_r">
+					<li><a href="https://sportschosun.com/" target="_blank"><img src="https://sports.chosun.com/img/icon-earth.png" width="20" alt="영문사이트"> <b>global</b></a></li>
+					<li><a href="https://www.youtube.com/channel/UCgf99FxnJYCee6WEeH58n2w" target="_blank" rel="nofollow"><img src="https://sports.chosun.com/img/bul_you2022.png" width="20" alt="유튜브"> 유튜브</a></li>
+					<!--검색--->
+					<li>
+						<button class="submit search-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> 
+							<i class="fa fa-search" aria-hidden="true"></i>
+						</button>
+						<div class="collapse search-box" id="collapseExample">
+							<div class="card card-body">
+								<form method="post" name="search" id="sfrm" target="_top" action="https://sports.chosun.com/search/" accept-charset="UTF-8">
+									<input type="search" name="s" id="keyword" placeholder="검색어를 입력하세요">
+									<button type="submit" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+								</form>
+							</div>
+						</div>
+					</li>        
+				</ul>
+			</div>
+			<!--//우측메뉴 -->
+			<!--모바일 전체메뉴-->
+			<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasNavbarLabel">전체메뉴</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<div class="sitemap">
+						<div class="accordion accordion-flush" id="accordionExample">
+							<div class="sub-menu"><a href="https://sports.chosun.com/latest/?action=all">전체기사</a></div>
+							<div class="accordion-item">
+								<div class="accordion-header sub-menu" id="headingbaseball">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#baseball" aria-expanded="false" aria-controls="baseball">야구</button>
+								</div>
+								<div id="baseball" class="accordion-collapse collapse" aria-labelledby="headingbaseball" data-bs-parent="#accordionExample">
+									<div class="accordion-body">
+										<ul>
+											<li><a href="https://sports.chosun.com/baseball/?action=baseball">야구</a></li>
+											<li><a href="https://sports.chosun.com/baseball/?action=kbo">프로야구</a></li>
+											<li><a href="https://sports.chosun.com/baseball/?action=kbaseball">아마야구</a></li>
+											<li><a href="https://sports.chosun.com/baseball/?action=mlb">MLB</a></li>
+											<li><a href="https://sports.chosun.com/baseball/?action=npb">NPB</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<div class="accordion-header sub-menu" id="headingsoccer">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soccer" aria-expanded="false" aria-controls="soccer">축구</button>
+								</div>
+								<div id="soccer" class="accordion-collapse collapse" aria-labelledby="headingsoccer" data-bs-parent="#accordionExample">
+									<div class="accordion-body">
+										<ul>
+											<li><a href="https://sports.chosun.com/football/?action=football">축구</a></li>
+											<li><a href="https://sports.chosun.com/football/?action=kleague">프로축구</a></li>
+											<li><a href="https://sports.chosun.com/football/?action=kfa">아마축구</a></li>
+											<li><a href="https://sports.chosun.com/football/?action=worldfootball">해외축구</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<div class="accordion-header sub-menu" id="headingbasketball">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#basketball" aria-expanded="false" aria-controls="basketball">농구</button>
+								</div>
+								<div id="basketball" class="accordion-collapse collapse" aria-labelledby="headingbasketball" data-bs-parent="#accordionExample">
+									<div class="accordion-body">
+										<ul>
+											<li><a href="https://sports.chosun.com/basketball/?action=basketball">농구</a></li>
+											<li><a href="https://sports.chosun.com/basketball/?action=kbl">남자프로농구</a></li>
+											<li><a href="https://sports.chosun.com/basketball/?action=wkbl">여자프로농구</a></li>
+											<li><a href="https://sports.chosun.com/basketball/?action=kba">아마농구</a></li>
+											<li><a href="https://sports.chosun.com/basketball/?action=nba">NBA</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<div class="accordion-header sub-menu" id="headinggolf">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#golf" aria-expanded="false" aria-controls="golf">골프</button>
+								</div>
+								<div id="golf" class="accordion-collapse collapse" aria-labelledby="headinggolf" data-bs-parent="#accordionExample">
+									<div class="accordion-body">
+										<ul>
+											<li><a href="https://sports.chosun.com/golf/?action=golf">골프</a></li>
+											<li><a href="https://sports.chosun.com/golf/?action=kpga">KPGA</a></li>
+											<li><a href="https://sports.chosun.com/golf/?action=klpga">KLPGA</a></li>
+											<li><a href="https://sports.chosun.com/golf/?action=amaturegolf">아마골프</a></li>
+											<li><a href="https://sports.chosun.com/golf/?action=pga">PGA</a></li>
+											<li><a href="https://sports.chosun.com/golf/?action=lpga">LPGA</a></li>
+											<li><a href="https://sports.chosun.com/golf/?action=ksga">사회인골프</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<div class="accordion-header sub-menu" id="headingvolleyball">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#volleyball" aria-expanded="false" aria-controls="volleyball">배구</button>
+								</div>
+								<div id="volleyball" class="accordion-collapse collapse" aria-labelledby="headingvolleyball" data-bs-parent="#accordionExample">
+									<div class="accordion-body">
+										<ul>
+											<li><a href="https://sports.chosun.com/volleyball/?action=volleyball">배구</a></li>
+											<li><a href="https://sports.chosun.com/volleyball/?action=vleaguemen">남자프로배구</a></li>
+											<li><a href="https://sports.chosun.com/volleyball/?action=vleaguewomen">여자프로배구</a></li>
+											<li><a href="https://sports.chosun.com/volleyball/?action=amaturevolleyball">아마배구</a></li>	
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<div class="accordion-header sub-menu" id="headingothers">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#others" aria-expanded="false" aria-controls="others">종합</button>
+								</div>
+								<div id="others" class="accordion-collapse collapse" aria-labelledby="headingothers" data-bs-parent="#accordionExample">
+									<div class="accordion-body">
+										<ul>
+											<li><a href="https://sports.chosun.com/sports-news/?action=news">종합</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<div class="accordion-header sub-menu" id="headingenter">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#enter" aria-expanded="false" aria-controls="enter">연예</button>
+								</div>
+								<div id="enter" class="accordion-collapse collapse" aria-labelledby="headingenter" data-bs-parent="#accordionExample">
+									<div class="accordion-body">
+										<ul>
+											<li><a href="https://sports.chosun.com/entertainment/?action=entertainment">연예</a></li>
+											<li><a href="https://sports.chosun.com/entertainment/?action=worldenter">해외연예</a></li>
+											<li><a href="https://sports.chosun.com/entertainment/?action=star">스타</a></li>
+											<li><a href="https://sports.chosun.com/entertainment/?action=tv">TV일반</a></li>
+											<li><a href="https://sports.chosun.com/entertainment/?action=worldtv">해외TV</a></li>
+											<li><a href="https://sports.chosun.com/entertainment/?action=drama">드라마</a></li>
+											<li><a href="https://sports.chosun.com/entertainment/?action=music">국내음악</a></li>
+											<li><a href="https://sports.chosun.com/entertainment/?action=movie">해외음악</a></li>
+											<li><a href="https://sports.chosun.com/entertainment/?action=worldenter">영화일반</a></li>
+											<li><a href="https://sports.chosun.com/entertainment/?action=worldmovie">해외영화</a></li>
+											<li><a href="https://sports.chosun.com/entertainment/?action=blueaward">청룡영화상</a></li>
+											<li><a href="https://sports.chosun.com/entertainment/?action=newmovie">새영화</a></li>
+											<li><a href="https://sports.chosun.com/entertainment/?action=game">게임일반</a></li>
+											<li><a href="https://sports.chosun.com/entertainment/?action=gameawards">게임대상</a></li>
+											<li><a href="https://sports.chosun.com/entertainment/?action=culture">문화일반</a></li>
+											<li><a href="https://sports.chosun.com/entertainment/?action=concert">공연</a></li>
+											<li><a href="https://sports.chosun.com/entertainment/?action=gallery">전시</a></li>
+											<li><a href="https://sports.chosun.com/entertainment/?action=book">책</a></li>
+											<li><a href="https://sports.chosun.com/entertainment/?action=musicalawards">뮤지컬대상</a></li>
+											<li><a href="https://sports.chosun.com/entertainment/?action=worldculture">해외문화</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<div class="accordion-header sub-menu" id="headinglife">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#life" aria-expanded="false" aria-controls="life">라이프</button>
+								</div>
+								<div id="life" class="accordion-collapse collapse" aria-labelledby="headingenter" data-bs-parent="#accordionExample">
+									<div class="accordion-body">
+										<ul>
+											<li><a href="https://sports.chosun.com/life/?action=life">라이프</a></li>
+											<li><a href="https://sports.chosun.com/life/?action=society">사회일반</a></li>
+											<li><a href="https://sports.chosun.com/life/?action=horseracing">경마</a></li>
+											<li><a href="https://sports.chosun.com/life/?action=cycleracing">경륜</a></li>
+											<li><a href="https://sports.chosun.com/life/?action=boatracing">경정</a></li>
+											<li><a href="https://sports.chosun.com/life/?action=living">생활</a></li>
+											<li><a href="https://sports.chosun.com/life/?action=health">건강</a></li>
+											<li><a href="https://sports.chosun.com/life/?action=campus">캠퍼스</a></li>
+											<li><a href="https://sports.chosun.com/life/?action=mobility">자동차</a></li>
+											<li><a href="https://sports.chosun.com/life/?action=leisure">레저</a></li>
+											<li><a href="https://sports.chosun.com/life/?action=trip">여행</a></li>
+											<li><a href="https://sports.chosun.com/life/?action=100mountain">100대 명산</a></li>
+											<li><a href="https://sports.chosun.com/life/?action=it">IT</a></li>
+											<li><a href="https://sports.chosun.com/life/?action=economy">경제</a></li>
+											<li><a href="https://sports.chosun.com/life/?action=politics">정치</a></li>
+										</ul>
+									</div>
+								</div> 
+							</div>				
+							<div class="sub-menu">스페셜</div>
+								<ul>
+									<li><a href="https://sports.chosun.com/cartoon/" rel="nofollow">무료만화</a></li>
+									<li><a href="https://sports.chosun.com/tv/">TV</a></li>
+									<li><a href="https://sports.chosun.com/diva/">Diva</a></li>
+								</ul>
+							<div class="sub-menu"><a href="https://sportschosun.com" rel="nofollow">global</a></div>
+						</div> 
+					</div>              
+				</div>
+			</div>
+			<!--//모바일 전체메뉴-->
+		</nav>
+	</div>
+<!-- 전체메뉴 End -->
+<!-- ##### Header Area End ##### -->	<!-- ##### Header Area End ##### -->
+	
+	<!--뉴스컨텐츠 START-->
+	<section style="margin-top: -1px;">
+		<div class="container" style="position: relative;">
+
+			<!-- 플로팅광고 -->
+			 <div class="d-none d-xl-flex"><div class="sc_floating" id="sc_floating"><div class="sc_floating_01" id="sc_floating_01" style="position:absolute; z-index:10;  top:170px; left:450px;"><script>document.write("<d"+"iv id='mobonDivBanner_40981' style='line-height:0'><d"+"iv id='mobonButton' style='cursor: pointer;position: absolute;bottom: 2px;right: 2px;z-index: 9999;'onclick='document.getElementById(\"mobonDivBanner_40981\").setAttribute(\"style\",\"display:none\")'><img src=\"https://sports.chosun.com/news/img/sc_close.jpg\" style='width: 15px;height: 15px;'></d"+"iv><iframe name='ifrad' width='300' height='250' id='mobonIframe_40981' src='//www.mediacategory.com/servlet/adBanner?from="+escape(document.referrer)+"&s=40981&iwh=300_250&igb=74&cntad=1&cntsr=1' frameBorder='0' marginWidth='0' marginHeight='0' scrolling='no' ></iframe></d"+"iv>");</script></div></div></div>
+			<!-- 플로팅광고 -->
+
+			<div class="main-web-bg">
+				<!--기사 roof 40개 시작-->
+				<div class="row g-3">
+					<!--fix 기사11개 시작-->
+					<!--뉴스5개-->
+					<div class="col-md-12 col-lg-6">
+						<!--top기사-->
+						<div class="card-key">
+							<div class="news-thumb"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100181260024262"><img src="https://sports.chosun.com/news/screennews/402_20241024_1024f.jpg " alt="“송지은, ♥박위 배변냄새 킁킁”..논란된 동생 축사 영상 수정, 흔들림 없는 허니문"></a></div>
+							<div class="news-post">
+								<div class="news-title"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100181260024262">“송지은, ♥박위 배변냄새 킁킁”..논란된 동생 축사 영상 수정, 흔들림 없는 허니문</a></div>
+								<div class="news-meta">
+																		<span class="txt-enter"><i class="icon-enter"></i>연예</span>
+									<span>백지은 기자</span>
+									<!-- <span class="txt-english"><a href="#" id="202410240100181260024262" onclick="return false;"><i class="icon-english"></i></a></span> -->
+									<span class="txt-sns"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100181260024262" onclick="return false;"><i class="icon-sns"></i></a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-lg-3">
+						<div class="key-card-type">
+							<div class="card-type02">
+								<div class="card-s">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100178880023566">'故 최진실 딸' 최준희 “온몸에 염증 부종이 가득..다이어트 한 75kg 시절 몸매”</a></div>
+										<div class="news-meta">
+																						<span class="txt-enter"><i class="icon-enter"></i>연예</span>
+											<span>김수현 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100178880023566" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100178880023566" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100178880023566"><img src="https://sports.chosun.com/news/screennews/402_20241024_1024y.jpg " alt="'故 최진실 딸' 최준희 “온몸에 염증 부종이 가득..다이어트 한 75kg 시절 몸매”"></a>
+									</div>
+								</div>
+							</div>
+							<div class="card-type02">
+								<div class="card-s">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100180680024131">윤여정, 글로벌 활동 계속된다..'성난 사람들' 시즌2 합류</a></div>
+										<div class="news-meta">
+																						<span class="txt-enter"><i class="icon-enter"></i>연예</span>
+											<span>문지연 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100180680024131" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100180680024131" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100180680024131"><img src="https://sports.chosun.com/news/screennews/402_20241024_1024h.jpg " alt="윤여정, 글로벌 활동 계속된다..'성난 사람들' 시즌2 합류"></a>
+									</div>
+								</div>
+							</div>
+							<div class="card-type02">
+								<div class="card-s">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100181010024187">류승룡 “6살 때 처음 만난 예승이, 성인 되면 명품백 선물 사줄 것”</a></div>
+										<div class="news-meta">
+																						<span class="txt-enter"><i class="icon-enter"></i>영화</span>
+											<span>안소윤 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100181010024187" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100181010024187" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100181010024187"><img src="https://sports.chosun.com/news/screennews/402_20241024_1024s.jpg " alt="류승룡 “6살 때 처음 만난 예승이, 성인 되면 명품백 선물 사줄 것”"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-lg-3">
+						<div class="card-type01">
+							<div class="news-thumb"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100180490024039"><img src="https://sports.chosun.com/news/screennews/402_20241024_1024yu.jpg " alt="[단독]엔하이픈, '새신랑' 조세호 빈자리 채운다..'1박 2일' 완전체 출연"></a></div>
+							<div class="news-post">
+								<div class="news-title"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100180490024039">[단독]엔하이픈, '새신랑' 조세호 빈자리 채운다..'1박 2일' 완전체 출연</a></div>
+								<div class="news-meta">
+																		<span class="txt-enter"><i class="icon-enter"></i>TV</span>
+									<span>정빛 기자</span>
+									<!-- <span class="txt-english"><a href="#" id="202410240100180490024039" onclick="return false;"><i class="icon-english"></i></a></span> -->
+									<span class="txt-sns"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100180490024039" onclick="return false;"><i class="icon-sns"></i></a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--//뉴스5개-->
+					<!--뉴스 6개-->
+					<!--3개 박스뉴스-->
+					<div class="col-md-12 col-lg-3">
+						<div class="key-card-type">
+							<div class="card-type02">
+								<div class="card-s03">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100182520024392">박나래 집서 유명 연예인 알몸으로 실종→얼굴 공개 ‘충격’</a></div>
+										<div class="news-meta">
+																						<span class="txt-enter"><i class="icon-enter"></i>연예</span>
+											<span>박아람 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100182520024392" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100182520024392" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100182520024392"><img src="https://sports.chosun.com/news/screennews/402_20241024_1024te.jpg " alt="박나래 집서 유명 연예인 알몸으로 실종→얼굴 공개 ‘충격’"></a>
+									</div>
+								</div>
+							</div>
+							<div class="card-type02">
+								<div class="card-s03">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100180360024028">정성일 “'더글로리' 지우고 싶지 않지만..새로운 정성일 보여주고파”</a></div>
+										<div class="news-meta">
+																						<span class="txt-enter"><i class="icon-enter"></i>영화</span>
+											<span>조지영 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100180360024028" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100180360024028" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100180360024028"><img src="https://sports.chosun.com/news/screennews/402_20241024_1024d.jpg " alt="정성일 “'더글로리' 지우고 싶지 않지만..새로운 정성일 보여주고파”"></a>
+									</div>
+								</div>
+							</div>
+							<div class="card-type02">
+								<div class="card-s03">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100180290023968">진선규 “류승룡과 '극한직업' 후 재회, 코믹 연기 부담 있었다”</a></div>
+										<div class="news-meta">
+																						<span class="txt-enter"><i class="icon-enter"></i>영화</span>
+											<span>안소윤 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100180290023968" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100180290023968" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100180290023968"><img src="https://sports.chosun.com/news/screennews/402_20241024_1024u.jpg " alt="진선규 “류승룡과 '극한직업' 후 재회, 코믹 연기 부담 있었다”"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--//3개 박스뉴스-->
+					<div class="col-md-12 col-lg-3">
+						<div class="card-type">
+							<!--세로썸네일 css추가-->
+							<!--이미지 사이즈 세로 기준 class="img-fluid-v"-->
+							<div class="news-thumb"><a href="https://sports.chosun.com/ext/2024-10-24/202410240100180000023913"><img src="https://sports.chosun.com/news/screennews/402_20241024_1024ur.jpg " alt="'박하선 시누이' 최윤라, 11월 말 비연예인과 결혼 “따뜻한 축하 부탁”" ></a></div>
+							<div class="news-post">
+								<div class="news-title"><a href="https://sports.chosun.com/ext/2024-10-24/202410240100180000023913">'박하선 시누이' 최윤라, 11월 말 비연예인과 결혼 “따뜻한 축하 부탁”</a></div>
+								<div class="news-meta">
+																		<span class="txt-enter"><i class="icon-enter"></i>연예</span>
+									<span>김수현 기자</span>
+									<!-- <span class="txt-english"><a href="#" id="202410240100180000023913" onclick="return false;"><i class="icon-english"></i></a></span> -->
+									<span class="txt-sns"><a href="https://sports.chosun.com/ext/2024-10-24/202410240100180000023913" onclick="return false;"><i class="icon-sns"></i></a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-lg-3">
+						<div class="card-type03">
+							<div class="news-thumb"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100179290023751"><img src="https://sports.chosun.com/news/screennews/402_20241024_1024pa.jpg " alt="“죽음까지 생각”..이승연, 위안부 누드집→프로포폴 투약파문 심경고백"></a></div>
+							<div class="news-post">
+								<div class="news-title"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100179290023751">“죽음까지 생각”..이승연, 위안부 누드집→프로포폴 투약파문 심경고백</a></div>
+								<div class="news-meta">
+																		<span class="txt-enter"><i class="icon-enter"></i>연예</span>
+									<span>백지은 기자</span>
+									<!-- <span class="txt-english"><a href="#" id="202410240100179290023751" onclick="return false;"><i class="icon-english"></i></a></span> -->
+									<span class="txt-sns"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100179290023751" onclick="return false;"><i class="icon-sns"></i></a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-lg-3">
+						<div class="card-type03">
+							<div class="news-thumb"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100179790023837"><img src="https://sports.chosun.com/news/screennews/402_20241024_1024i.jpg " alt="유명 성악가, 알고 보니 아동학대자?..“엄마를 고소합니다”"></a></div>
+							<div class="news-post">
+								<div class="news-title"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100179790023837">유명 성악가, 알고 보니 아동학대자?..“엄마를 고소합니다”</a></div>
+								<div class="news-meta">
+																		<span class="txt-enter"><i class="icon-enter"></i>TV</span>
+									<span>박아람 기자</span>
+									<!-- <span class="txt-english"><a href="#" id="202410240100179790023837" onclick="return false;"><i class="icon-english"></i></a></span> -->
+									<span class="txt-sns"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100179790023837" onclick="return false;"><i class="icon-sns"></i></a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--//뉴스 6개-->
+					<!--//fix 기사11개 끝-->
+					<!--웹 야구스코어-->
+										<div class="col-md-12 col-lg-3 d-none d-lg-block">
+						<div class="section-box">
+							<div class="sub-menu-title">경기일정 및 결과</div>
+							<div class="score-cont">
+								<ul>
+																		<li>
+										<span class="b-team"><i class="emblem">
+																				</i>아탈란타</span>
+										<span class="b-score"> 
+																						<em class="txt-vs">0 : 0</em>
+																																												<em class="txt-bs">종료</em>
+																					</span>
+										<span class="b-team"><i class="emblem">
+																				</i>셀틱</span>
+									</li>
+																	</ul>
+							</div>
+						</div>
+					</div>
+										<!--//웹 야구스코어-->
+					<div class="col-md-12 col-lg-3">
+						<div class="card-type">
+							<div class="news-thumb"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100180690024132"><img src="https://sports.chosun.com/news/screennews/403_20241024_2024102401001806900241321.jpg " alt="[이슈] '나솔' 돌싱끼리…'교제' 22기 정숙♥10기 상철→'의혹' 22기 정희·16기 영수"></a></div>
+							<div class="news-post">
+								<div class="news-title"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100180690024132">[이슈] '나솔' 돌싱끼리…'교제' 22기 정숙♥10기 상철→'의혹' 22기 정희·16기 영수</a></div>
+								<div class="news-meta">
+																		<span class="txt-enter"><i class="icon-enter"></i>TV</span>
+									<span>정빛 기자</span>
+									<!-- <span class="txt-english"><a href="#" id="202410240100180690024132" onclick="return false;"><i class="icon-english"></i></a></span> -->
+									<span class="txt-sns"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100180690024132" onclick="return false;"><i class="icon-sns"></i></a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--모바일 야구스코어-->
+										<!--//모바일 야구스코어-->
+					<!--영상섹션-->
+					<div class="col-md-12 col-lg-3">
+						<div class="video-box">
+							<div class="img">
+								<img src="https://i.ytimg.com/vi/3kPOjLAWdBo/mqdefault.jpg" alt="[LIVE 하이라이트] 절대 에이스의 시대 / 소노 이정현, KCC 디온테 버튼 / KT 허 훈 손목 부상 / 현대모비스 무너진 숀 롱 라인업">
+								<button type="button" class="btn-play video-btn" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/3kPOjLAWdBo" data-bs-target="#videoModal">
+								<span></span>
+								</button>
+							</div>
+							<div class="video-post">
+								<div class="video-meta">
+																		<span class="video-tit"><i class="icon-video03"></i>이류농구TV</span>
+									<span class="video-more"><a href="https://www.youtube.com/@KBLrumor-and-fact" target="_blank">더보기</a></span>
+								</div>
+								<div class="video-title">[LIVE 하이라이트] 절대 에이스의 시대 / 소노 이정현, KCC 디온테 버튼 / KT 허 훈 손목 부상 / 현대모비스 무너진 숀 롱 라인업</div>
+							</div>
+						</div>
+					</div>
+					<!--//영상섹션-->
+					<!--3개 박스뉴스-->
+					<div class="col-md-12 col-lg-3">
+						<div class="key-card-type">
+							<div class="card-type02">
+								<div class="card-s03">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/baseball/2024-10-24/202410240100183420024437">"아픈데 보내 주겠나." 손주영에 구자욱도 쉽지않다. 류중일 감독 고민 속 프리미어12 대표팀 훈련 출발</a></div>
+										<div class="news-meta">
+																						<span class="txt-sports"><i class="icon-sports"></i>야구</span>
+											<span>권인하 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100183420024437" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/baseball/2024-10-24/202410240100183420024437" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/baseball/2024-10-24/202410240100183420024437"><img src="https://sports.chosun.com/news/html/2024/10/24/2024102401001834200244371.jpg" alt=""아픈데 보내 주겠나." 손주영에 구자욱도 쉽지않다. 류중일 감독 고민 속 프리미어12 대표팀 훈련 출발"></a>
+									</div>
+								</div>
+							</div>
+							<div class="card-type02">
+								<div class="card-s03">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/baseball/2024-10-24/202410240100181320024274">교체 선수로 오자마자 27점 폭발. 불가리아 폭격기도 아빠였다니... "한국은 아이 키우기 좋은 환경"</a></div>
+										<div class="news-meta">
+																						<span class="txt-sports"><i class="icon-sports"></i>야구</span>
+											<span>권인하 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100181320024274" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/baseball/2024-10-24/202410240100181320024274" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/baseball/2024-10-24/202410240100181320024274"><img src="https://sports.chosun.com/news/html/2024/10/24/2024102401001813200242741.jpg" alt="교체 선수로 오자마자 27점 폭발. 불가리아 폭격기도 아빠였다니... "한국은 아이 키우기 좋은 환경""></a>
+									</div>
+								</div>
+							</div>
+							<div class="card-type02">
+								<div class="card-s03">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/baseball/2024-10-24/202410240100181430024296">'주자 만루시 13타수 무안타→1홈런 18타점' 21세 국대 외야수, 진화는 계속된다 "내년 목표는…" </a></div>
+										<div class="news-meta">
+																						<span class="txt-sports"><i class="icon-sports"></i>야구</span>
+											<span>김영록 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100181430024296" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/baseball/2024-10-24/202410240100181430024296" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/baseball/2024-10-24/202410240100181430024296"><img src="https://sports.chosun.com/news/html/2024/10/24/2024102401001814300242964.jpg" alt="'주자 만루시 13타수 무안타→1홈런 18타점' 21세 국대 외야수, 진화는 계속된다 "내년 목표는…" "></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--//3개 박스뉴스-->
+					<div class="col-md-12 col-lg-3">
+						<div class="card-type">
+							<div class="news-thumb"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100182430024387"><img src="https://sports.chosun.com/news/screennews/403_20241024_2024102401001824300243871.jpg " alt="[이슈] 최민환, 보살인가…“율희 가출 →양육비·재산분할無” 이혼 전말에 쏠린 응원"></a></div>
+							<div class="news-post">
+								<div class="news-title"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100182430024387">[이슈] 최민환, 보살인가…“율희 가출 →양육비·재산분할無” 이혼 전말에 쏠린 응원</a></div>
+								<div class="news-meta">
+																		<span class="txt-enter"><i class="icon-enter"></i>연예</span>
+									<span>백지은 기자</span>
+									<!-- <span class="txt-english"><a href="#" id="202410240100182430024387" onclick="return false;"><i class="icon-english"></i></a></span> -->
+									<span class="txt-sns"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100182430024387" onclick="return false;"><i class="icon-sns"></i></a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--모바일 야구스코어-->
+										<!--//모바일 야구스코어-->
+					<div class="col-md-12 col-lg-3">
+						<div class="card-type">
+							<div class="news-thumb"><a href="https://sports.chosun.com/football/2024-10-24/202410240100181910024367"><img src="https://sports.chosun.com/news/html/2024/10/24/2024102401001819100243671.jpg" alt="'토트넘 초비상!' 철강왕 손흥민, 또 햄스트링 고장났나→70분 만에 부상 재발..."포스테코글루 SON과 회의 진행할 것" 우려 증가"></a></div>
+							<div class="news-post">
+								<div class="news-title"><a href="https://sports.chosun.com/football/2024-10-24/202410240100181910024367">'토트넘 초비상!' 철강왕 손흥민, 또 햄스트링 고장났나→70분 만에 부상 재발..."포스테코글루 SON과 회의 진행할 것" 우려 증가</a></div>
+								<div class="news-meta">
+																		<span class="txt-sports"><i class="icon-sports"></i>축구</span>
+									<span>이현석 기자</span>
+									<!-- <span class="txt-english"><a href="#" id="202410240100181910024367" onclick="return false;"><i class="icon-english"></i></a></span> -->
+									<span class="txt-sns"><a href="https://sports.chosun.com/football/2024-10-24/202410240100181910024367" onclick="return false;"><i class="icon-sns"></i></a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--모바일 야구스코어-->
+										<div class="col-md-12 mobile-ad">
+					  	<div class="section-box">
+							<div class="sub-menu-title">경기일정 및 결과</div>
+							<div class="score-cont">
+								<ul>
+									<li>
+										<span class="b-team"><i class="emblem"></i>아탈란타</span>
+										<span class="b-score"> 
+																				<em class="txt-vs">0 : 0</em>
+																																								<em class="txt-bs">종료</em>
+																				</span>
+										<span class="b-team"><i class="emblem"></i>셀틱</span>
+									</li>
+								</ul>
+						  	</div>
+						</div>
+					</div>
+										<!--//모바일 야구스코어-->
+					<!--3개 박스뉴스-->
+					<div class="col-md-12 col-lg-3">
+						<div class="key-card-type">
+							<div class="card-type02">
+								<div class="card-s03">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100183130024419">장원영, 침대 위에서 깜찍 포즈..바비인형 실제 모델?</a></div>
+										<div class="news-meta">
+																						<span class="txt-enter"><i class="icon-enter"></i>연예</span>
+											<span>고재완 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100183130024419" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100183130024419" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100183130024419"><img src="https://sports.chosun.com/news/html/2024/10/24/2024102401001831300244199.jpg" alt="장원영, 침대 위에서 깜찍 포즈..바비인형 실제 모델?"></a>
+									</div>
+								</div>
+							</div>
+							<div class="card-type02">
+								<div class="card-s03">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100183480024440">'배변 아닌 XX' 송지은♥박위 축사 오해였다....헬스장 사건 급반전 "결혼전 유튜브서 이미 해명"</a></div>
+										<div class="news-meta">
+																						<span class="txt-enter"><i class="icon-enter"></i>연예</span>
+											<span>김준석 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100183480024440" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100183480024440" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100183480024440"><img src="https://sports.chosun.com/news/html/2024/10/24/2024102401001834800244401.jpg" alt="'배변 아닌 XX' 송지은♥박위 축사 오해였다....헬스장 사건 급반전 "결혼전 유튜브서 이미 해명""></a>
+									</div>
+								</div>
+							</div>
+							<div class="card-type02">
+								<div class="card-s03">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/football/2024-10-24/202410240100182450024389">[공식발표]"심판 모욕→퇴장→7분간 버티기" 최강희 감독, ACL 6경기 출장정지+벌금 1800만원 '중징계'</a></div>
+										<div class="news-meta">
+																						<span class="txt-sports"><i class="icon-sports"></i>축구</span>
+											<span>윤진만 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100182450024389" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/football/2024-10-24/202410240100182450024389" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/football/2024-10-24/202410240100182450024389"><img src="https://sports.chosun.com/news/html/2024/10/24/2024102401001824500243891.jpg" alt="[공식발표]"심판 모욕→퇴장→7분간 버티기" 최강희 감독, ACL 6경기 출장정지+벌금 1800만원 '중징계'"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--//3개 박스뉴스-->
+					<!--웹 광고 300px 250px 광고-->
+					<div class="col-md-12 col-lg-3 d-none d-lg-flex">
+						<div class="adBox"> 							
+							<div class="ad_banner02">
+															<script type="text/javascript" src="https://yellow.contentsfeed.com/RealMedia/ads/adstream_jx.ads/www.sports.chosun.com/main@Right" rel="nofollow noopener sponsored"></script>
+														</div>
+						</div>
+					</div>
+					<!--//웹 광고-->
+					<!--모바일 광고-->
+					<div class="col-md-12 col-lg-3 mobile-ad text-center">
+						<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6314880445783562"
+							 crossorigin="anonymous"></script>
+						<!-- SC_모바일 초기면 300250 -->
+						<ins class="adsbygoogle"
+							 style="display:inline-block;width:300px;height:250px"
+							 data-ad-client="ca-pub-6314880445783562"
+							 data-ad-slot="7220789208"></ins>
+						<script>
+							 (adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
+					</div>
+					<!--모바일 광고-->
+					<!--영상섹션-->
+					<div class="col-md-12 col-lg-3">
+						<div class="video-box">
+							<div class="img">
+								<img src="https://i.ytimg.com/vi/_Bon5EsZwek/mqdefault.jpg" alt="'새로운 유니폼 어울리나요?' 화성인 된 이소영, 홈 팬들에게 밝은 미소로 첫인사">
+								<button type="button" class="btn-play video-btn" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/_Bon5EsZwek" data-bs-target="#videoModal">
+								<span></span>
+								</button>
+							</div>
+							<div class="video-post">
+								<div class="video-meta">
+																		<span class="video-tit"><i class="icon-video04"></i>SC영상</span>
+									<span class="video-more"><a href="https://www.youtube.com/@sportschosun" target="_blank">더보기</a></span>
+								</div>
+								<div class="video-title">'새로운 유니폼 어울리나요?' 화성인 된 이소영, 홈 팬들에게 밝은 미소로 첫인사</div>
+							</div>
+						</div>
+					</div>
+					<!--//영상섹션-->
+					<div class="col-md-12 col-lg-3">
+						<div class="card-type03">
+							<div class="news-thumb"><a href="https://sports.chosun.com/life/2024-10-24/202410240100182440024388"><img src="https://sports.chosun.com/news/screennews/401_20241024_2024102401001824400243881.jpg " alt="아파트 한 동 너비에 높이 380m, 73층 '초박형' 건물 두바이 조성"></a></div>
+							<div class="news-post">
+								<div class="news-title"><a href="https://sports.chosun.com/life/2024-10-24/202410240100182440024388">아파트 한 동 너비에 높이 380m, 73층 '초박형' 건물 두바이 조성</a></div>
+								<div class="news-meta">
+																		<span class="txt-life"><i class="icon-life"></i>사회</span>
+									<span>장종호 기자</span>
+									<!-- <span class="txt-english"><a href="#" id="202410240100182440024388" onclick="return false;"><i class="icon-english"></i></a></span> -->
+									<span class="txt-sns"><a href="https://sports.chosun.com/life/2024-10-24/202410240100182440024388" onclick="return false;"><i class="icon-sns"></i></a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-lg-3">
+						<div class="card-type03">
+							<div class="news-thumb"><a href="https://sports.chosun.com/baseball/2024-10-24/202410240100182860024404"><img src="https://sports.chosun.com/news/html/2024/10/24/2024102401001828600244041.jpg" alt="LG '꽁꽁' 묶은 롯데 철벽 마운드→NC 20세 영건 10이닝 무실점 쾌투…쿠바 타선 압도"></a></div>
+							<div class="news-post">
+								<div class="news-title"><a href="https://sports.chosun.com/baseball/2024-10-24/202410240100182860024404">LG '꽁꽁' 묶은 롯데 철벽 마운드→NC 20세 영건 10이닝 무실점 쾌투…쿠바 타선 압도</a></div>
+								<div class="news-meta">
+																		<span class="txt-sports"><i class="icon-sports"></i>야구</span>
+									<span>김영록 기자</span>
+									<!-- <span class="txt-english"><a href="#" id="202410240100182860024404" onclick="return false;"><i class="icon-english"></i></a></span> -->
+									<span class="txt-sns"><a href="https://sports.chosun.com/baseball/2024-10-24/202410240100182860024404" onclick="return false;"><i class="icon-sns"></i></a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-lg-3">
+						<div class="card-type">
+							<div class="news-thumb"><a href="https://sports.chosun.com/football/2024-10-24/202410240100182940024409"><img src="https://sports.chosun.com/news/html/2024/10/24/2024102401001829400244092.jpg" alt=""레알+뮌헨급 재능" 700억 양민혁 동갑내기 이건 몰랐네...집안 역사가 축구 그 자체"></a></div>
+							<div class="news-post">
+								<div class="news-title"><a href="https://sports.chosun.com/football/2024-10-24/202410240100182940024409">"레알+뮌헨급 재능" 700억 양민혁 동갑내기 이건 몰랐네...집안 역사가 축구 그 자체</a></div>
+								<div class="news-meta">
+																		<span class="txt-sports"><i class="icon-sports"></i>축구</span>
+									<span>김대식 기자</span>
+									<!-- <span class="txt-english"><a href="#" id="202410240100182940024409" onclick="return false;"><i class="icon-english"></i></a></span> -->
+									<span class="txt-sns"><a href="https://sports.chosun.com/football/2024-10-24/202410240100182940024409" onclick="return false;"><i class="icon-sns"></i></a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--모바일 야구스코어-->
+										<!--//모바일 야구스코어-->
+					<!--멜론차트-->
+					<!--영상섹션-->
+					<!-- <div class="col-md-12 col-lg-3">
+						<div class="video-box">
+							<div class="img">
+								<img src="https://i.ytimg.com/vi/Z5lNNwywNa0/mqdefault.jpg" alt="양현종 상대로 위축되지 않는 류지혁">
+								<button type="button" class="btn-play video-btn" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/Z5lNNwywNa0" data-bs-target="#videoModal">
+								<span></span>
+								</button>
+							</div>
+							<div class="video-post">
+								<div class="video-meta">
+																		<span class="video-tit"><i class="icon-video01"></i>야구부장</span>
+									<span class="video-more"><a href="https://www.youtube.com/@KBOnews" target="_blank">더보기</a></span>
+								</div>
+								<div class="video-title">양현종 상대로 위축되지 않는 류지혁</div>
+							</div>
+						</div>
+					</div> -->
+					<!--//영상섹션-->
+					<!--주간 박스오피스-->
+					<div class="col-md-12 col-lg-3">
+						<div class="section-box">
+							<div class="sub-menu-title02">주간 박스오피스</div>
+							<div class="melon-chart">
+								<ul id="boxOffice">
+																		<li class="movie-box"> 
+										<span class="f01">
+											<span class="img"><img src="http://file.koreafilm.or.kr/thm/02/99/18/56/tn_DPK022788.jpg" alt="보통의 가족"></span>
+										</span>
+										<span class="f02">
+											<span class="num">1</span>
+										</span>
+										<span class="f04">
+											<span><b>보통의 가족</b></span>
+											<span class="up-down">
+												<i class="icon-up"></i>
+												<span>14</span>
+											</span>
+										</span>
+										<span class="f03">289,731명</span>
+									</li>
+																		<li class="movie-box"> 
+										<span class="f01">
+											<span class="img"><img src="http://file.koreafilm.or.kr/thm/02/99/18/54/tn_DPK022660.jpg" alt="베테랑2"></span>
+										</span>
+										<span class="f02">
+											<span class="num">2</span>
+										</span>
+										<span class="f04">
+											<span><b>베테랑2</b></span>
+											<span class="up-down">
+												<i class="icon-down"></i>
+												<span>1</span>
+											</span>
+										</span>
+										<span class="f03">7,441,590명</span>
+									</li>
+																		<li class="movie-box"> 
+										<span class="f01">
+											<span class="img"><img src="http://file.koreafilm.or.kr/thm/02/99/18/55/tn_DPK022732.jpg" alt="대도시의 사랑법"></span>
+										</span>
+										<span class="f02">
+											<span class="num">3</span>
+										</span>
+										<span class="f04">
+											<span><b>대도시의 사랑법</b></span>
+											<span class="up-down">
+												<i class="icon-down"></i>
+												<span>1</span>
+											</span>
+										</span>
+										<span class="f03">638,244명</span>
+									</li>
+																		<li class="movie-box"> 
+										<span class="f01">
+											<span class="img"><img src="http://file.koreafilm.or.kr/thm/02/99/18/55/tn_DPF030007.jpg" alt="와일드 로봇"></span>
+										</span>
+										<span class="f02">
+											<span class="num">4</span>
+										</span>
+										<span class="f04">
+											<span><b>와일드 로봇</b></span>
+											<span class="up-down">
+												<i class="icon-down"></i>
+												<span>1</span>
+											</span>
+										</span>
+										<span class="f03">536,972명</span>
+									</li>
+																		<li class="movie-box"> 
+										<span class="f01">
+											<span class="img"><img src="http://file.koreafilm.or.kr/thm/02/99/18/57/tn_DPK022792.jpg" alt="더러운 돈에 손대지 마라"></span>
+										</span>
+										<span class="f02">
+											<span class="num">5</span>
+										</span>
+										<span class="f04">
+											<span><b>더러운 돈에 손대지 마라</b></span>
+											<span class="up-down">
+												<i class="icon-up"></i>
+												<span>31</span>
+											</span>
+										</span>
+										<span class="f03">63,873명</span>
+									</li>
+																	</ul>
+							</div>
+						</div>
+					</div>
+					<!--//주간 박스오피스-->
+					<!-- <div class="col-md-12 col-lg-3">
+						<div class="section-box">
+							<div class="sub-menu-title02">멜론 음악 차트</div>
+							<div class="melon-chart">
+								<ul>
+									<li>
+										<span class="fl-box">
+											<span class="img"><img src="https://cdnimg.melon.co.kr/cm2/album/images/114/44/397/11444397_20240318115810_500.jpg?8cb5c0486469bbe05f7dd895ec073d72/melon/resize/282/quality/80/optimize"></span>
+											<span class="num">1</span>
+											<span>
+												<b>HAPPY</b>
+												DAY6 (데이식스)
+											</span>
+										</span>
+										<span class="fr-box">
+											<span>5</span>
+											<i class="icon-up"></i>
+										</span>
+									</li>
+									<li>
+										<span class="fl-box">
+											<span class="img"><img src="https://cdnimg.melon.co.kr/cm2/album/images/114/44/397/11444397_20240318115810_500.jpg?8cb5c0486469bbe05f7dd895ec073d72/melon/resize/282/quality/80/optimize"></span>
+											<span class="num">2</span>
+											<span>
+												<b>HAPPY</b>
+												DAY6 (데이식스)
+											</span>
+										</span>
+										<span class="fr-box">
+											<span>5</span>
+											<i class="icon-down"></i>
+										</span>
+									</li>
+									<li>
+										<span class="fl-box">
+											<span class="img"><img src="https://cdnimg.melon.co.kr/cm2/album/images/114/44/397/11444397_20240318115810_500.jpg?8cb5c0486469bbe05f7dd895ec073d72/melon/resize/282/quality/80/optimize"></span>
+											<span class="num">3</span>
+											<span>
+												<b>HAPPY</b>
+												DAY6 (데이식스)
+											</span>
+										</span>
+										<span class="fr-box">
+											<span>5</span>
+											<i class="icon-equal"></i>
+										</span>
+									</li>
+									<li>
+										<span class="fl-box">
+											<span class="img"><img src="https://cdnimg.melon.co.kr/cm2/album/images/114/44/397/11444397_20240318115810_500.jpg?8cb5c0486469bbe05f7dd895ec073d72/melon/resize/282/quality/80/optimize"></span>
+											<span class="num">4</span>
+											<span>
+												<b>HAPPY</b>
+												DAY6 (데이식스)
+											</span>
+										</span>
+										<span class="fr-box">
+											<span>5</span>
+											<i class="icon-up"></i>
+										</span>
+									</li>
+									<li>
+										<span class="fl-box">
+											<span class="img"><img src="https://cdnimg.melon.co.kr/cm2/album/images/114/44/397/11444397_20240318115810_500.jpg?8cb5c0486469bbe05f7dd895ec073d72/melon/resize/282/quality/80/optimize"></span>
+											<span class="num">5</span>
+											<span>
+												<b>HAPPY</b>
+												DAY6 (데이식스)
+											</span>
+										</span>
+										<span class="fr-box">
+											<span>5</span>
+											<i class="icon-up"></i>
+										</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div> -->
+					<!--//멜론차트-->
+					<!--3개 박스뉴스-->
+					<div class="col-md-12 col-lg-3">
+						<div class="key-card-type">
+							<div class="card-type02">
+								<div class="card-s03">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/life/2024-10-24/202410240100179630023788">이웃집 신발 냄새 맡던 20대 '덜미'…“나도 이해 안 돼”</a></div>
+										<div class="news-meta">
+																						<span class="txt-life"><i class="icon-life"></i>사회</span>
+											<span>장종호 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100179630023788" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/life/2024-10-24/202410240100179630023788" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/life/2024-10-24/202410240100179630023788"><img src="https://sports.chosun.com/news/screennews/401_20241024_2024102401001796300237881.jpg " alt="이웃집 신발 냄새 맡던 20대 '덜미'…“나도 이해 안 돼”"></a>
+									</div>
+								</div>
+							</div>
+							<div class="card-type02">
+								<div class="card-s03">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/life/2024-10-24/202410240100180890024180">“성인물 플랫폼 가입, 아내에게 알리겠다” 협박 돈 뜯은 배우 '덜미'</a></div>
+										<div class="news-meta">
+																						<span class="txt-life"><i class="icon-life"></i>사회</span>
+											<span>장종호 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100180890024180" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/life/2024-10-24/202410240100180890024180" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/life/2024-10-24/202410240100180890024180"><img src="https://sports.chosun.com/news/screennews/401_20241024_2024102401001808900241801.jpg " alt="“성인물 플랫폼 가입, 아내에게 알리겠다” 협박 돈 뜯은 배우 '덜미'"></a>
+									</div>
+								</div>
+							</div>
+							<div class="card-type02">
+								<div class="card-s03">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100180680024131">[이슈] 윤여정, 글로벌 활동 계속된다..'성난 사람들' 시즌2 합류</a></div>
+										<div class="news-meta">
+																						<span class="txt-enter"><i class="icon-enter"></i>연예</span>
+											<span>문지연 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100180680024131" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100180680024131" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100180680024131"><img src="https://sports.chosun.com/news/screennews/403_20241024_2024102401001806800241311.jpg " alt="[이슈] 윤여정, 글로벌 활동 계속된다..'성난 사람들' 시즌2 합류"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--//3개 박스뉴스-->
+					<!--영상섹션-->
+					<div class="col-md-12 col-lg-3">
+						<div class="video-box">
+							<div class="img">
+								<img src="https://i.ytimg.com/vi/laIBlb2G1i8/mqdefault.jpg" alt="KIA 김도영, 한국시리즈 1호 홈런 폭발">
+								<button type="button" class="btn-play video-btn" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/laIBlb2G1i8" data-bs-target="#videoModal">
+								<span></span>
+								</button>
+							</div>
+							<div class="video-post">
+								<div class="video-meta">
+																		<span class="video-tit"><i class="icon-video01"></i>야구부장</span>
+									<span class="video-more"><a href="https://www.youtube.com/@KBOnews" target="_blank">더보기</a></span>
+								</div>
+								<div class="video-title">KIA 김도영, 한국시리즈 1호 홈런 폭발</div>
+							</div>
+						</div>
+					</div>
+					<!--//영상섹션-->
+					<!--광고-->
+					<div class="col-md-12 col-lg-3">
+						<div class="key-card-type">
+							<div class="card-type02  d-none d-lg-block">
+								<div class="card-s02">
+									<!--웹 광고-->
+									<div class="text-center">
+										<script type="text/javascript">
+											var banner=new Array();
+
+																						  banner[0]="<div><a href='https://ffbbs.sportschosun.com/cron/bridge_banner.php?wr_id=261&link=https%3A%2F%2Fwww.daishin.com%2Fg.ds%3Fp%3D12933%26v%3D12835%26m%3D1109%26cid%3D2905' target='_blank'><img src='https://ffbbs.sportschosun.com/data/file/scad/1179010818_HCrGksUO_d40ec12133396a0314e1dea16fe8e65aa7410be3.png'></img></div>";
+																						  banner[1]="<div><a href='https://ffbbs.sportschosun.com/cron/bridge_banner.php?wr_id=258&link=https%3A%2F%2Fbit.ly%2F3I8s145' target='_blank'><img src='https://ffbbs.sportschosun.com/data/file/scad/1179010818_TdgBfzAt_8d915473f3ec62e800e3141743861972f8c1d2ff.gif'></img></div>";
+																						  banner[2]="<div><a href='https://ffbbs.sportschosun.com/cron/bridge_banner.php?wr_id=257&link=https%3A%2F%2Funibio.kr%2Fproduct%2Fdetail.html%3Fproduct_no%3D170' target='_blank'><img src='https://ffbbs.sportschosun.com/data/file/scad/1179010817_jEhwMvV4_8fbfc1d83a5a7428da94adbaac860ec7526d7706.jpg'></img></div>";
+																						  banner[3]="<div><a href='https://ffbbs.sportschosun.com/cron/bridge_banner.php?wr_id=262&link=http%3A%2F%2Ftx.theline13.com%2Fclick%3Fad%3D100572' target='_blank'><img src='https://ffbbs.sportschosun.com/data/file/scad/1179010817_M0CQYOBF_cc1fd11010d531ad6c47d4c0fab31af11d923e45.jpg'></img></div>";
+																						  banner[4]="<div><a href='https://ffbbs.sportschosun.com/cron/bridge_banner.php?wr_id=95&link=https%3A%2F%2Fdasim.co.kr' target='_blank'><img src='https://ffbbs.sportschosun.com/data/file/scad/1179010561_ku9dvtMh_ca3a8d418e96d42717add3e1056c3b79ea11f71b.png'></img></div>";
+																						  banner[5]="<div><a href='https://ffbbs.sportschosun.com/cron/bridge_banner.php?wr_id=250&link=https%3A%2F%2Fspot.wooribank.com%2Fpot%2FDream%3Fwithyou%3DEVEVT0001' target='_blank'><img src='https://ffbbs.sportschosun.com/data/file/scad/1179010817_F3jpdlos_cd915dec935cd0aa73ee24d17b739586f24b5b86.jpg'></img></div>";
+																						  banner[6]="<div><a href='https://ffbbs.sportschosun.com/cron/bridge_banner.php?wr_id=265&link=https%3A%2F%2Fwww.youtube.com%2Fuser%2Fsamsungcnt' target='_blank'><img src='https://ffbbs.sportschosun.com/data/file/scad/1179010819_MnFIBz59_0d855893621b6e84a923516bfa3a1193dbc79339.jpg'></img></div>";
+											
+											var random_banner=Math.floor(Math.random()*(banner.length));
+										</script>
+
+										<script type="text/javascript">document.write(banner[random_banner]);</script>
+									</div>
+									<!--//웹 광고-->
+								</div>
+							</div>
+							<div class="card-type02  d-none d-lg-block">
+								<div class="card-s">
+									<div class="text-center">
+										<!--웹 광고-->
+										<div class="text-center">
+											<div style="display: none"><a href="http://www.hmfutsalpark.com/" target="_blank" rel="nofollow noopener sponsored"><img src="img/bg-img/hcup2022.png" alt=""/></a></div>
+											<div id="breakingBannerTicker" class="ticker" style="height: 75px;width=245px;">
+												<ul>
+													<li>
+														<a href='https://www.youtube.com/c/ktwiztv/featured' target='_blank' rel="nofollow noopener sponsored">
+														<img src='img/bg-img/bn10.jpg' title="ktwiz" ></a>
+													</li>
+												</ul>				
+											 </div>
+										</div>
+										<!--//웹 광고-->
+									</div>
+								</div>
+							</div>
+							<div class="card-type02">
+								<div class="card-s03">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/football/2024-10-24/202410240100180760024172">'이럴수가, 홀란이 무림고수였다니!' 홀란의 묘기같은 백힐 발리슛에 깜놀한 레전드 해설가의 찐반응</a></div>
+										<div class="news-meta">
+																						<span class="txt-sports"><i class="icon-sports"></i>축구</span>
+											<span>이원만 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100180760024172" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/football/2024-10-24/202410240100180760024172" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/football/2024-10-24/202410240100180760024172"><img src="https://sports.chosun.com/news/html/2024/10/24/2024102401001807600241721.jpg" alt="'이럴수가, 홀란이 무림고수였다니!' 홀란의 묘기같은 백힐 발리슛에 깜놀한 레전드 해설가의 찐반응"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--//광고-->
+					<div class="col-md-12 col-lg-3">
+						<div class="card-type">
+							<div class="news-thumb"><a href="https://sports.chosun.com/life/2024-10-24/202410240100183030024413"><img src="https://sports.chosun.com/news/screennews/401_20241024_2024102401001830300244131.jpg " alt="원조 '타잔' 86세로 사망…5년 전 아내·아들 한꺼번에 잃어"></a></div>
+							<div class="news-post">
+								<div class="news-title"><a href="https://sports.chosun.com/life/2024-10-24/202410240100183030024413">원조 '타잔' 86세로 사망…5년 전 아내·아들 한꺼번에 잃어</a></div>
+								<div class="news-meta">
+																		<span class="txt-life"><i class="icon-life"></i>사회</span>
+									<span>장종호 기자</span>
+									<!-- <span class="txt-english"><a href="#" id="202410240100183030024413" onclick="return false;"><i class="icon-english"></i></a></span> -->
+									<span class="txt-sns"><a href="https://sports.chosun.com/life/2024-10-24/202410240100183030024413" onclick="return false;"><i class="icon-sns"></i></a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--모바일 야구스코어-->
+										<!--//모바일 야구스코어-->
+					<div class="col-md-12 col-lg-3">
+						<div class="card-type">
+							<div class="news-thumb"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100183310024431"><img src="https://sports.chosun.com/news/html/2024/10/24/2024102401001833100244311.jpg" alt="'1500만원 커플티' 조세호 부부, 초호화 유럽 신혼여행 중 "파리타임""></a></div>
+							<div class="news-post">
+								<div class="news-title"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100183310024431">'1500만원 커플티' 조세호 부부, 초호화 유럽 신혼여행 중 "파리타임"</a></div>
+								<div class="news-meta">
+																		<span class="txt-enter"><i class="icon-enter"></i>연예</span>
+									<span>김수현 기자</span>
+									<!-- <span class="txt-english"><a href="#" id="202410240100183310024431" onclick="return false;"><i class="icon-english"></i></a></span> -->
+									<span class="txt-sns"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100183310024431" onclick="return false;"><i class="icon-sns"></i></a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--모바일 야구스코어-->
+										<!--//모바일 야구스코어-->
+					<!--3개 박스뉴스-->
+					<div class="col-md-12 col-lg-3">
+						<div class="key-card-type">
+							<div class="card-type02">
+								<div class="card-s03">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/life/2024-10-24/202410240100180420024033">한 발로 균형잡기 10초 안 된다면 당신의 나이는?</a></div>
+										<div class="news-meta">
+																						<span class="txt-life"><i class="icon-life"></i>사회</span>
+											<span>장종호 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100180420024033" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/life/2024-10-24/202410240100180420024033" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/life/2024-10-24/202410240100180420024033"><img src="https://sports.chosun.com/news/screennews/401_20241024_2024102401001804200240331.jpg " alt="한 발로 균형잡기 10초 안 된다면 당신의 나이는?"></a>
+									</div>
+								</div>
+							</div>
+							<div class="card-type02">
+								<div class="card-s03">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/life/2024-10-24/202410240100180030023916">美 상대 후보 선거 전단지 바꿔치기 “딱 걸렸네”</a></div>
+										<div class="news-meta">
+																						<span class="txt-life"><i class="icon-life"></i>사회</span>
+											<span>장종호 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100180030023916" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/life/2024-10-24/202410240100180030023916" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/life/2024-10-24/202410240100180030023916"><img src="https://sports.chosun.com/news/screennews/401_20241024_2024102401001800300239161.jpg " alt="美 상대 후보 선거 전단지 바꿔치기 “딱 걸렸네”"></a>
+									</div>
+								</div>
+							</div>
+							<div class="card-type02">
+								<div class="card-s03">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/life/2024-10-24/202410240100181820024363">110세 생일 할머니의 건강 장수 비결은?</a></div>
+										<div class="news-meta">
+																						<span class="txt-life"><i class="icon-life"></i>사회</span>
+											<span>장종호 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100181820024363" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/life/2024-10-24/202410240100181820024363" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/life/2024-10-24/202410240100181820024363"><img src="https://sports.chosun.com/news/screennews/401_20241024_2024102401001818200243631.jpg " alt="110세 생일 할머니의 건강 장수 비결은?"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--//3개 박스뉴스-->
+					<!--영상섹션-->
+					<div class="col-md-12 col-lg-3">
+						<div class="video-box">
+							<div class="img">
+								<img src="https://i.ytimg.com/vi/TeTSuSDm6yM/mqdefault.jpg" alt="'깜찍한 손인사' 조여정, 세월 잊은 소녀 같은 '동안 매력, 동안 피부'">
+								<button type="button" class="btn-play video-btn" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/TeTSuSDm6yM" data-bs-target="#videoModal">
+								<span></span>
+								</button>
+							</div>
+							<div class="video-post">
+								<div class="video-meta">
+																		<span class="video-tit"><i class="icon-video04"></i>SC영상</span>
+									<span class="video-more"><a href="https://www.youtube.com/@sportschosun" target="_blank">더보기</a></span>
+								</div>
+								<div class="video-title">'깜찍한 손인사' 조여정, 세월 잊은 소녀 같은 '동안 매력, 동안 피부'</div>
+							</div>
+						</div>
+					</div>
+					<!--//영상섹션-->
+					<!--3개 박스뉴스-->
+					<div class="col-md-12 col-lg-3">
+						<div class="key-card-type">
+							<div class="card-type02">
+								<div class="card-s03">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100183200024424">박위♥송지은, 행복한 결혼식에 재뿌린 '배변 축사' 논란→결국 영상 편집 후 신혼여행 출발 [종합]</a></div>
+										<div class="news-meta">
+																						<span class="txt-enter"><i class="icon-enter"></i>연예</span>
+											<span>이지현 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100183200024424" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100183200024424" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100183200024424"><img src="https://sports.chosun.com/news/html/2024/10/24/2024102401001832000244241.jpg" alt="박위♥송지은, 행복한 결혼식에 재뿌린 '배변 축사' 논란→결국 영상 편집 후 신혼여행 출발 [종합]"></a>
+									</div>
+								</div>
+							</div>
+							<div class="card-type02">
+								<div class="card-s03">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/life/2024-10-24/202410240100179320023754">동물원서 새총 쏜 관광객들 '공분'…“역시 중국인이다”</a></div>
+										<div class="news-meta">
+																						<span class="txt-life"><i class="icon-life"></i>사회</span>
+											<span>장종호 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100179320023754" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/life/2024-10-24/202410240100179320023754" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/life/2024-10-24/202410240100179320023754"><img src="https://sports.chosun.com/news/screennews/401_20241024_2024102401001793200237541.jpg " alt="동물원서 새총 쏜 관광객들 '공분'…“역시 중국인이다”"></a>
+									</div>
+								</div>
+							</div>
+							<div class="card-type02">
+								<div class="card-s03">
+									<div class="news-post">
+										<div class="news-title"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100183510024442">이세영 왜 울었을까..카약 타던 중 돌연 눈물, 언니들 '당황'('텐트 밖은 유럽')</a></div>
+										<div class="news-meta">
+																						<span class="txt-enter"><i class="icon-enter"></i>TV</span>
+											<span>문지연 기자</span>
+											<!-- <span class="txt-english"><a href="#" id="202410240100183510024442" onclick="return false;"><i class="icon-english"></i></a></span> -->
+											<span class="txt-sns"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100183510024442" onclick="return false;"><i class="icon-sns"></i></a></span>
+										</div>
+									</div>
+									<div class="news-thumb">
+										<a href="https://sports.chosun.com/entertainment/2024-10-24/202410240100183510024442"><img src="https://sports.chosun.com/news/html/2024/10/24/2024102401001835100244421.jpg" alt="이세영 왜 울었을까..카약 타던 중 돌연 눈물, 언니들 '당황'('텐트 밖은 유럽')"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--//3개 박스뉴스-->
+					<!--영상섹션-->
+					<div class="col-md-12 col-lg-3">
+						<div class="video-box">
+							<div class="img">
+								<img src="https://i.ytimg.com/vi/yYKXLv4Zl2w/mqdefault.jpg" alt="34R 후토크｜이승우 미스터리, 인천 DNA 유효? 아직 끝나지 않은 우승 경쟁">
+								<button type="button" class="btn-play video-btn" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/yYKXLv4Zl2w" data-bs-target="#videoModal">
+								<span></span>
+								</button>
+							</div>
+							<div class="video-post">
+								<div class="video-meta">
+																		<span class="video-tit"><i class="icon-video02"></i>볼만찬 기자들</span>
+									<span class="video-more"><a href="https://www.youtube.com/@ballmanchan" target="_blank">더보기</a></span>
+								</div>
+								<div class="video-title">34R 후토크｜이승우 미스터리, 인천 DNA 유효? 아직 끝나지 않은 우승 경쟁</div>
+							</div>
+						</div>
+					</div>
+					<!--//영상섹션-->
+					<!--띠별운세-->
+					<div class="col-md-12 col-lg-3">
+						<div class="section-box02">
+							<div class="sub-menu-title02">오늘의 띠별 운세</div>
+							<div class="unse-cont">
+								<div class="tit-any">
+									<span class="anyicon"><i class="icon-ani12"></i></span>
+									<span>
+										<b>소띠</b>
+										<em>귀하의 덕이 모든 이들에게 알려져 명성과 부를 얻게 됩니다.</em>
+									</span>
+								</div>
+								<div class="any12">
+									<span><a href="https://www.unsin.co.kr/unse/free/todayline/form?linenum=01" target="_blank"><i class="icon-ani11"></i>쥐띠</a></span>
+									<span><a href="https://www.unsin.co.kr/unse/free/todayline/form?linenum=01" target="_blank"><i class="icon-ani12"></i>소띠</a></span>
+									<span><a href="https://www.unsin.co.kr/unse/free/todayline/form?linenum=01" target="_blank"><i class="icon-ani01"></i>범띠</a></span>
+									<span><a href="https://www.unsin.co.kr/unse/free/todayline/form?linenum=01" target="_blank"><i class="icon-ani02"></i>토끼띠</a></span>
+									<span><a href="https://www.unsin.co.kr/unse/free/todayline/form?linenum=01" target="_blank"><i class="icon-ani03"></i>용띠</a></span>
+									<span><a href="https://www.unsin.co.kr/unse/free/todayline/form?linenum=01" target="_blank"><i class="icon-ani04"></i>뱀띠</a></span>
+									<span><a href="https://www.unsin.co.kr/unse/free/todayline/form?linenum=01" target="_blank"><i class="icon-ani05"></i>말띠</a></span>
+									<span><a href="https://www.unsin.co.kr/unse/free/todayline/form?linenum=01" target="_blank"><i class="icon-ani06"></i>양띠</a></span>
+									<span><a href="https://www.unsin.co.kr/unse/free/todayline/form?linenum=01" target="_blank"><i class="icon-ani07"></i>원숭이띠</a></span>
+									<span><a href="https://www.unsin.co.kr/unse/free/todayline/form?linenum=01" target="_blank"><i class="icon-ani08"></i>닭띠</a></span>
+									<span><a href="https://www.unsin.co.kr/unse/free/todayline/form?linenum=01" target="_blank"><i class="icon-ani09"></i>개띠</a></span>
+									<span><a href="https://www.unsin.co.kr/unse/free/todayline/form?linenum=01" target="_blank"><i class="icon-ani10"></i>돼지띠</a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--//띠별운세-->
+					<div class="col-md-12 col-lg-3">
+						<div class="card-type">
+							<div class="news-thumb"><a href="https://sports.chosun.com/baseball/2024-10-24/202410240100182680024397"><img src="https://sports.chosun.com/news/html/2024/10/24/2024102401001826800243971.jpg" alt=""구자욱 합류 불투명" 첫 훈련 돌입 '류중일호'…송성문, 프리미어12 주장 낙점"></a></div>
+							<div class="news-post">
+								<div class="news-title"><a href="https://sports.chosun.com/baseball/2024-10-24/202410240100182680024397">"구자욱 합류 불투명" 첫 훈련 돌입 '류중일호'…송성문, 프리미어12 주장 낙점</a></div>
+								<div class="news-meta">
+																		<span class="txt-sports"><i class="icon-sports"></i>야구</span>
+									<span>이종서 기자</span>
+									<!-- <span class="txt-english"><a href="#" id="202410240100182680024397" onclick="return false;"><i class="icon-english"></i></a></span> -->
+									<span class="txt-sns"><a href="https://sports.chosun.com/baseball/2024-10-24/202410240100182680024397" onclick="return false;"><i class="icon-sns"></i></a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--모바일 야구스코어-->
+										<!--//모바일 야구스코어-->
+					<div class="col-md-12 col-lg-3">
+						<div class="card-type03">
+							<div class="news-thumb"><a href="https://sports.chosun.com/football/2024-10-24/202410240100182160024377"><img src="https://sports.chosun.com/news/html/2024/10/24/2024102401001821600243771.jpg" alt="'최악의 영입, 사우디로 당장 팔아'→21세기 히바우두로 부활 '13경기 9골 8도움' 미친 활약"></a></div>
+							<div class="news-post">
+								<div class="news-title"><a href="https://sports.chosun.com/football/2024-10-24/202410240100182160024377">'최악의 영입, 사우디로 당장 팔아'→21세기 히바우두로 부활 '13경기 9골 8도움' 미친 활약</a></div>
+								<div class="news-meta">
+																		<span class="txt-sports"><i class="icon-sports"></i>축구</span>
+									<span>김대식 기자</span>
+									<!-- <span class="txt-english"><a href="#" id="202410240100182160024377" onclick="return false;"><i class="icon-english"></i></a></span> -->
+									<span class="txt-sns"><a href="https://sports.chosun.com/football/2024-10-24/202410240100182160024377" onclick="return false;"><i class="icon-sns"></i></a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-lg-3">
+						<div class="card-type03">
+							<div class="news-thumb"><a href="https://sports.chosun.com/baseball/2024-10-24/202410240100182990024412"><img src="https://sports.chosun.com/news/html/2024/10/24/2024102401001829900244121.jpg" alt=""비행기 티켓 당기고, 쉬는날 운동하고" 무서웠던 형님이 감독으로 돌아왔다"></a></div>
+							<div class="news-post">
+								<div class="news-title"><a href="https://sports.chosun.com/baseball/2024-10-24/202410240100182990024412">"비행기 티켓 당기고, 쉬는날 운동하고" 무서웠던 형님이 감독으로 돌아왔다</a></div>
+								<div class="news-meta">
+																		<span class="txt-sports"><i class="icon-sports"></i>야구</span>
+									<span>나유리 기자</span>
+									<!-- <span class="txt-english"><a href="#" id="202410240100182990024412" onclick="return false;"><i class="icon-english"></i></a></span> -->
+									<span class="txt-sns"><a href="https://sports.chosun.com/baseball/2024-10-24/202410240100182990024412" onclick="return false;"><i class="icon-sns"></i></a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-lg-3">
+						<div class="card-type">
+							<div class="news-thumb"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410050100183350024433"><img src="https://sports.chosun.com/news/html/2024/10/24/2024100501001833500244331.jpg" alt="[청룡랭킹] 변우석 VS 김혜윤, '심장 쫄깃쫄깃'하게 하는 초접전  '분단위로 순위 탈바꿈'"></a></div>
+							<div class="news-post">
+								<div class="news-title"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410050100183350024433">[청룡랭킹] 변우석 VS 김혜윤, '심장 쫄깃쫄깃'하게 하는 초접전  '분단위로 순위 탈바꿈'</a></div>
+								<div class="news-meta">
+																		<span class="txt-enter"><i class="icon-enter"></i>연예</span>
+									<span>전상희 기자</span>
+									<!-- <span class="txt-english"><a href="#" id="202410050100183350024433" onclick="return false;"><i class="icon-english"></i></a></span> -->
+									<span class="txt-sns"><a href="https://sports.chosun.com/entertainment/2024-10-24/202410050100183350024433" onclick="return false;"><i class="icon-sns"></i></a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--모바일 야구스코어-->
+										<!--//모바일 야구스코어-->
+					<div class="col-md-12 col-lg-3">
+						<div class="card-type03">
+							<div class="news-thumb"><a href="https://sports.chosun.com/football/2024-10-24/202410240100181240024260"><img src="https://sports.chosun.com/news/html/2024/10/24/2024102401001812400242601.jpg" alt="'날 밀었다고요!' 김민재 분노의 항의→최저 평점 가혹 비판...뮌헨, 바르셀로나 원정서 1-4 대참사"></a></div>
+							<div class="news-post">
+								<div class="news-title"><a href="https://sports.chosun.com/football/2024-10-24/202410240100181240024260">'날 밀었다고요!' 김민재 분노의 항의→최저 평점 가혹 비판...뮌헨, 바르셀로나 원정서 1-4 대참사</a></div>
+								<div class="news-meta">
+																		<span class="txt-sports"><i class="icon-sports"></i>축구</span>
+									<span>김대식 기자</span>
+									<!-- <span class="txt-english"><a href="#" id="202410240100181240024260" onclick="return false;"><i class="icon-english"></i></a></span> -->
+									<span class="txt-sns"><a href="https://sports.chosun.com/football/2024-10-24/202410240100181240024260" onclick="return false;"><i class="icon-sns"></i></a></span>
+								</div>
+							</div>
+						</div>
+					</div>					
+				</div>
+				<!--//기사 40개 roof 끝-->
+			</div>
+		</div>
+	</section>
+	<!--//뉴스컨텐츠 START-->	
+	<!--광고영역 웹970x250-->
+	<section class="d-none d-lg-flex">
+		<div class="container mt-5">
+			<!-- <div class="text-center"><img src="img/ad-sample2.jpg" alt=""/></div> -->
+			<div class="text-center">
+				<!--광고추가-->
+				<div style="margin: auto; width: 100%; padding:40px 0; text-align: center; ">
+					<div class="container">
+					<!-- /195060224/SC_PC_Main_midlle_970250 -->
+					<div id='div-gpt-ad-1702516960444-0' style='min-width: 930px; min-height: 66px;'>
+					  <script>
+						googletag.cmd.push(function() { googletag.display('div-gpt-ad-1702516960444-0'); });
+					  </script>
+					</div>
+					</div>
+				</div>
+				<!--광고추가-->
+			</div>
+		</div>
+	</section>
+	<!--//광고영역-->
+    
+	<!-- ##### Footer Area Start ##### -->
+	<!-- Footer Start -->
+<!--사이트맵-->
+<div class="footer-area">
+	<div class="container">
+		<div class="bottom-sitemap">
+			<div class="row">
+				<div class="col-6 col-xl-2">
+					<ul>
+						<a href="https://sports.chosun.com/latest/?action=all"><li class="title">전체뉴스</li></a>
+					</ul>
+					<ul>
+						<a href="https://sports.chosun.com/baseball/?action=baseball"><li class="title">야구</li></a>
+						<a href="https://sports.chosun.com/baseball/?action=kbo"><li>프로야구</li></a>
+						<a href="https://sports.chosun.com/baseball/?action=kbaseball"><li>아마야구</li></a>
+						<a href="https://sports.chosun.com/baseball/?action=mlb"><li>MLB</li></a>
+						<a href="https://sports.chosun.com/baseball/?action=npb"><li>NPB</li></a>
+					</ul>
+					<ul>
+						<a href="https://sports.chosun.com/football/?action=football"><li class="title">축구</li></a>
+						<a href="https://sports.chosun.com/football/?action=kleague"><li>프로축구</li></a>
+						<a href="https://sports.chosun.com/football/?action=kfa"><li>아마축구</li></a>
+						<a href="https://sports.chosun.com/football/?action=worldfootball"><li>해외축구</li></a>
+					</ul>
+					<ul>
+						<a href="https://sports.chosun.com/basketball/?action=basketball"><li class="title">농구</li></a>
+						<a href="https://sports.chosun.com/basketball/?action=kbl"><li>남자프로농구</li></a>
+						<a href="https://sports.chosun.com/basketball/?action=wkbl"><li>여자프로농구</li></a>
+						<a href="https://sports.chosun.com/basketball/?action=kba"><li>아마농구</li></a>
+						<a href="https://sports.chosun.com/basketball/?action=nba"><li>NBA</li></a>
+					</ul>
+				</div>
+				<div class="col-6 col-xl-2">
+					<ul>
+						<a href="https://sports.chosun.com/golf/?action=golf"><li class="title">골프</li></a>
+						<a href="https://sports.chosun.com/golf/?action=kpga"><li>KPGA</li></a>
+						<a href="https://sports.chosun.com/golf/?action=klpga"><li>KLPGA</li></a>
+						<a href="https://sports.chosun.com/golf/?action=amaturegolf"><li>아마골프</li></a>
+						<a href="https://sports.chosun.com/golf/?action=pga"><li>PGA</li></a>
+						<a href="https://sports.chosun.com/golf/?action=lpga"><li>LPGA</li></a>
+						<a href="https://sports.chosun.com/golf/?action=ksga"><li>사회인골프</li></a>
+					</ul>
+					<ul>
+						<a href="https://sports.chosun.com/volleyball/?action=volleyball"><li class="title">배구</li></a>
+						<a href="https://sports.chosun.com/volleyball/?action=vleaguemen"><li>남자프로배구</li></a>
+						<a href="https://sports.chosun.com/volleyball/?action=vleaguewomen"><li>여자프로배구</li></a>
+						<a href="https://sports.chosun.com/volleyball/?action=amaturevolleyball"><li>아마배구</li></a>
+					</ul>
+					<ul>
+						<a href="https://sports.chosun.com/sports-news/?action=news"><li class="title">종합</li></a>
+						<a href="https://sports.chosun.com/sports-news/?action=news"><li>종합</li></a>
+					</ul>
+				</div>
+				<div class="col-6 col-xl-2">
+					<ul>
+						<a href="https://sports.chosun.com/entertainment/?action=entertainment"><li class="title">연예</li></a>
+						<a href="https://sports.chosun.com/entertainment/?action=worldenter"><li>해외연예</li></a>
+						<a href="https://sports.chosun.com/entertainment/?action=star"><li>스타</li></a>
+						<a href="https://sports.chosun.com/entertainment/?action=tv"><li>TV일반</li></a>
+						<a href="https://sports.chosun.com/entertainment/?action=worldtv"><li>해외TV</li></a>
+						<a href="https://sports.chosun.com/entertainment/?action=drama"><li>드라마</li></a>
+						<a href="https://sports.chosun.com/entertainment/?action=music"><li>국내음악</li></a>
+						<a href="https://sports.chosun.com/entertainment/?action=movie"><li>해외음악</li></a>
+						<a href="https://sports.chosun.com/entertainment/?action=worldenter"><li>영화일반</li></a>
+						<a href="https://sports.chosun.com/entertainment/?action=worldmovie"><li>해외영화</li></a>
+						<a href="https://sports.chosun.com/entertainment/?action=blueaward"><li>청룡영화상</li></a>
+						<a href="https://sports.chosun.com/entertainment/?action=newmovie"><li>새영화</li></a>
+						<a href="https://sports.chosun.com/entertainment/?action=game"><li>게임일반</li></a>
+						<a href="https://sports.chosun.com/entertainment/?action=gameawards"><li>게임대상</li></a>
+					</ul>
+				</div>
+				<div class="col-6 col-xl-2">
+					<ul>
+						<a href="https://sports.chosun.com/entertainment/?action=culture"><li>문화일반</li></a>
+						<a href="https://sports.chosun.com/entertainment/?action=concert"><li>공연</li></a>
+						<a href="https://sports.chosun.com/entertainment/?action=gallery"><li>전시</li></a>
+						<a href="https://sports.chosun.com/entertainment/?action=book"><li>책</li></a>
+						<a href="https://sports.chosun.com/entertainment/?action=musicalawards"><li>뮤지컬대상</li></a>
+						<a href="https://sports.chosun.com/entertainment/?action=worldculture"><li>해외문화</li></a>
+					</ul>
+					<ul>
+						<li class="title">스페셜</li>
+						<a href="https://sports.chosun.com/cartoon/main2019.htm" rel="nofollow"><li>무료만화</li></a>
+						<a href="https://sports.chosun.com/diva/"><li>Diva</li></a>
+						<a href="https://sports.chosun.com/photo-news/"><li>포토화보</li></a>
+						<a href="https://sports.chosun.com/spoon/"><li>카드뉴스</li></a>
+						<a href="https://sports.chosun.com/funfum/" target="_new"><li>펀펌</li></a>
+						<a href="https://sports.chosun.com/rungo/" target="_new"><li>달리고</li></a>
+					</ul>
+				</div>
+				<div class="col-6 col-xl-2">
+					<ul>
+						<a href="https://sports.chosun.com/life/?action=life"><li class="title">라이프</li></a>
+						<a href="https://sports.chosun.com/life/?action=society"><li>사회일반</li></a>
+						<a href="https://sports.chosun.com/life/?action=horseracing"><li>경마</li></a>
+						<a href="https://sports.chosun.com/life/?action=cycleracing"><li>경륜</li></a>
+						<a href="https://sports.chosun.com/life/?action=boatracing"><li>경정</li></a>
+						<a href="https://sports.chosun.com/life/?action=living"><li>생활</li></a>
+						<a href="https://sports.chosun.com/life/?action=health"><li>건강</li></a>
+						<a href="https://sports.chosun.com/life/?action=campus"><li>캠퍼스</li></a>
+						<a href="https://sports.chosun.com/life/?action=mobility"><li>자동차</li></a>
+						<a href="https://sports.chosun.com/life/?action=leisure"><li>레저</li></a>
+						<a href="https://sports.chosun.com/life/?action=trip"><li>여행</li></a>
+						<a href="https://sports.chosun.com/life/?action=100mountain"><li>100대 명산</li></a>
+						<a href="https://sports.chosun.com/life/?action=it"><li>IT</li></a>
+						<a href="https://sports.chosun.com/life/?action=economy"><li>경제</li></a>
+						<a href="https://sports.chosun.com/life/?action=politics"><li>정치</li></a>
+					</ul>
+				</div>
+				<div class="col-6 col-xl-2">
+					<ul>
+						<li class="title">DB</li>
+						<a href="https://sports.chosun.com/pdf/"><li>지면 PDF보기</li></a>
+						<a href="https://sports.chosun.com/search/"><li>기사검색</li></a>
+					</ul>
+				</div>               
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid footer">
+	<div class="container">
+		<div class="row g-3">
+			<div class="footer-widget-area">
+				<!-- List -->
+				<ul class="list mb-3">
+					<li><a href="https://sports.chosun.com/company2/index.htm" target="_blank" rel="nofollow">회사소개</a></li>
+					<li><a href="https://sports.chosun.com/company2/ad.htm" target="_blank" rel="nofollow">광고/제휴문의</a></li>
+					<li><a href="https://sports.chosun.com/company2/index.htm" target="_blank" rel="nofollow">사진대여</a></li>
+					<li><a href="https://sports.chosun.com/company2/apply.htm" target="_blank" rel="nofollow">신문구독신청</a></li>
+					<li><a href="https://sports.chosun.com/company2/policy.htm" target="_blank" rel="nofollow"><b>개인정보처리방침</b></a></li>
+					<li><a href="https://sports.chosun.com/company2/protect.htm" target="_blank" rel="nofollow">청소년보호정책</a></li>
+					<li><a href="https://sports.chosun.com/rss.htm">RSS</a></li>
+					<li><a href="https://sports.chosun.com/sitemap/">사이트맵</a></li>
+				</ul>	
+			</div>
+		</div>
+		<div class="row g-3">
+			<div class="col-md-6 col-lg-2 d-none d-lg-block">
+				<a href="https://sports.chosun.com"><div class="logo"><img src="https://sports.chosun.com/img/logo-black.png" alt="스포츠조선"></div></a>
+			</div>
+			<!-- Footer Widget Area -->
+			<div class="col-md-12 col-lg-10">
+				<div class="footer-widget-area">
+					<ul class="list">
+						<!--li><a href="mailto:contact@youremail.com">contact@youremail.com</a></li-->
+						<li>등록번호 : 서울 아01720</li>
+						<li>등록일자 : 2011년 7월 29일</li>
+						<li>발행일자 : 2000년 11월 1일</li>
+						<li>주소 : 서울 양천구 목동동로 233-1</li>
+						<li>전화번호 : <a href="tel:0232198114">02-3219-8114,8266</a></li><br>
+						<li>발행인 : 박진형</li>
+						<li>편집인 : 박재호</li>
+						<li>청소년보호책임자 : 이재훈</li>
+					</ul>
+				</div>
+				<div class="copyright">Copyright (c) <a href="https://sports.chosun.com" style="letter-spacing: 0;">sports.chosun.com</a> All rights reserved.</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Footer End -->	<!-- ##### Footer Area END ##### -->
+
+	<!-- Video Modal Start -->
+    <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- 16:9 aspect ratio -->
+                    <div class="ratio ratio-16x9">
+                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always" allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<script>
+	$(document).ready(function() {
+		var $videoSrc;  
+		$('.video-btn').click(function() {
+			$videoSrc = $(this).data( "src" );
+			console.log($videoSrc);
+		});
+		
+		// when the modal is opened autoplay it  
+		$('#videoModal').on('shown.bs.modal', function (e) {
+			// set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
+			$("#video").attr('src',$videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+		})
+		  
+		// stop playing the youtube video when I close the modal
+		$('#videoModal').on('hide.bs.modal', function (e) {
+			// a poor man's stop video
+			$("#video").attr('src',$videoSrc); 
+		}) 
+	});
+	</script>
+    <!-- Video Modal End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://sports.chosun.comlib/wow/wow.min.js"></script>
+    <script src="https://sports.chosun.comlib/easing/easing.min.js"></script>
+    <script src="https://sports.chosun.comlib/waypoints/waypoints.min.js"></script>
+    <script src="https://sports.chosun.comlib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="https://sports.chosun.comlib/lightbox/js/lightbox.min.js"></script>
+	
+    <!-- Template Javascript -->
+    <script src="https://sports.chosun.com/js/main.js"></script>
+	<script src="https://sports.chosun.com/js/copy.min.js"></script>
+	<!-- <script src="https://sports.chosun.com/js/english.min.js"></script> -->
+	<!-- <script src="https://sports.chosun.com/js/kobis.min.js"></script> -->
+	<!-- <script src="https://sports.chosun.com/js/kobisJsonFile.min.js"></script> -->
+</body>
+</html>s
