@@ -153,9 +153,8 @@ div.copyright span {
   font-size: 20px;
 }
 div.copyright span::before {
-  content: '⚠️';
+  content: "⚠️";
 }
-
 
 /* 공통 보더박스 디자인 (.bd-box)*/
 
@@ -314,13 +313,47 @@ div.copyright span::before {
   );
   padding: 10px;
 }
+
+/* 여러줄일때 말줄임 설정하기 */
+/* 1. 여러줄 말줄임시 필요한 display */
+/* display: -webkit-box; */
+/* 2. 넘치는 요소 숨기기 */
+/* overflow: hidden; */
+/* 3. 텍스트 말줄임표시 */
+/* text-overflow: ellipsis; */
+/* 4. 말줄임 처리 줄수: 여기선 2줄처리 */
+/* -webkit-line-clamp: 2; */
+/* 5. 말줄임 처리 방향 설정 : 수직방향 (vertical) */
+/* -webkit-box-orient: vertical; */
+/* 6. 높이값 제한설정 (이유 : 숨겨야하니) */
+/* max-height: 2.5em */
+/* 7. 줄바꿈방지를 일반으로 변경(nowrap or normal) */
+/* white-space: normal; */
 /* 뉴스파트 공통 a 요소 */
 .news-box a {
   font-size: 18px;
   line-height: 2.5;
   color: #222;
   text-decoration: none;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  /* max-height: 2.5em; */
+  /* white-space: normal; */
 }
+
+/* 
+  [CSS 속성이나 값에 벤더사 접두어]
+  - 브라우저 제작사별로 특정 속성을 지원할 경우 특정 버전부터 지원하게 되고, 그때 브라우저사 접두어를 사용함.
+
+  1. -webkit- : 크롬, 사파리
+  2. -ms- : 익스플로러, 엣지
+  3. -o- : 오페라
+  4. -moz- : (모질라) 파이어폭스
+*/
+
 .news-box a:hover {
   color: #e83f03;
   text-shadow: 1px 1px 2px
@@ -364,13 +397,13 @@ div.copyright span::before {
 */
 
 .main-news a::before {
-  content: '🤢';
+  content: "🤢";
   margin: 0 10px;
   font-size: 25px;
   vertical-align: middle;
 }
 .main-news a::after {
-  content: '🤮';
+  content: "🤮";
   font-size: 25px;
   /* url을 사용하여 이미지를 넣을 수 있지만 크기 조정 불가 */
   /* content: url(https://upload.wikimedia.org/wikipedia/en/1/1d/Information_icon4.svg); */
@@ -391,7 +424,7 @@ div.copyright span::before {
 .sec-news dt {
   font-size: 30px;
   font-family: "Bagel Fat One",
-  sans-serif;
+    sans-serif;
   border: 4px dashed lightcoral;
   display: inline-block;
   padding: 20px;
@@ -424,7 +457,7 @@ div.copyright span::before {
   dt 앞에 dd가 있는 모든 dt를 선택한다.
   형제선택자 사용 "+" 사용함 : dd+dt
 */
-.sec-news dd+dt {
+.sec-news dd + dt {
   margin-top: 20px;
 }
 
@@ -432,7 +465,7 @@ div.copyright span::before {
 .photo-news table {
   max-width: 500px;
   margin: 0 auto;
-  
+
   /* 테이블 기본 간격 없애기(정확한 수치화를 위해) */
   border-collapse: collapse;
   /* 
@@ -444,16 +477,17 @@ div.copyright span::before {
   border: 2px solid #ccc;
 }
 .photo-news h2 {
-  font-family: "Black And White Picture", sans-serif;
+  font-family: "Black And White Picture",
+    sans-serif;
   font-weight: normal;
   font-size: 40px;
   text-align: center;
 }
 .photo-news h2::after {
-  content: '📺';
+  content: "📺";
 }
 .photo-news h2::before {
-  content: '📷';
+  content: "📷";
 }
 /* 첫번째 td : 숫자데이터 */
 .photo-news td:first-child {
@@ -477,8 +511,8 @@ div.copyright span::before {
   height: 70px;
   vertical-align: middle;
 }
-.photo-news tr+tr td {
-  border-top: 2px solid #ccc
+.photo-news tr + tr td {
+  border-top: 2px solid #ccc;
 }
 /* 사진뉴스 a요소 세팅 */
 .photo-news table a {
@@ -510,4 +544,9 @@ section.contents mark {
   font-weight: 700;
   background-color: #888;
   color: #fff;
+}
+
+/* strong요소 디자인 변경 */
+section.contents strong {
+  font-size: normal;
 }
