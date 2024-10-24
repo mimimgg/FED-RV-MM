@@ -205,6 +205,16 @@
           >을 포함해 복잡한 상호작용을
           할 줄 아는 것으로 유명하다.
         </p>
+        <figure class="article-picture">
+          <img
+            src="./images/arti_img7.jpg"
+            alt="웃고있는 돌고래 사진"
+          />
+          <!-- 사진설명은 figcaption을 사용 -->
+          <figcaption>
+            병코돌고래 자료사진
+          </figcaption>
+        </figure>
         <p>
           연구진은
           <q
@@ -222,6 +232,13 @@
             했다는 것을 시사한다</q
           >고 전했다.
         </p>
+        <!-- 동영상넣기 -->
+        <div class="mv-box">
+          <iframe
+            src="https://www.youtube.com/embed/IvIIofrMVWU"
+            title="친절한 돌고래의 선물"
+          ></iframe>
+        </div>
         <p>
           이어 “이번 연구에서는 돌고래의
           음향신호를 따로 기록하지
@@ -269,7 +286,9 @@
         >
 
         <!-- 2-5.5 인용블록영역-->
-        <article class="quote-box bd-box">
+        <article
+          class="quote-box bd-box"
+        >
           <h4>참고자료 : 병코돌고래</h4>
           <!-- 블록인용요소는 p안에 쓰면 안된다.
   왜? p요소는 인라인요소만 내부에 사용 가능! -->
@@ -332,14 +351,15 @@
         <figure>
           <img
             src="./images/scream.jpg"
-            alt="뭉크의 절규"image.png
+            alt="뭉크의 절규"
+            image.png
           />
           <figcaption>
-            뭉크의 &lt;<cite>절규</cite>&gt;
+            뭉크의
+            &lt;<cite>절규</cite>&gt;
           </figcaption>
         </figure>
       </article>
-
 
       <!-- 
         [ 순서없는 리스트 : ul ]
@@ -359,46 +379,81 @@
         - 주의 : 하위에 li 이외의 블록요소나 
         그 어떤 요소도 직계자식으로 사용할 수 없다!
         예) <ul><li></li><div></div></ul> -> 사용불가!
-      --> 
+      -->
 
       <!-- 주요뉴스 : ul -->
-      <article class="main-news news-box">
+      <article
+        class="main-news news-box"
+      >
         <h3>주요뉴스</h3>
         <ul>
           <li>
-            <a href="https://n.news.naver.com/mnews/article/081/0003488438" target="_blank">
-              🧡 “누가 먼저 깃발 꽂나”…빅테크도 탐내는 소형모듈원전[딥앤이지테크]
+            <a
+              href="https://n.news.naver.com/mnews/article/081/0003488438"
+              target="_blank"
+            >
+              🧡 “누가 먼저 깃발
+              꽂나”…빅테크도 탐내는
+              소형모듈원전[딥앤이지테크]
             </a>
           </li>
           <li>
-            <a href="https://n.news.naver.com/mnews/article/081/0003488442" target="_blank">
-              🩵 정부가 품질 보장?…특허받은 로또 예측 기술은 없다
+            <a
+              href="https://n.news.naver.com/mnews/article/081/0003488442"
+              target="_blank"
+            >
+              🩵 정부가 품질
+              보장?…특허받은 로또 예측
+              기술은 없다
             </a>
           </li>
           <li>
-            <a href="https://n.news.naver.com/mnews/article/081/0003488420" target="_blank">
-              🖤 “등산 도와줄 잘생기고 키 큰 대학생 고용합니다” 하이킹 서비스에 난리 난 中
+            <a
+              href="https://n.news.naver.com/mnews/article/081/0003488420"
+              target="_blank"
+            >
+              🖤 “등산 도와줄 잘생기고
+              키 큰 대학생 고용합니다”
+              하이킹 서비스에 난리 난 中
             </a>
           </li>
         </ul>
       </article>
       <!-- 랭킹뉴스 : ol -->
-      <article class="rank-news news-box">
+      <article
+        class="rank-news news-box"
+      >
         <h3>랭킹뉴스</h3>
         <ol>
           <li>
-            <a href="https://nownews.seoul.co.kr/news/newsView.php?id=20241002601009&wlog_tag3=naver_relation" target="_blank">
-              🤎 태풍이 만든 '파묘', 관 떠내려가…"약 150명 사망, 지옥같은 상황"[포착](영상)
+            <a
+              href="https://nownews.seoul.co.kr/news/newsView.php?id=20241002601009&wlog_tag3=naver_relation"
+              target="_blank"
+            >
+              🤎 태풍이 만든 '파묘', 관
+              떠내려가…"약 150명 사망,
+              지옥같은 상황"[포착](영상)
             </a>
           </li>
           <li>
-            <a href="https://nownews.seoul.co.kr/news/newsView.php?id=20240828601016&wlog_tag3=naver_relation" target="_blank">
-              🩶 살인범 출신 러 바그너용병, 사면받고 또 살인 후 또 참전
+            <a
+              href="https://nownews.seoul.co.kr/news/newsView.php?id=20240828601016&wlog_tag3=naver_relation"
+              target="_blank"
+            >
+              🩶 살인범 출신 러
+              바그너용병, 사면받고 또
+              살인 후 또 참전
             </a>
           </li>
           <li>
-            <a href="https://nownews.seoul.co.kr/news/newsView.php?id=20240723601011&wlog_tag3=naver_relation" target="_blank">
-              🤍 마약먹은 미친 상어?…브라질 해안 상어 잡아보니 '코카인' 양성 반응 [핵잼 사이언스]
+            <a
+              href="https://nownews.seoul.co.kr/news/newsView.php?id=20240723601011&wlog_tag3=naver_relation"
+              target="_blank"
+            >
+              🤍 마약먹은 미친
+              상어?…브라질 해안 상어
+              잡아보니 '코카인' 양성
+              반응 [핵잼 사이언스]
             </a>
           </li>
         </ol>
@@ -422,43 +477,76 @@
       -->
 
       <!-- 분야별뉴스 : dl dt dd -->
-      <article class="sec-news news-box">
+      <article
+        class="sec-news news-box"
+      >
         <h3>분야별뉴스</h3>
         <dl>
           <!-- 경제파트 -->
           <dt>경제</dt>
           <dd>
-            <a href="https://n.news.naver.com/mnews/article/081/0003489086" target="_blank">
-              🫶 “돈맛 알아야” 12살 딸에 400만원 D사 가방 선물한 남편
+            <a
+              href="https://n.news.naver.com/mnews/article/081/0003489086"
+              target="_blank"
+            >
+              🫶 “돈맛 알아야” 12살 딸에
+              400만원 D사 가방 선물한
+              남편
             </a>
           </dd>
           <dd>
-            <a href="https://n.news.naver.com/mnews/article/081/0003489103" target="_blank">
-              💛 “조현병 환자 X소리” 막말 퍼붓다…의협회장 탄핵 위기
+            <a
+              href="https://n.news.naver.com/mnews/article/081/0003489103"
+              target="_blank"
+            >
+              💛 “조현병 환자 X소리”
+              막말 퍼붓다…의협회장 탄핵
+              위기
             </a>
           </dd>
           <!-- 사회파트 -->
           <dt>사회</dt>
           <dd>
-            <a href="https://n.news.naver.com/mnews/article/081/0003489113" target="_blank">
-              💜 금수저인데 “일자리 원해”…열심히 감자 튀긴 트럼프, ‘고용주’ 반응은?
+            <a
+              href="https://n.news.naver.com/mnews/article/081/0003489113"
+              target="_blank"
+            >
+              💜 금수저인데 “일자리
+              원해”…열심히 감자 튀긴
+              트럼프, ‘고용주’ 반응은?
             </a>
           </dd>
           <dd>
-            <a href="https://n.news.naver.com/article/081/0003489120" target="_blank">
-              ❤️‍🩹 14세 학생, 수업 중 총기 난사해 3명 사망…“SNS와 게임이 문제”
+            <a
+              href="https://n.news.naver.com/article/081/0003489120"
+              target="_blank"
+            >
+              ❤️‍🩹 14세 학생, 수업 중 총기
+              난사해 3명 사망…“SNS와
+              게임이 문제”
             </a>
           </dd>
           <!-- TV/연예파트 -->
           <dt>TV/연예</dt>
           <dd>
-            <a href="https://n.news.naver.com/article/081/0003489116" target="_blank">
-              ❤️‍🔥 ‘테이저건 사망사건’ 사용연한 초과장비 사용 ‘도마’
+            <a
+              href="https://n.news.naver.com/article/081/0003489116"
+              target="_blank"
+            >
+              ❤️‍🔥 ‘테이저건 사망사건’
+              사용연한 초과장비 사용
+              ‘도마’
             </a>
           </dd>
           <dd>
-            <a href="https://n.news.naver.com/article/081/0003489066?ntype=RANKING" target="_blank">
-              💔 “자궁 밖에서 살수 있는데”…‘36주차 낙태’ 병원장·집도의 ‘살인 혐의’ 구속영장
+            <a
+              href="https://n.news.naver.com/article/081/0003489066?ntype=RANKING"
+              target="_blank"
+            >
+              💔 “자궁 밖에서 살수
+              있는데”…‘36주차 낙태’
+              병원장·집도의 ‘살인 혐의’
+              구속영장
             </a>
           </dd>
         </dl>
@@ -483,7 +571,9 @@
       -->
 
       <!-- 사진뉴스 : table -->
-      <article class="photo-news news-box">
+      <article
+        class="photo-news news-box"
+      >
         <h2>사진뉴스</h2>
         <!-- <table border="1"> -->
         <table>
@@ -491,11 +581,23 @@
           <tr>
             <td>1</td>
             <td>
-              <a href="https://n.news.naver.com/mnews/article/008/0005104454" target="_blank">"1년만 다녀도 22개월 위로금"…엔씨 희망퇴직 '파격적'</a>
-          </td>
+              <a
+                href="https://n.news.naver.com/mnews/article/008/0005104454"
+                target="_blank"
+                >"1년만 다녀도 22개월
+                위로금"…엔씨 희망퇴직
+                '파격적'</a
+              >
+            </td>
             <td>
-              <a href="https://n.news.naver.com/mnews/article/008/0005104454" target="_blank">
-                <img src="./images/photonews01.jpg" alt="포토뉴스1">
+              <a
+                href="https://n.news.naver.com/mnews/article/008/0005104454"
+                target="_blank"
+              >
+                <img
+                  src="./images/photonews01.jpg"
+                  alt="포토뉴스1"
+                />
               </a>
             </td>
           </tr>
@@ -503,11 +605,24 @@
           <tr>
             <td>2</td>
             <td>
-              <a href="https://n.news.naver.com/mnews/article/008/0005104445" target="_blank">화재 경보 96%가 오작동…불필요한 소방 신고 줄일 'AI 센서' 나왔다</a>
-          </td>
+              <a
+                href="https://n.news.naver.com/mnews/article/008/0005104445"
+                target="_blank"
+                >화재 경보 96%가
+                오작동…불필요한 소방
+                신고 줄일 'AI 센서'
+                나왔다</a
+              >
+            </td>
             <td>
-              <a href="https://n.news.naver.com/mnews/article/008/0005104445" target="_blank">
-                <img src="./images/photonews02.jpg" alt="포토뉴스2">
+              <a
+                href="https://n.news.naver.com/mnews/article/008/0005104445"
+                target="_blank"
+              >
+                <img
+                  src="./images/photonews02.jpg"
+                  alt="포토뉴스2"
+                />
               </a>
             </td>
           </tr>
@@ -515,17 +630,28 @@
           <tr>
             <td>3</td>
             <td>
-              <a href="https://n.news.naver.com/mnews/article/018/0005866291" target="_blank">엔비디아 "카카오 AI 전환 지원…데이터센터도 협업"</a>
-          </td>
+              <a
+                href="https://n.news.naver.com/mnews/article/018/0005866291"
+                target="_blank"
+                >엔비디아 "카카오 AI
+                전환 지원…데이터센터도
+                협업"</a
+              >
+            </td>
             <td>
-              <a href="https://n.news.naver.com/mnews/article/018/0005866291" target="_blank">
-                <img src="./images/photonews03.jpg" alt="포토뉴스3">
+              <a
+                href="https://n.news.naver.com/mnews/article/018/0005866291"
+                target="_blank"
+              >
+                <img
+                  src="./images/photonews03.jpg"
+                  alt="포토뉴스3"
+                />
               </a>
             </td>
           </tr>
         </table>
       </article>
-      
     </main>
     <!-- <div id="main"></div> -->
 
