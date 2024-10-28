@@ -1,0 +1,107 @@
+@charset "utf-8";
+
+/* 드라마 테이블 css - drama.css */
+
+/* 기본초기화 */
+html, body, h1, h2, h3, h4, h5, h6, ul, ol {
+    margin: 0;
+    padding: 0;
+}
+
+/* 블릿 표시자 초기화 : ul, ol */
+ul, ol {
+    list-style: none;
+}
+/* ul의 li를 옆으로 흐르게 하기 */
+.drama ul > li {
+    /* 블럭 플롯 셋팅 */
+    float: left;
+    padding: 9px;
+}
+
+/* 자식 블록 플롯 때문에 부모가 망가지는 걸 막아주는 가상요소 clear 장치 */
+.drama ul::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* 그룹 전체 제목 */
+h1.tit {
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+}
+
+/* 드라마 제목 */
+h2.tit {
+    font-size: 17px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+/* 테이블 셋팅 */
+table.drama {
+    /* 최대 가로 크기 */
+    max-width: 670px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+/* 드라마별 묶음요소 .drama > ul */
+table.drama ul {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+}
+table.drama ol a {
+    text-decoration: none;
+    color: blue;
+}
+table.drama ol a:hover {
+    text-decoration: underline;
+}
+
+/* 구독버튼 */
+table.drama ol a.subscribe-btn {
+    display: inline-block;
+    padding: 7px;
+    margin: 5px;
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+    text-decoration: none;
+}
+table.drama ol a.subscribe-btn span {
+    color: green;
+}
+table.drama ol a.subscribe-btn b {
+    font-weight: normal;
+    font-size: 14px;
+    color: #939396;
+    border-right: 1px solid #ccc;
+    padding-right: 10px;
+}
+table.drama ol a.subscribe-btn i {
+    font-style: normal;
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+table.drama img {
+    width: 75px;
+}
+
+/* 추가정보 파트 */
+table.drama .info-txt {
+    color: #939393;
+}
+table.drama .num-txt {
+    color: red;
+    font-weight: bold;
+}
+table.drama .num-txt em {
+    font-style: normal;
+}
