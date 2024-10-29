@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02. relative 포지션</title>
+    <style>
+        .bx{
+            width: 300px;
+            height: 300px;
+            border: 2px solid blue;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;/* fwb */
+            /* 글자세로중앙 */
+            line-height: 300px;
+        }
+
+        /* 첫번째 박스에 포지션 체크 */
+        #s1{
+            position: static;
+
+            /* 위치 이동속성 적용안됨! */
+            top: 100px;
+            left: 100px;
+
+            margin-top: 50px;
+            margin-left: 50px;
+            /* 
+                [ CSS 포지션이 뭐지? ]
+                - 위치를 효과적으로 배치하기 위한
+                코딩법을 제공하는 속성
+
+                [ 1. static 포지션 ]
+                1. 설정하지 않아도 기본값
+                2. 위치이동속성(top,left,bottom,right)이
+                적용되지 않는다!
+                3. 위치이동은 margin 속성을 사용함!
+                특징: 마진위치이동을 하면
+                아래 또는 옆의 다른 static 요소에
+                영향을 미쳐서 같이 이동됨!
+
+                
+            */
+           
+
+
+            background-color: lightgreen;
+        }
+        #s2{
+            background-color: lightcoral;
+        }
+        #r1 {
+            position: relative;
+            top: 100px;
+            left: 100px;
+            
+            /*
+                ---------------------------------------------------------------- 
+                2. relative position
+                - 위치 이동 속성이 적용된다.
+                - 위치 이동의 기준은 원래 있던 위치임 (상대적)
+                - 이동 시 다른 요소에 영향을 주지 않음
+                - 원래 위치는 그대로 보존된다.
+                - 위치값 설정시 한 방향당 한가지 기준으로 세팅한다.
+                - margin은 그대로 적용된다.
+                - relative에 위치 이동값을 쓰지 않으면 static과 일반적인 배치가 동일하다.
+                - relative는 겹쳐질 수 있으므로 위, 아래 관계가 성립한다.
+                    1) static 보다는 항상 위
+                    2) static 포지션이 아닌 경우 나중에 그려진 요소가 위
+                    3) z-index 속성으로 숫자가 크면 위
+                - 부모자격
+                ----------------------------------------------------------------
+                [ 위치이동속성 ]
+                - 선택요소의 위치를 이동시켜주는 설정 속성
+                - 포지션에 따라서 다르게 적용됨
+                - 종류 : 4가지
+                    top, bottom, left, right
+                ----------------------------------------------------------------
+            */
+            background: url(./images/ab5.jpg) no-repeat center/cover;
+        }
+        #r2 {
+            position: relative;
+            margin: 20px;
+            background: url(./images/ab4.jpg) no-repeat  center/cover;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- .bx#s${s$}*3 -->
+    <!-- 
+        emmet coding
+        ----------------------------------------------------------------
+        . : 클래스
+        # : 아이디
+        *n : 반복생성횟수
+        {} : 데이터출력 (꺽쇠사이값)
+        [] ; 속성세팅값
+        > : 하위직계 자식요소
+        + : 형제요소
+        () : 요소구분하기
+        ----------------------------------------------------------------
+        🙄 예시1
+        (header.my#key[title=hi]{menu})>h1*2
+        👇
+        <header class="my" id="key" title="hi">menu</header>
+        <header class="my" id="key" title="hi">menu</header>
+        ----------------------------------------------------------------
+        🙄 예시2
+        div.my#my$*2>section+article>img
+        👇
+        <div class="my" id="my1">
+            <section></section>
+            <article><img src="" alt=""></article>
+        </div>
+        <div class="my" id="my2">
+            <section></section>
+            <article><img src="" alt=""></article>
+        </div>
+    -->
+
+    <div class="bx" id="r1">r1</div>
+    <div class="bx" id="s1">s1</div>
+    <div class="bx" id="r2">r2</div>
+    <div class="bx" id="s2">s2</div>
+    
+    
+</body>
+</html>
