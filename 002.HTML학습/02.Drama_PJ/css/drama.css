@@ -13,14 +13,15 @@ ul, ol {
     list-style: none;
 }
 /* ul의 li를 옆으로 흐르게 하기 */
-.drama ul > li {
+ul > li {
     /* 블럭 플롯 셋팅 */
     float: left;
     padding: 9px;
 }
 
 /* 자식 블록 플롯 때문에 부모가 망가지는 걸 막아주는 가상요소 clear 장치 */
-.drama ul::after {
+.drama ul::after, 
+section.drama::after {
     content: '';
     display: block;
     clear: both;
@@ -46,24 +47,66 @@ table.drama {
     max-width: 670px;
     margin: 0 auto;
     padding: 15px;
+    border-spacing: 13px;
+}
+
+/* 테이블 대신 일반 블록바스로 드라마 구성 */
+section.drama {
+    max-width: 670px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+/* 이동네비게이션 메뉴 */
+.menu {
+    text-align: center;
+}
+.menu h2 {
+    font-size: 16px;
+    font-weight: normal;
+}
+.menu a {
+    color: #555;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 2.5;
+    margin: 0 10px;
+}
+.menu a.on {
+    color: #000;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+}
+
+/* 일반 블록박스 옆으로 흐르게 하기 */
+.each-drama {
+    float: left;
+    width: 50%;
+    /* 가로크기에 패딩포함설정 */
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.each-drama ol {
+    width: 200px;
 }
 
 /* 드라마별 묶음요소 .drama > ul */
-table.drama ul {
+.drama ul {
     border: 1px solid #ccc;
     border-radius: 10px;
     font-size: 15px;
 }
-table.drama ol a {
+.drama ol a {
     text-decoration: none;
     color: blue;
 }
-table.drama ol a:hover {
+.drama ol a:hover {
     text-decoration: underline;
 }
 
 /* 구독버튼 */
-table.drama ol a.subscribe-btn {
+.drama ol a.subscribe-btn {
     display: inline-block;
     padding: 7px;
     margin: 5px;
@@ -73,35 +116,36 @@ table.drama ol a.subscribe-btn {
     font-size: 14px;
     text-decoration: none;
 }
-table.drama ol a.subscribe-btn span {
+.drama ol a.subscribe-btn span {
     color: green;
 }
-table.drama ol a.subscribe-btn b {
+.drama ol a.subscribe-btn b {
     font-weight: normal;
     font-size: 14px;
     color: #939396;
-    border-right: 1px solid #ccc;
-    padding-right: 10px;
 }
-table.drama ol a.subscribe-btn i {
+.drama ol a.subscribe-btn i {
     font-style: normal;
     color: red;
     font-weight: bold;
     font-size: 16px;
+    border-left: 1px solid #ccc;
+    padding-left: 10px;
+
 }
 
-table.drama img {
+.drama img {
     width: 75px;
 }
 
 /* 추가정보 파트 */
-table.drama .info-txt {
+.drama .info-txt {
     color: #939393;
 }
-table.drama .num-txt {
+.drama .num-txt {
     color: red;
     font-weight: bold;
 }
-table.drama .num-txt em {
+.drama .num-txt em {
     font-style: normal;
 }
