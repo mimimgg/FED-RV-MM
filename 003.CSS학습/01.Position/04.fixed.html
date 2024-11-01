@@ -304,6 +304,7 @@
         writing-mode: vertical-lr;
         font-size: 25px;
         text-align: center;
+        font-weight: bold;
         padding-left: 8px;
         box-sizing: border-box;
         
@@ -316,6 +317,24 @@
         height: 300px;
         /* 블록박스에 단독이미지 하단간극 없애기 */
         vertical-align: top;
+      }
+
+      /* 부모가 많은 요소를 fixed 처리하기 */
+      .iamfixed {
+        /* 
+          - display: inline; 요소가 자동으로 block 처리됨 
+          - 가로, 세로 크기 내용만큼 생김
+          - 부모가 아무리 많아도 fixed는 보이는 화면이 부모 (window)
+        */
+        position: fixed;
+        top: 350px;
+        right: 150px;
+        border: 4px double chartreuse;
+        border-radius: 50px;
+        background-color: #ffffff75;
+        backdrop-filter: blur(5px);
+        padding: 20px 40px;
+        font-size: 30px;
       }
 
     </style>
@@ -356,7 +375,7 @@
         <img src="./images/ab4.jpg" alt="닥스">
      </div>
 
-    <!-- 부모를 찾는 픽스드 -->
+    <!-- 부모를 찾는 앱솔루트 -->
     <div class="bx2 s5">
       s5
       <div class="bx2 s6">
@@ -365,12 +384,17 @@
           s7
           <div class="bx2 s8">
             s8
-            <!-- 박스내부 픽스드 -->
-            <div class="abs a3" title="나는 젠틀 픽스드다">a3</div>
+            <!-- 박스내부 앱솔루트 -->
+            <div class="abs a3" title="나는 젠틀 앱솔루트다">a3</div>
             <div class="abs a4" title="나는 부모 찾아 올라간다">a4</div>
 
             <span class="spabs" title="자동블록전환">
-                나는 span 픽스드다!
+                나는 span 앱솔루트다!
+            </span>
+
+            <!-- 부모가 많은 요소를 fixed 처리하기 -->
+            <span class="iamfixed">
+              👷‍♀️개발자👷‍♂️
             </span>
           </div>
         </div>

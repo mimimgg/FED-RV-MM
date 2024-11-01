@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+/* CGV PJ 메인페이지 CSS - main.css */
+
+/* 외부CSS 불러오기 */
+@import url(./reset.css);
+
+/* 전체 디자인 */
+body {
+    background-color: #000;
+}
+
+/* 공사중 표시 : 구현시 박스 표시 */
+body * {
+    /* 아웃라인은 아무런 영향이 없음 (보더주지말기) */
+    outline: 2px dashed #ccc;
+}
+
+/* 레이아웃 공통클래스 */
+.part {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/*************** 1. 상단영역 ***************/
+header.top-area {
+    height: 80px;
+}
+
+/*************** 2. 메인영역 ***************/
+main.main-area {
+    height: 788px;
+}
+
+/*************** 3. 하단영역 ***************/
+footer.footer-area {
+    height: 100px;
+}
