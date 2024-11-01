@@ -6,6 +6,29 @@
     <title>CGV에 오신 것을 환영합니다</title>
 
     <link rel="stylesheet" href="./css/main.css">
+
+    <!-- 자바스크립트 실행구역 -->
+    <script>
+        // JS 한줄주석
+        /* JS 여러줄주석 */
+        // 개발자모드 - console탭에서 확인
+        console.log("여긴 어디? 나는 누구?");
+
+        // 호출 시에만 실행하고 싶으면 함수 사용
+        // function(전달변수){코드}
+        /* 함수실행원리:
+        함수 이름을 이벤트 속성에서 불러준다.
+        이벤트 속성은 모든 요소 안에 있다 */
+        // <태그 on이벤트명="값">
+        // 예) <div click="멍멍이">
+
+        // 함수 작성! | 함수는 코드저장소임
+        function 멍멍이(먹이){
+            // 알림창 띄우기 (alert = 기본내장)
+            alert("안녕나야"+먹이);
+        };
+
+    </script>
 </head>
 <body>
     <!-- 1. 상단영역 -->
@@ -14,7 +37,47 @@
      </header>
     <!-- 2. 메인영역 -->
      <main class="main-area part">
-
+        <!-- 2-1. 스크린 -->
+         <div class="screen">
+            <!-- 유튜브 아이프레임 (iframe은 인라인요소) -->
+            <iframe id="ifr" src="https://www.youtube.com/embed/eq4cFcEua8Q?autoplay=1&mute=1&controls=0&loop=1&playlist=eq4cFcEua8Q"  allow="autoplay">
+            </iframe>
+         </div>
+        <!-- 2-2. 포스터메뉴 -->
+         <nav class="poster-menu">
+            <ul>
+                <li>
+                    <a href="#" onclick="멍멍이('아마존 활명수')">
+                        <img src="./images/m01.jpg" alt="아마존 활명수">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="멍멍이('대도시의 사랑법')">
+                        <img src="./images/m02.jpg" alt="대도시의 사랑법">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="멍멍이('베놈: 라스트 댄스')">
+                        <img src="./images/m03.jpg" alt="베놈: 라스트 댄스">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="멍멍이('4분 44초')">
+                        <img src="./images/m04.jpg" alt="4분 44초">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="멍멍이('보통의 가족')">
+                        <img src="./images/m05.jpg" alt="보통의 가족">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="멍멍이('아이브 더 퍼스트 월드투어 인 시네마')">
+                        <img src="./images/m06.jpg" alt="아이브 더 퍼스트 월드투어 인 시네마">
+                    </a>
+                </li>
+            </ul>
+         </nav>
      </main>
 
     <!-- 3. 하단영역 -->
