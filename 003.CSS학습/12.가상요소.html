@@ -54,7 +54,7 @@
 
              */
       /* h2요소 맨앞에 이미지 넣기 */
-      .뭘까 {
+      h2::before {
         content: url(./imgs/blogo.png);
         width: 20px;
         height: 10px;
@@ -69,7 +69,7 @@
       }
 
       /* 맨뒤 추가요소 ::after */
-      .뭘까 {
+      h2::after {
         /* 이미지크기 조절하려면
             박스를 만들고 배경이미지로 넣는다! */
         content: "";
@@ -107,20 +107,20 @@
       }
 
       /* 반복되는 요소의 앞에 아이콘 가상요소로 넣기 */
-      .뭘까{
+      dt:first-of-type::before {
         content: '🛕★';
         font-size: 30px;
         vertical-align: 2px;
         color: red;
       }
       /* dt아이콘 변경 */
-      .뭘까{
+      dt:nth-of-type(2)::before{
         content: '🧛‍♂️';
       }
-      .뭘까{
+      dt:nth-of-type(3)::before{
         content: '🏇';
       }
-      .뭘까{
+      dt:nth-of-type(4)::before{
         content: '🍒';
       }
 
