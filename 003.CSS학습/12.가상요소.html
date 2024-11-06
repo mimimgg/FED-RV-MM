@@ -125,47 +125,48 @@
       }
 
       /* dd전체 before적용하기 */
-      .뭘까{
+      dd::before {
         content: '👨‍🦰';
         font-size: 28px;
         margin-right: 15px;
       }
       /* 여자인 경우 이모지 변경 */
-      .뭘까,
-      .뭘까,
-      .뭘까,
-      .뭘까,
-      .뭘까,
-      .뭘까      
+      dd:nth-of-type(3)::before,
+      dd:nth-of-type(4)::before,
+      dd:nth-of-type(8)::before,
+      dd:nth-of-type(9)::before,
+      dd:nth-of-type(11)::before,
+      dd:nth-of-type(12)::before      
       {
         content: '👩‍🦰';
       }
-      .뭘까      
+      dd:nth-of-type(13)::before      
       {
         content: '👨‍🦰👩‍🦰';
       }
 
       
       /* 스토리의 dd는 가상요소 없애기 */
-      .뭘까{
+      dd.story::before{
         display: none;
       }
 
       /* 스토리의 dd 아래 h3 이모지넣기 */
-      .뭘까{
+      .story > h3::before{
         content: '🎥';
         margin-right: 20px;
       }
 
       /* .story의 첫번째 p태그의 첫번째 글자 디자인 변경하기 */
-      .뭘까{
+      dd.story > p:first-of-type::first-letter {
             font-size: 50px;
             color: hotpink;
             font-weight: bold;
+            font-family: '맑은고딕';
         }
 
       /* .story의 첫번째 p태그의 첫번째줄 디자인 변경하기 */
-      .뭘까{
+      dd.story > p:first-of-type::first-line {
             font-size: 22px;
             color: blue;
             font-family: '궁서';
@@ -186,7 +187,8 @@
       /* 기타 가상요소 ::selection */
       /* 드래그 선택시 글자색 배경색 설정변경! */
       
-      .뭘까{
+      /* p::selection -> p만 적용 */
+      ::selection {
         color: rgb(52, 255, 154);
         background-color: hotpink;
       }
