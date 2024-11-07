@@ -19,7 +19,10 @@ function 김비서나와라(){
     /////// 3. CSS 변경하기 ///////
     // CSS를 변경할 대상선정 : .pbox
     console.log(
-    document.getElementsByClassName('pbox'));
+        document.getElementsByClassName('pbox'),
+        document.getElementsByTagName('span'),
+        document.getElementById('name')
+    );
 
     // 변수에 대상 할당하기
     var 나변수 = document.getElementsByClassName('pbox').item(0);
@@ -95,11 +98,158 @@ function 김비서나와라(){
     var 나바디 = document.body;
     나바디.style.backgroundColor = "lightGreen";
     나바디.style.transition = "3s 5s";
-    // 나바디.style.background = "linear-gradient(45deg, purple, yellow, lightgreen)"
+    // 나바디.style.backgroundImage = "linear-gradient(45deg, purple, yellow, lightgreen)"
+
+    /**************************************************
+        [ JS DOM의 요소 선택 메서드 ]
+         1. id 선택 메서드 : getElementById(id명)
+            - document.getElementById("id명")
+         2. class 선택 메서드 : getElementsByClassName(class명)
+            - document.getElementsByClassName("class명")
+            ((하위속성))
+            length - 클래스 개수
+            ((순번선택 하위메서드))
+            item(순번) - 구체적인 순번요소 선택 (0부터 시작)
+         3. tag 선택 메서드 : getElementsByTagName(tag명)
+            - document.getElementsByTagName("tag명")
+            ((하위속성))
+            length - 요소개수
+            ((순번선택 하위메서드))
+            item(순번) - 구체적인 순번요소 선택 (0부터 시작)
+
+        [ HTML 컬렉션은 무엇인가? ]
+            - DOM을 통하여 선택된 다중선택요소인
+            class/tag 를 메모리상 수집하는 공간
+            - 상세 선택시 순번선택 메서드인 item()을
+            사용하여 선택한다
+            - 배열처럼 순서대로 메모리를 사용하기 때문에
+            '유사배열'이라고 불리우며 배열처럼 대괄호순번
+            을 사용하여 선택할 수 있다!
+            - document
+            .getElementsByClassName(클래스명).item(0)
+            -> 아래처럼 점안찍고 대괄호 순번사용가능!
+            .getElementsByClassName(클래스명)[0]
+
+            - 컬렉션 전체 개수정보는 length 속성으로 
+            알 수 있다!
+
+            참고) 
+            https://www.w3schools.com/js/js_htmldom_collections.asp
+    **************************************************/
 } // 김비서나와라 함수
 
+/********************************************************* 
+
+    함수명 : 맘대로해라
+    기능 : 선택요소의 style과 html을 변경함
+
+*********************************************************/
+
+function 맘대로해라(헐, 헉스){
+    // 헐 - html에서 [ .원이야 ]의 순번
+    // 헉스 - html에서 [ .원이야 ]의 그림제목
+    // 1. 함수호출확인
+    console.log("니맘대로하세요~~", 헐, 헉스);
+
+    // 2. 대상선정 : .박스야 .원이야
+    // 해당요소의 순번은 헐 변수에 들어있음
+    var 아파트 = document.querySelectorAll(".박스야 .원이야")[헐];
+    // var 아파트 = document.querySelectorAll(".박스야 .원이야").item(헐);
+    /************************************************************* 
+        [ JS DOM의 특별한 선택 메서드 2가지 ]
+        1. querySelector(CSS선택자) - 하나만 선택
+        2. querySelectorAll(CSS선택자) - 여러개 선택
+            -> 2번 방식은 HTMLCollection을 반환한다.
+            -> 따라서 length와 item(순번)/[순번]을 사용한다.
+    *************************************************************/
+
+    // document.getElementsByClassName("박스야").item(0)
+    // .getElementsByClassName("원이야").item(헐);
+    
+    console.log("대상요소:", 아파트);
+
+    // 3. 변경내용 : transition으로 화면 왼쪽 하단으로 이동하며 박스에 유튜브 비디오가 나오도록 한다.
+    // 3-1. transition 설정
+    아파트.style.transition = "all 1s ease-out, right 0.5s 1s";
+
+    // 3-2. 위치이동
+    아파트.style.top = "calc(100% - 200px)";
+    아파트.style.right = "calc(100% - 200px*"+(헐+1)+")";
+    // 순번에 1을 더해서 곱한 이유는 right위치를 순서대로 잡기 위함
+
+    // 3-3. 유튜브 동영상 넣기
+    아파트.innerHTML = `<iframe src="https://www.youtube.com/embed/8Ebqe2Dbzls?autoplay=1?" allow="autoplay"></iframe>`;
+
+    // 3-4. iframe 디자인
+    var 뮤비 = 아파트.querySelector("iframe");
+
+    // cssText 속성 : 한꺼번에 문자열로 CSS를 넣을 때 사용 (주의!! 따로 속성 세팅할 때와 달리 다른 인라인 속성을 덮어써서 지워버린다.)
+    뮤비.style.cssText = `
+        position: absolute;
+        border: none;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    `;
+    
+    // 자바스크립트를 쉽게 쓰는 한가지 방법
+    // 클래스 넣기 / 빼기
+    // 클래스 제어 객체 : classList
+    // (1) add(클래스명) : 클래스 추가
+    // (2) remove(클래스명) : 클래스 제거
+    // (3) toggle(클래스명) : 클래스 추가/제거
+    
+    // 3-5. class 추가/제거
+    // -> 현재 class "on"때문에 회전 애니메이션이 적용됨
+    // 그래서 클릭된 요소는 "on"을 제거한다.
+
+    아파트.classList.remove("on");
+
+} /////////////// 맘대로해라 함수 ////////////////////////
 
 
+/*********************************************************** 
+
+    함수명 : 사각사각
+    기능 : 전체가 사각형으로 화면을 채우며 애니메이션 됨
+
+***********************************************************/
+
+function 사각사각(){
+    // 1. 함수호출 확인
+    console.log("사각사각");
+
+    // 2. 대상선정 : .넌뭐냐
+    var 나야나 = document.querySelector(".넌뭐냐");
+    console.log("선택요소:", 나야나);
+
+    // 3. 변경내용 : top, transition, width, height 값 변경
+    나야나.style.top = "0";
+    나야나.style.borderRadius = "0";
+    나야나.style.width = "100%";
+    나야나.style.height = "100%";
+    나야나.style.transition = "all 3s 1s, top 1s 0s";
+    나야나.style.zIndex = "2"
+    // top값부터 1초간 작동하고 나머지는 1초 후에 작동
+
+    // 4. 추가변경 : 글자넣기
+    // innerText = 글자내용
+    // -> 태그 없는 글자 데이터만 넣기
+    나야나.innerText = "JS입문을 환영합니다."
+
+    // 5. 글자 관련 CSS 넣기
+    나야나.style.fontSize = "70px";
+    나야나.style.color = "orange";
+    나야나.style.fontWeight = "bold";
+    나야나.style.textShadow = "5px 5px 3px #000";
+    나야나.style.lineHeight = window.innerHeight + "px";
+    // window.innerHeght는 현재 윈도우창 높이값 리턴!
+
+    // 화면 높이값
+    console.log("화면높이값:", window.innerHeght);
+    
+    
+}; ////////////////// 사각사각 함수 //////////////////////
 
 
 

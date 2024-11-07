@@ -353,14 +353,15 @@
       /* 원모양 개별셋팅 */
       .원이야:nth-child(1) {
         right: 400px;
-        background-image: url(./images/01.png);
+        background-image: url(./images/apt1.jpg);
       }
       .원이야:nth-child(2) {
         right: 200px;
-        background-image: url(./images/02.png);
+        background-image: url(./images/apt2.jpg);
       }
       .원이야:nth-child(3) {
-        background-image: url(./images/03.png);
+        background-image: url(./images/apt3.jpg);
+        background-position: center;
       }
 
       /* .원이야.on 일 경우 애니적용하기! */
@@ -417,10 +418,16 @@
       나는 요즘 매일 생각한다. <br />
       도대체 <span id="name"></span>
     </p>
-    <!-- 
-    <div class="pbox"></div>
-    <div class="pbox"></div>
-    <div class="pbox"></div> 
-    -->
+    
+    <!-- 원 모양 박스 -->
+    <div class="박스야">
+      <div class="원이야 on" onmouseover="맘대로해라(0,'로제')"></div>
+      <div class="원이야 on" onmouseover="맘대로해라(1,'브루노마스')"></div>
+      <div class="원이야 on" onmouseover="맘대로해라(2,'아파트밴드')"></div>  
+    </div>
+
+    <!-- 사각형으로 변할 전체 마무리 원박스 -->
+    <div class="넌뭐냐" title="더블클릭해주세요!" ondblclick="사각사각()"></div>
+
   </body>
 </html>
