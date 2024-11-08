@@ -1,11 +1,12 @@
 @charset "utf-8";
 /* 로봇 PJ CSS - robot.css */
 
+/* 외부 CSS 합치기 */
+@import url(./reset.css);
+@import url(./core.css);
+
 html, body {
-    margin: 0;
-    padding: 0;
     height: 100%;
-    box-sizing: border-box;
 }
 
 /* 공사중 표시 */
@@ -15,6 +16,9 @@ body > * {
 
 body {
     background: url(../images/bg.jpg) no-repeat top/cover;
+
+    /* 커서 이미지로 변경하기 */
+    cursor: url(../images/favicon.png), auto;
 }
 
 /****************** 1. 상단영역 ******************/
@@ -32,22 +36,18 @@ body {
 .main-area > .robot-box > .head {
     position: relative;
     margin: 0 auto;
-    width: 250px;
+    width: 200px;
     height: 250px;
+    border-radius: 50px 50px 100px 100px;
 }
 
-/****************** 공통클래스 /******************/
-/* 메탈배경 클래스 */
-.metal1 {
-    background: url(../images/metal01.jpg) no-repeat center/cover;
-}
-.metal2 {
-    background: url(../images/metal02.jpg) no-repeat center/cover;
+/* 로봇머리 하위 공통 앱솔루트 */
+.head > div {
+    position: absolute;
 }
 
 /* 눈 공통 */
 .main-area > .robot-box > .head > .eye {
-    position: absolute;
     top: 50px;
     width: 50px;
     height: 50px;
@@ -60,23 +60,54 @@ body {
 
 /* 왼눈 */
 .main-area > .robot-box > .head > .eye1 {
-    left: 50px;
+    left: 16%;
     background-image: url(../images/e1.jpg);
 }
 
 /* 오른눈 */
 .main-area > .robot-box > .head > .eye2 {
-    right: 50px;
+    right: 16%;
     background-image: url(../images/e2.jpg);
 }
 
 /* 코 */
+.main-area > .robot-box > .head > .nose {
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 50px;
+    height: 80px;
+    background: url(../images/nose.jpg) no-repeat 0/110% 100%;
+    border-radius: 20px;
+}
 
 /* 입 */
+.main-area > .robot-box > .head > .mouth {
+    bottom: 30px;
+    left: 87px;
+    width: 80px;
+    height: 30px;
+    background: url(../images/mouth.png) no-repeat 0/100% 100%;
+}
+
+/* 귀 공통 */
+.main-area > .robot-box > .head > .ear {
+    top: 80px;
+    width: 50px;
+    height: 80px;
+}
 
 /* 왼귀 */
+.main-area > .robot-box > .head > .ear1 {
+    left: -50px;
+    border-radius: 20px 0 0 20px;
+}
 
 /* 오른귀 */
+.main-area > .robot-box > .head > .ear2 {
+    right: -50px;
+    border-radius: 0 20px 20px 0;
+}
 
 /* 2-1-2. 로봇몸통 */
 
