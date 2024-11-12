@@ -19,8 +19,34 @@ body * {
 
 /*************** 1. 상단영역 ***************/
 header.top-area {
+    position: relative;
     height: 80px;
     background: url(../images/curtain.jpg) repeat-x;
+}
+/* 1-1. 타이틀 */
+header.top-area > .tit {
+    font-family: 'Jua', sans-serif;
+    font-size: 30px;
+    line-height: 80px;
+    color: aquamarine;
+    text-align: center;
+    box-shadow: 0 0 4px aquamarine;
+}
+/* 1-2. GNB 메뉴 */
+header.top-area > .gnb {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+header.top-area > .gnb > ul {
+    font-family: 'Jua', sans-serif;
+    font-size: 20px;
+}
+header.top-area > .gnb > ul > li {
+    float: left;
+}
+header.top-area > .gnb > ul > li+li {
+    margin-left: 25px;
 }
 
 /*************** 2. 메인영역 ***************/
