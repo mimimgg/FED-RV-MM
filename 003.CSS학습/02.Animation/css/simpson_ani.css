@@ -1,0 +1,202 @@
+@charset "utf-8";
+
+/* 심슨 가족 애니메이션 코드 : simpson_ani.css */
+
+/* 심슨애니 호출 */
+.simpson {
+  /* 애니메이션: 이름 시간 이징 지연 반복 방향 마지막 */
+  animation: simpson-ani 4s ease-in-out
+    2s alternate forwards;
+  /* 
+    ((반복))
+    반복횟수 없으면 1번만, 숫자만큼 반복, 영원히는 infinite 
+    ((방향)) 
+    - alternate 번갈아 설정시 왔다갔다함!(회수가 많아야함)
+    ((마지막상태))
+    처음상태가 backwards(기본값) / 나중상태가 forwards
+    - 마지막장면 상태유지 하려고 할때 forwards 사용
+    - 회수가 무한이면 안됨
+    */
+}
+/* 심슨 키프레임 */
+@keyframes simpson-ani {
+  0% {
+    top: 65%;
+    left: 43.7%;
+    width: 5%;
+  }
+  /* 1.옆으로 나옴 */
+  10% {
+    top: 69%;
+    left: 39.7%;
+    width: 5%;
+  }
+  /* 2. 걸어서 앞으로 나옴
+    z-index위로 설정, rotate설정
+  */
+  20% {
+    top: 72%;
+    left: 39.7%;
+    width: 9%;
+    rotate: -5deg;
+    z-index: 1;
+  }
+  40% {
+    top: 69%;
+    left: 36.7%;
+    width: 14%;
+    rotate: 5deg;
+    z-index: 1;
+  }
+  60% {
+    top: 67%;
+    left: 38.7%;
+    width: 18%;
+    rotate: -5deg;
+    z-index: 1;
+  }
+  80% {
+    top: 48%;
+    left: 39.7%;
+    width: 26%;
+    rotate: 5deg;
+    z-index: 1;
+  }
+  100% {
+    top: 28%;
+    left: 35.7%;
+    width: 34%;
+    rotate: 0deg;
+    z-index: 1;
+  }
+}
+/* 키프레임 */
+
+/* 문열기 호출 */
+.door {
+  /* animation: 이시이지반방마; */
+  animation: door-ani 2s ease-in-out 1s;
+}
+/* 문열기 키프레임 
+닫음-열림-열림-닫음*/
+@keyframes door-ani {
+  0% {
+    rotate: y 0deg;
+  }
+  30% {
+    rotate: y 125deg;
+  }
+  70% {
+    rotate: y 125deg;
+  }
+  100% {
+    rotate: y 0deg;
+  }
+}
+/* 키프레임 */
+
+/* 말풍선 애니호출 */
+.words {
+  /* 애니메이션 : 이시(이)지(반방)마 */
+  animation: tooltip-ani 1s ease-in-out 6s forwards;
+}
+/* 말풍선 키프레임 */
+@keyframes tooltip-ani {
+  /* 처음값이 기본값과 같으면 from 생략 가능 */
+  to {
+    opacity: 1;
+  }
+}
+/* 키프레임 */
+
+/* 마지애니 호출 */
+.marge {
+  animation: marge-ani 1s ease-in-out 6s forwards;
+}
+/* 마지키프레임 */
+@keyframes marge-ani {
+  0% {
+    bottom: -45%;
+    right: -24%;
+    width: 50%;
+    transform: rotate(0deg);
+  }
+  100% {
+    right: -25%;
+    bottom: -39%;
+    transform: rotate(-15deg)
+  }
+}
+/* 키프레임 */
+
+/* 리사 키프레임 */
+/* 키프레임 */
+
+/* 메기 애니 호출 */
+.maggie {
+  /* 등장 애니 */
+  animation: maggie-ani 1s ease-out 8s forwards,
+  /* 업다운 애니 - alternate는 번갈아 양방향 애니 세팅 */
+  maggie-updown-ani 1s ease-in-out 9s infinite alternate,
+  /* 왔다갔다애니 */
+  maggie-comengo-ani 4s ease-in-out 12s infinite alternate;
+}
+/* 메기 키프레임 */
+@keyframes maggie-ani {
+  to {
+    bottom: -15%;
+  }
+}
+/* 키프레임 */
+
+/* 메기 업다운 키프레임 */
+@keyframes maggie-updown-ani {
+  to {
+    bottom: -20%;
+  }
+}
+/* 키프레임 */
+
+/* 메기 왔다갔다 키프레임 */
+@keyframes maggie-comengo-ani {
+  0% {
+    left: 12%;
+  }
+  50% {
+    left: 8%;
+  }
+  100% {
+    left: 64%;
+  }
+}
+
+/* 바트 애니 호출 */
+.bart {
+  animation: bart-ani 1s ease-in-out 10s forwards,
+  bart-drop-ani 1s ease-in-out 12s infinite alternate;
+}
+/* 키프레임 */
+
+/* 바트 키프레임 */
+@keyframes bart-ani {
+  to {
+    top: -37%;
+  }
+}
+/* 떨어지는 바트 */
+@keyframes bart-drop-ani {
+  0% {
+    top: -37%;
+  }
+  100% {
+    bottom: -100%;
+    transition: rotate(360deg);
+  }
+}
+/* 키프레임 */
+
+/* 바트 추락 키프레임 */
+/* 키프레임 */
+
+/* 바트 일어섬 키프레임 */
+/* 키프레임 */
