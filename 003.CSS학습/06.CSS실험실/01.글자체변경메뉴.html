@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01.글자체변경메뉴</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+      /*
+            원본참고사이트
+            https://www.joinflowparty.com/on-demand
+            -> 메뉴를 클릭하여 중앙 메뉴
+            오버시 글자체가 다른 메뉴가
+            하단에서 올라옴. 아웃시 복귀
+        */
+
+        /* 초기화 */
+        ul{
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        }
+        a{
+          text-decoration: none;
+          color: black;
+        }
+        /* 메뉴 박스 */
+        .menu{
+          width: 600px;
+          margin: 0 auto;
+          background-color: #bfff0a;
+          padding: 15px;
+          border: 2px solid lightseagreen;
+          border-radius: 15px;
+        }
+        .menu li{
+          height: 80px;
+          overflow: hidden;
+        }
+        /* 메뉴 span */
+        .menu span{
+          display: block;
+          font-size: 30px;
+          line-height: 80px;
+        }
+        /* 두번째 메뉴만 글씨체변경 */
+        .menu span:last-child{
+          font-style: italic;
+          font-family: "dancing script";
+        }
+        /* 메뉴에 오버시 애니메이션 */
+        .menu a {
+          display: block;
+          transition: .4s ease-out;
+        }
+        .menu li:hover a {
+          /* transform: translateY(-50%); */
+          /* transform: translate(0, -50%); */
+          translate: 0 -50%;
+          /* -50% y축 이동값은 위쪽방향으로 현재 a요소 높이값 (80xp * 2) 크기의 절반을 의미함 */
+        }
+        /* 
+          [ 방법1 : 마진값 활용 ]
+          -> a요소를 대상으로 올린다 (단, a는 반드시 블록으로 변경)
+              display: inline-block;
+              margin-top: -80px;
+              transition: .5s;
+
+          [ 방법2 : position 활용 ]
+          -> 트랜지션은 변경 전에 top:0 설정을 해야함
+              position: relative;
+              top: -80px;
+              transition: .5s;
+
+          [ 방법3 : translate 활용 ]
+          -> a요소를 대상으로 함 (단, a는 반드시 블록으로 변경)
+              translate: 0 -50%;
+              display: block;
+              transition: .5s;
+              (display: block;으로 설정하는 이유는
+              transition이 inline요소이기 때문에)
+        */
+
+    </style>
+  </head>
+  <body>
+    <nav class="menu">
+      <ul>
+        <li>
+          <a href="#">
+            <span>EVENTS</span>
+            <span>Events</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>WHO WE ARE</span>
+            <span>Who we are</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>ON DEMAND</span>
+            <span>On demand</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>WHAT WE DO</span>
+            <span>What we do</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>HANDY TOOLS</span>
+            <span>Party tools</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>
