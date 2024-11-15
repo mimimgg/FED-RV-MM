@@ -1,0 +1,265 @@
+@charset "utf-8";
+
+/* 웹폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+/* font-family: 'Anton', sans-serif; */
+
+
+/* 
+  [ CSS의 변수 사용 ]
+  1. 최상위 영역에 변수를 세팅하여 특정 부분의 값을 한번에 컨트롤할 수 있다.
+  2. 설정방법
+    :root {
+      --변수명:값;
+    }
+  3. 사용방법:
+    var(--변수명)
+  4. 변수명명법:
+    일반적으로 -- 기호 뒤에 영문자를 쓰고 단어 구분마다 데쉬(-)를 사용하는 케밥케이스를 사용한다.
+
+  예)
+  :root {
+    --box-size1: 100px;
+  }
+
+  div.my {
+    width: var(--box-size1);
+  }
+
+  5. 변수사용의 유용성:
+    (1) 반복적으로 사용되는 값의 업데이트 시 한번에 제어할 수 있음 (재사용성)
+    (2) 미디어쿼리에서 값 변경시 변수값만 업데이트하면 전체 컨트롤이 가능
+
+  6. 변수 사용의 범위:
+    (1) 특정 사이즈 크기값
+    (2) 사이트 지정 컬러값
+    (3) 특정 변경가능한 모든 지정값
+*/
+
+/* CSS 변수 */
+:root {
+  /* 아이폰 가로 크기 */
+  --ip-width: 200px;
+  /* 아이폰 세로 크기 */
+  --ip-height: 400px;
+  /* 아이폰 두께 크기 */
+  --ip-side-size: 20px;
+
+  /* 그라데이션 색상 */
+  --grad-color1: #fff;
+  --grad-color2: skyblue;
+}
+
+/* 아이폰 회전 애니메이션 CSS */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(to bottom, var(--grad-color1) 20%, var(--grad-color2) 40%, #fff);
+  overflow: hidden;
+}
+
+/* 아이폰박스 */
+.iphone {
+  position: absolute;
+  top: calc(50% - var(--ip-height)/2);
+  left: calc(50% - var(--ip-width)/2);
+  width: var(--ip-width);
+  height: var(--ip-height);
+
+  outline: 2px solid blue;
+
+  /* 
+    [ CSS 트랜스폼 입체설정하기 ]
+    - 입체를 만들 부모요소에 설정한다.
+    (1) flat : 2D 설정 (기본값)
+    (2) preserve-3d : 3D 설정
+        -> 3D 설정 후 z축 이동 및 회전 사용이 가능해진다.
+  */
+  transform-style: preserve-3d;
+
+  /* 회전적용 */
+  transform: rotateX(10deg) rotateY(30deg);
+}
+
+/* 아이폰 각 면 공통 */
+.iphone span {
+  position: absolute;
+  width: var(--ip-width);
+  height: var(--ip-height);
+
+  /* 배경공통 */
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: #fff;
+}
+
+/* 1. 앞면 */
+.iphone span:nth-child(1) {
+  background-image: url(../images/ip01.png);
+
+  /* z축 이동하기 */
+  /* transform: translateZ(10px); */
+  translate: 0 0 10px;
+}
+
+/* 2. 뒷면 */
+.iphone span:nth-child(2) {
+  background-image: url(../images/ip02.png);
+
+  /* z축 이동하기 */
+  translate: 0 0 -10px;
+
+  /* 폰 뒤집기 */
+  rotate: y 180deg;
+}
+
+/* 3. 우측면 */
+.iphone span:nth-child(3) {
+  background-image: url(../images/ip03.png);
+  width: var(--ip-side-size);
+
+  right: -10px;
+  
+  /* y축 90도 회전하기 */
+  rotate: y 90deg;
+}
+
+/* 4. 좌측면 */
+.iphone span:nth-child(4) {
+  background-image: url(../images/ip04.png);
+  width: var(--ip-side-size);
+
+  left: -10px;
+  
+  /* y축 90도 회전하기 */
+  rotate: y 90deg;
+}
+
+/* 5. 아랫면 */
+.iphone span:nth-child(5) {
+  background-image: url(../images/ip05.png);
+  height: var(--ip-side-size);
+  
+  bottom: -10px;
+
+  /* x축 90도 회전하기 */
+  rotate: x 90deg;
+}
+
+/* 5. 윗면 */
+.iphone span:nth-child(6) {
+  background-image: url(../images/ip06.png);
+  height: var(--ip-side-size);
+  
+  top: -10px;
+
+  /* x축 90도 회전하기 */
+  rotate: x 90deg;
+}
+
+/* 애니메이션 호출 클래스 */
+.ip-ani {
+  /* 애니메이션 : 이시이지반방마 */
+  animation: ip-rotate-ani 3s ease-in-out 1s 2 alternate;
+  /* 이름 시간(3초) 이징 지연(1초) 반복(2회) 양방향 */
+}
+/* 아이폰 회전 키프레임 */
+@keyframes ip-rotate-ani {
+  to {
+    transform: rotateX(370deg) rotateY(-330deg);
+    /* 각도 설정 시 유의사항 */
+    /* 
+      360도 설정 시 이미 회전되어있는 초기 각도를 고려하여 [ 같은 방향이면 + ] [ 반대 방향이면 - ]로 쓰고 실제 각도를 더하거나 빼준다.
+    */
+  }
+}
+
+/* 흘러가는 글자 박스 */
+.fbx {
+  position: absolute;
+  width: 100vw;
+}
+
+.f1 {
+  top: 5vh;
+}
+.f2 {
+  bottom: 5vh;
+}
+.f2 .tbx {
+  translate: -50%;
+}
+
+/* 텍스트박스 */
+.tbx {
+  display: flex;
+  /* ul이 두개니가 2배 크기로 만들어서 하나는 바깥으로 나가있게 한다 */
+  width: 200vw;
+}
+/* 텍스트박스 하위 ul 2개 공통 */
+/* 2개인 이유는 반복단위 최소 개수임 */
+.tbx ul {
+  display: flex;
+  /* outline: 4px dotted red; */
+  flex: 1;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tbx li {
+  flex: 1;
+  /* outline: 2px dotted purple; */
+  text-align: center;
+  font-family: 'Anton', sans-serif;
+  font-size: 4vw;
+  color: #a0a0a0;
+  font-weight: bold;
+}
+
+/* 글자애니 클래스1 */
+.txt-ani1{
+  animation: txt-flow-ani1 10s linear infinite;
+}
+
+/* 글자 흐르게 하기 키프레임1 */
+@keyframes txt-flow-ani1 {
+  to{
+      translate: -50%;
+  }
+}
+
+/* 글자애니 클래스2 */
+.txt-ani2{
+  animation: txt-flow-ani2 10s linear infinite;
+}
+
+/* 글자 흐르게 하기 키프레임2 */
+@keyframes txt-flow-ani2 {
+  to{
+      translate: 0%;
+  }
+}
+
+/* 3번째 박스(반대방향주기 다른방법) */
+.f3{
+  bottom: 15vh;
+}
+.f3:hover .tbx{
+  /* 마우스 오버시 멈추게하기 */
+  animation-play-state: paused;
+  /* running 애니진행상태 / paused 애니 멈춤 상태 */
+}
+/* 글자애니 클래스3 */
+.txt-ani3{
+  /* 기존 왼쪽 방향 흐름 애니메이션을 그대로 호출함 */
+  animation: txt-flow-ani1 5s linear infinite reverse;
+  /* 방향 속성 값을 reverse로 하면 기존 애니가 반대로 적용된다! */
+}
+
+
+
