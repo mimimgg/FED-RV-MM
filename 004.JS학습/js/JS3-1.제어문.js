@@ -431,3 +431,41 @@ function showLocal() {
       없으면 이 부분이 실행됨(단, 필요시 사용)
       -> default문에는 break를 쓰지 않는다!
   **********************************************/
+
+
+  // [ for문 구구단 출력을 위한 코드 ]
+  // 1. 대상선정 - 이벤트대상, 변경대상
+  // 1-1. 이벤트 대상 : selec#selbx
+  var selbx = document.querySelector("#selbs");
+  // 1-2. 변경 대상 : .g1
+  var g1 = document.querySelector(".g1");
+  // DOM 선택이 된 이유는 외부JS 호출 시 defer로 호출했기 때문에
+  // html태그 로딩 후 실행됨.
+  // console.log("선택대상:", selbx,g1);
+
+  // 2. 이벤트 설정하기 
+  selbx.onchange = makeGugu;
+  // 함수를 그대로 할당하면 이벤트 발생 시 함수를 실행한다.
+
+  // 3. 함수만들기
+  function makeGugu(){
+    // 함수를 호출한 요소 자신은? this
+    // this === select#selbx요소
+
+    // 1. 선택값 option의 value값
+    var optVal = this.value;
+
+    // 2. 함수호출확인
+    console.log("구구단을 쓰자", optVal, this);
+
+    // 3. 구구단 만들기
+    var hcode = `<h2>${optVal}단</h2>`;
+
+    // 구구단 넣기
+    hcode += ` 4 * 3 = 12 <br> `;
+
+    // 4. 화면요소에 출력하기
+    // 대상.innerHTML = hcode;
+    g1.innerHTML = hcode;
+
+  }; /// makeGugu 함수 ///
