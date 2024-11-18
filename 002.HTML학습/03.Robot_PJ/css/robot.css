@@ -25,8 +25,10 @@ body {
 /* 1-1.로고 */
 h1.logo{
     position: fixed;
-    top: calc(50% - 10vw);
-    left: calc(50% - 10vw);
+    top: 0;
+    left: 0;
+    /* top: calc(50% - 10vw);
+    left: calc(50% - 10vw); */
     width: 20vw;
     height: 20vw;
     border-radius: 50%;
@@ -85,7 +87,25 @@ h1.logo{
 
 /****************** 2. 메인영역 ******************/
 
+/* 메인영역 속박스 */
+.main-area {
+    padding-top: 100vh;
+}
+
 /* 2-1. 로봇박스 */
+.main-area > .robot-box {
+    position: fixed;
+    top: 0;
+    /* left : 84% -> 50% */
+    left: 84%;
+    translate: -50%;
+    /* 축소 : 0.4 -> 0.8 */
+    scale: .4;
+    transform-origin: center 30%;
+    
+    padding-top: 100px;
+    padding-bottom: 700px;
+}
 
 /* 2-1-0. 로봇 말풍선 */
 .link-title{
@@ -170,10 +190,6 @@ h1.logo{
   */
   
 /* 2-1-1. 로봇머리 */
-.main-area > .robot-box {
-    padding-top: 100px;
-    padding-bottom: 700px;
-}
 .main-area > .robot-box > .head {
     position: relative;
     margin: 0 auto;

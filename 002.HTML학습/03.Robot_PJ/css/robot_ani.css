@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+/* 로봇 PJ 애니메이션 - 키프레임, 호출 구현 : robot_ani.css */
+
+/* 호출 */
+.main-area > .robot-box {
+  animation: move-robot-ani 4s ease-in-out 1s forwards;
+}
+
+/* 1. 로봇이동 애니메이션 */
+@keyframes move-robot-ani {
+  to {
+      /* left : 84% -> 50% */
+    left: 50%;
+    /* 축소 : 0.4 -> 0.8 */
+    scale: .8;
+  }
+}
+
+/* 호출 */
+.leg1 {
+  /* 트랜스폼 축 변경 (상단 : top) */
+  transform-origin: top;
+  /* 애니메이션 */
+  animation: step-walk-ani .5s 1s 8 alternate;
+  /* 이름, 시간, (이징), 지연, 반복, 방향, (마지막상태) */
+}
+.leg2 {
+  /* 트랜스폼 축 변경 (상단 : top) */
+  transform-origin: top;
+  /* 애니메이션 */
+  animation: step-walk-ani .5s 1.5s 8 alternate;
+  /* 이름, 시간, (이징), 지연, 반복, 방향, (마지막상태) */
+}
+
+/* 2. 다리구르기 애니 */
+@keyframes step-walk-ani {
+  to {
+    scale: 1 .8;
+  }
+}
