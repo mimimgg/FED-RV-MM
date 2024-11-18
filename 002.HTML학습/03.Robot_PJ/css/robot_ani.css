@@ -2,11 +2,6 @@
 
 /* 로봇 PJ 애니메이션 - 키프레임, 호출 구현 : robot_ani.css */
 
-/* 호출 */
-.main-area > .robot-box {
-  animation: move-robot-ani 4s ease-in-out 1s forwards;
-}
-
 /* 1. 로봇이동 애니메이션 */
 @keyframes move-robot-ani {
   to {
@@ -15,6 +10,18 @@
     /* 축소 : 0.4 -> 0.8 */
     scale: .8;
   }
+}
+
+/* 2. 다리구르기 애니 */
+@keyframes step-walk-ani {
+  to {
+    translate: 0 -30%;
+  }
+}
+
+/* 호출 */
+.main-area > .robot-box {
+  animation: move-robot-ani 4s ease-in-out 1s forwards;
 }
 
 /* 호출 */
@@ -33,9 +40,170 @@
   /* 이름, 시간, (이징), 지연, 반복, 방향, (마지막상태) */
 }
 
-/* 2. 다리구르기 애니 */
-@keyframes step-walk-ani {
+/* 3. 왼쪽팔 올리기(1) */
+@keyframes move-arm-ani1 {
   to {
-    scale: 1 .8;
+    rotate: 30deg;
+  }
+}
+
+.arm1 {
+  transform-origin: top;
+  animation: move-arm-ani1 .8s 5s forwards;
+}
+
+/* 4. 왼쪽팔 올리기(2) */
+@keyframes move-arm-ani2 {
+  to {
+    rotate: -60deg
+  }
+}
+
+.arm1 > span {
+  transform-origin: top;
+  animation: move-arm-ani2 .8s 5s forwards;
+}
+
+/* 5. 왼쪽팔 올리기(3) */
+@keyframes move-arm-ani3 {
+  to {
+    rotate: 30deg
+  }
+}
+
+.arm1 > span::after {
+  transform-origin: top;
+  animation: move-arm-ani3 .8s 5s forwards;
+}
+
+/* 6. 오른쪽팔 올리기(1) */
+@keyframes move-arm2-ani1 {
+  to {
+    rotate: -150deg;
+  }
+}
+@keyframes move-arm2-waving-ani1 {
+  to{
+    rotate: -140deg;
+  }
+}
+
+.arm2 {
+  transform-origin: top;
+  animation: move-arm2-ani1 .4s 6s forwards,
+  move-arm2-waving-ani1 .4s ease-in-out 6.4s infinite alternate;
+}
+
+/* 7. 오른쪽 팔뚝 흔들기(1) */
+@keyframes move-arm2-ani2 {
+  to{
+    rotate: -20deg;
+  }
+}
+@keyframes move-arm2-waving-ani2 {
+  to{
+    rotate: 10deg;
+  }
+}
+
+.arm2 span {
+  transform-origin: top;
+  animation: move-arm2-ani2 .4s 6s forwards,
+  move-arm2-waving-ani2 .4s ease-in-out 6.4s infinite alternate;
+}
+
+/* 손목돌리기 */
+@keyframes rotate-ani {
+  to {
+    rotate: y 180deg;
+    translate: 18% 0;
+  }
+}
+
+.arm2 span::after {
+  animation: rotate-ani .1s 6.4s forwards;
+}
+
+
+/* 8. 로고애니 */
+.logo {
+  /* 처음출발 크기지정 */
+  transform: scale(2);
+
+  animation: 
+    /* 1초후 3초간 이동애니 셋팅 */ 
+    logo-ani 3s linear 1s alternate
+      forwards,
+    /* 4초후 스윙애니 영원히 셋팅 */ 
+    swing-ani 0.4s ease-in-out 4s infinite
+      alternate;
+  /* 
+    animation: 
+    logo-ani 2s ease-in-out 1s 3 alternate forwards; */
+}
+
+@keyframes logo-ani {
+  /* 정가운데 출발 */
+  0% {
+    top: calc(50% - 10vw);
+    left: calc(50% - 10vw);
+    transform: scale(2);
+  }
+  /* 처음위치이동 : 왼쪽위 */
+  20% {
+    top: calc(0% + 5vw);
+    left: calc(0% + 5vw);
+    transform: scale(0.5);
+  }
+  /* 두번째위치이동 : 오른쪽위 */
+  40% {
+    top: calc(0% + 5vw);
+    left: calc(100% - 25vw);
+    transform: scale(0.5);
+  }
+  /* 세번째위치이동 : 오른쪽아래 */
+  60% {
+    top: calc(100% - 25vw);
+    left: calc(100% - 25vw);
+    transform: scale(0.5);
+  }
+  /* 네번째위치이동 : 왼쪽아래 */
+  80% {
+    top: calc(100% - 25vw);
+    left: calc(0% + 5vw);
+    transform: scale(0.5);
+  }
+  /* 처음위치로 돌아옴! : 왼쪽위 */
+  90% {
+    top: calc(0% + 5vw);
+    left: calc(0% + 5vw);
+    transform: scale(1);
+  }
+  /* 각도 돌리기:다음 스윙애니 출발각도로 변경! */
+  100% {
+    top: calc(0% + 5vw);
+    left: calc(0% + 5vw);
+    transform: scale(1) rotate(30deg);
+  }
+}
+
+/* 제자리 스윙 애니 */
+@keyframes swing-ani {
+  from {
+    transform: scale(1) rotate(30deg);
+  }
+  to {
+    transform: scale(1) rotate(-30deg);
+  }
+}
+
+/* 9. 말풍선 나타나기 애니 */
+.link-title{
+  animation: show-tooltip .6s ease-in 10s forwards;
+}
+@keyframes show-tooltip {
+  to{
+      transform: 
+      translateX(200px) scale(1);
   }
 }

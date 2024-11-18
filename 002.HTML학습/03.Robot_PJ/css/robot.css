@@ -5,6 +5,10 @@
 @import url(./reset.css);
 @import url(./core.css);
 
+html {
+    scroll-behavior: smooth;
+}
+
 html, body {
     height: 100%;
 }
@@ -25,10 +29,8 @@ body {
 /* 1-1.로고 */
 h1.logo{
     position: fixed;
-    top: 0;
-    left: 0;
-    /* top: calc(50% - 10vw);
-    left: calc(50% - 10vw); */
+    top: calc(50% - 10vw);
+    left: calc(50% - 10vw);
     width: 20vw;
     height: 20vw;
     border-radius: 50%;
@@ -102,7 +104,7 @@ h1.logo{
     /* 축소 : 0.4 -> 0.8 */
     scale: .4;
     transform-origin: center 30%;
-    
+
     padding-top: 100px;
     padding-bottom: 700px;
 }
@@ -354,8 +356,6 @@ h1.logo{
 /* 왼팔 */
 .main-area >.robot-box >.body >.arm1 {
     left: -70px;
-    rotate: 45deg;
-    transform-origin: top;
 }
 /* 오른팔 */
 .main-area >.robot-box >.body >.arm2 {
