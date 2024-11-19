@@ -60,6 +60,10 @@ body {
   height: 100vh;
   background-image: linear-gradient(to bottom, var(--grad-color1) 20%, var(--grad-color2) 40%, #fff);
   overflow: hidden;
+
+  /* 커서 이미지 변경 */
+  /* 이미지 크기 변경은 불가! 따라서 일정크기 이하여야만 커서로 사용 가능 128px 가로, 세로 중 모두 이하여야 함 */
+  cursor: url('../images/coke_cursor.png'), auto;
 }
 
 /* 아이폰박스 */
@@ -83,6 +87,9 @@ body {
 
   /* 회전적용 */
   transform: rotateX(10deg) rotateY(30deg);
+
+  /* 트랜지션 적용 */
+  transition: .4s ease-out;
 }
 
 /* 아이폰 각 면 공통 */
@@ -106,6 +113,27 @@ body {
   translate: 0 0 10px;
 }
 
+/* 배경이미지 하나 추가 */
+.iphone span:nth-child(1)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  height: 0%;
+  background: url(../images/avatar.jpg) no-repeat center/cover;
+
+  /* 애니메이션 : 이시이지반방마 */
+  animation: avatar-ani .5s ease-in-out 6s forwards
+}
+
+/* 아바타 가운데서 생겨나기 */
+@keyframes avatar-ani {
+  to {
+    top: 20%;
+    height: 60%;
+  }
+}
 /* 2. 뒷면 */
 .iphone span:nth-child(2) {
   background-image: url(../images/ip02.png);
@@ -270,6 +298,7 @@ body {
   bottom: 0;
   right: 0;
   z-index: 9;
+  display: none;
 }
 
 .evt-bx ul {
@@ -283,5 +312,5 @@ body {
 .evt-bx ul li {
   width: 20vw;
   height: 33.333vh;
-  outline: 2px dashed purple;
+  /* outline: 2px dashed purple; */
 } 
