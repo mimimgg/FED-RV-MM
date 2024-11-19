@@ -261,5 +261,27 @@ body {
   /* 방향 속성 값을 reverse로 하면 기존 애니가 반대로 적용된다! */
 }
 
+/* 아이폰 따라보기 이벤트 박스 */
+.evt-bx {
+  position: fixed;
+  /* top, left, bottom, right 0 / 사방을 당겨서 화면 채우기 */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9;
+}
 
+.evt-bx ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
+.evt-bx ul li {
+  width: 20vw;
+  height: 33.333vh;
+  outline: 2px dashed purple;
+} 
