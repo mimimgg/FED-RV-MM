@@ -14,7 +14,7 @@ body {
 /* 공사중 표시 : 구현시 박스 표시 */
 body * {
     /* 아웃라인은 아무런 영향이 없음 (보더주지말기) */
-    outline: 2px dashed #ccc;
+    /* outline: 2px dashed #ccc; */
 }
 
 /*************** 1. 상단영역 ***************/
@@ -29,24 +29,116 @@ header.top-area > .tit {
     font-size: 30px;
     line-height: 80px;
     color: aquamarine;
-    text-align: center;
+    text-align: center; 
     box-shadow: 0 0 4px aquamarine;
+
+    /* 애니메이션 : 이시이지반방마 */
+    animation: tit-ani .8s ease-in infinite alternate;
 }
+
+/* 타이틀 애니 키프레임 */
+@keyframes tit-ani {
+    to {
+        text-shadow: 0 0 12px aquamarine;
+    }
+}
+
 /* 1-2. GNB 메뉴 */
 header.top-area > .gnb {
     position: absolute;
     bottom: 10px;
     right: 10px;
+    z-index: 2;
 }
 header.top-area > .gnb > ul {
+    display: flex;
+    /* 사이간격 gap : 로간격 컬럼간격 */
+    gap: 0 1.5rem;
     font-family: 'Jua', sans-serif;
-    font-size: 20px;
+    font-size: 2rem;
 }
 header.top-area > .gnb > ul > li {
-    float: left;
+    /* 서브메뉴를 위한 부모자격 */
+    position: relative;
+    padding-bottom: 1rem;
+    /* float: left; */
 }
+/*  플렉스박스일 경우 gap속성으로 세팅한다. 
 header.top-area > .gnb > ul > li+li {
     margin-left: 25px;
+}
+*/
+
+/* 서브메뉴 */
+.smenu{
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 147px;
+    /* outline: 2px solid yellow; */
+    /* box-shadow: 0 0 5px #fff; */
+    /* 모든 외곽선에 그림자(글로우)효과를 주려면 filter 드랍쉐도우를 사용함! */
+    filter: drop-shadow(0 0 5px #fff);
+    border-radius: 5px;
+    font-size: 1.7rem;
+    line-height: 1.6;
+    padding: 3px;
+    background: url(../images/bg_smenu.png) no-repeat center/cover;
+    /* 처음에 안보임 */
+    display: none;
+}
+/* 상위메뉴 오버시 서브보이기 */
+.gnb ul>li:hover .smenu{
+    display: block;
+}
+/* 가상요소로 삼각형 만들기 */
+.smenu::before{
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 15px;
+    background-color: #303030;
+    /* 클립패쓰로 자르기 */
+    clip-path: polygon(0 100%, 50% 0,100% 100%);
+}
+/*************** 서브메뉴 ol ***************/
+.smenu ol{
+    border: 1px solid #ccc;
+    padding: 10px;
+    white-space: nowrap;
+}
+/* 사이구분선 클래스 */
+.bd-top{
+    border-top: 1px solid #ccc;
+}
+/* 서브메뉴 오버시 글자색 */
+.smenu li:hover a{
+    color: red;
+}
+/* 서브메뉴 오버시 아이콘 */
+.smenu li:hover a::after{
+    content: '🧛‍♂️';
+    /* 오른쪽 끝에 위치 */
+    float: right;
+}
+/* 예매 */
+.gnb ul>li:nth-child(2) 
+.smenu li:hover a::after{
+    content: '🍋';
+}
+/* 극장 */
+.gnb ul>li:nth-child(3) 
+.smenu li:hover a::after{
+    content: '🌞';
+}
+/* 이벤트&컬처 */
+.gnb ul>li:nth-child(4) 
+.smenu li:hover a::after{
+    content: '📣';
 }
 
 /*************** 2. 메인영역 ***************/
@@ -122,6 +214,37 @@ nav.poster-menu ul li a .mv-info ol li:first-child {
 }
 
 /*************** 3. 하단영역 ***************/
-footer.footer-area {
-    height: 100px;
+.footer-area{
+    /* 플렉스 박스 */
+    display: flex;
+    /* 진행방향 수직정렬(한줄) */
+    align-items: center;
+    gap: 0 20px;
+    padding: 30px;
+
+    /* height: 100px; */
+}
+/* 3-1.하단로고 */
+/* 3-2.회사정보 */
+.co-info address{
+    font-family: 'cute font';
+    font-size: 1.6rem;
+    color: #fff;
+    /* 이탤릭해제 */
+    font-style: normal;
+}
+/* 3-3.SNS */
+.sns-box{
+    /* 플렉스 자식에서 왼쪽마진을
+    auto로 주면 오른쪽 끝으로 이동함 */
+    margin-left: auto;
+}
+.sns-box ol{
+    /* 플렉스박스 */
+    display: flex;
+    gap: 0 10px;
+}
+.sns-box a{
+    font-size: 4rem;
+    color: #fff;
 }

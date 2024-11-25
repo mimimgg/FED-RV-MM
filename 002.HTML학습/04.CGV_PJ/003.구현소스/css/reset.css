@@ -3,6 +3,11 @@
 /* CGV PJ : 리셋 CSS - reset.css */
 /* 기본 초기화 셋팅 */
 
+/* 글자크기 Root : rem단위 표준 */
+html {
+    font-size: 10px;
+}
+
 
 /* 기본 초기화 */
 html,

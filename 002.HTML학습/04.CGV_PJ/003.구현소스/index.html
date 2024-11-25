@@ -1,167 +1,260 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CGV에 오신 것을 환영합니다</title>
+    <!-- 폰트어썸 아이콘 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/main.css" />
 
     <!-- 자바스크립트 실행구역 -->
     <script>
-        // JS 한줄주석
-        /* JS 여러줄주석 */
-        // 개발자모드 - console탭에서 확인
-        console.log("여긴 어디? 나는 누구?");
+      // JS 한줄주석
+      /* JS 여러줄주석 */
+      // 개발자모드 - console탭에서 확인
+      console.log("여긴 어디? 나는 누구?");
 
-        // 호출 시에만 실행하고 싶으면 함수 사용
-        // function(전달변수){코드}
-        /* 함수실행원리:
+      // 호출 시에만 실행하고 싶으면 함수 사용
+      // function(전달변수){코드}
+      /* 함수실행원리:
         함수 이름을 이벤트 속성에서 불러준다.
         이벤트 속성은 모든 요소 안에 있다 */
-        // <태그 on이벤트명="값">
-        // 예) <div click="멍멍이">
+      // <태그 on이벤트명="값">
+      // 예) <div click="멍멍이">
 
-        // 함수 작성! | 함수는 코드저장소임
-        function 멍멍이(먹이){
-            // 알림창 띄우기 (alert = 기본내장)
-            // alert("안녕나야"+먹이);
+      // 함수 작성! | 함수는 코드저장소임
+      function 멍멍이(먹이) {
+        // 알림창 띄우기 (alert = 기본내장)
+        // alert("안녕나야"+먹이);
 
-            // 콘솔창 띄우기 (consol = console창)
-            console.log ("안녕나야"+먹이);
+        // 콘솔창 띄우기 (consol = console창)
+        console.log("안녕나야" + 먹이);
 
-            // 소방대장 도착
-            // 설계도 가져와 -> document
-            document.getElementById("ifr").src = "https://www.youtube.com/embed/"+먹이+"?autoplay=1";
-            // document : 현재 전체 웹문서 객체
-            // . : 하위 속성/메서드 접근
-            // getElementById(아이디명) : # 접근 메서드
-            // JS에서 이퀄(=)은 왼쪽 값이 오른쪽에 들어감(할당)
-        } ///////// 멍멍이 함수 /////////
-
+        // 소방대장 도착
+        // 설계도 가져와 -> document
+        document.getElementById("ifr").src = "https://www.youtube.com/embed/" + 먹이 + "?autoplay=1";
+        // document : 현재 전체 웹문서 객체
+        // . : 하위 속성/메서드 접근
+        // getElementById(아이디명) : # 접근 메서드
+        // JS에서 이퀄(=)은 왼쪽 값이 오른쪽에 들어감(할당)
+      } ///////// 멍멍이 함수 /////////
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- 1. 상단영역 -->
-     <header class="top-area part">
-        <!-- 1-1. 타이틀 -->
-        <h1 class="tit">CGV 예고편 상영관</h1>
-        <!-- 1-2. GNB 메뉴 -->
-        <nav class="gnb">
-            <ul>
+    <header class="top-area part">
+      <!-- 1-1. 타이틀 -->
+      <h1 class="tit">CGV 예고편 상영관</h1>
+      <!-- 1-2. GNB 메뉴 -->
+      <nav class="gnb">
+        <ul>
+          <li>
+            <a href="#">영화</a>
+            <!-- 서브메뉴 -->
+            <div class="smenu">
+              <ol>
                 <li>
-                    <a href="#">영화</a>
+                  <a href="#">무비차트</a>
                 </li>
                 <li>
-                    <a href="#">예매</a>
+                  <a href="#">HD 트레일러</a>
                 </li>
                 <li>
-                    <a href="#">극장</a>
+                  <a href="#">무비파인더</a>
+                </li>
+                <li class="bd-top">
+                  <a href="#">CGV아트하우스</a>
+                </li>
+              </ol>
+            </div>
+          </li>
+          <li>
+            <a href="#">예매</a>
+            <!-- 서브메뉴 -->
+            <div class="smenu">
+              <ol>
+                <li>
+                  <a href="#">빠른예매</a>
                 </li>
                 <li>
-                    <a href="#">이벤트&amp;컬처</a>
+                  <a href="#">상영시간표</a>
                 </li>
-            </ul>
-        </nav>
-     </header>
+              </ol>
+            </div>
+          </li>
+          <li>
+            <a href="#">극장</a>
+            <!-- 서브메뉴 -->
+            <div class="smenu">
+              <ol>
+                <li>
+                  <a href="#">CGV 극장</a>
+                </li>
+                <li>
+                  <a href="#">특별관</a>
+                </li>
+                <li class="bd-top">
+                  <a href="#">CLUB 서비스</a>
+                </li>
+              </ol>
+            </div>
+          </li>
+          <li>
+            <a href="#">이벤트&amp;컬처</a>
+            <!-- 서브메뉴 -->
+            <div class="smenu">
+              <ol>
+                <li>
+                  <a href="#">이벤트</a>
+                </li>
+                <li>
+                  <a href="#">기프트샵</a>
+                </li>
+                <li>
+                  <a href="#">매거진</a>
+                </li>
+              </ol>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
     <!-- 2. 메인영역 -->
-     <main class="main-area part">
-        <!-- 2-1. 스크린 -->
-         <div class="screen">
-            <!-- 유튜브 아이프레임 (iframe은 인라인요소) -->
-            <iframe id="ifr" src="https://www.youtube.com/embed/eq4cFcEua8Q?autoplay=1&mute=1&controls=0&loop=1&playlist=eq4cFcEua8Q"  allow="autoplay">
-            </iframe>
-         </div>
-        <!-- 2-2. 포스터메뉴 -->
-         <nav class="poster-menu">
-            <ul>
-                <li>
-                    <a href="#" onclick="멍멍이('nxbmhop7D1M')">
-                        <!-- 포스터이미지 -->
-                        <img src="./images/m01.jpg" alt="아마존 활명수">
-                        <!-- 영화정보 박스 -->
-                        <div class="mv-info">
-                            <ol>
-                                <li>아마존 활명수</li>
-                                <li>류승룡, 진선규</li>
-                                <li>코미디</li>
-                            </ol>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" onclick="멍멍이('5VPwCGe9S5c')">
-                        <img src="./images/m02.jpg" alt="대도시의 사랑법">
-                        <!-- 영화정보 -->
-                        <div class="mv-info">
-                            <ol>
-                                <li>대도시의 사랑법</li>
-                                <li>김고은, 노상현</li>
-                                <li>드라마</li>
-                            </ol>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" onclick="멍멍이('soCtsN0JYUg')">
-                        <img src="./images/m03.jpg" alt="베놈: 라스트 댄스">
-                        <!-- 영화정보 -->
-                        <div class="mv-info">
-                            <ol>
-                                <li>베놈: 라스트 댄스</li>
-                                <li>톰 하디</li>
-                                <li>액션, SF, 스릴러</li>
-                            </ol>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" onclick="멍멍이('ZuV0obhqBXM')">
-                        <img src="./images/m04.jpg" alt="4분 44초">
-                        <!-- 영화정보 -->
-                        <div class="mv-info">
-                            <ol>
-                                <li>4분 44초</li>
-                                <li>유지애, 함연지</li>
-                                <li>공포(호러)</li>
-                            </ol>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" onclick="멍멍이('YRV-BwoqgoQ')">
-                        <img src="./images/m05.jpg" alt="보통의 가족">
-                        <!-- 영화정보 -->
-                        <div class="mv-info">
-                            <ol>
-                                <li>보통의 가족</li>
-                                <li>설경구, 장동건</li>
-                                <li>드라마</li>
-                            </ol>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" onclick="멍멍이('g32lft6lOFw')">
-                        <img src="./images/m06.jpg" alt="아이브 더 퍼스트 월드투어 인 시네마">
-                        <!-- 영화정보 -->
-                        <div class="mv-info">
-                            <ol>
-                                <li>아이브 더 퍼스트 월드투어 인 시네마</li>
-                                <li>아이브</li>
-                                <li>공연</li>
-                            </ol>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-         </nav>
-     </main>
+    <main class="main-area part">
+      <!-- 2-1. 스크린 -->
+      <div class="screen">
+        <!-- 유튜브 아이프레임 (iframe은 인라인요소) -->
+        <iframe
+          id="ifr"
+          src="https://www.youtube.com/embed/eq4cFcEua8Q?autoplay=1&mute=1&controls=0&loop=1&playlist=eq4cFcEua8Q"
+          allow="autoplay"
+        >
+        </iframe>
+      </div>
+      <!-- 2-2. 포스터메뉴 -->
+      <nav class="poster-menu">
+        <ul>
+          <li>
+            <a href="#" onclick="멍멍이('nxbmhop7D1M')">
+              <!-- 포스터이미지 -->
+              <img src="./images/m01.jpg" alt="아마존 활명수" />
+              <!-- 영화정보 박스 -->
+              <div class="mv-info">
+                <ol>
+                  <li>아마존 활명수</li>
+                  <li>류승룡, 진선규</li>
+                  <li>코미디</li>
+                </ol>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick="멍멍이('5VPwCGe9S5c')">
+              <img src="./images/m02.jpg" alt="대도시의 사랑법" />
+              <!-- 영화정보 -->
+              <div class="mv-info">
+                <ol>
+                  <li>대도시의 사랑법</li>
+                  <li>김고은, 노상현</li>
+                  <li>드라마</li>
+                </ol>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick="멍멍이('soCtsN0JYUg')">
+              <img src="./images/m03.jpg" alt="베놈: 라스트 댄스" />
+              <!-- 영화정보 -->
+              <div class="mv-info">
+                <ol>
+                  <li>베놈: 라스트 댄스</li>
+                  <li>톰 하디</li>
+                  <li>액션, SF, 스릴러</li>
+                </ol>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick="멍멍이('ZuV0obhqBXM')">
+              <img src="./images/m04.jpg" alt="4분 44초" />
+              <!-- 영화정보 -->
+              <div class="mv-info">
+                <ol>
+                  <li>4분 44초</li>
+                  <li>유지애, 함연지</li>
+                  <li>공포(호러)</li>
+                </ol>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick="멍멍이('YRV-BwoqgoQ')">
+              <img src="./images/m05.jpg" alt="보통의 가족" />
+              <!-- 영화정보 -->
+              <div class="mv-info">
+                <ol>
+                  <li>보통의 가족</li>
+                  <li>설경구, 장동건</li>
+                  <li>드라마</li>
+                </ol>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick="멍멍이('g32lft6lOFw')">
+              <img src="./images/m06.jpg" alt="아이브 더 퍼스트 월드투어 인 시네마" />
+              <!-- 영화정보 -->
+              <div class="mv-info">
+                <ol>
+                  <li>아이브 더 퍼스트 월드투어 인 시네마</li>
+                  <li>아이브</li>
+                  <li>공연</li>
+                </ol>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </main>
 
     <!-- 3. 하단영역 -->
-     <footer class="footer-area part">
-
-     </footer>
-
-</body>
+    <footer class="footer-area part">
+      <!-- 3-1.하단로고 -->
+      <div class="logo">
+        <img src="./images/blogo.png" alt="하단로고" />
+      </div>
+      <!-- 3-2.회사정보 -->
+      <div class="co-info">
+        <address>
+          (04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)
+          <br />
+          대표이사 : 최병환사업자등록번호 : 104-81-45690통신판매업신고번호 : 2017-서울용산-0662 <br />
+          개인정보보호 책임자 : 정종민대표이메일 : cjcgvmaster@cj.netCGV고객센터 : 1544-1122
+        </address>
+      </div>
+      <!-- 3-3.SNS -->
+      <div class="sns-box">
+        <ol>
+          <!-- 페이스북 -->
+          <li>
+            <a class="fa-brands fa-square-facebook" href="#"></a>
+          </li>
+          <!-- 트위터X -->
+          <li>
+            <a class="fa-brands fa-square-twitter" href="#"></a>
+          </li>
+          <!-- 인스타그램 -->
+          <li>
+            <a class="fa-brands fa-square-instagram" href="#"></a>
+          </li>
+          <!-- 유튜브 -->
+          <li>
+            <a class="fa-brands fa-square-youtube" href="#"></a>
+          </li>
+        </ol>
+      </div>
+    </footer>
+  </body>
 </html>
