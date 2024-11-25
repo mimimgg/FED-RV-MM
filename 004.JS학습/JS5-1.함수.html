@@ -403,14 +403,34 @@
         // for문을 돌려서 h2태그에 넣고 .letters박스에
         // 출력시키기
 
-       
+        // 전달값 개수
+        let cnt = arguments.length;
+        
+        // 출력대상 .letters
+        let txtBox = document.querySelector(".letters");
+
+        // for문으로 반복하여 글자를 <h2>태그로 싼 후 출력한다.
+          for ( let i = 0 ; i < cnt ; i++){
+            txtBox.innerHTML += `
+              <h2>${arguments[i]}</h2>
+            `;
+          } //// for ////
+
+      
       } //////////////// myFn 함수 /////////////////
       /////////////////////////////////////////////
 
       // 윈도우 컨텐츠 로딩후 호출
       window.addEventListener("load", function () {
         // 함수호출하기
-        
+         // 함수호출하기
+        myFn(
+          "집에가고싶어",
+          "집에가고싶어",
+          "집에가고싶어",
+          "집에가고싶어",
+          "집에가고싶어"
+        );
       });
 
       // 함수의 전달변수가 없어도 보내는 전달값이 있으면
@@ -438,12 +458,16 @@
         console.log("퐈이어~~!");
 
         // 2.대상선정: .fireworks
-        
+        let fireworks = document.querySelector(".fireworks");
 
         // 3.변경 적용하기 : 보이게하기
-        
+        fireworks.style.display = "block";
 
         // 4. 3초후 다시 안보이게 처리하기
+        setInterval (() => {
+          fireworks.style.display = "none";
+        }, 3000);
+        
         // setTimeout(함수,시간)
         
       } ////////// showFireworks 함수 ////////////
