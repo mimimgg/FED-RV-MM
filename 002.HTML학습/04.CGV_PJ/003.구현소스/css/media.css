@@ -1,0 +1,11 @@
+@charset "urf-8";
+
+/* CGV PJ 미디어쿼리 CSS - media.css */
+
+/**************** 최대크기 1350px 이하 ****************/
+@media screen and (max-width: 1350px) {
+  header.top-area > .gnb {
+    right: 75px;
+  }
+}
+/**************** 최대크기 1350px 이하 ****************/

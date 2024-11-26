@@ -141,20 +141,90 @@ header.top-area > .gnb > ul > li+li {
     content: '📣';
 }
 
+/* 영사기 박스 */
+.cam {
+    position: absolute;
+    top: -10px;
+    right: -65px;
+}
+
+/* 영사기 이미지 */
+.cam img {
+    width: 50px;
+
+    rotate: 30deg;
+    /* 트랜지션 */
+    transition: .3s .3s;
+}
+/* 오버시 영사기 이미지 회전 */
+.gnb:hover .cam img {
+    rotate: 0deg;
+    transition-delay: 0s;
+}
+/* 빔프로젝트 빔 */
+.beam {
+    position: absolute;
+    top: -16px;
+    right: 7px;
+    width: 0;
+    height: 70px;
+    background: url(../images/bim.png) no-repeat right/auto 100%;
+    z-index: -1;
+
+    /* 트랜지션 */
+    transition: .3s;
+}
+/* 오버시 빔 회전 */
+.gnb:hover .beam {
+    width: 200px;
+    transition-delay: .4s;
+    opacity: 1;
+    /* 빔프로젝트 빛 떨림 애니메이션 */
+    animation: beam-ani .05s linear infinite alternate; 
+}
+@keyframes beam-ani {
+    to {
+        opacity: .5;
+    }
+}
+
+/* 가상요소로 스크린 만들기 */
+.cam::after {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    top: -15px;
+    right: 120px;
+    opacity: 0;
+    width: 0;
+    height: 66px;
+    background: url(../images/screen.gif) no-repeat -50% center/auto 80%;
+
+    transition: opacity .3s;
+}
+/* 오버 시  */
+.gnb:hover .cam::after {
+    width: 129px;
+    opacity: 1;
+    transition-delay: .6s;
+}
+
 /*************** 2. 메인영역 ***************/
 main.main-area {
     position: relative;
-    height: 788px;
+    /* height: 788px; */
     background: url(../images/bg.jpg) no-repeat center/cover;
+
+    /* 비율설정하기 : 이때 높이값을 주면 안됨 */
+    aspect-ratio: 1200 / 788;
 }
 /* 2-1. 스크린 */
 .screen {
     position: absolute;
-    top: 136px;
-    left: 257px;
-
-    width: 700px;
-    height: 405px;
+    top: 17.1%;
+    left: 21.3%;
+    width: 59%;
+    height: 51%;
     background-color: #000;
 }
 .screen iframe#ifr {
@@ -166,12 +236,15 @@ main.main-area {
 /* 2-2. 포스터메뉴 */
 nav.poster-menu {
     position: absolute;
-    bottom: 0;
-    left: 225px;
+    bottom: 3%;
+    left: 50%;
+    translate: -50%;
+}
+nav.poster-menu ul {
+    display: flex;    
 }
 nav.poster-menu ul > li {
     position: relative;
-    float: left;
     overflow: hidden;
 }
 /* li+li 앞에 li가 있는 li선택
