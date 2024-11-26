@@ -36,11 +36,12 @@ ul,ol {
 }
 
 /* float 해제 세팅 */
-ul::after, ol::after {
+/* flex에는 불필요함 */
+/* ul::after, ol::after {
     content: '';
     display: block;
     clear: both;
-}
+} */
 
 /* a요소 리셋 */
 a {
