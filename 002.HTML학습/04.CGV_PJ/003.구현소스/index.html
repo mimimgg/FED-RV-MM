@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
     <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/media.css">
+    <link rel="stylesheet" href="./css/media.css" />
     <!-- 자바스크립트 실행구역 -->
     <script>
       // JS 한줄주석
@@ -34,7 +34,7 @@
 
         // 소방대장 도착
         // 설계도 가져와 -> document
-        document.getElementById("ifr").src = "https://www.youtube.com/embed/" + 먹이 + "?autoplay=1";
+        document.getElementById("ifr").src = "https://www.youtube.com/embed/" + 먹이 + "?autoplay=1&playsinline=1";
         // document : 현재 전체 웹문서 객체
         // . : 하위 속성/메서드 접근
         // getElementById(아이디명) : # 접근 메서드
@@ -136,7 +136,7 @@
         <!-- 유튜브 아이프레임 (iframe은 인라인요소) -->
         <iframe
           id="ifr"
-          src="https://www.youtube.com/embed/eq4cFcEua8Q?autoplay=1&mute=1&controls=0&loop=1&playlist=eq4cFcEua8Q"
+          src="https://www.youtube.com/embed/eq4cFcEua8Q?autoplay=1&mute=1&controls=0&loop=1&playlist=eq4cFcEua8Q&playsinline=1"
           allow="autoplay"
         >
         </iframe>

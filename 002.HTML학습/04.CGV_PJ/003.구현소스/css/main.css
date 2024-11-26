@@ -275,8 +275,8 @@ nav.poster-menu ul li a .mv-info {
     background-color: #00000091;
     text-align: center;
     line-height: 2;
-    padding-top: 35px;
-    font-size: min(1.6rem, 1.3vw);
+    padding-top: min(3.5rem, 2.5vw);
+    font-size: min(1.6rem, 1.4vw);
     font-family: 'Cute Font', cursive;
     box-sizing: border-box;
     transition: .3s ease-out;
@@ -290,7 +290,7 @@ nav.poster-menu ul li:hover .mv-info {
     top: 0;
 }
 nav.poster-menu ul li a .mv-info ol li:first-child {
-    font-size: min(2rem, 1.5vw);
+    font-size: min(2rem, 1.9vw);
     color: aqua;
 }
 

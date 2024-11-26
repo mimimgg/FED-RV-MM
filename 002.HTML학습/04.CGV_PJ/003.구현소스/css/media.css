@@ -1,11 +1,105 @@
-@charset "urf-8";
-
+@charset "utf-8";
 /* CGV PJ 미디어쿼리 CSS - media.css */
 
-/**************** 최대크기 1350px 이하 ****************/
+/********** 최대크기 1350px 이하 시작 **********/
 @media screen and (max-width: 1350px) {
+  /* GNB 위치변경 */
   header.top-area > .gnb {
     right: 75px;
   }
 }
-/**************** 최대크기 1350px 이하 ****************/
+/********** 최대크기 1350px 이하 종료 **********/
+
+/********** 최대크기 1000px 이하 시작 **********/
+@media screen and (max-width: 1000px) {
+  /* GNB 위치변경 */
+  header.top-area > .gnb {
+    bottom: auto;
+    top: 80px;
+    right: 18px;
+  }
+  /* 플렉스 진행방향 컬럼으로 변경 */
+  header.top-area > .gnb > ul {
+    flex-direction: column;
+    /* 메뉴만 숨기기 */
+    display: none;
+    /* 영상기와 연결되게 셋팅!
+    이유: 마우스오버시 이벤트 끊어지지 않게함! */
+    padding-top: 10px;
+    margin-top: -10px;
+  }
+  /* GNB오버시 메뉴 보이기
+  보일때는 원래 display로! 여기선 flex! */
+  header.top-area > .gnb:hover > ul {
+    display: flex;
+  }
+  header.top-area > .gnb > ul > li {
+    /* 글자 오른쪽 정렬로 변경 */
+    text-align: right;
+  }
+  /* 마우스 오버시 서브메뉴 안나오게함 */
+  .gnb ul > li:hover .smenu {
+    display: none;
+  }
+  /* 영사기 위치변경 */
+  .cam {
+    position: absolute;
+    top: -56px;
+    right: -5px;
+  }
+}
+/********** 최대크기 1000px 이하 종료 **********/
+
+/********** 최대크기 1000px 이하 시작 **********/
+@media screen and (max-width: 1000px) {
+}
+/********** 최대크기 1000px 이하 종료 **********/
+
+/********** 최대크기 840px 이하 시작 **********/
+@media screen and (max-width: 840px) {
+  .footer-area {
+    flex-direction: column;
+    gap: 1.5rem 2rem;
+  }
+  .co-info address {
+    text-align: center;
+  }
+  .sns-box {
+    margin-left: 0;
+  }
+}
+/********** 최대크기 840px 이하 종료 **********/
+
+/********** 최대크기 700px 이하 시작 **********/
+@media screen and (max-width: 700px) {
+  main.main-area {
+    background: url(../images/bg.jpg) no-repeat center top/145%;
+    aspect-ratio: 1/1.4;
+  }
+  .screen {
+    top: 11.1%;
+    left: 8.3%;
+    width: 85%;
+    height: 35%;
+  }
+  nav.poster-menu {
+    bottom: 1.2%;
+    width: 72%;
+    aspect-ratio: 1/0.9;
+  }
+  nav.poster-menu ul {
+    flex-wrap: wrap;
+    gap: 2%;
+  }
+  nav.poster-menu ul > li {
+    flex-basis: 31.6%;
+  }
+  nav.poster-menu ul li a .mv-info {
+    padding-top: 7vw;
+    font-size: 3vw;
+  }
+  nav.poster-menu ul li a .mv-info ol li:first-child {
+    font-size: 4vw;
+  }
+}
+/********** 최대크기 700px 이하 종료 **********/
