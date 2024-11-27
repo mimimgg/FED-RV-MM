@@ -255,14 +255,18 @@ nav.poster-menu ul > li {
   transform-origin: bottom;
 
   /* 트랜지션 : 속도 시간 이징 지연 */
-  transition: rotate .4s ease-out;
+  transition: rotate 0.4s ease-out;
 }
-/* li에 오버시 x축 회전하여 일어나기 */
-nav.poster-menu ul > li:hover {
-    rotate: x 0deg;
-    z-index: 1;
+/* li에 오버시 x축 회전하여 일어나기
++ li의 클래스가 "on"일 경우 동일 디자인 */
+nav.poster-menu ul > li:hover,
+nav.poster-menu ul > li.on {
+  rotate: x 0deg;
+  z-index: 1;
+  /* 선택요소 외곽선 보이기 */
+  outline: 1px solid aquamarine;
+  border-radius: 10px;
 }
-
 
 /* li+li 앞에 li가 있는 li선택
 즉, 첫번째 li빼고 다 선택 */
@@ -298,7 +302,9 @@ nav.poster-menu ul li a .mv-info {
   text-overflow: ellipsis;
   overflow: hidden;
 }
-nav.poster-menu ul li:hover .mv-info {
+nav.poster-menu ul li:hover .mv-info,
+nav.poster-menu ul li.on .mv-info
+ {
   top: 0;
 }
 nav.poster-menu ul li a .mv-info ol li:first-child {
