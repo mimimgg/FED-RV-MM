@@ -22,21 +22,79 @@
         height: 50px;
         background-color: #333;
         border-radius: 25px;
+        
       }
-      
-      
+      /* 첫번째 바 */
+      .hambtn span:nth-child(1) {
+        top: 0;
+
+        transition: 
+        top .3s .3s,
+        rotate .3s;
+      }
+      /* 두번째 바 */
+      .hambtn span:nth-child(2) {
+        top: 100px;
+
+        transition: 
+        width .01s .3s;
+      }
+      /* 세번째 바 */
+      .hambtn span:nth-child(3) {
+        top: 200px;
+
+        transition: 
+        top .3s .3s,
+        rotate .3s;
+      }
+
+      /* 클래스 on일때 바 세팅상태 */
+      /* 첫번째 바 */
+      .hambtn.on span:nth-child(1) {
+        top: 100px;
+        rotate: 45deg;
+
+        transition: 
+        top .3s,
+        rotate .3s .3s;
+      }
+      /* 두번째 바 */
+      .hambtn.on span:nth-child(2) {
+        top: 100px;
+        width: 0;
+        
+        transition: 
+        width .01s .3s,
+      }
+      /* 세번째 바 */
+      .hambtn.on span:nth-child(3) {
+        top: 100px;
+        rotate: -45deg;
+
+        transition: 
+        top .3s,
+        rotate .3s .3s;
+      }
+
+      /* 두번째 카피 햄버거버튼 크기/위치 이동 */
+      .hambtn2{
+        position: absolute;
+        top: 2vw;
+        right: 3vw;
+        scale: .1;
+        transform-origin: right top;
+      }
+
     </style>
   </head>
   <body>
-    <div class="hambtn" 
-    onclick="this.classList.toggle('on')">
+    <div class="hambtn" onclick="this.classList.toggle('on')">
       <span></span>
       <span></span>
       <span></span>
     </div>
 
-    <div class="hambtn hambtn2" 
-    onclick="this.classList.toggle('on')">
+    <div class="hambtn hambtn2" onclick="this.classList.toggle('on')">
       <span></span>
       <span></span>
       <span></span>
@@ -51,6 +109,6 @@
         -> 클래스를 제어하는 객체
         3. toggle(클래스명) 
         -> 설정한 클래스가 없으면 넣고 있으면 빼는 메서드
-     -->
+    -->
   </body>
 </html>
