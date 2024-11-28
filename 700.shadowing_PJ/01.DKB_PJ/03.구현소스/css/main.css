@@ -16,12 +16,17 @@ body * {
 /* 임시 높이 */
 .main-area .inbox {
   height: 500px;
-
 }
 
 /* 임시타이틀 */
 h1, h2 {
+  position: absolute;
+  left: 0;
+  width: 100%;
   text-align: center;
   font-size: 5vw;
   color: #ccc;
+  z-index: -1;
+
+  outline: none;
 }
