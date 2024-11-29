@@ -53,9 +53,9 @@ a{
 
 /* 메뉴 플렉스박스 설정 */
 .gnb ul{
-    
+    display: flex;
     /* 진행방향 오른쪽끝정렬 */
-    
+    justify-content: flex-end;
 
     /* 메뉴 글자 줄바꿈방지 */
     white-space: nowrap;
@@ -110,6 +110,7 @@ a{
 /* 상위li오버시 서브메뉴 보이기 */
 .gnb ul>li:hover .smenu{
     
+    max-height: 210px;
     /* max-height로 셋팅하는 원리:
     최대높이값은 컨텐츠내용이 적을때 auto하게
     내용물 만큼만 높이값이 셋팅된다!
@@ -142,7 +143,7 @@ a{
 /* 서브메뉴 li 순서대로 나타나기 */
 .smenu li{
     /* 투명하게 */
-    opacity: 0;
+    opacity: 1;
     /* 트랜지션 */
     transition: all .4s;
 }
@@ -185,11 +186,25 @@ a{
 /* 상위메뉴 오버시 밑줄애니 */
 .uline ul>li>a::after{
     content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    margin-top: 4px;
+    background-color: #fff;
     
+    /* 들어온 방향에서 반대쪽으로 나가게 하기 위해 왼쪽마진값을 100%로 설정한다. */
+    margin-left: 100%;
+
+    transition: .3s ease-out;
 }
 /* 오버시 밑줄박스 애니 */
 .uline ul>li:hover>a::after{
-    
+    width: 100%;
+    /* 왼쪽마진 시작위치로 / 단, 트랜지션이 안되게 해야함 */
+    margin-left: 0;
+
+    /* 마우스 오버시 트랜지션은 width만 적용 */
+    transition: width .3s;
 }
 
 /* 다국어 메뉴파트 */

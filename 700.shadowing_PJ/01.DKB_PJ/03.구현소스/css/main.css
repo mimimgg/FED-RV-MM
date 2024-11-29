@@ -19,7 +19,7 @@ body * {
 }
 
 /* 임시타이틀 */
-h1, h2 {
+h2.temp {
   position: absolute;
   left: 0;
   width: 100%;
