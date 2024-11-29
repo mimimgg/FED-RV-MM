@@ -5,21 +5,42 @@
 
 /********************* 1. 상단영역 ************************/
 .top-area {
-  height: 120px;
+  /* 최소높이설정 : 최소높이보다 컨텐츠가 많아지면 자동으로 높이값이 auto됨. */
+  min-height: 120px;
 }
-/********************* nav > 탑메뉴 ************************/
+/********************* nav > 로고 ************************/
+.logo {
+  padding: 18px 10px;
+}
+/********************* 1-2. 메뉴영역/메뉴박스 ************************/
+.menu-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 4.2rem;
+}
+/********************* 1-2. 메뉴영역/메뉴박스/탑메뉴 ************************/
 .top-menu {
   font-size: 1.3rem;
 }
 .top-menu ul {
-  justify-content: flex-end;
+  gap: 1.6rem;
 }
-/********************* nav > GNB메뉴 ************************/
+/********************* 1-2. 메뉴영역/메뉴박스/GNB메뉴 ************************/
 .gnb {
   font-size: 1.6rem;
 }
 .gnb ul {
-  justify-content: flex-end;
+  gap: 3.2rem;
+}
+.gnb a:hover {
+  color: red;
+}
+.gnb i {
+  font-size: 1rem;
+  vertical-align: 0.3rem;
 }
 
 /********************* 2. 하단영역 ************************/
