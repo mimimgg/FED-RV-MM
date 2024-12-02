@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 탭 아이콘 세팅 -->
+  <link rel="shortcut icon" href="./images/favicon_tvN.png">
   <title>쓸쓸하고 찬란하神 도깨비 드라마 소개</title>
-
   <!-- 폰트어썸 CDN CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <!-- 메인css 불러오기 -->
@@ -94,39 +95,37 @@
   <!-- 메인영역 -->
   <main class="main-area">
     <!-- 2. 배너파트 -->
-    <div>
-      <!-- 배너박스 -->
+    <div id="ban-area">
+      <!-- 배너 기능 박스는 바깥에 있음 -->
+      <!-- 슬라이드박스 -->
+      <section class="ban-box">
+        <ul>
+          <li>
+            <img src="./images/banner/ban01.jpg" alt="배너이미지">
+          </li>
+          <li>
+            <img src="./images/banner/ban02.jpg" alt="배너이미지">
+          </li>
+          <li>
+            <img src="./images/banner/ban03.jpg" alt="배너이미지">
+          </li>
+        </ul>
+      </section>
+      <!-- 배너박스(인박스:인디케이터 등) -->
       <section class="ban-area inbox">
         <h2 class="blind">2.배너박스</h2>
         <!-- 파티션박스 -->
         <div class="cont-box">
           <div class="col-12">
-            <!-- 슬라이드박스 -->
-            <div class="ban-box">
-              <ul>
-                <li>
-                  <img src="./images/bg_mainvisual.jpg" alt="배너이미지">
-                </li>
-                <li>
-                  <img src="./images/bg_main_02.jpg" alt="배너이미지">
-                </li>
-                <li>
-                  <img src="./images/bg_main_03.jpg" alt="배너이미지">
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </section>
       <!-- 캐릭터소개박스 -->
-      <section class="inbox">
-        <h2 class="temp">캐릭터소개박스</h2>
+      <section class="cat-area inbox">
+        <h2 class="blind">캐릭터소개박스</h2>
         <!-- 파티션박스 -->
         <div class="cont-box">
-          <div class="col-3"></div>
-          <div class="col-3"></div>
-          <div class="col-3"></div>
-          <div class="col-3"></div>
+          <div class="col-12"></div>
         </div>
       </section>
     </div>
