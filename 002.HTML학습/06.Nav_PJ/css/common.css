@@ -49,10 +49,10 @@ body{
 }
 /* 서브메뉴 박스 : 100%차지 서브영역 */
 .smenu{
-    position: absolute;
+    /* position: absolute;
     z-index: 999;
     left: 0;
-    width: 100%;
+    width: 100%; */
     /* 숨김박스 */ 
     height: 0;
     overflow: hidden;
