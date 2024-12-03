@@ -77,9 +77,80 @@ h2.temp {
 .main-area .cat-area {
   /* 비율적용을 위해 높이값을 없앤다 */
   height: auto;
-  aspect-ratio: calc(328*4)/186;
+  aspect-ratio: calc(328 * 4) / 186;
 }
 
+/* 캐릭터박스 */
+.cat-box {
+  display: flex;
+  gap: 1%;
+}
+.cat-box > div {
+  flex: 1;
+}
+/* 캐릭터 이미지 박스 */
+.cat-box figure {
+  /* 트랜지션 */
+  transition: 0.4s ease-out;
+}
+/* 캐릭터 각 박스 오버시 캐릭터박스 마진 탑 올리기 */
+.cat-box > div:hover figure {
+  margin-top: -250px;
+}
+/* 캐릭터 이미지만 선택 */
+.cat-box figure > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* 캐릭터 이름 이미지 박스 */
+.cat-box figcaption {
+  text-align: center;
+  margin-top: -17%;
+}
+/* 이름 이미지 공통 */
+.cat-box figcaption img {
+  width: 35%;
+}
+.cat-box figcaption img:first-child {
+  display: none;
+}
+/* 캐릭터 개별박스에 오버시 이름 변경
+  -> 첫번째는 보이고, 두번째는 숨기기
+*/
+.cat-box > div:hover figcaption img:first-child {
+  display: inline;
+}
+.cat-box > div:hover figcaption img:last-child {
+  display: none;
+}
 
+/* 캐릭터 설명박스 */
+.cat-box aside {
+  height: 0px;
+  overflow: auto;
+  background: url(../images/eachBG.jpg) no-repeat bottom/cover;
+  /* 트랜지션 */
+  transition: height 0.4s ease-out;
+}
+/* 각 캐릭터박스에 오버시 설명박스 보이기 */
+.cat-box > div:hover aside {
+  height: 250px;
+}
 
-
+/* 캐릭터 타이틀 */
+.cat-box aside h3 {
+  font-family: "Gugi";
+  font-size: 2.2rem;
+  font-weight: normal;
+  padding: 1.5rem 1rem 0.5rem;
+  letter-spacing: -1px;
+}
+/* 캐릭터 설명 */
+.cat-box aside p {
+  font-family: "single day";
+  font-size: 1.6rem;
+  padding: 1.5rem;
+  line-height: 1.6;
+  text-align: justify;
+}
