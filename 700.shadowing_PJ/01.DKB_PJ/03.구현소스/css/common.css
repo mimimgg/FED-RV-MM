@@ -3,47 +3,96 @@
 /* 도깨비 PJ : 공통 모듈 CSS - common.css */
 /* 공유기능 요소 셋팅 */
 
-/********************* 1. 상단영역 ************************/
+/**************** 1. 상단영역 ****************/
+#top-area {
+  position: relative;
+  /* .smenu의 부모 */
+  z-index: 2;
+}
 .top-area {
-  /* 최소높이설정 : 최소높이보다 컨텐츠가 많아지면 자동으로 높이값이 auto됨. */
+  /* 최소높이설정 : 최소높이보다 컨텐츠가
+  많아지면 높이값이 auto로 전환되어 늘어남! */
   min-height: 120px;
 }
-/********************* nav > 로고 ************************/
+/* 1-1.로고영역 - 로고 */
 .logo {
   padding: 18px 10px;
 }
-/********************* 1-2. 메뉴영역/메뉴박스 ************************/
+/* 1-2. 메뉴영역/메뉴박스 */
 .menu-box {
   display: flex;
+  /* row사이간격 */
+  gap: 42px;
+  /* 세로진행방향 */
   flex-direction: column;
-  height: 100%;
+  /* 진행방향 정렬 */
   justify-content: flex-end;
+  /* 진행방향수직 정렬 */
   align-items: flex-end;
-  gap: 4.2rem;
+
+  /* 높이값 부모박스만큼 */
+  height: 100%;
 }
-/********************* 1-2. 메뉴영역/메뉴박스/탑메뉴 ************************/
+/* 1-2. 메뉴영역/메뉴박스/탑메뉴 */
 .top-menu {
   font-size: 1.3rem;
 }
 .top-menu ul {
   gap: 1.6rem;
 }
-/********************* 1-2. 메뉴영역/메뉴박스/GNB메뉴 ************************/
+
+/*  1-2. 메뉴영역/메뉴박스/GNB메뉴 */
 .gnb {
   font-size: 1.6rem;
 }
 .gnb ul {
   gap: 3.2rem;
 }
+/* gnb a요소 오버시 */
 .gnb a:hover {
   color: red;
 }
+/* 아래화살표 아이콘 */
 .gnb i {
   font-size: 1rem;
   vertical-align: 0.3rem;
 }
 
-/********************* 2. 하단영역 ************************/
+/* 서브메뉴 */
+aside.smenu {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  /* 숨길 박스는 패딩을 주지 말것 */
+  height: 0;
+  transition: height .6s ease-in-out;
+  /* 부모는? 최상위 상단영역 #top-area */
+  background-color: #fff;
+  overflow: hidden;
+}
+/* 마우스 오버 시 늘어남 */
+.gnb > ul > li:hover aside.smenu{
+  height: 250px;
+}
+/* 서브 속박스 */
+.smenu > .inbox {
+  padding: 20px;
+  box-sizing: border-box;
+}
+/* 서브제목 */
+.smenu h2 {
+  font-size: 3rem;
+  margin: 2rem 0;
+}
+/* 서브리스트 */
+.smenu ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem 5rem;
+  font-size: 2rem;
+}
+
+/**************** 2. 하단영역 ****************/
 .footer-area {
   height: 320px;
 }
