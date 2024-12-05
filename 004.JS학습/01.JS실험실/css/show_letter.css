@@ -4,13 +4,21 @@
 body {
     background-color: darkslateblue;
 }
-/* 글자스테이지 */
-.stage-letters {
+/* 랩핑박스 */
+.wrap {
     position: fixed;
-    display: flex;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+/* 글자스테이지 */
+.stage-letters {
+    display: flex;
     outline: 2px dashed yellow;
 
     /* 글자설정 */
@@ -23,6 +31,10 @@ body {
 .stage-letters span {
     /* 트랜스폼 적용위해 */
     display: block;
+}
+/* 글자사이 떨어지게 하는 박스 */
+.stage-letters b {
+    margin-left: 2vw;
 }
 /* 글자등장 스타일1 */
 .style1 span{
