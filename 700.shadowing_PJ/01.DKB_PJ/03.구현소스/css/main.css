@@ -156,6 +156,7 @@ h2.temp {
   /* 중앙박스 최대크기에서 px과 vw크기를 맞추고
   최소크기 출력을 테스트하면 잘된다! */
   height: min(200px,15vw);
+  border-radius: 10px 0 0 10px;
 }
 /* 캐릭터 타이틀 */
 .cat-box aside h3{

@@ -48,9 +48,31 @@
 .gnb ul {
   gap: 3.2rem;
 }
-/* gnb a요소 오버시 */
-.gnb a:hover {
+/* gnb 상위 a 요소 */
+.gnb ul > li > a {
+  padding-bottom: 10px;
+}
+
+/* gnb a요소 + 서브메뉴 a요소 오버시 */
+.gnb ul > li:hover > a,
+.smenu a:hover  {
   color: red;
+}
+/* gnb 상위 a 요소 오버시 밑줄 디자인 보이기 */
+.gnb ul > li > a::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+}
+/* gnb 상위 a 요소 오버시 밑줄 디자인 보이기 */
+.gnb ul > li:hover > a::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: lightsalmon;
 }
 /* 아래화살표 아이콘 */
 .gnb i {
@@ -64,15 +86,16 @@ aside.smenu {
   left: 0;
   width: 100%;
   /* 숨길 박스는 패딩을 주지 말것 */
-  height: 0;
-  transition: height .6s ease-in-out;
+  max-height: 0;
+  transition: max-height .6s ease-in-out;
   /* 부모는? 최상위 상단영역 #top-area */
   background-color: #fff;
   overflow: hidden;
+  border-top: 2px solid #ccc;
 }
 /* 마우스 오버 시 늘어남 */
 .gnb > ul > li:hover aside.smenu{
-  height: 250px;
+  max-height: 250px;
 }
 /* 서브 속박스 */
 .smenu > .inbox {
