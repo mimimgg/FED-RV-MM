@@ -12,43 +12,41 @@ import myFn from "./my_function.js";
 ****************************/
 
 // 1. 대상선정 : .smanu -> 각 li의 공통class
-const smenu = myFn.qsa('.smenu');
+const smenu = myFn.qsa(".smenu");
 // console.log(smenu);
 
 // 2. 이벤트 설정
 smenu.forEach(setList);
 
 // 3. 함수만들기
-function setList(el,idx){
-    // forEach메서드 호출함수이므로 전달변수는 순서대로 요소
-    // el: li요소, idx: li요소의 index
+function setList(el, idx) {
+  // forEach메서드 호출함수이므로 전달변수는 순서대로 요소
+  // el: li요소, idx: li요소의 index
 
-    // 1. 함수 호출 확인
-    // console.log('나야나',el,idx);
+  // 1. 함수 호출 확인
+  // console.log('나야나',el,idx);
 
-    // 2. 이벤트 설정하기
-    // (1) mouseenter
-    myFn.addEvt(el,'mouseenter',()=>{
-        // 마우스 오버시 하위 div 서브메뉴 박스
-        let tg = myFn.qsEl(el,'div');
-        // console.log('tg',tg); 
-        // 마우스 오버시 하위 div 내부 ol 박스 높이값
-        let boxH = myFn.qsEl(tg,'ol').offsetHeight;
-        console.log('서브ol높이값',boxH);
-        
-        // 높이값 주기 - 서브 ol요소의 높이값으로 넣기
-        tg.style.height = boxH + 'px';
-        tg.style.transition = 'height .4s ease-out';
-    });
+  // 2. 이벤트 설정하기
+  // (1) mouseenter
+  myFn.addEvt(el, "mouseenter", () => {
+    // 마우스 오버시 하위 div 서브메뉴 박스
+    let tg = myFn.qsEl(el, "div");
+    // console.log('tg',tg);
+    // 마우스 오버시 하위 div 내부 ol 박스 높이값
+    let boxH = myFn.qsEl(tg, "ol").offsetHeight;
+    console.log("서브ol높이값", boxH);
 
-    // (2) mouseleave
-    myFn.addEvt(el,'mouseleave',()=>{
-        let tg = myFn.qsEl(el,'div');
-        // 높이값 0
-        tg.style.height = '0';
-    });
+    // 높이값 주기 - 서브 ol요소의 높이값으로 넣기
+    tg.style.height = boxH + "px";
+    tg.style.transition = "height .4s ease-out";
+  });
 
-    
+  // (2) mouseleave
+  myFn.addEvt(el, "mouseleave", () => {
+    let tg = myFn.qsEl(el, "div");
+    // 높이값 0
+    tg.style.height = "0";
+  });
 } // setList 함수 //
 
 /*************************************************** 
@@ -59,132 +57,125 @@ function setList(el,idx){
     4. 선택요소.offsetLeft : left 위치값            
 ***************************************************/
 
-
-
 // [ 이벤트 비교 ]
 // mouseover / mouseout -> 버블링발생함!
 // -> 요소위에 오버시 / 아웃시
 // mouseenter / mouseleave -> 버블링발생안함!
 // -> 요소경계선 안으로 들어갈때 / 경계선을 떠날때
 
-
 ///////////////////////////////////////////////////
 // [ 추가기능 : 링크 클릭시 페이지 새창이동하기 ] ////
 // 1. 대상선정 : .smenu ol a
-const link = myFn.qsa('.smenu ol a');
+const link = myFn.qsa(".smenu ol a");
 
 // 2. forEach로 순회하며 링크이동함수 호출하기
 // 클릭이벤트 설정
-link.forEach(el=>myFn.addEvt(el,'click', linkFn));
+link.forEach((el) => myFn.addEvt(el, "click", linkFn));
 
 // 3. 이동함수 만들기
-function linkFn(){
-    // (1) 클릭된 요소의 글자읽어오기
-    let txt = this.innerText;
-    // zmfflrdhls dythf
+function linkFn() {
+  // (1) 클릭된 요소의 글자읽어오기
+  let txt = this.innerText;
+  // zmfflrdhls dythf
 
-    //  (2) 함수 호춣 확인
-    console.log('링크이동', txt);
+  //  (2) 함수 호춣 확인
+  console.log("링크이동", txt);
 
-    // (3) 링크 이동하기 - 링크주소 리턴 함수 호출
-    window.open(getLink(txt));
-    // window.open('https://www.google.com');
-    // window.open(주소) - 새창열기
+  // (3) 링크 이동하기 - 링크주소 리턴 함수 호출
+  window.open(getLink(txt));
+  // window.open('https://www.google.com');
+  // window.open(주소) - 새창열기
 
-    // 참고 : 현재창에서 열기는? location.htrf = 주소
-    // location.href = 'https://www.google.com';
+  // 참고 : 현재창에서 열기는? location.htrf = 주소
+  // location.href = 'https://www.google.com';
 
-    // 참고 : 만약 히스토리 없이 현재창 열기하려면?
-    // -> location.replace(이동주소)
-    // -> 이전으로 가기 불가 (보안이 필요한 경우에 사용)
-    // location.replace('https://www.google.com');
-
+  // 참고 : 만약 히스토리 없이 현재창 열기하려면?
+  // -> location.replace(이동주소)
+  // -> 이전으로 가기 불가 (보안이 필요한 경우에 사용)
+  // location.replace('https://www.google.com');
 } // linkFn 함수 //
 
 // 버튼별 이동링크 주소 리턴함수
-function getLink(txt){ // txt = 링크구분명
-    // (1) 함수 호출 및 전달 확인
-    console.log('url받아와',txt);
+function getLink(txt) {
+  // txt = 링크구분명
+  // (1) 함수 호출 및 전달 확인
+  console.log("url받아와", txt);
 
-    // (2) 결과를 담을 변수
-    let url;
+  // (2) 결과를 담을 변수
+  let url;
 
-    // (3) url주소 분기하여 할당하기
-    switch (txt) {
-        case "Google":
-            url = "https://www.google.com/";
-            break;
-        case "Naver":
-            url = "http://www.naver.com";
-            break;
-        case "Daum":
-            url = "http://www.daum.net";
-            break;
-        case "Nate":
-            url = "http://www.nate.com";
-            break;
-        case "SK":
-            url = "http://www.sktelecom.com";
-            break;
-        case "KT":
-            url = "http://www.kt.com";
-            break;
-        case "Uplus":
-            url = "http://www.uplus.co.kr";
-            break;
-        case "CGV":
-            url = "http://www.cgv.co.kr";
-            break;
-        case "MEGABOX":
-            url = "http://www.megabox.co.kr";
-            break;
-        case "LOTTE CINEMA":
-            url = "https://www.lottecinema.co.kr/NLCHS";
-            break;
-        case "GMARKET":
-            url = "http://www.gmarket.co.kr";
-            break;
-        case "11번가":
-            url = "http://www.11st.co.kr";
-            break;
-        case "Auction":
-            url = "http://www.auction.co.kr";
-            break;
-        case "스토어팜":
-            url = "https://shopping.naver.com/";
-            break;
-        case "인터파크":
-            url = "http://www.interpark.co.kr";
-            break;
-        case "쿠팡":
-            url = "http://www.coopang.co.kr";
-            break;
-        case "Apple":
-            url = "http://www.apple.com";
-            break;
-        case "Samsung":
-            url = "http://www.samsung.com";
-            break;
-        case "넷마블":
-            url = "http://www.netmarble.net";
-            break;
-        case "넥슨":
-            url = "https://www.nexon.com";
-            break;
-        case "IMC":
-            url = "http://www.imc.co.kr";
-            break;
-        } /////// switch case문 ////////
+  // (3) url주소 분기하여 할당하기
+  switch (txt) {
+    case "Google":
+      url = "https://www.google.com/";
+      break;
+    case "Naver":
+      url = "http://www.naver.com";
+      break;
+    case "Daum":
+      url = "http://www.daum.net";
+      break;
+    case "Nate":
+      url = "http://www.nate.com";
+      break;
+    case "SK":
+      url = "http://www.sktelecom.com";
+      break;
+    case "KT":
+      url = "http://www.kt.com";
+      break;
+    case "Uplus":
+      url = "http://www.uplus.co.kr";
+      break;
+    case "CGV":
+      url = "http://www.cgv.co.kr";
+      break;
+    case "MEGABOX":
+      url = "http://www.megabox.co.kr";
+      break;
+    case "LOTTE CINEMA":
+      url = "https://www.lottecinema.co.kr/NLCHS";
+      break;
+    case "GMARKET":
+      url = "http://www.gmarket.co.kr";
+      break;
+    case "11번가":
+      url = "http://www.11st.co.kr";
+      break;
+    case "Auction":
+      url = "http://www.auction.co.kr";
+      break;
+    case "스토어팜":
+      url = "https://shopping.naver.com/";
+      break;
+    case "인터파크":
+      url = "http://www.interpark.co.kr";
+      break;
+    case "쿠팡":
+      url = "http://www.coopang.co.kr";
+      break;
+    case "Apple":
+      url = "http://www.apple.com";
+      break;
+    case "Samsung":
+      url = "http://www.samsung.com";
+      break;
+    case "넷마블":
+      url = "http://www.netmarble.net";
+      break;
+    case "넥슨":
+      url = "https://www.nexon.com";
+      break;
+    case "IMC":
+      url = "http://www.imc.co.kr";
+      break;
+  } /////// switch case문 ////////
 
-    // 결과 url 리턴
-    return url;
-
+  // 결과 url 리턴
+  return url;
 } // getLink 함수 //
 
 // 4. 페이지 이동하기 ////
-
-
-
 
 /************************************************** 
         
@@ -223,83 +214,100 @@ function getLink(txt){ // txt = 링크구분명
 
 // 1. 대상선정
 // (1) 버튼대상
-const btnNew = myFn.qs('.nbt');
+const btnNew = myFn.qs(".nbt");
 // (2) 변경대상
-const box2 = myFn.qs('#div02 ul');
+const box2 = myFn.qs("#div02 ul");
 
 // console.log('잘됐니?', btnNew, box2);
 
 // 2. 이벤트 설정
-myFn.addEvt(btnNew, 'click', makeElement);
+myFn.addEvt(btnNew, "click", makeElement);
 
 // 3. 함수만들기
-function makeElement(){
-    // (1) 함수호출 확인
-    console.log('만들어');
+function makeElement() {
+  // (1) 함수호출 확인
+  console.log("만들어");
 
-    // 할일 : 새로운 li요소를 넣기
-    // 변경대상은 ul임
-    // DOM메서드 이용하여 메모리상에 먼저 요소를 생성한다
+  // 할일 : 새로운 li요소를 넣기
+  // 변경대상은 ul임
+  // DOM메서드 이용하여 메모리상에 먼저 요소를 생성한다
 
-    // (2) 넣을 요소 만들기
-    // (2-1) 새로운 li를 생성하여 변수에 할당
-    let newEl = document.createElement('li');
+  // (2) 넣을 요소 만들기
+  // (2-1) 새로운 li를 생성하여 변수에 할당
+  let newEl = document.createElement("li");
 
-    // (2-2) 이미지 alt속성
-    let imgEl = document.createElement('img');
+  // (2-2) 이미지 alt속성
+  let imgEl = document.createElement("img");
 
-    // (2-3) 이미지 속성 세팅하기
-    let isrc = document.createAttribute('src');
-    let ialt = document.createAttribute('alt');
-    let itit = document.createAttribute('title');
+  // (2-3) 이미지 속성 세팅하기
+  let isrc = document.createAttribute("src");
+  let ialt = document.createAttribute("alt");
+  let itit = document.createAttribute("title");
 
-    // 1~5 사이 랜덤수
-    // Math.ceil(Math.random()*5);
-    let rdm = Math.ceil(Math.random()*5);
-    console.log(rdm);
+  // 1~5 사이 랜덤수
+  // Math.ceil(Math.random()*5);
+  let rdm = Math.ceil(Math.random() * 5);
+  console.log(rdm);
 
-    // 순번에 맞는 이미지 설명 배열
-    const altText = ['아이언맨','딱딱이','토르','닥스','스타로드'];
+  // 순번에 맞는 이미지 설명 배열
+  const altText = ["아이언맨", "딱딱이", "토르", "닥스", "스타로드"];
 
+  // (2-4) 메모리상 속성
+  isrc.value = `images/ab${rdm}.jpg`;
+  ialt.value = altText[rdm - 1];
+  itit.value = "클릭하면 지워집니다";
 
-    // (2-4) 메모리상 속성
-    isrc.value = `images/ab${rdm}.jpg`;
-    ialt.value = altText[rdm-1];
-    itit.value = '클릭하면 지워집니다';
-    
-    // (2-5) 메모리상 생성된 이미지 속성을 이미지에 넣기
-    imgEl.setAttributeNode(isrc);
-    imgEl.setAttributeNode(ialt);
-    imgEl.setAttributeNode(itit);
+  // (2-5) 메모리상 생성된 이미지 속성을 이미지에 넣기
+  imgEl.setAttributeNode(isrc);
+  imgEl.setAttributeNode(ialt);
+  imgEl.setAttributeNode(itit);
 
-    // (2-6) 메모리상에 생성된 li에 생성된 img 넣기
-    newEl.appendChild(imgEl);
-    // console.log(newEl);
+  // (2-6) 메모리상에 생성된 li에 생성된 img 넣기
+  newEl.appendChild(imgEl);
+  // console.log(newEl);
 
-    // (2-7) li 화면 출력 전 클릭이벤트 설정으로 지우기 세팅
-    newEl.onclick = () => newEl.remove();
+  // (2-7) li 화면 출력 전 클릭이벤트 설정으로 지우기 세팅
+  newEl.onclick = () => newEl.remove();
 
-    // 3. 변경대상에 새로운 li추가하여 넣기
-    // appendChild(요소) DOM 메서드 사용!
-    box2.appendChild(newEl);
-    
+  // 3. 변경대상에 새로운 li추가하여 넣기
+  // appendChild(요소) DOM 메서드 사용!
+  box2.appendChild(newEl);
 } // makeElement 함수 //
 
+// 처음부터 들어가있는 li 5개를 돌면서 지우기 세팅하기
+myFn.qsaEl(box2, "li").forEach((el) => {
+  // 클릭 시 지우기 (li)
+  el.onclick = () => el.remove();
+  // 이미지에 title속성 넣기
+  myFn.qsEl(el, "img").title = "클릭하시면 지워집니다.";
+}); // forEach //
 
 /////////////////////////////////////
 // [ 맨뒤이동 버튼 클릭시 ] /////////
 // 맨앞요소를 맨뒤로 이동하기 ///
 // 이벤트 대상: .mvl
 // 변경대상: #div02 ul
-
-
+myFn.qs(".mvl").onclick = () => {
+  // box2 아래 li 선택
+  let list = myFn.qsaEl(box2, "li");
+  // 변경대상의 첫번째 요소 선택 -> list[0]
+  // 맨 앞 요소를 맨 뒤로 이동 -> appendChild(맨앞요소)
+  box2.appendChild(list[0]);
+}; // click //
 
 /// [ 맨앞이동버튼 클릭시 ] ////////////
 // 맨뒤li가 맨 앞으로 이동됨
 // 이벤트 대상: .mvf
 // 변경대상: #div02 ul
-
-
+myFn.qs(".mvf").onclick = () => {
+  // box2 아래 li 선택
+  let list = myFn.qsaEl(box2, "li");
+  // 변경대상의 마지막 요소 선택 -> list[개수-1]
+  // 변경대상의 첫번째 요소 선택 -> list[0]
+  // 맨 뒤 요소를 맨 앞으로 이동 -> insertBefore(넣을놈, 넣을놈전놈)
+  // insertBefore(마지막요소, 첫번째요소)
+  box2.insertBefore(list[list.length - 1], list[0]);
+}; // click //
 
 /************************************************** 
     ※ appendChild() 와 insertBefore()는 
