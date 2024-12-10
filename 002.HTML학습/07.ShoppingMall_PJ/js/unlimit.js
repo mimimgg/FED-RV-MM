@@ -1,0 +1,155 @@
+// 쇼핑몰 배너 JS - 01.가로방향 배너 슬라이드 - 무한이동 //
+
+// 나의 함수 불러오기
+import myFn from "./my_function.js";
+
+/***************************************************** 
+    [ 슬라이드 이동 기능정의 ]
+    1. 이벤트 종류: click
+    2. 이벤트 대상: 이동버튼(.abtn)
+    3. 변경 대상: 슬라이드 박스(.slide)
+    4. 기능 설계:
+
+    (1) 오른쪽 버튼 클릭시 다음 슬라이드가
+        나타나도록 슬라이드 박스의 translate X축 이동값을
+        -100%로 변경시킨다.
+        -> 슬라이드 이동후!!! 
+        바깥에 나가있는 첫번째 슬라이드
+        li를 잘라서 맨뒤로 보낸다!
+        동시에 translate x축 이동값을 0으로 변경한다!
+
+    (2) 왼쪽버튼 클릭시 이전 슬라이드가
+        나타나도록 하기위해 우선 맨뒤 li를
+        맨앞으로 이동하고 동시에 translate X축 이동값을
+        -100%로 변경한다.
+        그 후 translate X축 이동값을 0으로 애니메이션하여
+        슬라이드가 왼쪽에서 들어온다.
+
+    (4) 공통기능: 슬라이드 위치표시 블릿
+        - 블릿 대상: .indic li
+        - 변경 내용: 슬라이드 순번과 같은 순번의
+        li에 클래스 "on"주기(나머진 빼기->초기화!)
+
+*****************************************************/
+
+// 전역변수구역 //////////
+// (1) 순번변수
+let seqNum = 0;
+
+// 1. 대상선정
+// (1)전체 슬라이드 박스 : .slide-box
+const slideBox = myFn.qs('.slide-box');
+// 전체박스 하위의 요소로 상대적으로 잡아준다.
+// 이유는? 다른 슬라이드 박스를 카피하여 만든 경우 동일한 기능이 될 수 있게 해준다.
+// (2) 이벤트대상: .abtn
+const abtn = myFn.qsaEl(slideBox,'.abtn');
+// (3) 변경대상: .slide
+const slide = myFn.qsEl(slideBox,'.slide');
+// 슬라이드 개수 변수할당
+// 보통 변경없이 사용하는 변수는 상수라고 하고, 상수는 보통 대문자로 쓴다.
+const SLIDE_CNT = myFn.qsaEl(slide,'li').length;
+console.log(SLIDE_CNT);
+
+// console.log("대상",slideBox,abtn,slide);
+
+// (4) 인디케이터 블릿대상
+const indic = myFn.qsaEl(slideBox,'.indic li');
+// const indic = myFn.qsaEl(slideBox,'.indic li');//
+
+// 2. 이벤트설정하기
+abtn.forEach(el=>{
+    // console.log('요소', el);
+    // 각 요소에 이벤트 설정하기
+    // click이벤트를 addEventListener로 설정
+    myFn.addEvt(el,'click',goSlide);
+}); // forEach //
+
+// 3. 함수만들기
+function goSlide(){
+    // 1. 함수호출확인
+    // console.log('나함수',this);
+    
+    // 2. 오른쪽버튼 여부 확인
+    let isRight = this.classList.contains('ab2');
+    console.log('나함수',isRight);
+
+    // 3. 분기하여 슬라이드 순번 변수 증감하기
+    // (1) 오른쪽 버튼 클릭 시 : 왼쪽으로 이동
+    if(isRight){
+      // [1] translate x축방향 -100% 이동
+      slide.style.translate = '-100%';
+      slide.style.transition = '.4s ease-in-out';
+
+      // 슬라이드 이동 후 실행해야 함
+      // 따라서 setTimeout으로 시간 지연 실행 코드 작성
+      setTimeout(() => {
+        // [2] 맨앞 li를 선택하여 맨 뒤로 이동하기
+        slide.appendChild(myFn.qsaEl(slide,'li')[0]);
+        // 슬라이드.appendChild(맨앞 li)
+        
+        // [3] 이 때, translate값 0으로 초기화 함
+        slide.style.translate = '0';
+
+        // [4] 초기화할 경우 트랜지션 없애기
+        slide.style.transition = 'none';
+      }, 400); // setTimeout // 
+    } // if //
+    // (2) 왼쪽 버튼 클릭 시 : 오른쪽으로 이동
+    else {
+        // 현재 li 수집
+        const list = myFn.qsaEl(slide, 'li');
+        // [1] 맨 뒤 li 맨앞으로 이동하기
+        slide.insertBefore(list[list.length - 1], list[0]);
+        // 슬라이드.insertBefore(맨뒤li,맨앞li)
+        // 맨뒤 li 순번은 개수-1임
+
+        // [2] 이때 슬라이드 translate값을 -100%로 설정
+        slide.style.translate = '-100%';
+        slide.style.transition = 'none';
+        
+        // 코드 실행순서를 분리하여 비동기처리하면
+        // 위의 변경사항과 같은 변경이 시차를 두고 실행된다.
+        // 큐에서 대기하고 스택에서 실행된다.
+        setTimeout(() => {
+          // [3] translate값을 0으로 변경하여 들어오기
+          slide.style.translate = '0';
+  
+          // [4] 이 때 트랜지션 애니메이션 설정
+          slide.style.transition = '.4s ease-in-out';
+        }, 0);
+    } // else //
+
+    // 명령어 코드는 콜스택(call stack)에서 순서대로 실행된다.
+    // console.log('1');
+    // 타임아웃 멧드는 태스크 큐(Task Queue)에 대기하다가
+    // 콜 스택의 명령어가 모두 실행 후 큐에 쌓인 명령어를 스택으로 옮겨서 순서대로 실행한다.
+    // setTimeout(()=>console.log('2'),0);
+    // console.log('3');
+    // console.log('4');
+
+
+  // 6. 인디케이터 변경하기 : 대상 .indic li
+  // indic.forEach((el, idx) => {
+  //   // console.log(el,idx);
+  //   // (1) 페이지번호와 일치하는 순번li에 클래스 "on"넣기
+  //   if (idx === seqNum) {
+  //     el.classList.add("on");
+  //   } /// if ///
+  //   // (2) 나머지 li는 "on" 제거하기
+  //   else {
+  //     el.classList.remove("on");
+  //   } /// else ///
+  // }); /// forEach ////
+
+  // -> seqNum 값 즉, 슬라이드 순번과
+  // 인디케이터 li 순번이 같으므로
+  // 해당순번의 li에 클래스"on"을 넣고
+  // 나머지는 "on"을 제거한다!
+    
+    // -> seqNum 값 즉, 슬라이드 순번과 인디케이터 li순번이 같으므로
+    // 해당 순번의 li에 closs'on'을 넣고 나머지는 on을 제헌다.]
+} // goSlide //
+
+
+
+
