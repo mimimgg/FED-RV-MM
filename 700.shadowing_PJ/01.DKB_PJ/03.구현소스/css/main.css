@@ -139,6 +139,7 @@ h2.temp {
   /* 비율적용을 위해 높이값을 없앤다! */
   height: auto;
   aspect-ratio: 1320/190;
+  position: relative;
 }
 /* 캐릭터박스 */
 .cat-box {
