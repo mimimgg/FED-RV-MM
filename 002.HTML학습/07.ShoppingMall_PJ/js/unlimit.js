@@ -27,7 +27,7 @@ import myFn from "./my_function.js";
 
     (4) 공통기능: 슬라이드 위치표시 블릿
         - 블릿 대상: .indic li
-        - 변경 내용: 슬라이드 순번과 같은 순번의
+        - 변경 내용: 슬라이드 순번과 같은 순번의dd
         li에 클래스 "on"주기(나머진 빼기->초기화!)
 
 *****************************************************/
@@ -212,6 +212,6 @@ function clearAuto(){
   // (2) 타임아웃 지우기(실행 쓰나미 방지)
   clearTimeout(autoT);
   // (3) 일정시간이 지난 후 인터벌 재호출 (최종 하나만 남김)
-  autoT = setTimeout(autoSlide, 4000);
+  autoT = setTimeout(autoSlide, 5000);
 } // clearAuto 함수 //
 

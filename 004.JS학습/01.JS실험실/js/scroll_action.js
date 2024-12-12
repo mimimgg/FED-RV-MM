@@ -5,8 +5,12 @@ import myFn from "./my_function.js";
 
 // 글자등장 함수 불러오기
 import callLetter from "./call_letter.js";
-
 // console.log(myFn, callLetter);
+
+// 부드러운 스크롤 불러오기
+import startSS from "./smoothScroll23.js";
+startSS();
+// console.log(myFn, startSS);
 
 // 글자등장함수 호출하기
 callLetter('.stage','신카이 마코토',1500);
@@ -120,3 +124,69 @@ function moveTit(){
   else 
     tit.style.left = '50%';
 } // moveTit 함수 //
+
+/************************************************* 
+  [    떨어지는 여자 기능 구현하기   ]
+--------------------------------------------------
+  (1) 기본원리 : 스크롤 이동에 따른 화면 높이값 범위 안에서 
+  떨어지는 여자 이미지가 아래쪽으로 이동 애니메이션 됨
+  
+  (2) 계산을 위한 비례식 세우기
+      스크롤 한계값 : 윈도우 높이값
+    = 스크롤 이동값 : 이미지 이동값
+
+  (3) 우리가 구할 값은? 이미지 이동값
+  -> 외항의 곱은 내항의 곱과 같다
+  스한 : 윈높 = 스이 : 이이
+  스한 * 이이 = 윈높 * 스이
+  이이 = 윈노 * 스이 / 스한
+  
+*************************************************/
+
+// 1. 변수값 세팅하기
+// (1) 윈도우 높이값 (윈높)
+const winH = window.innerHeight;
+// 전체 문서 높이
+const docH = document.body.clientHeight;
+
+// (2) 스크롤 한계값 (스한) -> 전체 문서 높이 - 화면높이
+// 스한 = docH - winH
+const scLimit = docH - winH;
+console.log(
+  '문서높이:',docH,
+  '\n 윈도우높이:', winH,
+  '\n 스크롤한계값:', scLimit,
+)
+
+// 2. 대상선정 : 떨어지는 여자요소
+const woman = myFn.qs('#woman');
+console.log('떨녀', woman);
+
+// 3. 이벤트설정하기 : window가 이벤트 대상
+myFn.addEvt(window,'scroll',moveWoman);
+
+// 4. 함수만들기
+function moveWoman(){
+  // 스크롤바 위치값
+  let scY = window.scrollY;
+
+  // (1) 호출확인 및 스크롤바 위치값
+  console.log('홀롤로:', scY);
+
+  // (2) 떨녀 top값 구하기 (이미지 이동값)
+  // 이이 = 윈노 * 스이 / 스한
+  // 이이 = winH * scY / scLimit
+  let womanTop = winH * scY / scLimit;
+
+  // 호출확인 및 스크롤바 위치값, 떨녀 top값
+  console.log(
+    '스이:',scY,
+    '\n이이:',womanTop
+  )
+
+  // (3) 떨녀에게 적용하기
+  woman.style.top = womanTop + `px`;
+
+  // (4) 맨 위에 있을 때 숨기기
+  if( scY < 50 ) woman.style.top + '-20%';
+} // moveWoman 함수 //
