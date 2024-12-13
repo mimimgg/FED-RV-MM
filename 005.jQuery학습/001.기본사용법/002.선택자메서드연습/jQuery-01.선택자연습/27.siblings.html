@@ -34,11 +34,26 @@
           width: '100px',
         })
         .click(function(){
-          $(this).animate({
-            width: '200px',
-          })
-        })
-        
+          $(this)
+          .animate({width: '200px'}, 800)
+          .siblings() // 다른 형제 미니언즈 이미지 모두
+          .delay(800) // 애니 앞에서 지연시간
+          .animate ({width: '50px'}, 500);
+
+          // 추가미션:
+          // siblings(필터) 를 활용한 테두리주기!
+          // 클릭된 미니언즈 이외의 다른 미니언즈 중
+          // class가 "my"인 형제요소를
+          // 선택하여 테두리주기!
+          
+          $(this)
+          .css({border: 'none'})
+          .siblings('.my')
+          .css({border: '5px dashed orange'})
+        }); // click //
+        // 미니언즈 중 7n+1번째 이미지에 클래스 my넣기
+        // class넣는 메서드는? addClass(클래스명)
+        tg.find('img:nth-child(7n+1)').addClass('my');
       }); //jQuery실행구역
     </script>
 
