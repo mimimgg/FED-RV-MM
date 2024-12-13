@@ -192,7 +192,9 @@ abtn.forEach((el)=>{
     // click이벤트를 addEventListener로 설정
     myFn.addEvt(el,'click',goSlide);
     // 이동버튼 클릭시 인터발 지우기 함수 호출 //
-    myFn.addEvt(el, 'click', ()=>{clearAuto()});
+    myFn.addEvt(el, 'click', (e)=>{
+      e.preventDefault();
+      clearAuto()});
 }); // forEach //
 
 // 광클 금지 상태 변수
