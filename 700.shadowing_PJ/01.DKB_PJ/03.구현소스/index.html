@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     <!-- 메인 CSS 불러오기 -->
     <link rel="stylesheet" href="./css/main.css" />
-
+    
     <!-- main.js 불러오기 -->
     <script type="module" src="./js/main.js"></script>
   </head>
@@ -475,10 +475,8 @@
               </div>
               <!-- 설명박스 -->
               <p class="intro-txt">
-                불멸의 삶을 끝내기 위해 인간 신부가 필요한 도깨비, 그와 기묘한
-                동거를 시작한 기억상실증 저승사자. 그런 그들 앞에 '도깨비
-                신부'라 주장하는 '죽었어야 할 운명'의 소녀가 나타나며 벌어지는
-                神비로운 낭만 설화.
+                불멸의 삶을 끝내기 위해 인간 신부가 필요한 도깨비, 그와 기묘한 동거를 시작한 기억상실증 저승사자. 그런
+                그들 앞에 '도깨비 신부'라 주장하는 '죽었어야 할 운명'의 소녀가 나타나며 벌어지는 神비로운 낭만 설화.
               </p>
               <!-- 인트로 버튼 -->
               <button class="intro-btn">방송편성보기</button>
@@ -486,11 +484,10 @@
             <div class="col-6 col-2nd-12">
               <figure class="intro-mv-box">
                 <div class="intro-mv-img off">
-                  <img src="./images/intro_mv_img.jpg" alt="인트로 동영상 이미지">
+                  <img src="./images/intro_mv_img.jpg" alt="인트로 동영상 이미지" />
                 </div>
                 <figcaption>
-                  [예고]끝나지 않은 깨요일! 공동재부터 깨비.저승 커플 키스신
-                  비하인드까지! #하드털이 #스페셜
+                  [예고]끝나지 않은 깨요일! 공동재부터 깨비.저승 커플 키스신 비하인드까지! #하드털이 #스페셜
                 </figcaption>
               </figure>
             </div>
@@ -498,12 +495,13 @@
         </section>
       </div>
       <!-- 4.회차정보파트 -->
-      <div>
-        <section class="inbox">
-          <h2 class="temp">4.회차정보파트</h2>
-          <!-- 파티션박스 -->
+      <div id="preview-area">
+        <section class="preview-area inbox">
+          <h2 class="stit">미리보기</h2>
           <div class="cont-box">
-            <div class="col-12"></div>
+            <div class="col-12 preview-box">
+              <ul class="fx-box" data-db="previewData"></ul>
+            </div>
           </div>
         </section>
       </div>
