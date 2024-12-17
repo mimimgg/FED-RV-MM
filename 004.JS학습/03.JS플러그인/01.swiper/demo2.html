@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>스와이퍼 데모2</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+      h1 {
+        text-align: center;
+      }
+      /* 스와이퍼 부모 박스 */
+      .demo-box {
+        width: 800px;
+        height: 450px;
+        margin: 0 auto;
+        outline: 2px solid green;
+        background: #000;
+      }
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      /* 개별 조작 버튼 박스 */
+      .btn-box {
+        text-align: center;
+        padding: 5vh;
+      }
+      .btn-box > button {
+        font-size: 30px;
+      }
+    </style>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        // 스와이퍼 인스턴트 생성하기
+        const swiper = new Swiper(".mySwiper", {
+          // 🔻 한 화면에 보여질 슬라이드 개수
+          slidesPerView: 3,
+          // 🔻 슬라이드 사이의 간격 (숫자는 px단위)
+          spaceBetween: 10,
+          // 🔻 루프설정
+          loop: true,
+          // 🔻 자동넘김설정
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+          // 🔻 하단 블릿 인디케이터 페이지네이션
+          pagination: {
+            // 🔻 사용할 요소 이름
+            el: ".swiper-pagination",
+            // 🔻 블릿 클릭 설정
+            clickable: true,
+          },
+          // 🔻 양쪽 이동 버튼 (좌 / 우)
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        }); // swiper //
+
+        // 스와이퍼 API를 이용한 개별코딩
+        // 내가 만든 버튼에 이동 기능 부여하기
+        const myBtns = document.querySelectorAll(".btn-box button");
+        console.log(myBtns);
+
+        // 클릭이벤트 설정하기
+        myBtns.forEach((el) => {
+          el.addEventListener("click", controlSwp);
+        });
+
+        // 기능 구현 함수
+        function controlSwp() {
+          // 버튼구분하기
+          let isBtn = this.classList.contains("btn-next");
+          console.log("나야나", isBtn);
+
+          // 분기하기
+          // 다음버튼
+          if (isBtn) {
+            swiper.slideNext();
+          } // if //
+          // 이전버튼
+          else {
+            swiper.slidePrev();
+          } // else //
+        } // controlSwp //
+
+        const bgColor = ["pink", "lightgreen", "orange", "lightyellow", "limegreen", "skyblue"];
+        let arrNum = 0;
+
+        // 스와이퍼 슬라이드 변경 시 배경색 바꾸기
+        swiper.on("slideChange", function () {
+          console.log("slide changed");
+          // 색상변경
+          document.body.style.backgroundColor = bgColor[arrNum];
+          // 배열수 증가
+          arrNum++;
+          if (arrNum > 3) arrNum = 0;
+        });
+      }); // load 구역 //
+    </script>
+  </head>
+  <body>
+    <h1>Slides per view</h1>
+    <div class="demo-box swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="./images/pic01.jfif" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/pic20.jfif" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/pic03.jfif" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/pic05.jfif" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/pic06.jfif" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/pic07.jfif" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/pic08.jfif" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/pic09.jfif" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/pic11.jfif" alt="" />
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <!-- 개별 컨트롤을 위한 버튼 -->
+    <div class="btn-box">
+      <button class="btn-prev">이전</button>
+      <button class="btn-next">다음</button>
+    </div>
+  </body>
+</html>

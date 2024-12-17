@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>스와이퍼 데모1</title>
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<style>
+    h1 {text-align: center;}
+    /* 스와이퍼 부모 박스 */
+    .demo-box {
+        max-width: 1000px;
+        /* height: 450px; */
+        aspect-ratio: 16/9;
+        margin: 0 auto;
+        outline: 2px solid green;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+    // 스와이퍼 인스턴트 생성하기
+    var swiper = new Swiper(".mySwiper", {
+        // 🔻 한 화면에 보여질 슬라이드 개수
+        slidesPerView: 1,
+        // 🔻 슬라이드 사이의 간격 (숫자는 px단위)
+        spaceBetween: 30,
+        // 🔻 루프설정 
+        loop: true,
+        // 🔻 자동넘김설정
+        autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        },
+        // 🔻 하단 블릿 인디케이터 페이지네이션
+        pagination: {
+            // 🔻 사용할 요소 이름 
+            el: ".swiper-pagination",
+            // 🔻 블릿 클릭 설정
+            clickable: true,
+        },
+        // 🔻 양쪽 이동 버튼 (좌 / 우)
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+    }); // load 구역 //
+</script>
+</head>
+<body>
+<h1>Infinite loop</h1>
+<div class="demo-box swiper mySwiper">
+    <div class="swiper-wrapper">
+    <div class="swiper-slide">
+        <img src="./images/banner/ban01.jfif" alt="">
+    </div>
+    <div class="swiper-slide">
+        <img src="./images/banner/ban02.jfif" alt="">
+    </div>
+    <div class="swiper-slide">
+        <img src="./images/banner/ban03.jfif" alt="">
+    </div>
+    <div class="swiper-slide">
+        <img src="./images/banner/ban05.jfif" alt="">
+    </div>
+    <div class="swiper-slide">
+        <img src="./images/banner/ban06.jfif" alt="">
+    </div>
+    <div class="swiper-slide">
+        <img src="./images/banner/ban07.jfif" alt="">
+    </div>
+    <div class="swiper-slide">
+        <img src="./images/banner/ban08.jfif" alt="">
+    </div>
+    <div class="swiper-slide">
+        <img src="./images/banner/ban09.jfif" alt="">
+    </div>
+    <div class="swiper-slide">
+        <img src="./images/banner/ban10.jfif" alt="">
+    </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+</div>
+
+</body>
+</html>
