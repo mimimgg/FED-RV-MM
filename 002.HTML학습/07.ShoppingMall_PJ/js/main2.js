@@ -34,6 +34,8 @@
 const $btnMove = $('.abtn');
 // 변경대상 : 슬라이드박스 (.slide)
 const $slide = $('.slide');
+// 변경대상 : 블릿박스 (.indic)의 li
+const $indic = $('.indic li');
 
 // 광클 금지 상태 변수
 let stsClick = false;
@@ -83,13 +85,24 @@ $btnMove.click(function(){
             $slide
             .css({translate:'0 0', transition: TIME_ANI + 'ms'})
         }, 0);
-    }
+    } // else //
+
+    // (3) 블릿 변경하기 : 해당순번에 클래스 'on'넣기
+    // 아랫쪽 버튼은 두번째 순번, 위쪽 버튼은 첫번째 순번
+    // 대상: .indic li
+    // 순번은 슬라이드 방향별로 아래와 같이 읽어옴 | 아래쪽 버튼은 두번째, 위쪽 버튼은 첫번째 순번
+    let currIdx = $slide.find('li').eq(isBtn ? 1 : 0).attr('data-seq');
+    console.log('읽은순번', currIdx);
+
+    // 해당순번의 블릿 li 클래스 'on' 넣기 (나머지는 빼기)
+    $indic.eq(currIdx).addClass('on').siblings().removeClass('on')
+
 }); // click //
 
 // [ 3. 처음 슬라이드에 고유번호 속성넣기 ]
 // 제이쿼리 순회 메서드 : each((순번, 요소) => {})
     $slide.find('li').each((idx,el)=>{
-        console.log('돌아',idx,el);
+        // console.log('돌아',idx,el);
         // 각 요소의 속성추가하기
         // 속성명 : data-seq
         // 제이쿼리 속성세팅 메서드 : attr(속성명, 값)

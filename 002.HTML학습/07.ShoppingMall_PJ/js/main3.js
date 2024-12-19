@@ -18,3 +18,102 @@
     4. 블릿은 현재 슬라이드와 일치된 순번표시
 
 ********************************************/
+
+// 전역변수
+// 슬라이드 번호 변수
+let sNum = 0;
+
+// 1. 대상선정
+// 슬라이드로 대상선정
+const $slide = $('.slide>li');
+// 슬라이드 개수
+const SLIDE_CNT = $slide.length;
+
+// 블릿대상
+const $indic = $('.indic > li');
+
+// 2. 이벤트 설정 및 기능구현
+// 2-1. 오른쪽 버튼
+$('.ab2').click(()=>{
+    // 광클금지
+    if(blockCode()) return false;
+
+    // 슬라이드 번호증가(한계값 설정)
+    sNum++;
+    if(sNum == SLIDE_CNT) sNum = 0;
+
+    // 공통처리함수 호출
+    comFn();
+}); // click //
+// 2-2. 왼쪽 버튼
+$('.ab1').click(()=>{
+    // 광클금지
+    if(blockCode()) return false;
+
+    // 슬라이드 번호감소(한계값 설정)
+    sNum--;
+    if(sNum == -1) sNum = SLIDE_CNT-1;
+
+    // 공통처리함수 호출
+    comFn();
+}); // click //
+
+// 3. 공통처리함수 만들기
+function comFn(){
+    // 슬라이드에 클래스 넣기 (지우기)
+    $slide.eq(sNum).addClass('on')
+    .siblings().removeClass('on');
+    
+    // 블릿변경
+    $indic.eq(sNum).addClass('on')
+    .siblings().removeClass('on');
+};
+
+
+// 광클금지 상태변수
+let clickSts = false;
+
+// 광클금지 함수
+function blockCode(){
+    /// 1. 광클 상태기 true이면 -> return true ///
+    if(clickSts) return true;
+
+    /// 2. 클릭상태 전역변수 세팅 ///
+    clickSts = true; // 잠금
+    setTimeout(()=>{
+        clickSts = false;
+    }, 400);
+
+    /// 3. 광클상태 false이면 전역세팅 후 리턴 false ///
+    return false;
+} /// blockCode ///
+
+
+// 자동 넘김 세팅하기 //
+let autoI, autoT;
+
+// 최초호출
+slideAuto();    
+
+// 1. 자동호출함수 ///
+function slideAuto(){
+    autoI = setInterval(()=>{
+
+    sNum++;
+    if(sNum == SLIDE_CNT) sNum = 0;
+
+    // 공통처리함수 호출
+    comFn();
+
+    }, 2000);
+}
+
+// 2. 지우기 함수 ////
+function clearAuto(){
+    clearInterval(autoI);
+    clearTimeout(autoT);
+    autoT = setTimeout(slideAuto, 5000);
+}
+
+// 3. 버튼 클릭시 지우기 함수 호출 셋팅 ///
+$('.abtn').click(clearAuto);

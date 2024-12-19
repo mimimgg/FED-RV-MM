@@ -25,10 +25,34 @@
 			// 순번에 맞는 글자색 배열
 			const color = ["red","blue","green"];
 
-			
-			
-			
-		});//// jQB ////////////////////////////
+			$(".container p")
+          .css({
+            fontSize: "54px",
+            height: "60px",
+          }) //// css /////
+          .click(function () {
+            // 클릭된 p태그의 순번 알아오기
+            // index() 메서드
+            let idx = $(this).index();
+            console.log("순번:", idx);
+            console.log("txt[]:", txt[idx]);
+            console.log("color[]:", color[idx]);
+
+            // 글자변경하기
+            $(this)
+              .empty() // 1.내용비우기
+              .css({ opacity: 0 }) // 2. 투명하게하기
+              .text(txt[idx]) // 3. 해당순번 내용넣기
+              .delay(500) // 4. 지연시간설정
+              .animate(
+                {
+                  opacity: 1, // 5. 투명도복원
+                  color: color[idx], // 6. 해당순번 글자색넣기
+                },
+                800
+              ); ///// animate ///
+          }); ///// click ////
+      }); //// jQB ////////////////////////////
 	
 	
 	</script>

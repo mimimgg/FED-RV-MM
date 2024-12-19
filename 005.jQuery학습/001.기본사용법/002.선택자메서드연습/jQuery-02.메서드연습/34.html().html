@@ -20,9 +20,73 @@
 		// img태그를 5개 만들고 css설정을 absolute로 하여 차례대로 
 		// left이동 애니메이션을 하시오.
 		
-		
-	
-		
+		$('#main').find('p').first()
+		.click(function(){
+			console.log('하이'); 
+			$(this) // 주인공 첫번째 p요소
+			.next() // 두번째 p요소
+			.html(`
+				<img src="pic1.jpg">
+        <img src="pic2.jpg">
+        <img src="pic3.jpg">
+        <img src="pic4.jpg">
+        <img src="pic5.jpg">
+			`)
+			.find('img') // 위에서 넣은 이미지들 선택
+			.css({
+				position: 'absolute',
+				left: '0',
+			})
+			.first() // 5개 중 첫번째
+			.css({width: '300px'})
+			.next() // 다음 이미지 (2번째)
+			.css({width: '250px'})
+			.next() // 다음 이미지 (3번째)
+			.css({width: '200px'})
+			.next() // 다음 이미지 (4번째)
+			.css({width: '150px'})
+			.next() // 다음 이미지 (5번째)
+			.css({width: '100px'})
+			/// 애니메이션 주기
+			// 마지막 이미지에서 부모로 이동
+			.parent()
+			.find('img') // 5개의 자식이미지를 모두 선택
+			.eq(1) // eq(n)은 0부터 시작 (즉, 1번은 두번쩨 이미지임) 
+			.delay(1000) // 1초 후
+			.animate({left: '300px'},500) // 액션
+
+			.next() // 3번이미지
+			.delay(1400) // 1.4초 후
+			.animate({left: '550px'},400) // 액션
+
+			.next() // 4번이미지
+			.delay(1500) // 1.8초 후
+			.animate({left: '750px'},600) // 액션
+
+			.next() // 5번이미지
+			.delay(1600) // 1.6초 후
+			.animate({left: '900px'},700) // 액션
+
+			// 짝수번째이미지 이동 애니메이션
+			// 사실 홀수번째다! 왜? : even만 쓰면 첫번째가 0번
+			.parent().find('img:even')
+			.delay(2000) // 2초 후
+			.animate({top: '200px'},500)
+			
+			// 홀수번째 이미지
+			.parent().find('img:odd').first() // 홀수 중 마지막
+			.delay(2000) // 위의 총액션시간 + 2초 후
+			.animate({top: '-50px'},200)
+
+			// 홀수번째 이미지
+			.parent().find('img:odd').last() // 홀수 중 마지막
+			.delay(2000) // 위의 총액션시간 + 2초 후
+			.animate({top: '50px'},200); // (;)세미콜론은 마지막에만
+
+			// html 태그 읽어와서 찍기 //
+			console.log('현재 html:', $('#main').html())
+
+		}); // click
 	});/////////// jQB ///////////////////////
 	
 	
