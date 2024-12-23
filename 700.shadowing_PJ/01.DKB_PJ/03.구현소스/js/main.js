@@ -77,3 +77,31 @@ function controlSwp() {
     swiper.slidePrev();
   } // else //
 } ////////// controlSwp함수 /////////
+
+//////////////////////////////////////////////
+//////// 리스트 내용 서브페이지 별창형 구현 //////////
+//////////////////////////////////////////////
+
+// 공통변경대상 : .sub-cont
+const $subCont = $('.sub-cont');
+// 닫기버튼 세팅
+$subCont.find('.cbtn').click(()=>$subCont.hide());
+
+// 1. 미리보기 영역 클릭 시 세부내용 보기 //
+// 이벤트대상 : .preview-box li
+$('.preview-box li').click(function(){
+  console.log('안뇽');
+
+  // 1. 클릭된 박스의 데이터 읽어오기
+  let currTit = $(this).find('h3').text();
+  let currCont = $(this).find('p').text();
+
+  // 2. 읽어온 내용을 서브컨텐츠 박스에 넣기
+  $subCont.find('h1').text(currTit);
+  $subCont.find('.sub-item').text(currCont);
+
+  // 3. 서브컨텐츠 박스 보이기
+  $subCont.fadeIn();
+  // fadeIn(시간) -> 시간 안쓰면 자동으로 400
+
+}); // click //

@@ -16,6 +16,14 @@
 			// 미션: 각 버튼을 클릭시 버튼에 쓰여진 수치에 맞게 투명도를 조절하여 변경하시오.
 
 			
+      $('button').click(function(){
+        var opa = $(this).text();
+        console.log(opa);
+
+				// 이미지 투명도 변경 애니 적용하기
+				// fadeTo(시간, 오파서티, 이징, 함수)
+				$('img').fadeTo(1000,opa);
+      });
 			
 			
 			

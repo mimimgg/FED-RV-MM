@@ -105,8 +105,23 @@
 	<script>
 		$(function () { /// jQB ////////////
 
+			// 1. 슬라이드 업/다운할 서브메뉴 모두 숨기기
+			$('.smenu').hide();
 			
+			// 2. 슬라이드 애니 설정하기
+			// 이벤트대상 : .gnb > ul > li
+			// 변경대상 : .smenu
 
+			// 형식: $(선택자).hover(함수1,함수2)
+			// - 마우스 오버시 함수1실행, 아웃시 함수2실행
+			$('.gnb > ul > li ').hover(
+				function(){ // over //
+					$('.smenu',this).stop().slideDown(300);
+				},
+				function(){ // out //
+					$('.smenu',this).stop().slideUp(300);
+				}
+		); // hover
 
 			/// stop() 메서드
 			// 애니메이션이 큐에 등록되어 실행되는데 
