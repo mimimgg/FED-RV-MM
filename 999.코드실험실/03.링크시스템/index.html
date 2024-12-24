@@ -3,13 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>02.화면전환효과</title>
+    <title>03.링크시스템 - 메인페이지</title>
     <style>
       html,
       body,
       h1 {
         margin: 0;
         padding: 0;
+      }
+      body{
+        /* 배경넣기 */
+        background: url('https://t4.ftcdn.net/jpg/02/96/64/61/360_F_296646140_btnypVWa1CHefYgC3EgoRLzO2Qh79ITa.jpg') no-repeat center/cover;
       }
 
       /* 페이지 전환효과용 가림막 */
@@ -19,8 +23,8 @@
         top: 0;
         left: 0;
         width: 100vw;
-        /* height: 100vh;
-        display: none; */
+        height: 100vh;
+        /*display: none; */
         background-color: lightseagreen;
         /* 트랜지션: 속시이지 */
         /* transition: all 0.8s ease-in-out; */
@@ -78,8 +82,11 @@
     <!-- 제이쿼리 UI CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"></script>
 
+    <!-- 링크시스템 JS -->
+     <script src="./js/linksys.js" defer></script>
+
     <!-- JS코드구역 -->
-     <script src="./js/main.js" defer></script>
+     <script src="./js/common.js" defer></script>
   </head>
   <body>
     <nav class="gnb">
@@ -94,5 +101,7 @@
         <h1>This is Second One!</h1>
       </div>
     </div>
+    <!-- 화면전환용 가림막 요소 -->
+    <div class="pg-cover"></div>
   </body>
 </html>
