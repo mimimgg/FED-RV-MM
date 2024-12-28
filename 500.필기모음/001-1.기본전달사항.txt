@@ -8,7 +8,7 @@
 3. 공식교과서: w3c 스쿨
 https://www.w3schools.com/
 
-4. 소스 빌드용 폴더 생성하기!
+4. 소스 빌드용 폴더 생성하기!!
 
 5. 강의 동영상 백업 유튜브: 탐쌤코딩 프론트엔드 2024
 https://www.youtube.com/channel/UC54MBwmFWTQoxPeICl7wy2A
