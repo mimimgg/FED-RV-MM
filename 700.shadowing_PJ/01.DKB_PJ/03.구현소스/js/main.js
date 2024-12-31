@@ -8,6 +8,49 @@ import { previewData } from "../data/dkb_data.js";
 
 console.log(previewData);
 
+import gnbData from "../data/gnb_data.js";
+console.log(gnbData, Object.keys(gnbData));
+
+// 0. GNB 데이터 바인딩하기
+$(".gnb").html(`
+    <ul class="fx-box">
+      ${Object.keys(gnbData)
+        .map(
+          (v) => `
+          <li>
+            <a href="#">
+              ${v + (gnbData[v] == "없음" ? "" : '<i class="fa-solid fa-chevron-down"></i>')}
+            </a>
+          ${
+            gnbData[v] == "없음"
+              ? ""
+              : `
+            <!-- 서브메뉴 -->
+            <aside class="smenu">
+              <div class="inbox">
+                <h2>${v}</h2>
+                <ol>
+                ${gnbData[v]
+                  .map(
+                    (v2) => `
+                    <li>
+                      <a href="#">${v2}</a>
+                    </li>
+                  `
+                  )
+                  .join("")}
+                </ol>
+              </div>
+            </aside>
+            `
+          }
+          </li>
+        `
+        )
+        .join("")}
+    </ul>
+  `);
+
 // 1. 슬라이드함수 호출하여 실행하기
 slideFn();
 
@@ -83,25 +126,24 @@ function controlSwp() {
 //////////////////////////////////////////////
 
 // 공통변경대상 : .sub-cont
-const $subCont = $('.sub-cont');
+const $subCont = $(".sub-cont");
 // 닫기버튼 세팅
-$subCont.find('.cbtn').click(()=>$subCont.hide());
+$subCont.find(".cbtn").click(() => $subCont.hide());
 
 // 1. 미리보기 영역 클릭 시 세부내용 보기 //
 // 이벤트대상 : .preview-box li
-$('.preview-box li').click(function(){
-  console.log('안뇽');
+$(".preview-box li").click(function () {
+  console.log("안뇽");
 
   // 1. 클릭된 박스의 데이터 읽어오기
-  let currTit = $(this).find('h3').text();
-  let currCont = $(this).find('p').text();
+  let currTit = $(this).find("h3").text();
+  let currCont = $(this).find("p").text();
 
   // 2. 읽어온 내용을 서브컨텐츠 박스에 넣기
-  $subCont.find('h1').text(currTit);
-  $subCont.find('.sub-item').text(currCont);
+  $subCont.find("h1").text(currTit);
+  $subCont.find(".sub-item").text(currCont);
 
   // 3. 서브컨텐츠 박스 보이기
   $subCont.fadeIn();
   // fadeIn(시간) -> 시간 안쓰면 자동으로 400
-
 }); // click //
