@@ -3,6 +3,15 @@
 // DOM 메서드 모듈
 import myFn from "./my_function.js";
 
+// 결과 메시지 제이슨 불러오기
+import msgTxt from "./data_racing.json" with { type: "json" };
+console.log(msgTxt);
+
+// (( 제이슨 호출형식 ))
+// import 내가지은제이슨담을변수
+// from 제이슨파일경로
+// with {type: 'json'}
+
 /********************************************** 
             [ 게임 기능정의 ]
     _________________________________
@@ -78,20 +87,24 @@ function goGame() {
     }
     // (2-2) '거북출발' 일 경우
     else if(btxt === '거북출발'){
-        // 1) 거북요소 위치값 증가
+
+        // 1) 거북 멈춤 상태값이 true이면 함수 나가
+        if(t1Stop) return;
+
+        // 2) 거북요소 위치값 증가
         t1pos += T1_NUM;
         // t1pos += 100;
         // t1pos = t1pos + 100;
 
-        // 2)거북요소 위치이동값 반영
+        // 3)거북요소 위치이동값 반영
         t1.style.left = t1pos + 'px';
 
-        // 3) 거북버튼 포커스 이동하여 엔터버튼 사용 금지
+        // 4) 거북버튼 포커스 이동하여 엔터버튼 사용 금지
         this.blur();
         // 초점이 들어가게 하는 메서드 : focus()
         // 초점이 빠지게 하는 메서드 : blur()
 
-        // 4) 이때, 토끼호출
+        // 5) 이때, 토끼호출
         goR1();
     }
     // (2-3) '처음으로' 일 경우
@@ -153,7 +166,49 @@ function whoWinner(){
         // (1) 토끼야 멈춰라
         clearInterval(autoI);
         
+        // (2) 거북아 멈춰라 -> 거북멈춤 상태값 true로 변경
+        t1Stop = true;
+
+        // 승자판별변수 (토끼 승 / 거북 승 / 무승부)
+        let winner;
+
+        // (3) 승자 판별하기
+        if(r1pos > t1pos) winner = '토끼';
+        else if(t1pos > r1pos) winner = '거북';
+        else winner = '무승부';
+
+        
+        // (4) 선택된 객체의 배열값 개수로 랜덤수 만들기
+        let rdmNum = Math.floor(Math.random() * msgTxt[winner].length);
+
+        // (5) 선택된 메시지 변수에 담기
+        let lastMsg = msgTxt[winner][rdmNum];
+
+        console.log('결과보기', winner, msgTxt[winner], rdmNum, lastMsg);
+
+        // (6) 박스에 메시지 넣기
+        msg.innerText = lastMsg;
+        
+        // (7) 메시지박스 보이기
+        msg.style.display = 'block';
+        msg.style.zIndex = '9';
+
+        // (8) 전체 반투명 커버 암전주기
+        myFn.qs('.cover').style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: black;
+            opacity: .5;
+            z-index: 8;
+        `;
+
+        // (9) 버튼박스 위로 올리기
+        myFn.qs('#btns').style.zIndex = 200;
     }
+
 } ///////// whoWinner 함수 ////////////////
 
 /**************************************** 
