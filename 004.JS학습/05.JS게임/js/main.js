@@ -58,7 +58,7 @@ let t1Stop = false;
 // console.log('대상:',t1,r1,btns,level,msg);
 
 // 2. 이벤트 설정하기 ////////////
-btns.forEach(el=>myFn.addEvt(el,'click',goGame));
+btns.forEach((el) => myFn.addEvt(el, 'click', goGame));
 
 // 3. 함수 만들기 ///////////////////
 /*********************************** 
@@ -73,29 +73,63 @@ function goGame() {
     // (2) 기능별 분기하기
     // (2-1) '토끼출발' 일 경우
     if(btxt === '토끼출발'){
-
+        // 토끼 자동이동 함수 호출
+        goR1();
     }
     // (2-2) '거북출발' 일 경우
     else if(btxt === '거북출발'){
-        // 거북 위치값 증가
+        // 1) 거북요소 위치값 증가
+        t1pos += T1_NUM;
         // t1pos += 100;
-        t1pos = t1pos + 100;
+        // t1pos = t1pos + 100;
+
+        // 2)거북요소 위치이동값 반영
         t1.style.left = t1pos + 'px';
+
+        // 3) 거북버튼 포커스 이동하여 엔터버튼 사용 금지
+        this.blur();
+        // 초점이 들어가게 하는 메서드 : focus()
+        // 초점이 빠지게 하는 메서드 : blur()
+
+        // 4) 이때, 토끼호출
+        goR1();
     }
     // (2-3) '처음으로' 일 경우
     else if(btxt === '처음으로'){
-        
+        // 페이지 reload하기
+        location.reload();
     }
 } /////////// goGame 함수 ////////////
 
 /*********************************** 
- 함수명: goR1
- 기능: 토끼자동이동(인터발함수)
+    함수명: goR1
+    기능: 토끼자동이동(인터발함수)
  ***********************************/
 // 인터발지우기용 변수
 let autoI;
+console.log('할당전', autoI);
+// -> undefined는 if문에서 false 처리됨
 function goR1(){
-    console.log('토끼자동이동!');
+    console.log('토끼자동이동!', autoI);
+
+    // 인터발 변수에 할당하여 멈출 수 있게 한다
+    // 이때, 변수 할당 전에는 변수가 undefined이므로
+    // if문으로 한 번 할당후엔 실행 못하게 막아준다.
+
+    if (!autoI){ // 할당전 false일때 '!' (Not연산자) 사용해서 true로 변경
+        // 인터발호출
+        autoI = setInterval(() => {
+            // 토끼 위치값 변수
+            r1pos++;
+            r1.style.left = r1pos + 'px';
+            // console.log(r1pos);
+        },level.value);
+        // -> 레벨 옵션값을 읽어와서 넣어준다.
+        // -> 레벨 1 ~ 7 : 단계 10 ~ 4
+
+        // 레벨 적용을 위해 드롭다운 선택값 읽어오기
+        console.log('레벨옵션값:', level.value);
+    }
 } ///////// goR1함수 //////////////////
 
 /***************************************** 
