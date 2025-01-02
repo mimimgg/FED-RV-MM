@@ -68,7 +68,7 @@ btns.forEach((el) => myFn.addEvt(el, 'click', goGame));
 function goGame() {
     // (1) 클릭된 버튼 텍스트 읽기
     let btxt = this.innerText;
-    console.log("고고씽~!");
+    // console.log("고고씽~!");
 
     // (2) 기능별 분기하기
     // (2-1) '토끼출발' 일 경우
@@ -107,10 +107,10 @@ function goGame() {
  ***********************************/
 // 인터발지우기용 변수
 let autoI;
-console.log('할당전', autoI);
+// console.log('할당전', autoI);
 // -> undefined는 if문에서 false 처리됨
 function goR1(){
-    console.log('토끼자동이동!', autoI);
+    // console.log('토끼자동이동!', autoI);
 
     // 인터발 변수에 할당하여 멈출 수 있게 한다
     // 이때, 변수 할당 전에는 변수가 undefined이므로
@@ -119,16 +119,21 @@ function goR1(){
     if (!autoI){ // 할당전 false일때 '!' (Not연산자) 사용해서 true로 변경
         // 인터발호출
         autoI = setInterval(() => {
-            // 토끼 위치값 변수
+            // 1) 토끼 위치값 변수 1씩증가
             r1pos++;
+            // console.log(r1pos); 
+
+            // 2) 토끼 위치값 요소에 반영
             r1.style.left = r1pos + 'px';
-            // console.log(r1pos);
+
+            // 3) 승자판별 함수호출
+            whoWinner();
         },level.value);
         // -> 레벨 옵션값을 읽어와서 넣어준다.
         // -> 레벨 1 ~ 7 : 단계 10 ~ 4
 
         // 레벨 적용을 위해 드롭다운 선택값 읽어오기
-        console.log('레벨옵션값:', level.value);
+        // console.log('레벨옵션값:', level.value);
     }
 } ///////// goR1함수 //////////////////
 
@@ -138,7 +143,17 @@ function goR1(){
         승자를 판별하여 메시지를 보여준다!
 *****************************************/
 function whoWinner(){
-    console.log('승자판별!');
+    // console.log('승자판별!', 
+    // '\n토끼위치', r1pos, 
+    // '\n거북이위치', t1pos);
+
+    // 1) 토끼 / 거북 위치값이 기준값 이상일때
+    // -> 토끼 인터발 멈추기 + 거북이 클릭작동 멈추기
+    if(r1pos >= FINAL_NUM || t1pos >= FINAL_NUM){
+        // (1) 토끼야 멈춰라
+        clearInterval(autoI);
+        
+    }
 } ///////// whoWinner 함수 ////////////////
 
 /**************************************** 
