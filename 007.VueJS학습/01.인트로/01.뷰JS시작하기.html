@@ -75,11 +75,99 @@
         });
         
         // 2. 반복 렌더링
+        new Vue({
+          // 대상선정
+          el: '#app2',
+          // 변수세팅
+          data: {
+            // 배우명 배열리스트 : 배열데이터
+            list : ["김수현", "공유", "송강"],
+            // 상품정보 배열리스트(값은 객체)
+            goods: [
+              {
+                상품명: "나이키",
+                코드: "nike2544",
+                가격: "120,000원"
+              },
+              {
+                상품명: "아디다스",
+                코드: "adidas317",
+                가격: "150,000원"
+              },
+              {
+                상품명: "뉴발란스",
+                코드: "newbalance",
+                가격: "180,000원"
+              },
+            ],
+          },
+        });
         // 3. 이벤트 사용하기
-        // 4. 입력 양식과 동기화하기
-        // 5. 조건분기
+        new Vue({
+          // 대상요소
+          el: '#app3',
+          // 메서드 설정
+          methods: {
+            // 클릭이벤트 연결 메서드
+            myClick(e){ // e - 이벤트 전달변수
+              // 현재 요소 타겟
+              let tg = e.target;
+              console.log("버튼클릭", tg, this.$el);
+              // 1. 버튼클릭변경하기 "👻"
+              tg.innerText = "👻"
+              // 2. 2초 후에 해당요소 아래에 새로운 div 넣기
+              setTimeout(()=>{
+                // Vue 인스턴트에서 this의 의미는 객체 자신
+                // 인스턴스 자신의 요소는 $el로 표시
+                // 즉, div#app3 요소를 나타냄
+                this.$el.innerHTML +=
+                "<div>하하하</div>";
+              },2000)
+            },
+            // 마우스오버 이벤트 연결 메서드
+            myOver(e){
+              console.log("마우스오버");
+              // 1. 버튼글자변경
+              e.target.innerText = "🤢"
+              // 2. 2초후 글자 다시 변경
+              setTimeout(()=>{
+                e.target.innerText = "😵‍💫"
+              },2000)
+            },
+            // 마우스 오버 클릭시 이벤트 연결 메서드
+            overClick(txt){ // txt - 문자값 전달변수
+              console.log("마우스오버 후 클릭");
+              // 인스턴스 루트요소(this.$el)에 html 넣기
+              this.$el.innerHTML +=
+              `
+              <h1>내가 ${txt}야</h1>
+              `
+            },
+          },
+        })
+        // 4. 입력 양식과 동기화하기 ////
+        new Vue({
+            // 1. 대상
+            el: "#app4",
+            // 2. 데이터
+            data: {
+                msg: '여기에 입력해봐요~~~!',
+            },
 
+        }); ///// Vue ///////////////
 
+        // 5. 조건분기하기 //////////
+        new Vue({
+          // 1. 대상선정
+          el: '#app5',
+          // 2. 변수셋팅
+          data: {
+            show: false,
+            // show변수에 false를 담고 이것을
+            // v-if 조건문 디렉티브에 사용하면
+            // true이면 출력하고 false 이면 아예지운다!
+          }, /// data ///
+        }); /// Vue ///
       }); // load //
     </script>
   </head>
@@ -132,18 +220,68 @@
     <hr />
 
     <h2>2. 반복 렌더링</h2>
-    <div id="app2"></div>
+    <div id="app2">
+      <!-- 단순 배열데이터 찍기 -->
+      <ol>
+        <li v-for="배우명 in list">{{배우명}}</li>
+      </ol>
+      <!-- 배열안에 반복되는 객체 데이터 찍기 -->
+      <div v-for="(item, idx) in goods">
+        <h4>{{"아이템번호: item"+(idx+1)}}</h4>
+        {{item.가격}}
+        <ul>
+          <li v-for="(val,name) in item">{{name + " : " + val}}</li>
+        </ul>
+      </div>
+    </div>
     <hr />
 
     <h2>3. 이벤트 사용하기</h2>
-    <div id="app3"></div>
+    <div id="app3">
+      <button @click="myClick">클릭</button>
+      <button @mouseover="myOver"
+      @click="overClick('Vue.js')"
+      >오버</button>
+    </div>
     <hr />
 
     <h2>4. 입력 양식과 동기화하기</h2>
-    <div id="app4"></div>
+    <div id="app4">
+        <input type="text" v-model="msg" />
+        <!-- 
+        v-model 디렉티브 속성은 요소 자신의 값이
+        타겟값으로 반영되게 해준다!
+        변경 데이터의 뷰JS의 동기화기능을 확인!
+      -->
+        <p>
+            {{msg}}
+        </p>
+    </div>
     <hr />
 
     <h2>5. 조건분기</h2>
-    <div id="app5"></div>
+    <div id="app5">
+        <button @click="show=!show">
+          뒤집어!{{show}}
+          <!-- 
+            해석: show=!show
+            show값이 true이면 false, false이면 true로
+            불린값을 반대로 해서 다시 할당함!
+            (이벤트값 설정구역에 코드를 쓸수 도 있음!)
+          -->
+        </button>
+        <p>
+          나는 사실 사람이 아니다!
+          <span v-if="show">뻥이요~!</span>
+          <!-- 
+            v-if 조건문 디렉티브
+            값으로 쓴 조건에 따라
+            해당요소가 화면에 출력될지 말지를
+            결정할 수 있다!
+            (결과적으로 가상돔에 출력을 안하면
+            실제돔에 출력되지 않는다!)
+          -->
+        </p>
+      </div>
   </body>
 </html>
