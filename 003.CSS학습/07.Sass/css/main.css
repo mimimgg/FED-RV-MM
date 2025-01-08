@@ -142,7 +142,6 @@ img {
 .top-area h1 {
   color: #00ffd0;
   font-size: 40px;
-  font-weight: bold;
   font-family: "times New Roman", serif;
   text-align: center;
   text-decoration: underline;
@@ -155,8 +154,94 @@ img {
   background-size: 110px;
   padding: 28px;
 }
+.top-area h1::before {
+  content: "🤢";
+}
 .top-area h2 {
   font-size: 28px;
   text-align: center;
   padding: 28px 0;
+}
+
+.main-area section {
+  border-color: blue;
+  border-style: dashed;
+  border-width: 7px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+.main-area section h3 {
+  color: navy;
+  font-size: 40px;
+  font-family: "times New Roman", serif;
+  text-align: center;
+  text-decoration: underline;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2392156863);
+}
+.main-area section h3::before {
+  content: "🤢";
+}
+.main-area section ul, .main-area section ol, .main-area section p {
+  line-height: 2;
+  font-size: 20px;
+}
+.main-area section ul li, .main-area section ol li, .main-area section p li {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 5px;
+  text-decoration-color: #2a21ae;
+  text-align: center;
+}
+.main-area section ul li:first-child, .main-area section ol li:first-child, .main-area section p li:first-child {
+  color: orchid;
+  font-weight: bold;
+  font-size: 28px;
+  text-shadow: 1px 0 #000;
+}
+.main-area section ul li::before, .main-area section ol li::before, .main-area section p li::before {
+  content: "🙂‍↔️";
+}
+
+.box-basic, .bottom-title, .button-box {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.bottom-title {
+  color: darkred;
+  font-size: 40px;
+  font-family: "times New Roman", serif;
+  text-align: center;
+  text-decoration: underline;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2392156863);
+  margin-bottom: 50px;
+}
+.bottom-title::before {
+  content: "👉";
+}
+
+.button-basic, .button-report {
+  display: inline-block;
+  border: 1px solid #222;
+  border-radius: 20px;
+  padding: 15px 30px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+.button-basic:hover, .button-report:hover {
+  background-color: hotpink;
+  text-decoration: overline;
+  text-decoration-style: wavy;
+}
+.button-basic.my, .my.button-report {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 5px;
+}
+
+.button-report {
+  background-color: orange;
+  color: #fff;
 }/*# sourceMappingURL=main.css.map */
