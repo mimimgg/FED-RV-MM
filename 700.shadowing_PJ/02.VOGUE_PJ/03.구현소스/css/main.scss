@@ -1,6 +1,72 @@
 // 보그 PJ 메인페이지 SCSS - main.scss
 
 // 파일 합치기
-@import "./common/_core.scss";
+@import "./variables/variables";
+@import "./common/core";
+@import "./common/reset";
 
+// 1. 상단영역
+.top-area {
+  padding: $spacing-40;
+}
+// 1-1. 로고박스
+.logo {
+  h1 {
+    text-align: center;
+    img {
+      height: 60px;
+    }
+  }
+}
+// 1-2. gnb메뉴
+.gnb {
+  margin-top: 40px;
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: $spacing-40;
+    li {
+      font-size: $font-size-common;
+    }
+  }
+}
+
+// 2. 배너영역
+// 배너박스
+.ban-box {
+  ul {
+    display: flex;
+    li {
+      position: relative;
+      width: 100vw;
+      // 비율박스
+      aspect-ratio: 1499 / 701;
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .post_content {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: $spacing-40;
+        color: $color-white;
+        text-shadow: 0 0 5px #0000007d;
+
+        // 분류 / 날짜
+        p {
+          font-size: $font-size-common;
+        }
+        // 대타이틀
+        h3 {
+          font-size: $font-size-x-large;
+        }
+      }
+    }
+  }
+}
 
