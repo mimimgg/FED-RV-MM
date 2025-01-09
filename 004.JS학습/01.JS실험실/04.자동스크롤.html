@@ -6,6 +6,12 @@
     <title>JS실험실 - 04.자동스크롤 구현하기</title>
     <!-- 외부CSS호출 -->
     <link rel="stylesheet" href="./css/auto_scroll.css">
+    <!-- 여기에만 적용하는 CSS 덮어쓰기 -->
+    <style>
+        /* .on을 추가하면 상단메뉴 숨기기 */
+        #header.on {translate: 0 -100%;}
+        #header {transition: .4s;}
+    </style>
     <!-- 외부JS 연결 -->
     <script src="./js/auto_scroll.js" type="module"></script>
     <script src="./js/scroll_menu.js" type="module"></script>

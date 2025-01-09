@@ -38,7 +38,7 @@ myFn.qs('#logo a').onclick = function(){
 myFn.qs('html').style.scrollBehavior ='smooth';
 
 // (1-2) body에 overflow 히든 설정
-// myFn.qs('body').style.overflow ='hidden';
+myFn.qs('body').style.overflow ='hidden';
 
 // 2. 전역변수 설정하기
 // (2-1) 페이지변수
@@ -184,3 +184,68 @@ function movePage(evt,el,idx,list){
             // el2.parentElement.classList.remove('on');
     // }); // forEach // 
 } // movePage //
+
+/********************************************************* 
+    [ 모바일 이벤트처리 ]
+    
+    [ 모바일 터치 스크린에서 사용하는 이벤트 종류 ]
+    1. touchstart - 손가락이 화면에 닿을때 발생
+    2. touchend - 손가락이 화면에서 떨어질때 발생
+    3. touchmove - 손가락이 화면에 닿은채로 움직일때 발생
+    
+    [ 화면터치 이벤트관련 위치값 종류 ]
+    1. screenX, screenY : 
+        디바이스 화면을 기준한 x,y 좌표
+    2. clientX, clientY : 
+        브라우저 화면을 기준한 x,y 좌표(스크롤미포함)
+    3. pageX, pageY : 
+        스크롤을 포함한 브라우저 화면을 기준한 x,y 좌표
+*********************************************************/
+
+// 1. 모바일 이벤트 등록하기
+myFn.addEvt(window, 'touchstart', touchStartFn);
+myFn.addEvt(window, 'touchend', touchEndFn);
+
+// 터치 시 위치값 변수 지정
+// mPosStart 시작위치 / mPosEnd 끝위치
+let mPosStart = 0, 
+mPosEnd = 0;
+
+// 2. 모바일 이벤트함수 만들기
+function touchStartFn(event){
+    // 모바일에서 스와이프를 하기 위해서 필요한 값은 Y축
+    mPosStart = event.touches[0].screenY;
+    // event.touches는 모바일 터치정보를 담고 있음
+    // 위치정보는 0번째 주소에 모두 종류별로 있음
+    console.log('터치시작', mPosStart, event.touches);
+} // touchStartFn //
+function touchEndFn(event){
+    // 1. 모바일에서 스와이프를 하기 위해서 필요한 값은 Y축
+    mPosEnd = event.changedTouches[0].screenY;
+    // 처음 터치위치값과 변경된 터치위치값은 다른곳에 담긴다
+    // 바로 changedTouches를 사용한다.
+
+    // 2. 위치 차이 : 처음위치 - 나중위치
+    let diffValue = mPosStart - mPosEnd;
+    console.log('터치끝', mPosEnd, '차이수:', diffValue);
+
+    // 3. 위치차이 값이 양수이면 아래쪽 이동(음수는 위쪽이동)
+    if (diffValue > 0){
+        console.log('아랫방향이동');
+        pgNum++;
+    }  // if //
+    else if (diffValue < 0) {
+        console.log('윗방향이동');
+        pgNum--;
+    } // else if //
+
+    // 4. 한계갑 체크 (0과 페이지 끝번호 기준)
+    if (pgNum < 0) pgNum = 0;
+    else if (pgNum > TOTAL_PAGE - 1) pgNum = TOTAL_PAGE - 1;
+
+    // 5. 페이지 이동하기 /////////
+    window.scrollTo(0, pageEl[pgNum].offsetTop);
+    
+    // 6. 페이지번호와 일치하는 GNB와 인디케이터에 클래스on넣기
+    [gnb, indic].forEach((v) => addOn(v));
+} // touchEndFn //

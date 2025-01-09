@@ -1,6 +1,14 @@
 // 스타일 난다 사이트 구성 JS /////
 
 /*************************************** 
+ * [ 뷰JS 인스턴스 생성 기본구성 ]
+ * new Vue({
+ *  1. 대상요소 : el{}
+ *  2. 데이터 : data{}
+ *  3. 메소드 : methods{}
+ *  4. 라이프사이클 : created(){} / mounted(){}
+ * })
+ ****************************************
  * [ 뷰JS 라이프 사이클 속성 사용하기 ]
  * -> 뷰인스턴스 생성자 메서드 객체 셋팅시 사용!
  * -> new Vue({created(){},mounted(){},})
@@ -32,6 +40,15 @@ function GetList(idx, name, img, price) {
   this.price = price;
 } // GetList 생성자함수 //
 
+// 아래와 같이 생성자 함수가 아닌 객ㅊ리턴 함수를 사용할 수 있다.
+// const retFn = (idx,name,img,price) => ({
+//   idx:idx,
+//   name:name,
+//   img:img,
+//   price:price,
+// });
+// console.log(retFn("aa","bb","cc","dd"));
+
 // 1. 뷰JS 인스턴스 생성하기
 const vm = new Vue({
   // (1) 대상선정
@@ -60,12 +77,12 @@ const vm = new Vue({
     // (3-1) 이미지 태그를 리턴하는 메서드
     makeImg(val){
       return `
-      <img src="./images/fashion1/${val}.jpg" alt="스타일난다 상품1">
-      <img src="./images/fashion2/${val}.png" alt="스타일난다 상품2">
+      <img src="./images/fashion1/${val}.jpg" alt="스타일난다상품1">
+      <img src="./images/fashion2/${val}.png" alt="스타일난다상품2">
       `;
     },
     // (3-2) 숫자 세자릿수 구분 콤마
-    addCommas(x){},
+    addCommas: (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
   },
 
   // (4) 뷰인스턴스 초기화 단계 : created
@@ -78,7 +95,7 @@ const vm = new Vue({
     // 객체 18개를 생성하자 -> data파트에 생성함
     // const items = [];
 
-    for (let i = 0; i < 19; i++) {
+    for (let i = 1; i < 19; i++) {
       // 상품명 배열 랜덤 번호(0 ~ 3)
       let rdm = Math.floor(Math.random() * 4);
 
@@ -99,5 +116,20 @@ const vm = new Vue({
   }, // created //
 
   // (5) 뷰 랜더링 완료단계 : mounted
-  mounted() {}, // mounted //
+  mounted() {
+    // 랜더링 후 자동실행구역 
+    // 1) 제목 숨겼다 보이기
+    $('.tit').hide().delay(1000).slideDown(400);
+
+    // 2) 로고 왼쪽 날아오기
+    $('.logo').css({translate: '-100vw'})
+    .delay(2000)
+    .animate({translate: '0'}, 800, "easeOutElastic", ()=>{
+      // 3) 리스트 위치로 스크롤 애니 이동
+      $('html, body')
+      .animate({
+        scrollTop: $('.gwrap').offset().top + ''}
+        , 600, "easeOutExpo");
+    });
+  }, // mounted //
 });
