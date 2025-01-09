@@ -109,6 +109,7 @@
     text: {
         align: center;
         decoration: underline;
+        underline-offset: 10px;
         shadow: 5px 5px 5px #0000003d
     }
     // 가상요소 아이콘 넣기
@@ -144,12 +145,50 @@
     }
     // 서브 타이틀 박스
     h2 {
+        position: relative;
         font-size: $fontSize3;
         // 박스공통설정
-        text-align: center;
-        padding: $fontSize3 0;
+        @extend .box-basic;
+        // text-align: center;
+        // padding: $fontSize3 0;
+
+        // circle(원)모양 4개의 span
+        span {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+
+            // 각 span 위치잡기
+            @for $i from 1 through 4 {
+                &:nth-of-type(#{$i}) {
+                    @if ($i==1 or $i==2) {
+                        top: -40px;
+                    }
+                    @if ($i==3 or $i==4) {
+                        bottom: 0;
+                    }
+                    @if ($i==1 or $i==3) {
+                        left: 0;
+                    }
+                    @if ($i==2 or $i==4) {
+                        right: 0;
+                    }
+                }
+            }
+        }
     }
 }
+
+// 상단영역의 span 원모양 색상 @each 제어문 넣기
+// 사용할 세팅값은 객체형변수인 $colors를 사용한다
+@each $key, $val in $colors {
+    .#{$key}-circle {
+        background-color: $val;
+    }
+}
+// #{}자리에 변수가 들어가서 속성이 할당됨
+// $key, $val은 순서대로 앞에것이 속성, 뒤에 것이 들어옴.
 
 // 메인영역
 .main-area {
@@ -182,6 +221,8 @@
                     decoration-color: $mainColor2;
                     align: center;    
                 }
+                // 배경색
+                background-color: #ff0;
                 // [ 네스팅 이어붙이기 기법 ]
                 &:first-child {
                     color: orchid;
@@ -189,6 +230,16 @@
                     font-size: $fontSize3;
                     text-shadow: 1px 0 #000, 
                 }
+                // 두번째 li 요소부터 다섯번째까지 앞뒤 보더 넣기
+                @for $i from 2 to 6 { // to는 끝수 불포함
+                    &:nth-child(#{$i}){
+                        border-left: ($i * 20px) solid red;
+                        border-right: ($i * 20px) solid red;
+                    }
+                }
+                // 변수구역인 #{}는 선택자부분, CSS 속성부분에 사용
+                // 값부분에 사용시엔 변수를 그대로 쓸 수 있다.
+                
                 // 가상요소 블릿넣기
                 &::before{
                     content: '🙂‍↔️';
