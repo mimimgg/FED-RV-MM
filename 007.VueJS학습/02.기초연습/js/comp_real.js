@@ -1,4 +1,4 @@
-// 01. 컴포넌트 연습 JS
+// 02. 컴포넌트 현실화 JS
 
 // 1. 상단영역 전역 컴포넌트 만들기
 // Vue.component(컴포넌트명,{template:코드})
@@ -13,7 +13,7 @@ Vue.component("tit-comp", {
     `,
 }); ///// 전역컴포넌트1 /////
 
-new Vue({el:'.tit'});
+// new Vue({el:'.tit'});
 
 // [갤러리용 변수]
 let inum = 0;
@@ -94,19 +94,19 @@ Vue.component('list-comp',{
 });
 
 // 컴포넌트의 부모 뷰인스턴스
-new Vue({
-    el:'.grid',
-    // 자식 컴포넌트의 전달값을 받기 위한 메서드를 만든다
-    methods:{
-        // 자식이벤트 전달 후 실행메서드
-        goMsg(txt){
-            alert('자식이 부모에게 이벤트 전달 성공!! '+txt);
-        },
-        ovMsg(obj){
-            console.log('오버! 오케이!', obj);
-        }
-    },
-})
+// new Vue({
+//     el:'.grid',
+//     // 자식 컴포넌트의 전달값을 받기 위한 메서드를 만든다
+//     methods:{
+//         // 자식이벤트 전달 후 실행메서드
+//         goMsg(txt){
+//             alert('자식이 부모에게 이벤트 전달 성공!! '+txt);
+//         },
+//         ovMsg(obj){
+//             console.log('오버! 오케이!', obj);
+//         }
+//     },
+// })
 
 
 // 3. 유튜브 동영상 컴포넌트 만들기
@@ -125,7 +125,7 @@ Vue.component("ifr-comp",{
 });
 
 // 뷰인스턴스 생성하기 : 유튜브 동영상 컴포넌트
-new Vue({el:".you-box"});
+// new Vue({el:".you-box"});
 
 // 4. 하단 컴포넌트 만들기
 Vue.component("footer-comp",{
@@ -138,5 +138,5 @@ Vue.component("footer-comp",{
 });
 
 // 뷰인스턴스 생성하기 : 하단 컴포넌트
-new Vue({el:".tit2"});
+// new Vue({el:".tit2"});
 

@@ -126,6 +126,10 @@ function bindData() {
             .join("")}
     </table>
 `;
+
+// 삭제버튼 링크함수 호출
+setDelLink();
+
 } ////////////// bindData //////////////////
 
 /////////////////////////////////////
@@ -166,24 +170,94 @@ myFn.qs('#sbtn').onclick = () => {
         // 함수 아랫부분 실행하지 못하도록 return함
         return;
     } // catch //
+
+    // 로컬쓰 처리함수 호출
+    setLS({key:'minfo',opt:'add'});
+}; // click 이벤트 함수 //
+
+//////////////////////////////////////////////////////
+// [ 데이터 삭제 버튼 클릭 시 데이터 삭제하기 ]
+// 대상 : .del-link a (삭제버튼)
+// 처음 로딩시 삭제버튼에 클릭이벤트를 설정하게 되면 삭제 후 리스트가 변경됨에 따라 기존에 설정된 이벤트가 사라짐
+// -> 주의! 일반적으로 형제요소 중 DOM구조가 변경될 시 이벤트는 기존 이벤트가 리셋되는 것이 기본임
+// -> 따라서, DOM이 변경될 경우 그 형제요소의 이벤트를 다시 설정해야 한다.
+// 이런 이유로 아래 이벤트설정 코드는 함수로 만들어준다.
+//////////////////////////////////////////////////////
+function setDelLink(){
+    // 삭제코드 a링크를 순회하여 이벤트 및 기능넣기!
+    myFn.qsa('.del-link a').forEach(el=>{
+        myFn.addEvt(el,'click',function(e){
+            // a요소 기본이동 막기
+            e.preventDefault();
     
+            // 1. 지울순번 읽어오기 : data-idx 속성값
+            let delIdx = this.getAttribute('data-idx');
+            console.log('지울순번', delIdx);
+    
+            // 2. 로컬쓰 처리함수 호출
+            setLS({key:'minfo', opt:'delete', delSeq:delIdx});
+        }); // addEvt //
+    }); // forEach //
+} // setDelLink() 함수 // 
+
+/*******************************************
+ * 함수명 : setLS
+ * 기능 : 로컬스토리지 데이터를 처리하는 함수
+*******************************************/
+function setLS(obj){ 
+    // 전달변수를 하나만 받고 그 값을 객체로 정의한다.
+    // -> 이렇게 하면 확장성이 좋아진다.
+    // -> 지울때는 지울순번을 더 보내야한다.
+
+    // 아래 속성명 정의 // 
+    // obj = {key:값, opt:값, delIdx:값}
+    // obj.key - 로컬스토리지 키명
+    // obj.opt - 처리옵션 (add/delete/update)
+    // obj.delSeq - 지울순번
+    // -> 일반적으로 데이터 처리는 4가지를 말한다.
+    // -> 크루드(CRUD) -> Create / Read / Update / Delete
+
     // [ 로컬쓰 처리 기본과정 ]
     // 로컬쓰읽기 -> 로컬쓰파싱 -> 데이터변경 -> 로컬쓰문자형
+
+    // 1. 전달값 및 호출확인
+    console.log('로컬쓰처리', obj.key);
+
     // 2. 로컬쓰 minfo 데이터 읽어오기 : 문자형 데이터임
-    let locals = localStorage.getItem('minfo');
+    let locals = localStorage.getItem(obj.key);
 
-    // 3. 로컬쓰 minfo 파싱후 데이터 넣기
+    // 3. 로컬쓰 minfo 파싱후 데이터 처리하기
     locals = JSON.parse(locals);
-    locals.push({
-        idx: locals.length+1,
-        tit: tit.value,
-        cont: cont.value,
-    });
+    // 문자형 로컬쓰를 파싱하여 배열객체로 변환함
 
+    console.log('Math.max(1, 50, 24)', Math.max(1, 50, 24));
+    console.log('locals.map(v => v.idx))', locals.map(v => v.idx));
+
+    // 3-1. 'add'일때 데이터 추가
+    if(obj.opt == 'add'){
+        locals.push({
+            // 고유번호는 데이터 중 최대값에 1을 더해야 함
+            // Math.max(1, 50, 24) -> 결과는 50
+            // Math.max.apply(보낼객체, 배열) -> 보낼 객체가 없으면 null
+            // -> max하위 apply는 배열값을 대상으로 최대값을 적용한다.
+            idx: Math.max.apply(null, locals.map(v => v.idx)) + 1,
+            tit: tit.value,
+            cont: cont.value,
+        });
+    } // if //
+    // 3-2. 'update'일때 데이터 수정하기
+    else if(obj.opt == 'update'){
+        
+    } // else if //
+    // 3-3. 'delete'일때 데이터 삭제하기
+    else if(obj.opt == 'delete'){
+        // 삭제처리 배열함수 : splice(지울순번, 1)
+        locals.splice(obj.delSeq,1);
+    } // else if //
+    
     // 4. 로컬쓰 변경된 데이터 다시 넣기 : 넣을때는 문자화(stringify)
-    localStorage.setItem('minfo',JSON.stringify(locals));
+    localStorage.setItem(obj.key,JSON.stringify(locals));
 
     // 5. 다시 데이터 바인딩하기
     bindData();
-
-}; // click 이벤트 함수 //
+} // setLS 함수 // 
