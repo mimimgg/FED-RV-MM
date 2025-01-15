@@ -27,10 +27,22 @@
       <!-- 유튜브 동영상박스 -->
       <div class="you-box">
         <!-- 아이프레임 컴포넌트 -->
-        <ifr-comp></ifr-comp>
-        <ifr-comp></ifr-comp>
+        <ifr-comp v-bind:mv-code="'ZH1Y1l1OmTY'"></ifr-comp>
+        <ifr-comp v-bind:mv-code="'ZaQNTfKbngI'"></ifr-comp>
+        <ifr-comp v-bind:mv-code="'Qz2QFUHbHQc'"></ifr-comp>
+        <ifr-comp v-bind:mv-code="'iV-tLF7U-n0'"></ifr-comp>
       </div>
       <!-- 2.그리드 레이아웃 박스 -->
+      <!-- 추가된 리스트박스 -->
+      <div class="grid">
+        <de-fashion-list
+          v-for="v in exData"
+          v-bind:list-idx="v.idx"
+          v-bind:list-tit="v.gName"
+          v-bind:list-price="v.gPrice"
+          v-bind:fn-add-comma="addComma"
+        ></de-fashion-list>
+      </div>
       <div class="grid">
         <!-- v-for 숫자돌리기
         (숫자증가,순번) in 개수 -->
@@ -43,6 +55,7 @@
           v-bind:my-seq="i"
           v-on:hull="goMsg"
           v-on:gotkimchi="ovMsg"
+          v-bind:fn-add-comma="addComma"
         ></list-comp>
         <!--
           v-on:hull="goMsg"
