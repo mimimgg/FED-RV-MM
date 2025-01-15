@@ -73,14 +73,11 @@
         text-underline-offset: 10px;
       }
       // 구독하기
-      &:nth-child(2) {
+      &:nth-child(2) a{
         font-weight: bold;
         padding: 8px 15px;
         background-color: #000;
-
-        a {
-          color: #fff;
-        }
+        color: #fff;
       }
       // 햄버거
       &:nth-child(3) {
@@ -145,18 +142,19 @@
   }
 }
 
-// 7. Fashion 영역
-// 서브 타이틀 공통
-.sub-tit {
-  font-size: $font-size-x-large;
-  padding-bottom: 15px;
+// 3. today's stories 영역
+// 투데이영역박스
+.today-area {
+  @extend .common-box;
 }
 
-// 영역박스 공통
-.common-box {
-  padding: $spacing-40;
+// 리스트박스
+.post-list-today {
+  // left-type 불러오기
+  @include list-type("left-type");
 }
 
+// 7. 패션 영역
 // 패션박스
 .fashion-area {
   @extend .common-box;
@@ -164,50 +162,6 @@
 
 // 리스트박스
 .post-list {
-  ul {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-
-    // 3번째 li 두칸 차지하기
-    li:nth-child(3) {
-      grid-area: 1 / 3 / 3 / 4;
-
-      figcaption {
-        translate: 0 -100%;
-        padding: 20px;
-        color: #fff;
-        background: linear-gradient(to top, #000, transparent);
-
-        p.date {
-          display: none;
-        };
-      }
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  // 아이템설명박스
-  figcaption {
-    padding: 10px 0;
-
-    p.category {
-      font-size: $font-size-cat-date;
-    }
-    h3.s-tit {
-      font-size: $font-size-small-tit;
-      margin: 10px 0;
-    }
-    p.date {
-      font-size: $font-size-small;
-      text-align: right;
-      color: #999;
-      padding-right: 10px;
-    }
-  }
+  // right-type 불러오기
+  @include list-type("right-type");
 }
