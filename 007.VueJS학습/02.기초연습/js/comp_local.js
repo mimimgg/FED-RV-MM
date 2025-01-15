@@ -1,12 +1,71 @@
-// 02. 컴포넌트 현실화 JS
+// 03. 컴포넌트 지역화 JS - comp_local.js
 
 // 새로운 리스트 데이터 불러오기
 import deData from './comp_data.json' with{type: 'json'};
 // console.log(deData);
 
+/***************************************************** 
+  [ 컴포넌트의 지역화 : 지역 컴포넌트 ]
+  1. 지역 컴포넌트는 무엇인가?
+  - 뷰인스턴스 내부에 셋팅되는 컴포넌트다.
+  2. 전역 컴포넌트와 차이는 무엇인가?
+  - 지역컴포넌트는 다른 뷰인스턴스에서 사용할 수 없다
+  3. 왜 사용하는가?
+  - 전역과 달리 특정 뷰인스턴스 전용으로 만들때 사용한다.
+  4. 사용문법은 무엇인가?
+  - 뷰인스턴스 안의 components 속성값으로 객체형식으로 쓴다.
+  - 보통 템플릿 등의 속성객체는 별도의 변수에 할당 후 쓴다.
+
+  ((구문))
+  new Vue({
+    components:{
+      컴포넌트명: 셋팅객체,
+      컴포넌트명: 셋팅객체,
+      컴포넌트명: 셋팅객체,
+    }
+  })
+____________________________________
+
+  코드예)
+  // 타이틀 컴포넌트 셋팅데이터 변수
+  const titCompData = {
+    template: '<h1>{{propsdata}}</h1>',
+    props: ['propsdata']
+  }
+
+  // 배너 컴포넌트 셋팅데이터 변수
+  const banCompData = {
+    template: '<div>{{propsdata}}</div>',
+    props: ['propsdata']
+  }
+      
+  // 뷰 인스턴스 생성코드 ////
+  new Vue({
+    el: '#app',
+    // 지역 컴포넌트 셋팅속성 ///
+    components: {
+        'tit-comp': titCompData,
+        'ban-comp': banCompData,
+    },
+    data: {
+        message: 'Hello',
+        num: 10
+    }
+  })
+
+  _________________________________________
+  
+  ((비교참고 : 전역컴포넌트))
+  - 서로 다른 뷰 인스턴스에서 모두 사용가능한 컴포넌트
+  ((구문))
+  Vue.component(컴포넌트이름, {셋팅객체});
+
+*****************************************************/
+
+
 // 1. 상단영역 전역 컴포넌트 만들기
 // Vue.component(컴포넌트명,{template:코드})
-Vue.component("tit-comp", {
+const titCompData = {
     template: `
         <strong>
             <span>
@@ -15,7 +74,7 @@ Vue.component("tit-comp", {
             쇼핑모~~~올 갤러리 리스트
         </strong>
     `,
-}); ///// 전역컴포넌트1 /////
+}; ///// 전역컴포넌트1 /////
 
 // new Vue({el:'.tit'});
 
@@ -23,7 +82,7 @@ Vue.component("tit-comp", {
 let inum = 0;
 
 // 2. 갤러리 리스트에 넣을 전역 컴포넌트 만들기 ///
-Vue.component('list-comp',{
+const listCompData ={
     // (1) 템플릿 설정
     template: `
         <div>
@@ -90,7 +149,7 @@ Vue.component('list-comp',{
             this.$emit('gotkimchi');
         },
     }
-});
+};
 
 // 컴포넌트의 부모 뷰인스턴스
 // new Vue({
@@ -109,7 +168,7 @@ Vue.component('list-comp',{
 
 
 // 3. 유튜브 동영상 컴포넌트 만들기
-Vue.component("ifr-comp",{
+const ifrCompData = {
     // 3-1. template옵션
     template:`
     <iframe width="49%" style="aspect-ratio: 16/9;" 
@@ -127,27 +186,27 @@ Vue.component("ifr-comp",{
             ifrSrc: `https://www.youtube.com/embed/${this.mvCode}?autoplay=1&mute=1&loop=1&playlist=${this.mvCode}`,
         };
     },
-});
+};
 
 // 뷰인스턴스 생성하기 : 유튜브 동영상 컴포넌트
 // new Vue({el:".you-box"});
 
 // 4. 하단 컴포넌트 만들기
-Vue.component("footer-comp",{
+const footerCompData = {
     template:`
         <div style="background-color:black;text-align:center;color:white;line-height:2;font-weight:bold; padding:3vw; margin-top:1vw;">
             <h2>Discovery Expedition</h2>
             <h3>Copyright © F&F Corp. All Rights Reserved.</h3>        
         </div>
     `,
-});
+};
 
 // 뷰인스턴스 생성하기 : 하단 컴포넌트
 // new Vue({el:".tit2"});
 
 // 모든 컴포넌트는 모두 뷰인스턴스 생성전에 세팅하면 된다
 // 새로운 리스트 컴포넌트 세팅하기 //
-Vue.component('de-fashion-list', {
+const deFashionListData = {
     // 1. 템플릿
     template: `
         <div>
@@ -178,13 +237,21 @@ Vue.component('de-fashion-list', {
             gprice: this.fnAddComma(this.listPrice)+'원',
         };
     }, // data //
-}); // component //
+}; // component //
 
 ////////////////////////////////////////////////////////////////
 //// 전체 최상위 부모인 .main-wrap을 유일한 뷰 인스턴스로 생성함
 ////////////////////////////////////////////////////////////////
 new Vue({
     el:'.main-wrap',
+    // 지역컴포넌트 속성 세팅
+    components: {
+      "tit-comp": titCompData,
+      "list-comp": listCompData,
+      "ifr-comp": ifrCompData,
+      "footer-comp": footerCompData,
+      "de-fashion-list": deFashionListData,
+    },
     // 부모 뷰인스턴스 메서드 구역
     data:{
         // 부모컴포넌트에서 사용할 import한 데이터 할당
