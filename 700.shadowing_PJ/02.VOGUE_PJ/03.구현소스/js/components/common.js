@@ -46,7 +46,9 @@ const TopComp = Vue.component("top-comp", {
 });
 
 // 2. 하단 컴포넌트
-const BottomComp = Vue.component("bottom-comp", {});
+const BottomComp = Vue.component("bottom-comp", {
+  
+});
 
 // 3. 내보내기
 export { TopComp, BottomComp };
