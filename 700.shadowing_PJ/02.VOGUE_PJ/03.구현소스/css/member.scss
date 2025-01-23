@@ -1,11 +1,10 @@
-// 보그 PJ 메인페이지 SCSS - member.scss
+// 보그 PJ 회원가입 페이지 SCSS - member.scss
 
-// 파일 합치기
+// 파일 합치기 ////
 @import "./variables/variables";
 @import "./common/core";
 @import "./common/reset";
 @import "./common/common";
-
 
 /* 컨텐츠 영역 속박스 */
 .main-area {
@@ -27,7 +26,7 @@
 .scont {
   /* 처음에 회원가입 박스안보임 
     -> 대신 동의박스가 보임 */
-//   display: none;
+  //   display: none;
   max-width: 700px;
   min-height: 275px;
   margin: 0 auto;

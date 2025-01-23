@@ -1,12 +1,10 @@
-// 보그 PJ 메인페이지 SCSS - login.scss
+// 보그 PJ 로그인 페이지 SCSS - login.scss
 
-// 파일 합치기
+// 파일 합치기 ////
 @import "./variables/variables";
 @import "./common/core";
 @import "./common/reset";
 @import "./common/common";
-
-
 
 /* 컨텐츠 영역 속박스 */
 .main-area {
@@ -72,7 +70,7 @@
 }
 
 /* 포커스 아웃라인 제거
-모든 브라우저에 기본 포커스 아웃라인 셋팅됨! */
+  모든 브라우저에 기본 포커스 아웃라인 셋팅됨! */
 input:focus {
   outline: none;
 }
@@ -92,8 +90,8 @@ input:focus {
   border: 1px solid #888;
   border-radius: 5px;
   /* 그라데이션
-    배경이미지에서 셋팅
-    linear-gradient(방향,색1,색2,...) */
+      배경이미지에서 셋팅
+      linear-gradient(방향,색1,색2,...) */
   background-image: linear-gradient(to bottom, #ddd, #555);
   color: #fff;
   text-shadow: 1px 1px #555;

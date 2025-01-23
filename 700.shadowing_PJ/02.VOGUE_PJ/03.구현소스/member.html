@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,11 +7,13 @@
       name="description"
       content="컬렉션부터 스타일, 쇼핑, 뷰티, 라이프스타일, 셀러브리티까지 지금 가장 핫한 트렌드 소개"
     />
-    <link rel="shortcut icon" href="https://img.vogue.co.kr/vogue/common/vogue-favicon.ico?v=0.2" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="https://img.vogue.co.kr/vogue/common/vogue-favicon.ico?v=0.2"
+      type="image/x-icon"
+    />
     <title>보그 코리아 (Vogue Korea)</title>
-
-    <link rel="stylesheet" href="css/member
-.css" />
+    <link rel="stylesheet" href="./css/member.css" />
 
     <!-- 뷰JS 스탠드얼론 버전 가져오기! -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -22,15 +24,24 @@
     <!-- 엑시오스 라이브러리 스탠드얼론 버전 가져오기(제이슨불러오기) -->
     <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
 
+    <!-- 제이쿼리 라이브러리 CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- 제이쿼리 UI CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+
     <!-- 메인뷰 JS -->
     <script type="module" src="./js/main_vue.js"></script>
+
+    <!-- 메인 JS -->
+    <!-- <script type="module" src="./js/main.js"></script> -->
   </head>
   <body>
     <div id="vogue-app">
       <!-- 1. 상단영역 -->
       <top-comp></top-comp>
 
-      <!-- 2. 회원가입영역 -->
+      <!-- 2. 로그인영역 -->
       <div id="main-area">
         <main class="main-area ibx">
           <!-- 2-1. 회원가입 페이지 상단영역 -->
@@ -82,7 +93,13 @@
                 <!-- 이름 -->
                 <li>
                   <label htmlFor="mnm" class="itit"> 이름 </label>
-                  <input type="text" name="mnm" id="mnm" maxlength="20" placeholder="이름을 입력해 주세요!" />
+                  <input
+                    type="text"
+                    name="mnm"
+                    id="mnm"
+                    maxlength="20"
+                    placeholder="이름을 입력해 주세요!"
+                  />
                   <span class="msg"></span>
                 </li>
                 <!-- 성별 -->
@@ -101,7 +118,12 @@
                 <!-- 이메일 -->
                 <li>
                   <label htmlFor="email1" class="itit"> 이메일 </label>
-                  <input type="text" id="email1" name="email1" placeholder="이메일앞주소" />
+                  <input
+                    type="text"
+                    id="email1"
+                    name="email1"
+                    placeholder="이메일앞주소"
+                  />
                   <span class="gol">@</span>
                   <select name="seleml" id="seleml">
                     <option value="init">선택해주세요</option>
@@ -117,7 +139,12 @@
                 <!-- 이메일 뒷주소 직접입력 -->
                 <li>
                   <label htmlFor="email2"></label>
-                  <input type="text" name="email2" id="email2" placeholder="이메일뒷주소" />
+                  <input
+                    type="text"
+                    name="email2"
+                    id="email2"
+                    placeholder="이메일뒷주소"
+                  />
                 </li>
                 <!-- 서브밋버튼 -->
                 <li>
