@@ -136,7 +136,7 @@ img {
 .sum-menu ol {
   display: flex;
   align-items: center;
-  gap: 3em;
+  gap: 2rem;
 }
 .sum-menu ol li:nth-child(1) a {
   font-weight: bold;
@@ -155,6 +155,24 @@ img {
   font-weight: 100;
   transform: scaleX(0.7);
   display: inline-block;
+}
+
+.add-menu {
+  position: absolute;
+  right: 5rem;
+  top: 4rem;
+  font-size: 1.6rem;
+}
+.add-menu ol {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.add-menu ol li a {
+  letter-spacing: 2px;
+}
+.add-menu ol li.hide {
+  display: none;
 }
 
 #footer-area {
