@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+/* 
+  메인페이지 main.css 
+  - 변수 세팅 + 미디어쿼리 포함
+*/
+
+:root {
+  /* 색상변수 : --name-color */
+  --main-gray-color: #222;
+  --footer-font-color: #808080;
+  --character-area-color: #fefefe;
+  --company-area-color: #f5f5f5;
+  --contact-area-color: #4a679e;
+  /* 사이즈변수 : --name-size */
+  --top-area-padding-size: 20px 50px;
+  --bottom-area-padding-size: 50px;
+  --contents-box-padding-size: 85px 0 0;
+}
+
+

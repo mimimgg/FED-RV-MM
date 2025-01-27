@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+/******************* 웹폰트 *******************/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Gothic&display=swap');
+
+/* 기본 글자체, 글자크기 설정 - 최상위 html에 설정 */
+html {
+    font-family: "Montserrat", serif;
+    font-size: 16px;
+}
+
+/* 
+    font-family: "Montserrat", serif;
+    font-family: "Nanum Gothic", serif;
+*/
+
+/***************** 공통클래스 *****************/
+/* 중앙 속박스 (최대 1200px / 중앙정렬) */
+.inbox {
+    max-width: 1200px;
+    margin: 0 auto;
+}
