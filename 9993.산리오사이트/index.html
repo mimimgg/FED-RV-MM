@@ -1,65 +1,121 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="산리오, 산리오코리아">
-  <link rel="shortcut icon" type="image/x-icon" href="http://sanriokorea.co.kr/favicon.png.ico">
-  <title>산리오 사이트</title>
-</head>
-<body>
-  <!-- 1. 상단영역 -->
-  <div id="top-area">
-    <header class="top-area">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="산리오, 산리오코리아" />
+    <link rel="shortcut icon" type="image/x-icon" href="http://sanriokorea.co.kr/favicon.png.ico" />
+    <title>산리오 사이트</title>
 
-    </header>
-  </div>
-
-  <!-- 2. 메인영역 -->
-  <main id="main-area">
-    <!-- 2-1. banner -->
-    <div class="banner">
-      <section class="inbox">
-
-      </section>
+    <!-- 메인 CSS -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- 메인 JS -->
+    <script type="module" src="./js/main.js"></script>
+  </head>
+  <body>
+    <!-- 1. 상단영역 -->
+    <div id="top-area">
+      <header class="top-area">
+        <!-- 양쪽 flex 레이아웃 구성 (ul > li) -->
+        <ul>
+          <li>
+            <!-- 로고 -->
+            <h1 class="logo">
+              <a href="index.html">
+                <img src="./images/logo_2023.png" alt="산리오 메인 로고" />
+              </a>
+            </h1>
+          </li>
+          <li>
+            <!-- GNB 메뉴 -->
+            <nav class="gnb on">
+              <ul>
+                <li>
+                  <a href="#">company</a>
+                </li>
+                <li>
+                  <a href="#">character</a>
+                </li>
+                <li>
+                  <a href="#">place</a>
+                </li>
+                <li>
+                  <a href="#">recruit</a>
+                </li>
+              </ul>
+            </nav>
+            <!-- 모바일 GNB -->
+            <nav class="gnb-mob">
+              <a href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+              </a>
+            </nav>
+          </li>
+        </ul>
+        <!-- 네비 -->
+        <nav></nav>
+      </header>
     </div>
-    <!-- 2-2. character -->
-    <div class="character">
-      <section class="inbox">
 
-      </section>
+    <!-- 2. 메인영역 -->
+    <main id="main-area">
+      <!-- 2-1. banner -->
+      <div class="banner">
+        <section class="inbox dt-box">
+          <img src="./images/main_visual_pc_v1.png" alt="산리오 데스크탑용 메인 배너" />
+        </section>
+        <section class="mob-box">
+          <img src="./images/main_visual_m_v1.png" alt="산리오 모바일용 메인 배너" />
+        </section>
+      </div>
+      <!-- 2-2. character -->
+      <div class="character">
+        <section class="inbox">
+          <h2 class="stit">character</h2>
+          <div class="center-box">
+            <a href="#" class="com-btn view-btn">view more</a>
+          </div>
+          <!-- 캐릭터리스트 박스 -->
+          <div class="cat-list"></div>
+        </section>
+      </div>
+      <!-- 2-3. company -->
+      <div class="company">
+        <section class="inbox">
+          <h2 class="stit">company</h2>
+        </section>
+      </div>
+      <!-- 2-4. recruit -->
+      <div class="recruit">
+        <section class="inbox">
+          <h2 class="stit">recruit</h2>
+        </section>
+      </div>
+      <!-- 2-5. place -->
+      <div class="place">
+        <section class="inbox">
+          <h2 class="stit">place</h2>
+          <div class="center-box">
+            <a href="#" class="com-btn view-btn">place more</a>
+          </div>
+        </section>
+      </div>
+      <!-- 2-6. contact us -->
+      <div class="contact-us">
+        <section class="inbox">
+          <h2 class="stit">contact us</h2>
+          <div class="center-box">
+            <a href="#" class="com-btn view-btn">view detail</a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- 3. 하단영역 -->
+    <div id="bottom-area">
+      <footer class="bottom-area"></footer>
     </div>
-    <!-- 2-3. company -->
-    <div class="company">
-      <section class="inbox">
-
-      </section>
-    </div>
-    <!-- 2-4. recruit -->
-    <div class="recruit">
-      <section class="inbox">
-
-      </section>
-    </div>
-    <!-- 2-5. place -->
-    <div class="place">
-      <section class="inbox">
-
-      </section>
-    </div>
-    <!-- 2-6. contact us -->
-    <div class="contactus">
-      <section class="inbox">
-
-      </section>
-    </div>
-  </main>
-
-  <!-- 3. 하단영역 -->
-  <div id="bottom-area">
-    <footer class="bottom-area">
-
-    </footer>
-  </div>
-</body>
+  </body>
 </html>
