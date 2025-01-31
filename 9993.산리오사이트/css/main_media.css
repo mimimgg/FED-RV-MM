@@ -61,6 +61,10 @@
   .cat-list figcaption .title-en {
     display: none;
   }
+  /* 컨택어스 이미지 */
+  .info-box img {
+    width: 130px;
+  }
 }
 /***************** e 1024px이하 미디어쿼리 *****************/
 
@@ -73,6 +77,7 @@
   /* 햄버거 버튼 크기 변경 */
   .gnb-mob {
     scale: 0.8;
+    translate: 50% -20%;
     /* 가로오른쪽기준 */
     transform-origin: right;
   }
@@ -105,6 +110,28 @@
   a.com-btn {
     font-size: 2vw;
     margin-bottom: 4vh;
-}
+  }
+
+  /* 컨택어스 이미지 */
+  .info-box img {
+    width: 170px;
+  }
+  /* 컨택어스 레이아웃 변경 */
+  .map-info {
+    flex-direction: column;
+  }
+  .map-box {
+    border-radius: 20px 20px 0 0;
+    aspect-ratio: 2;
+  }
+  .info-box {
+    border-radius: 0 0 20px 20px;
+  }
+
+  /* 4. 하단영역 */
+  .bottom-area {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
 }
 /***************** e 800px이하 미디어쿼리 *****************/

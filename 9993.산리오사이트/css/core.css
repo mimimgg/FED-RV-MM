@@ -30,7 +30,10 @@ html {
     text-transform: uppercase;
     font-weight: 500;
 }
-/* 3. 공통 버튼 */
+.stit.reversal {
+    color: #fff;
+}
+/* 3-1. 공통 버튼*/
 .com-btn{
     font-size: 12px;
     display: inline-block;
@@ -58,6 +61,23 @@ html {
     display: inline-block;
     padding-left: 2rem;
     vertical-align: middle;
+}
+/* 3-2. 공통 버튼 : 반전세팅*/
+.com-btn.reversal{
+    border-color: #fff;
+    color: #fff;
+}
+/* 버튼오버시 */
+.com-btn:hover{
+    color: #222;
+    background-color: #fff;
+}
+/* 화살표 나오는 버튼 추가 클래스 */
+.view-btn.reversal::after {
+    content: url(../images/ico_more2.png);
+}
+.view-btn.reversal:hover::after {
+    content: url(../images/ico_more1.png);
 }
 /* 4. 센터박스 */
 .center-box {

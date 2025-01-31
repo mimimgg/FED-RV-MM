@@ -220,7 +220,8 @@ h1.logo img {
   margin-bottom: 3rem;
 }
 /* 2-5. place */
-.place {
+#main-area .place {
+  padding-bottom: 30vh;
   background: url(../images/bg_shop.jpg) no-repeat center/cover;
 }
 /* 2-6. contact us */
@@ -228,3 +229,88 @@ h1.logo img {
   background-color: var(--contact-area-color);
 }
 
+.map-info {
+  display: flex;
+  padding: 5vh 3vh 20vh;
+}
+.map-info>div {
+  flex-basis: 50%;
+}
+/* 지도박스 */
+.map-box iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+.map-box {
+  border-radius: 20px 0 0 20px;
+  overflow: hidden;
+  aspect-ratio: 1.4;
+}
+/* 정보박스 */
+.info-box {
+  position: relative;
+  background-color: #fff;
+  border-radius: 0 20px 20px 0;
+  padding: 5rem;
+}
+
+.info-box img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  translate: -10% 30%;
+}
+
+.info-box h3{
+  font-family: "Nanum Gothic", serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.info-box address{
+  font-size: 1.2rem;
+  color: #c9c9c9;
+  margin-bottom: 1.5rem;
+  line-height: 2;
+  font-style: normal;
+}
+.info-box p{
+  font-family: "Nanum Gothic", serif;
+  font-size: 1.4rem;
+  color: var(--main-gray-color);
+  margin-bottom: 5px;
+  line-height: 1.7;
+}
+.info-box p span{
+  display: block;
+}
+
+/* 4. 하단영역 */
+.bottom-area {
+  background-color: #222;
+  padding: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.copy-right img {
+  width: 197px;
+}
+.btn-box .com-btn:hover {
+  background-color: #222;
+  color: #fff;
+}
+
+/* 5. sns 버튼박스 */
+.q_btn {
+  position: fixed;
+  width: max(min(60px, 10vw),40px);
+  top: 10vh;
+  right: 5vh;
+  z-index: 2;
+}
+
+.q_btn img {
+  width: 100%;
+}
