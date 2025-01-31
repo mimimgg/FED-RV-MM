@@ -18,13 +18,31 @@
   --company-area-color: #f5f5f5;
   --contact-area-color: #4a679e;
   /* 사이즈변수 : --name-size */
-  --top-area-padding-size: 20px 50px;
-  --bottom-area-padding-size: 50px;
-  --contents-box-padding-size: 85px 0;
-  --cat-title-padding-size: 15px 10px;
+  --top-area-padding-size: 2rem 5rem;
+  --bottom-area-padding-size: .5rem;
+  --contents-box-padding-size: 8.5rem 0;
+  --cat-title-padding-size: 1.5rem 1rem;
+}
+/* 전체 글자크기 기준값 설정하기 : rem단위 */
+html {
+  /* 계산편의상 10px로 설정한다. */
+  font-size: 10px;
 }
 
+/* 모바일 모드에서 가로스크롤이 생기지 않게 하는 방법 */
+html, body {overflow-x: hidden;}
+body {
+  padding-top: 4rem;
+}
 /****************** 1. 상단영역 ******************/
+#top-area {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+}
 .top-area {
   padding: var(--top-area-padding-size);
 }
@@ -39,8 +57,10 @@
   height: 100%;
   display: flex;
   align-items: center;
-  gap: 80px;
+  gap: 8rem;
+  font-size: 1.6rem;
   font-weight: 500;
+  text-transform: uppercase;
 }
 h1.logo img {
   height: min(40px, 4vw);
@@ -50,10 +70,10 @@ h1.logo img {
 /* 모바일 GNB 햄버거버튼 */
 .gnb-mob {
   position: absolute;
-  top: 20px;
-  right: 50px;
-  width: 34px;
-  height: 34px;
+  top: 2rem;
+  right: 5rem;
+  width: 3.4rem;
+  height: 3.4rem;
 
   display: none;
 }
@@ -108,57 +128,6 @@ h1.logo img {
   transition: 0.6s ease-in-out;
 }
 
-/***************** 미디어쿼리 *****************/
-@media screen and (max-width: 1024px) {
-  /* GNB메뉴 클래스'on'이면 모바일용 숨김 메뉴로 변신 */
-  .gnb.on {
-    position: fixed;
-    top: 100px;
-
-    /* 오른쪽으로 나가있는 상태 */
-    left: 100vw;
-    width: 100vw;
-    height: calc(100vh - 100px);
-
-    background-color: #fff;
-    font-size: 4vw;
-
-    opacity: 0;
-    transition: 0.4s ease-in-out, opacity 0.2s 0.2s;
-  }
-  .gnb.on ul {
-    flex-direction: column;
-    gap: 3vh;
-  }
-  /* 보이기 클래스는 show */
-  .gnb.on.show {
-    left: 0;
-    opacity: 1;
-  }
-
-  /* GNB나타남 */
-  .gnb-mob {
-    display: block;
-  }
-
-  /* 배너이미지 */
-  .banner img {
-    height: 60vmin;
-  }
-
-  /* 데스크탑용 박스 */
-  .dt-box {
-    translate: 0 -100%;
-    opacity: 0;
-    transition: 0.4s ease-in-out;
-  }
-  /* 모바일용 박스 */
-  .mob-box {
-    top: 0%;
-    opacity: 1;
-  }
-}
-
 /* 2-2. character */
 .character {
   background-color: var(--character-area-color);
@@ -172,6 +141,9 @@ h1.logo img {
   flex-basis: 25%;
   padding: 10px;
   box-sizing: border-box;
+  /* 글자 줄바꿈 방지 */
+  white-space: nowrap;
+  overflow: hidden;
 }
 /* 이미지 파트박스 */
 .img-part {
@@ -197,6 +169,7 @@ h1.logo img {
 .cat-list figure {
   border: 1px solid #ccc;
   border-radius: 20px;
+  overflow: hidden;
 }
 /* 이미지설명 */
 .cat-list figcaption {
@@ -205,7 +178,7 @@ h1.logo img {
 }
 .cat-list figcaption h3 {
   font-family: "Nanum Gothic", serif;
-  font-size: 22px;
+  font-size: 2.2rem;
   font-weight: bold;
 }
 .cat-list figcaption .title-en {
@@ -214,14 +187,37 @@ h1.logo img {
   color: #ccc;
 }
 
-/* 2-3. company */
+/* 2-3. 컴퍼니영역 */
 .company {
   background: var(--company-area-color);
 }
 /* 2-4. recruit */
 .recruit {
   background-color: var(--character-area-color);
-  background: url(../images/bg_recruit.png) no-repeat center/cover;
+  background: url(../images/bg_recruit.png) no-repeat center 10vh/90%;
+
+}
+/* 컴퍼니 리쿠르트 공통영역 */
+.com-type-list {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 5vw;
+  text-align: center;
+}
+.com-type-list h3 {
+  font-family: "Nanum Gothic", serif;
+  font-size: 2.2rem;
+  padding: 2rem 0;
+  font-weight: normal;
+}
+.com-type-list p {
+  font-family: "Nanum Gothic", serif;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+.com-type-list p:last-of-type {
+  margin-bottom: 3rem;
 }
 /* 2-5. place */
 .place {
@@ -231,3 +227,4 @@ h1.logo img {
 .contact-us {
   background-color: var(--contact-area-color);
 }
+

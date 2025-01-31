@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+/* 산리오 사이트 메인 페이지 미디어쿼리 - main_media.css */
+
+/***************** s 1024px이하 미디어쿼리 *****************/
+@media screen and (max-width: 1024px) {
+  /* 전체 root 글자 크기 변경 : rem영향 */
+  html {
+    font-size: 8.2px;
+  }
+  /* GNB메뉴 클래스'on'이면 모바일용 숨김 메뉴로 변신 */
+  .gnb.on {
+    position: fixed;
+    top: 8rem;
+
+    /* 오른쪽으로 나가있는 상태 */
+    left: 100vw;
+    width: 100vw;
+    height: calc(100vh - 8rem);
+
+    background-color: #fff;
+    font-size: 5vw;
+
+    opacity: 0;
+    transition: 0.4s ease-in-out, opacity 0.2s 0.2s;
+  }
+  .gnb.on ul {
+    flex-direction: column;
+    gap: 3vh;
+    font-size: 4vh;
+  }
+  /* 보이기 클래스는 show */
+  .gnb.on.show {
+    left: 0;
+    opacity: 1;
+    border-top: 1px solid #000;
+    padding-top: 5vh;
+  }
+
+  /* GNB나타남 */
+  .gnb-mob {
+    display: block;
+  }
+
+  /* 배너이미지 */
+  .banner img {
+    height: 60vmin;
+  }
+
+  /* 데스크탑용 박스 */
+  .dt-box {
+    translate: 0 -100%;
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+  }
+  /* 모바일용 박스 */
+  .mob-box {
+    top: 0%;
+    opacity: 1;
+  }
+  .cat-list figcaption .title-en {
+    display: none;
+  }
+}
+/***************** e 1024px이하 미디어쿼리 *****************/
+
+/***************** s 800px이하 미디어쿼리 *****************/
+@media screen and (max-width: 800px) {
+  /* 캐릭터영역 레이아웃 변경 */
+  .cat-list ul li {
+    flex-basis: 50%;
+  }
+  /* 햄버거 버튼 크기 변경 */
+  .gnb-mob {
+    scale: 0.8;
+    /* 가로오른쪽기준 */
+    transform-origin: right;
+  }
+
+  /* 컴퍼니 영역 & 리쿠르트 영역 공통 리스트 디자인 */
+  .com-type-list {
+    flex-direction: column;
+    gap: 5vh;
+  }
+  /* 공통 타이틀 */
+  .com-type-list h3 {
+    font-size: 4vw;
+  }
+  /* 공통 내용 */
+  .com-type-list p {
+    display: none;
+  }
+  .recruit-list figure {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+  }
+  .recruit-list figcaption {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* 버튼변경 */
+  a.com-btn {
+    font-size: 2vw;
+    margin-bottom: 4vh;
+}
+}
+/***************** e 800px이하 미디어쿼리 *****************/

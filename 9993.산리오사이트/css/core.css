@@ -24,8 +24,8 @@ html {
 /* 2. 공통제목*/
 .stit {
     text-align: center;
-    font-size: 50px;
-    margin-bottom: 30px;
+    font-size: 5rem;
+    margin-bottom: 3rem;
     color: #222;
     text-transform: uppercase;
     font-weight: 500;
@@ -34,8 +34,8 @@ html {
 .com-btn{
     font-size: 12px;
     display: inline-block;
-    border-radius: 30px;
-    padding: 16px 30px;
+    border-radius: 3rem;
+    padding: 1.6rem 3rem;
     border: 1px solid #222;
     color: #222;
     transition: .3s;
@@ -50,13 +50,13 @@ html {
 .view-btn::after {
     content: url(../images/ico_more1.png);
     display: inline-block;
-    padding-left: 20px;
+    padding-left: 2rem;
     vertical-align: middle;
 }
 .view-btn:hover::after {
     content: url(../images/ico_more2.png);
     display: inline-block;
-    padding-left: 20px;
+    padding-left: 2rem;
     vertical-align: middle;
 }
 /* 4. 센터박스 */

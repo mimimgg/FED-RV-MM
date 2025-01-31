@@ -9,6 +9,7 @@
 
     <!-- 메인 CSS -->
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/main_media.css" />
     <!-- 메인 JS -->
     <script type="module" src="./js/main.js"></script>
   </head>
@@ -29,6 +30,7 @@
           <li>
             <!-- GNB 메뉴 -->
             <nav class="gnb on">
+              <!-- main.js -> 12번째 ~  라인 참조
               <ul>
                 <li>
                   <a href="#">company</a>
@@ -43,6 +45,7 @@
                   <a href="#">recruit</a>
                 </li>
               </ul>
+              -->
             </nav>
             <!-- 모바일 GNB -->
             <nav class="gnb-mob">
@@ -77,7 +80,7 @@
           <div class="center-box">
             <a href="#" class="com-btn view-btn">view more</a>
           </div>
-          <!-- 캐릭터리스트 박스 -->
+          <!-- 캐릭터 리스트 박스 -->
           <div class="cat-list"></div>
         </section>
       </div>
@@ -85,12 +88,16 @@
       <div class="company">
         <section class="inbox">
           <h2 class="stit">company</h2>
+          <!-- 컴퍼니 리스트 박스 -->
+          <div class="company-list"></div>
         </section>
       </div>
       <!-- 2-4. recruit -->
       <div class="recruit">
         <section class="inbox">
           <h2 class="stit">recruit</h2>
+          <!-- 리크루트 리스트 박스 -->
+          <div class="recruit-list"></div>
         </section>
       </div>
       <!-- 2-5. place -->
