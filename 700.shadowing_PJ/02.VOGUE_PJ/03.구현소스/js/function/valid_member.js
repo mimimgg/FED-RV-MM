@@ -64,21 +64,63 @@ export default function valid_member() {
         // console.log('아이디 검사결과:',vReg(cv,cid));
         if (!vReg(cv, cid)) {
           // 아이디검사 불통과시 들어감(!NOT)
-          $(this).siblings(".msg").text("영문자로 시작하는 6~20글자 영문자/숫자").removeClass("on");
+          $(this)
+            .siblings(".msg")
+            .text("영문자로 시작하는 6~20글자 영문자/숫자")
+            .removeClass("on");
 
-          // [ 불통과시 pass값 변경2 ]
-            pass = false;
+          // [ 불통과시 pass값 변경2-1 ]
+          pass = false;
         } //////// if ///////
         else {
-          // 통과시
-          // 1. DB에 조회하여 같은 아이디가 있다면
+          // 통과시 /////////////////////////
+          // 1. 로컬스에 조회하여 같은 아이디가 있다면
           // '이미 사용중인 아이디입니다' 와 같은 메시지출력
-          // 2. 만약 DB조회하여 같은 아이다가 없다면
+          if (localStorage.getItem("mem-data")) {
+            // (1) 로컬스 'mem-data'가 있는 경우 파싱함
+            let temp = JSON.parse(localStorage.getItem("mem-data"));
+            // (2) 파싱된 로컬스는 배열이므로 find로
+            // 현재 입력한 아이디가 있는지 찾아본다!
+            // 배열.find(v=>{if(조건){return true}})
+            // -> true가 리턴되면 해당배열값이 저장됨
+            // 그.러.나... 없으면 값이 그냥 undefined로 남음
+            let result = temp.find((v) => {
+              console.log(v.userid);
+              // cv는 입력된 아이디값
+              // 완전히 일치하는 아이디 존재여부를 검사!
+              if (v.userid == cv) return true;
+            }); /////// find ///////
+
+            console.log("아이디존재결과:", result);
+
+            // (3) 결과처리하기 ////////
+            // 1) result가 undefined가 아닐경우(아이디있음!)
+            if (result) {
+              /// 아이디 입력 불가!!!
+              $(this)
+                .siblings(".msg")
+                .text("이미 사용중인 아이디입니다!")
+                .removeClass("on");
+
+              // [ 불통과시 pass값 변경2-2 ]
+              pass = false;
+            } /// if ///
+            // 2) result가 undefined일 경우(아이디 없음!)
+            else {
+              // 아이디 입력가능!!!
+              // 메시지 띄우기
+              $(this).siblings(".msg").text("멋진 아이디네요~!").addClass("on");
+            } /// else ///
+          } /////////// if ///////////
+
+          // 2. 만약 DB조회하여 같은 아이디가 없다면
           // '멋진 아이디네요~!'와 같은 메시지출력
           // 여기서 우선은 DB조회 못하므로 통과시 메시지로 출력
-          // 메시지 띄우기
-          $(this).siblings(".msg").text("멋진 아이디네요~!").addClass("on");
-          // -> 비동기 통신 Ajax로 서버쪽에 아이디 중복검사필요!
+          else{
+            // 메시지 띄우기
+            $(this).siblings(".msg").text("멋진 아이디네요~!").addClass("on");
+            // -> 비동기 통신 Ajax로 서버쪽에 아이디 중복검사필요!
+          } /////////// else ///////////
         } ////// else //////
       } /////////////// else if : 아이디검사 ///////
 
@@ -91,10 +133,12 @@ export default function valid_member() {
         // console.log('비밀번호 검사결과:',vReg(cv,cid));
         if (!vReg(cv, cid)) {
           // 비밀번호검사 불통과시 들어감(!NOT)
-          $(this).siblings(".msg").text("특수문자,문자,숫자포함 형태의 5~15자리");
+          $(this)
+            .siblings(".msg")
+            .text("특수문자,문자,숫자포함 형태의 5~15자리");
 
           // [ 불통과시 pass값 변경3 ]
-            pass = false;
+          pass = false;
         } //////// if ///////
         else {
           // 통과시
@@ -127,9 +171,13 @@ export default function valid_member() {
     ****************************************/
       else if (cid == "email1") {
         // 1. 이메일 주소 만들기 :  앞주소@뒷주소
-        let comp = eml1.val() + "@" + (seleml.val() == "free" ? eml2.val() : seleml.val());
+        let comp =
+          eml1.val() +
+          "@" +
+          (seleml.val() == "free" ? eml2.val() : seleml.val());
         // (비?집:놀이동산)
-        // 선택박스값이 'free'인가?숨긴이메일입력창값:선택값
+        // 선택박스값이 'free'인가?
+        // 숨긴이메일입력창값:선택값
 
         // 2. 이메일 검사함수 호출하기!
         resEml(comp);
@@ -142,7 +190,8 @@ export default function valid_member() {
         $(this).siblings(".msg").empty();
       } /////// else //////
     }); ///////////////// blur 메서드 /////////////////
-  /////////////////////////////////////////////////
+  //////////////////////////////////////////////////
+
   /////////// 이메일 관련 대상선정 /////////////
   // 이메일 앞주소
   const eml1 = $("#email1");
@@ -218,9 +267,9 @@ export default function valid_member() {
     let cid = $(this).attr("id");
 
     // 2. 현재 입력된 값 읽어오기
-    // let cv = $(this).val();
+    let cv = $(this).val();
 
-    // console.log('입력아이디:',cid,'\n입력값:',cv);
+    console.log("입력아이디:", cid, "\n입력값:", cv);
 
     // 3. 이메일 뒷주소 셋팅하기
     let backEml = cid == "email1" ? seleml.val() : eml2.val();
@@ -253,7 +302,10 @@ export default function valid_member() {
       eml1.siblings(".msg").text("적합한 이메일 형식입니다!").addClass("on");
     } //////// if : 통과시 //////////
     else {
-      eml1.siblings(".msg").text("맞지않는 이메일 형식입니다!").removeClass("on");
+      eml1
+        .siblings(".msg")
+        .text("맞지않는 이메일 형식입니다!")
+        .removeClass("on");
 
       // [ 불통과시 pass값 변경5 ]
       pass = false;
@@ -261,8 +313,8 @@ export default function valid_member() {
   }; ///////////// resEml /////////////////
 
   /************************************** 
-      비밀번호 글자 보이기/숨기기 셋팅
-  **************************************/
+     비밀번호 글자 보이기/숨기기 셋팅
+    **************************************/
   let eyeNum = 1;
   $(".eye")
     .css({
@@ -319,7 +371,7 @@ export default function valid_member() {
     pass = true;
 
     // 3. 입력창 blur이벤트 강제 발생시키기
-    // trigger(이벤트) - 선택요소에 강제 이벤트 발생~
+    // trigger(이벤트) - 선택요소에 강제 이벤트 발생!
     $(`form.logF input[type=text][id!=email2],
         form.logF input[type=password]`).trigger("blur");
 
@@ -328,26 +380,53 @@ export default function valid_member() {
 
     // 4. 검사결과에 따라 메시지 보이기
     if (pass) {
-      // 로컬쓰 읽어오기
+      // 로컬쓰용 배열변수
       let temp = [];
 
-      // 로컬쓰가 있으면 읽어옴
-      if(!localStorage.getItem('mem-data'))
-        temp = JSON.parse(localStorage.getItem('mem-data'));
+      // 로컬쓰가 있으면 읽어옴!
+      if (localStorage.getItem("mem-data"))
+        temp = JSON.parse(localStorage.getItem("mem-data"));
+
+      /****************************************** 
+          [ 회원가입 입력 데이터 구조 정의 ]
+           1. 일련번호 : idx - 숫자값(유일키)
+           2. 아이디 : userid - 문자값
+           3. 비밀번호 : password - 문자값
+           4. 이름 : name - 문자값
+           5. 성별 : gender - 문자값(m-남성,w-여성)
+           6. 이메일 : email - 문자값(@포함주소)
+        ******************************************/
+
       // 로컬스토리지에 데이터 넣기
       let memData = {
-        idx:1,
-        mid:$('#mid').val(),
-        mpw:$('#mpw').val(),
-        mnm:$('#mnm').val(),
-        email:$('#email1').val()
+        // 1. 일련번호 : idx - 숫자값(유일키)
+        // -> 기존 배열개수 + 1 로 입력
+        idx: temp.length + 1,
+        // 2. 아이디 : userid - 문자값
+        userid: $("#mid").val(),
+        // 3. 비밀번호 : password - 문자값
+        password: $("#mpw").val(),
+        // 4. 이름 : name - 문자값
+        name: $("#mnm").val(),
+        // 5. 성별 : gender - 문자값(m-남성,w-여성)
+        // :radio - input 속성 type의 값이 'radio'선택
+        // [name=gen] - 속성 name의 값이 'gen'인 것을 선택
+        // :checked - 체크된 라디오버튼을 선택
+        gender: $(":radio[name=gen]:checked").val(),
+        // 6. 이메일 : email - 문자값(@포함주소)
+        email:
+          $("#email1").val() +
+          "@" +
+          ($("#seleml").val() == "free"
+            ? $("#email2").val()
+            : $("#seleml").val()),
       };
 
-      // 객체값을 배열 로컬쓰에 넣기 
+      // 객체값을 배열 로컬쓰에 넣기
       temp.push(memData);
 
       // 로컬쓰에 넣기
-      localStorage.setItem('mem-data',JSONstringify(temp));
+      localStorage.setItem("mem-data", JSON.stringify(temp));
 
       alert("회원가입을 축하드립니다! 짝짝짝!");
       // 원래는 POST방식으로 DB에 회원가입정보를
@@ -355,7 +434,7 @@ export default function valid_member() {
       // 로그인 페이지로 넘겨준다!
 
       // 로그인 페이지로 리디렉션!
-      // location.href = 'login.html';
+      //   location.href = 'login.html';
 
       // 민감한 입력 데이터 페이지가 다시 돌아와서
       // 보이면 안되기 때문에 히스토리를 지우는
@@ -400,7 +479,8 @@ function vReg(val, cid) {
       // (?=.*[!@#$%^&+=]) 특수문자 사용체크!
       break;
     case "eml": // 이메일
-      reg = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+      reg =
+        /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
       // 이메일 형식에 맞는지 검사하는 정규식
       break;
   } //////////// switch case문 //////////////////
