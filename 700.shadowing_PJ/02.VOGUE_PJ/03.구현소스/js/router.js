@@ -8,6 +8,7 @@ import { JoinComp } from "./components/join.js";
 import { LoginComp } from "./components/login.js";
 import { TodayAreaComp } from "./components/today_area.js";
 import { FashionAreaComp } from "./components/fashion_area.js";
+import { MainComp} from "./components/main.js";
 
 // console.log(TopComp, BannerComp, JoinComp, LoginComp, TodayAreaComp, FashionAreaComp);
 
