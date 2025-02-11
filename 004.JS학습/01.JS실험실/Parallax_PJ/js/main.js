@@ -1,22 +1,39 @@
 // 패럴렉스 PJ JS - main.js
 
+import myFn from "./my_function.js";
 
-/******************************************** 
-    [ 패럴렉스 기능구현하기 ]
-    1. 정의 : 패럴렉스란 스크롤 작동시 같은 방향으로
-    요소가 다른속도를 가지고 움직임으로
-    사용자가 공간감을 느낄 수 있게 하는 구현방법
+// 부드러운 스크롤 함수 불러오기
+import SmoothScrollFn from "./smoothScroll20.js";
 
-    2. 방법 : 
-        (1) 범위 - 요소가 화면에 등장하여
-        보일동안 스크롤될때 이동함
-        (2) 움직일 크기 설정이 필요함
-        (3) 범위체크를 위한 JS 메서드를 사용함
-        -> getBoundingClientRect().top
+// 패럴렉스 생성자 함수 불러오기
+import ParallaxFn from "./parallax_fn.js";
 
-    3. 이벤트 : scroll
-    4. 패럴렉스 대상 : 특정클래스 지정
-        (1) 글자박스 대상 : .txt
-        (2) 아이콘이미지 대상 : .icon
+// 부드러운 스크롤 인스턴스 생성하기
+const smScroll = new SmoothScrollFn();
 
-********************************************/
+// 1. 부드러운 스크롤 적용함수 호출하기
+// this로 등록된 변수에 할당된 인스턴스 내부 함수를 호출!
+smScroll.startSS();
+
+// [ 부드러운 스크롤 적용시 해야할 것들 ]
+// (1) 키보드 방향키 이동시 위치값 반영하기
+myFn.addEvt(window, "keyup", () => smScroll.setPos(window.scrollY));
+// window.scrollY는 현재 세로축 스크롤바 위치값
+
+// (2) 스크롤바 트랙 잡고 이동시 위치값 반영하기
+myFn.addEvt(window, "mouseup", () => smScroll.setPos(window.scrollY));
+// window.scrollY는 현재 세로축 스크롤바 위치값
+
+// 2. 패럴렉스 인스턴스 생성하기 /////
+const pxFn = new ParallaxFn();
+// 2-1. 아이콘 클래스 요소 패럴렉스 적용하기
+pxFn.scrollFn('icon',270);
+// 2-2. 글자박스 클래스 요소 패럴렉스 적용하기
+pxFn.scrollFn('txt',340);
+
+// 3. 새로고침 시 맨 위로 이동하기 코드
+// 테스크큐에서 가장 나중에 실행되게 함
+setTimeout (()=>{
+    window.scrollTo(0, 0);
+    smScroll.setPos(0);
+}, 100);
