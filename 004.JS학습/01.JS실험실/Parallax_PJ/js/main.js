@@ -24,7 +24,7 @@ myFn.addEvt(window, "keyup", () => smScroll.setPos(window.scrollY));
 myFn.addEvt(window, "mouseup", () => smScroll.setPos(window.scrollY));
 // window.scrollY는 현재 세로축 스크롤바 위치값
 
-// 2. 패럴렉스 인스턴스 생성하기 /////
+// 2. 패럴렉스 인스턴스 생성하기 //
 const pxFn = new ParallaxFn();
 // 2-1. 아이콘 클래스 요소 패럴렉스 적용하기
 pxFn.scrollFn('icon',270);
