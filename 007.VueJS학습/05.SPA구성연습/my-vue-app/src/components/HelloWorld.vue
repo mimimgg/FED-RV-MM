@@ -88,7 +88,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: '조나어렵다 징챠로🙄🙄🙄🙄'
     }
   }
 }
