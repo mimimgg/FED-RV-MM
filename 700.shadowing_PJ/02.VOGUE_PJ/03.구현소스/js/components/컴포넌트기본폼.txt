@@ -15,20 +15,3 @@ Vue.component("login-comp",{
     // 5. DOM 셋업파트
     mounted(){},
 });
-
-
-/***************************************************************
- *  1. (VS) login.js 생성
- *  2. (JS) export LoginComp 생성
-            * template: ``, ::::: 템플릿
-            * data (){},   ::::: 리턴함수 데이터
-            * methods: {}, ::::: 메서드
-            * created(){}, ::::: 데이터 셋업파트
-            * mounted(){}, ::::: DOM 셋업파트
- *  3. (HTML) <login-comp></login-comp>
- *  4. (JS) template `` 안에 html 마크업 입력
- *  5. (main_vue.js) 불러오기
- *  6. (JS생성) vaild_login.js ::::: 컴포넌트에만 적용되는 기능js 생성
-            * export default function validLogin
- *  7. (JS) 기능함수 불러오기
- ***************************************************************/

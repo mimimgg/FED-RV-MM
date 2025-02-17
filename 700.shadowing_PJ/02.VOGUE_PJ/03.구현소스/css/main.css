@@ -92,6 +92,10 @@ img {
   값으로 top, middle등 도 효과있음! */
 }
 
+#top-area {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2235294118);
+}
+
 .top-area {
   /* 부모자격 */
   position: relative;
@@ -160,7 +164,7 @@ img {
 .add-menu {
   position: absolute;
   right: 5rem;
-  top: 4rem;
+  top: 2rem;
   font-size: 1.6rem;
 }
 .add-menu ol {
@@ -171,8 +175,28 @@ img {
 .add-menu ol li a {
   letter-spacing: 2px;
 }
-.add-menu ol li.hide {
+.add-menu ol li:nth-child(2) {
   display: none;
+}
+.add-menu ol.login li:nth-child(2) {
+  display: block;
+}
+.add-menu ol.login li:nth-child(1),
+.add-menu ol.login li:nth-child(3) {
+  display: none;
+}
+
+#login-msg {
+  position: absolute;
+  width: 400px;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  z-index: -1;
 }
 
 #footer-area {
@@ -251,20 +275,24 @@ img {
 
 .ban-box {
   position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  /*이동버튼*/
+  /*블릿버튼*/
 }
 .ban-box ul {
   position: relative;
+  /* 3번째 슬라이드부터 보이기(앞에2개) */
   left: -200%;
   display: flex;
 }
 .ban-box ul li {
   position: relative;
   width: 100%;
+  /* 강제축소 설정 끄기 */
   flex-shrink: 0;
   aspect-ratio: 1499/701;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
 }
 .ban-box ul li img {
   position: absolute;
@@ -289,78 +317,7 @@ img {
 .ban-box ul li .post-content h3 {
   font-size: 4.2rem;
 }
-
-@media (max-width: 1000px) {
-  .ban-box ul li {
-    aspect-ratio: 979/931;
-  }
-}
-.post-list-today ul {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.post-list-today ul li:nth-child(1) {
-  grid-area: 1/1/3/2;
-}
-.post-list-today ul img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.post-list-today ul figure {
-  aspect-ratio: 1.3;
-}
-.post-list-today ul figcaption {
-  padding: 20px 0;
-}
-.post-list-today ul figcaption p.category {
-  font-size: 1.7rem;
-}
-.post-list-today ul figcaption h3.s-tit {
-  font-size: 2.2rem;
-  margin: 10px 0;
-}
-.post-list-today ul figcaption p.date {
-  font-size: 1.7rem;
-  color: #999;
-}
-
-.post-list ul {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.post-list ul li:nth-child(3) {
-  grid-area: 1/3/3/4;
-}
-.post-list ul img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.post-list ul figure {
-  aspect-ratio: 1.3;
-}
-.post-list ul figcaption {
-  padding: 20px 0;
-}
-.post-list ul figcaption p.category {
-  font-size: 1.7rem;
-}
-.post-list ul figcaption h3.s-tit {
-  font-size: 2.2rem;
-  margin: 10px 0;
-}
-.post-list ul figcaption p.date {
-  font-size: 1.7rem;
-  color: #999;
-}
-
-/*이동버튼*/
-.abtn {
+.ban-box .abtn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -368,36 +325,34 @@ img {
   /*왼쪽버튼*/
   /*오른쪽버튼*/
 }
-.abtn.ab1 {
+.ban-box .abtn.ab1 {
   left: 50px;
 }
-.abtn.ab2 {
+.ban-box .abtn.ab2 {
   right: 50px;
 }
-
-/*블릿버튼*/
-.indic {
+.ban-box .indic {
   display: flex;
   /* 플렉스박스 */
   position: absolute;
   bottom: 50px;
   left: 80px;
 }
-.indic li {
+.ban-box .indic li {
   width: 16px;
   height: 16px;
   cursor: pointer;
   /*회색블릿이미지가 보이게하는 class*/
 }
-.indic li img {
+.ban-box .indic li img {
   position: absolute;
   /*이미지 겹치게*/
 }
-.indic li img:last-child {
+.ban-box .indic li img:last-child {
   /*회색이미지만 투명하게*/
   opacity: 0;
 }
-.indic li.on img:last-child {
+.ban-box .indic li.on img:last-child {
   /*회색이미지만 투명하게*/
   opacity: 1;
   /*우선적용!*/

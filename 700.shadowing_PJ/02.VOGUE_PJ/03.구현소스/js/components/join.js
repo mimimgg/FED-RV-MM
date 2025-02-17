@@ -2,7 +2,8 @@
 
 // 유효성검사 함수 불러오기
 import valid_member from "../function/valid_member.js";
-// 메모리상 로딩한 본 함수는 DOM에 작동할 것이므로 반드시 뷰인스턴스 mounted 메서드에서 호출한다.
+// 메모리상 로딩한 본 함수는 DOM에 작동할 것이므로
+// 반드시 뷰 인스턴스 mounted 메서드에서 호출한다!
 
 // 1. 회원가입 컴포넌트
 export const JoinComp = Vue.component("join-comp", {
@@ -73,24 +74,26 @@ export const JoinComp = Vue.component("join-comp", {
                   <span class="itit">성별</span>
                   <label htmlFor="gen1">남성</label>
                   <input 
-                  type="radio" 
-                  name="gen" 
-                  id="gen1"
-                  value="m"
+                    type="radio" 
+                    name="gen" 
+                    id="gen1" 
+                    value="m"
                   />
                   <label htmlFor="gen2">여성</label>
                   <input 
-                  type="radio" 
-                  name="gen" 
-                  id="gen2"
-                  value="m"
-                  checked />
+                    type="radio" 
+                    name="gen" 
+                    id="gen2" 
+                    value="w"
+                    checked 
+                  />
                   <!-- 라디오버튼의 name 속성을 
                       같은 이름으로 쓰면 그룹핑되어
-                      하나만 선택된다! 
-
-                      checked 속성 - 기본체크설정
-                      value 값 - 설정해야 선택값을 읽을 때 사용할 수 있음 (남성은 'm', 여성은 'w') -->
+                      하나만 선택된다!     
+                    checked 속성 - 기본체크설정
+                    value값 설정해야 선택값 읽을때 사용됨!
+                    (남성은 'm', 여성은 'w')
+                    -->
                 </li>
                 <!-- 이메일 -->
                 <li>
@@ -137,13 +140,27 @@ export const JoinComp = Vue.component("join-comp", {
   `,
   // 1-2. 데이터 셋업 리턴 메서드 /////
   data() {
-    return {};
+    return {
+      
+    };
+  },
+  // 메서드 구역 /////
+  methods: {
+    goPage(){
+      // 이 메서드를 DOM 유효성검사 함수에
+      // 콜백으로 보내서 이동처리한다!
+      this.$router.push('/login');
+    },
   },
   // 컴포넌트 라이프 사이클 메서드 구역 ///
   // mounted 메서드 : DOM로딩후 실행구역!
   // -> 일반 DOM코딩 JS는 여기서 호출한다!!!
   mounted() {
-    // 유효성검사 함수호출
-    valid_member();
+    // 유효성검사 함수호출! 
+    // (라우터이동기능함수 콜백함수로 보냄!)
+    valid_member(this.goPage);
+    
+    // CSS 변경하기 ///
+    $('#css-set').attr('href','./css/member.css');
   }, /// mounted ///////
 });

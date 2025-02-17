@@ -10,15 +10,15 @@ console.log(itemData);
 // 2-1. 패션 영역용 데이터수집하기
 // filter() 메서드는 조건이 맞을때 true리턴!
 // -> 결과: 필터링된 배열값
-const fashionData = itemData
-  .filter((v) => {
-    if (v.mainCat == "fashion") return true;
-  })
-  // 2-2. 패션 영역 데이터 정렬하기 : idx 오름차순
-  // sort((a,b)=>a.idx==b.idx?0:a.idx<b.idx?-1:1)
-  .sort((a, b) => (a.idx == b.idx ? 0 : a.idx < b.idx ? -1 : 1));
+const fashionData = itemData.filter(v=>{
+    if(v.mainCat=='fashion')return true
+})
+// 2-2. 패션 영역 데이터 정렬하기 : idx 오름차순
+// sort((a,b)=>a.idx==b.idx?0:a.idx<b.idx?-1:1)
+.sort((a,b)=>a.idx==b.idx?0:a.idx<b.idx?-1:1)
 
-console.log("fashion데이터:", fashionData);
+
+console.log('fashion데이터:',fashionData);
 
 // 2-3. 패션 영역 셋팅 ///
 document.querySelector(".post-list").innerHTML = `
@@ -47,15 +47,15 @@ document.querySelector(".post-list").innerHTML = `
 // 3-1. 투데이 영역용 데이터수집하기
 // filter() 메서드는 조건이 맞을때 true리턴!
 // -> 결과: 필터링된 배열값
-const todayData = itemData
-  .filter((v) => {
-    if (v.mainCat == "today") return true;
-  })
-  // 3-2. 투데이 영역 데이터 정렬하기 : idx 오름차순
-  // sort((a,b)=>a.idx==b.idx?0:a.idx<b.idx?-1:1)
-  .sort((a, b) => (a.idx == b.idx ? 0 : a.idx < b.idx ? -1 : 1));
+const todayData = itemData.filter(v=>{
+    if(v.mainCat=='today')return true
+})
+// 3-2. 투데이 영역 데이터 정렬하기 : idx 오름차순
+// sort((a,b)=>a.idx==b.idx?0:a.idx<b.idx?-1:1)
+.sort((a,b)=>a.idx==b.idx?0:a.idx<b.idx?-1:1)
 
-console.log("today데이터:", todayData);
+
+console.log('today데이터:',todayData);
 
 // 3-3. 투데이 영역 셋팅 ///
 document.querySelector(".post-list-today").innerHTML = `

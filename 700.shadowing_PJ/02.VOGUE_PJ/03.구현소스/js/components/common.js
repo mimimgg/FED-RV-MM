@@ -33,14 +33,17 @@ const TopComp = Vue.component("top-comp", {
         <!-- 1-4. 추가메뉴박스 -->
         <nav class="add-menu">
           <ol>
-            <li v-for="
-              (v,k) in this.addMenu
-              /* v - 객체값, k - 키명 */
-            "
-            :class="
-              /* 키명이 '로그아웃'이면 'hide' 클래스 넣기*/
-              k=='로그아웃'?'hide':''
-            ">
+            <li 
+              v-for="
+                (v,k) in this.addMenu
+                /* v - 객체값, k - 키명 */
+              "
+
+              :class="
+              // 키명이 '로그아웃'이면 'hide'클래스넣기
+                k=='로그아웃' ? 'hide' : ''
+              "
+            >
               <a 
                 href="#"
                 @click.prevent="goPage(k)"
@@ -60,7 +63,7 @@ const TopComp = Vue.component("top-comp", {
       gnbMenu: ["FASHION", "BEAUTY", "LIFESTYLE", "CULTURE", "VIDEO"],
       // (2) 요약 메뉴 데이터
       sumMenu: ["KOREA", "구독하기", "≡"],
-      // (3) 추가가 메뉴 데이터 : key는 메뉴, value는 폰트어썸 클래스
+      // (3) 추가가 메뉴 데이터 : 키는 메뉴, 값은 폰트어썸 클래스
       addMenu: {
         로그인: "fa-solid fa-right-to-bracket",
         로그아웃: "fa-solid fa-right-from-bracket",
@@ -68,40 +71,40 @@ const TopComp = Vue.component("top-comp", {
         장바구니: "fa-solid fa-cart-shopping",
       },
     };
-  }, // data //
-  // 1-3. 컴포넌트 메서드구역
-  mathods:{
-    // 링크이동 메서드
+  }, /// data ///
+
+  // 1-3. 컴포넌트 메서드구역 /////
+  methods:{
+    // goPage : 링크이동 메서드 /////
     goPage(gubun){ // gubun - 구분키(키명)
       console.log(gubun);
-      // 페이지명 세팅변수
+      // 페이지명 셋팅변수
       let pgName;
-      // 구분키별 분기
+      // 구분키별 분기 //
       switch(gubun){
-        case "로그인"
-          : pgName = "login";
-          break;
-        case "회원가입"
-          : pgName = "member";
-          break;
-        case "장바구니"
-          : pgName = "cart";
-          break;
-      }
-      // 페이지이동하기
+        case "로그인": pgName = "login"; break;
+        case "회원가입": pgName = "member"; break;
+        case "장바구니": pgName = "cart_list"; break;
+      } //// switch /////////
+
+      // 페이지 이동하기 ///
       location.href = pgName + '.html';
-    }, // goPage
-  }, // methods
+
+    }, //// goPage 메서드 ////
+  }, /// methods //////
   // 1-4. 컴포넌트 라이프사이크 메서드 : mounted
   mounted(){
     // 폰트어썸 link CSS 넣기
     $('head').append(`
-      <!-- 폰트어썸 아이콘 -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
     `);
-  } // mounted
-}); // TopComp
-// 2. 하단컴포넌트
+  }, /// mounted ///
+}); /// TopComp ///////////////
+
+// 2. 하단컴포넌트 /////////////////////
 const BottomComp = Vue.component("bottom-comp", {
   // 템플릿 코드 ////
   template: `
@@ -131,7 +134,11 @@ const BottomComp = Vue.component("bottom-comp", {
             VOGUE.CO.KR IS OPERATED BY DOOSAN MAGAZINE
           </address>
         </footer>
-      </div>
+        <!-- 위로가기버튼 -->
+        <a href="#" class="tbtn fi fi-angle-up">
+          <span class="ir">위로가기버튼</span>
+        </a>
+      </div>      
   `,
   // 데이터 설정 ////
   data() {

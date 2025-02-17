@@ -1,4 +1,10 @@
-// 보그 PJ 공통 컴포넌트 - common_spa.js
+// 보그 PJ 공통 컴포넌트 : SPA용 - common_spa.js
+
+// 상단영역 데이터 불러오기 ///
+import {gnbMenu, sumMenu, addMenu} from "../../data/gnb_data.js";
+
+// 뷰엑스 스토어 불러오기 ///
+import store from "../vuex_store.js";
 
 // 1. 상단컴포넌트
 const TopComp = Vue.component("top-comp", {
@@ -9,16 +15,25 @@ const TopComp = Vue.component("top-comp", {
         <!-- 1-1. 로고박스 -->
         <div class="logo">
           <h1>
-            <a href="index.html">
+            <!-- 라우터 첫 페이지 이동셋팅 -->
+            <router-link to="/">
               <img src="./images/svg/logo.svg" alt="메인로고" />
-            </a>
+            </router-link>
           </h1>
         </div>
         <!-- 1-2. 메뉴박스 -->
         <nav class="gnb">
           <ul>
-            <li v-for="v in this.gnbMenu">
-              <a href="#">{{v}}</a>
+            <li v-for="v in Object.keys(this.gnbMenu)">
+              <router-link :to="{
+                name:'sub-page',
+                // query는 get방식처럼 url창으로 전달함
+                // 값은 {키:값,키:값} 객체형식임
+                // 결과는 url?키=값&키=값
+                query:{id:v}
+               }">
+                {{v}}
+              </router-link>
             </li>
           </ul>
         </nav>
@@ -32,76 +47,92 @@ const TopComp = Vue.component("top-comp", {
         </nav>
         <!-- 1-4. 추가메뉴박스 -->
         <nav class="add-menu">
-          <ol>
-            <li v-for="
-              (v,k) in this.addMenu
-              /* v - 객체값, k - 키명 */
-            "
-            :class="
-              /* 키명이 '로그아웃'이면 'hide' 클래스 넣기*/
-              k=='로그아웃'?'hide':''
-            ">
-              <a 
-                href="#"
-                @click.prevent="goPage(k)"
+          <ol :class="$store.state.loginCls">
+            <li 
+              v-for="
+                (v,k) in this.addMenu
+                /* v - 객체값, k - 키명 */
+              "
+            >
+              <!-- 
+              로그아웃일때는 일반 a요소
+
+              [뷰JS 조건문 디렉티브]
+              v-if="조건" / v-else-if="조건" / v-else
+              -->
+
+              <a href="#" 
+                v-if="k=='로그아웃'"
+                @click.prevent="logoutFn"
               >
-                <i :class="v" :title="k"></i>
+                <i :class="v[0]" :title="k"></i>
               </a>
+
+              <!-- 기타일때는 라우터링크 -->
+
+              <router-link :to="v[1]" v-else>
+                <i :class="v[0]" :title="k"></i>
+              </router-link>
             </li>
           </ol>
         </nav>
+        <!-- 로그인 환영메시지 박스 -->
+        <div id="login-msg">{{$store.state.welcomeMsg}}</div>
       </header>      
     </div>   
     `,
   // 1-2. 데이터 셋업 리턴 메서드 /////
   data() {
-    return {
-      // (1) GNB 메뉴 데이터
-      gnbMenu: ["FASHION", "BEAUTY", "LIFESTYLE", "CULTURE", "VIDEO"],
-      // (2) 요약 메뉴 데이터
-      sumMenu: ["KOREA", "구독하기", "≡"],
-      // (3) 추가가 메뉴 데이터 : key는 메뉴, value는 폰트어썸 클래스
-      addMenu: {
-        로그인: "fa-solid fa-right-to-bracket",
-        로그아웃: "fa-solid fa-right-from-bracket",
-        회원가입: "fa-solid fa-user",
-        장바구니: "fa-solid fa-cart-shopping",
-      },
-    };
-  }, // data //
-  // 1-3. 컴포넌트 메서드구역
-  mathods:{
-    // 링크이동 메서드
-    goPage(gubun){ // gubun - 구분키(키명)
+    return {gnbMenu,sumMenu,addMenu};
+    // 구조분해할당 방식으로 같은 이름의 객체 가져오기
+    // return {gnbMenu:gnbMenu, sumMenu:sumMenu, addMenu:addMenu};
+    // 외부에서 가져온 객체를 같은 이름으로 할당하는 경우가 많다!
+    // 이때 같은 이름으로 구조분해하여 할당하는 방식은
+    // 코딩량을 줄여주며 가독성을 높인다!
+  }, /// data ///
+
+  // 1-3. 컴포넌트 메서드구역 /////
+  methods: {
+    // 로그아웃 메서드 /////
+    logoutFn() {
+      if (confirm("로그아웃 하시겠습니까?")) store.commit("setLogout");
+    },
+    // goPage : 링크이동 메서드 /////
+    goPage(gubun) {
+      // gubun - 구분키(키명)
       console.log(gubun);
-      // 페이지명 세팅변수
+      // 페이지명 셋팅변수
       let pgName;
-      // 구분키별 분기
-      switch(gubun){
-        case "로그인"
-          : pgName = "login";
+      // 구분키별 분기 //
+      switch (gubun) {
+        case "로그인":
+          pgName = "login";
           break;
-        case "회원가입"
-          : pgName = "member";
+        case "회원가입":
+          pgName = "member";
           break;
-        case "장바구니"
-          : pgName = "cart";
+        case "장바구니":
+          pgName = "cart_list";
           break;
-      }
-      // 페이지이동하기
-      location.href = pgName + '.html';
-    }, // goPage
-  }, // methods
+      } //// switch /////////
+
+      // 페이지 이동하기 ///
+      location.href = pgName + ".html";
+    }, //// goPage 메서드 ////
+  }, /// methods //////
   // 1-4. 컴포넌트 라이프사이크 메서드 : mounted
-  mounted(){
+  mounted() {
     // 폰트어썸 link CSS 넣기
-    $('head').append(`
-      <!-- 폰트어썸 아이콘 -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    $("head").append(`
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
     `);
-  } // mounted
-}); // TopComp
-// 2. 하단컴포넌트
+  }, /// mounted ///
+}); /// TopComp ///////////////
+
+// 2. 하단컴포넌트 /////////////////////
 const BottomComp = Vue.component("bottom-comp", {
   // 템플릿 코드 ////
   template: `
@@ -131,7 +162,11 @@ const BottomComp = Vue.component("bottom-comp", {
             VOGUE.CO.KR IS OPERATED BY DOOSAN MAGAZINE
           </address>
         </footer>
-      </div>
+        <!-- 위로가기버튼 -->
+        <a href="#" class="tbtn fi fi-angle-up">
+          <span class="ir">위로가기버튼</span>
+        </a>
+      </div>      
   `,
   // 데이터 설정 ////
   data() {

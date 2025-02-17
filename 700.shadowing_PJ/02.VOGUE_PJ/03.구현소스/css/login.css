@@ -92,6 +92,10 @@ img {
   값으로 top, middle등 도 효과있음! */
 }
 
+#top-area {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2235294118);
+}
+
 .top-area {
   /* 부모자격 */
   position: relative;
@@ -160,7 +164,7 @@ img {
 .add-menu {
   position: absolute;
   right: 5rem;
-  top: 4rem;
+  top: 2rem;
   font-size: 1.6rem;
 }
 .add-menu ol {
@@ -171,8 +175,28 @@ img {
 .add-menu ol li a {
   letter-spacing: 2px;
 }
-.add-menu ol li.hide {
+.add-menu ol li:nth-child(2) {
   display: none;
+}
+.add-menu ol.login li:nth-child(2) {
+  display: block;
+}
+.add-menu ol.login li:nth-child(1),
+.add-menu ol.login li:nth-child(3) {
+  display: none;
+}
+
+#login-msg {
+  position: absolute;
+  width: 400px;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  z-index: -1;
 }
 
 #footer-area {
