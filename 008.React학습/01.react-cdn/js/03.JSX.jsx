@@ -175,7 +175,7 @@ ReactDOM.render(myEle6, target[5]);
 const myEle7 = (
     <h1 className="myclass">
         className 속성으로 클래스를 세팅한다
-        <label htmlFor="mytxt">이름:</label>
+        <label htmlFor="mytxt">htmlFor 속성으로 라벨요소의 for속성을 세팅한다</label>
         <input type="text" name="mytxt" id="mytxt" />
     </h1>
 )
@@ -191,3 +191,49 @@ ReactDOM.render(myEle7, target[6]);
     JSX 외부에서 if문을 사용하거나
     아니면 내부에서 삼항연산자를 사용할 수 있다!
 *****************************************************/
+
+// 8. JSX에서 if문 사용하여 출력하기
+const x = 9000;
+
+// if문 분기하여 결과 리턴하는 함수
+const showResult = money => {
+    let txt = "";
+
+    if (money < 10000) {
+        txt = "돈이 부족해요";
+    }
+    else {
+        txt = "구매 가능";
+    }
+
+    return txt;
+};
+
+// 출력변수 ////
+const myEle8 = (
+    <div>
+        <h1>현재 내가 가진 돈은 {x}원!</h1>
+        <h1>만원짜리 립밤을 살 수 있을까?</h1>
+        <h1>{showResult(x)}</h1>
+    </div>
+);
+
+// 여덟번째 div에 출력하기
+ReactDOM.render(myEle8, target[7]);
+
+// -------------------------------------------------------- //
+
+// 9. JSX의 표현식에 삼항연산자 사용하여 출력하기
+let time = 8;
+
+const myEle9 = (
+    <React.Fragment>
+        <h1>지금 몇시지? {time}시야</h1>
+        <h1>
+            {time > 9 ? "지금 집에 들어와" : "더 놀다와~"}
+        </h1>
+    </React.Fragment>
+)
+
+// 아홉번째 div에 출력하기
+ReactDOM.render(myEle9, target[8]);
