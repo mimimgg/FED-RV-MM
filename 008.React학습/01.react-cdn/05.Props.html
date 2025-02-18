@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>04.리액트 컴포넌트</title>
+    <title>05.리액트 Props</title>
 
     <!-- 1.리액트 기본 라이브러리 -->
     <script
@@ -19,30 +19,29 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
     <!-- 4. 모듈화 JS 호출 -->
-    <script src="./js/my_function.js" 
-    data-plugins="transform-es2015-modules-umd" 
-    type="text/babel"></script>
-
-    <!-- avengers.jsx 불러와야 함.. -->
-    <script src="./js/avengers.jsx" 
-    data-plugins="transform-es2015-modules-umd" 
-    type="text/babel"></script>
-
-    <!-- 5.리액트 컴포넌트 JSX 호출
-    합치는 파일도 data-plugins속성 필수!!! -->
+    <!-- 나의 함수 -->
     <script
-      src="./js/04.컴포넌트.jsx"
-      data-plugins="transform-es2015-modules-umd" 
+      src="./js/my_function.js"
+      data-plugins="transform-es2015-modules-umd"
+      type="text/babel"
+    ></script>
+
+    <!-- 자동차정보 JSX  -->
+    <script
+      src="./js/car_data.jsx"
+      data-plugins="transform-es2015-modules-umd"
+      type="text/babel"
+    ></script>
+
+    <!-- 리액트 Props JSX 호출 -->
+    <script
+      src="./js/05.Props.jsx"
+      data-plugins="transform-es2015-modules-umd"
       type="text/babel"
     ></script>
   </head>
   <body>
-    <!-- 리액트 출력요소들 -->
-    <div class="root"></div>
-    <div class="root"></div>
-    <div class="root"></div>
-    <div class="root"></div>
-    <div class="root"></div>
-    <div class="root"></div>
+    <!-- 리액트 출력요소 -->
+    <div id="root1"></div>
   </body>
 </html>
