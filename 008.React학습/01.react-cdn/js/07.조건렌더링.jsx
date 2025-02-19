@@ -316,27 +316,45 @@ function ShowLikePainter ({isChange}) {
   // isChange - 기존 작가를 변경하는 여부 전달변수
   // true / false -> 이 값에 따라 출력작가가 변경됨
 
+  // [ 후크 상태관리 변수 만들기 ]
+  const [result, setResult] = React.useState(isChange);
+  // result 변수의 초기값은 컴포넌트에 보낸 변수값으로 세팅
+  // result는 읽기 전용 변수
+  // setResult는 쓰기 전용 변수 -> setResult(값)
+
   // 리턴코드구역
   return (
     <React.Fragment>
       {/* 1. 큰제목 */}
       <SetTitle title="명화" />
 
-      {/* 변경버튼 */}
+      {/* 
+      변경버튼
+      -> 클릭시 상태관리변수를 업데이트하여 상태변수를 사용하고 있는 곳이 변경되게 한다.
+
+      !result는 true값이면 false로, false값이면 true를 반환하게 한다.
+      */}
       <button 
+      onClick={()=>{
+        setResult(!result);
+        console.log("변경 후 result 변수값:", result);
+      }}
         style = {{
           fontSize: "30px",
           padding: "10px",
           fontWeight: "blod",
-          backGroundCOlor: "blue",
-          color: "#ffffff"
+          backGroundCOlor: result?"blue":"red",
+          color: result?"aqua":"yellow"
         }}
       > 작가 변경 </button>
 
       {/* 3. 작품출력 */}
       {
         // 삼항연산자로 isChange 값에 따라 출력변경하기
-        isChange ? 
+
+
+        // isChange ? // 처음 한번만 세팅
+        result ? // 변경될때마다 갱신
         <MakePainting
           painter = "모네"
           wname = "양산을 쓴 여인"
@@ -368,8 +386,7 @@ ReactDOM.render(<ShowLikePainter isChange={false} />, root[6]);
         변경이 반영되도록 하고자 할때 후크를 사용한다!
 
     2. 구현방법:
-        1) 노드JS SPA 개발환경에서는 상단에 
-        import useState를 한다!
+        1) 노드JS SPA 개발환경에서는 상단에 import useState를 한다!
         -> CDN 에서는 React.useState 로 사용함!
         2) 코딩법 : useState() 메서드사용
             배열변수 = useState(초기값)
