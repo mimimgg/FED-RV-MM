@@ -6,7 +6,7 @@ import guData from "../data/gu_data";
 import hjData from "../data/hj_data";
 // console.log(guData);
 
-export default function GoodsDetail({selItem, gIdx}) {
+export default function GoodsDetail({selItem, gIdx, setViewList}) {
   // selItem - 대분류(공유/효진) -> 데이터선택
   // gIdx - 구체적인 선택 데이터 idx값
   console.log('selItem', selItem, '\ngIdx', gIdx);
@@ -16,10 +16,15 @@ export default function GoodsDetail({selItem, gIdx}) {
   selItem === '공유' ? 
   guData : 
   selData === '효진' ? 
-  hjData : [];
+  hjData : null;
+
+  // 조건 랜더링 : Null값일 경우
+    if(!selDB) return <ol>
+    <li>데이터가 없습니다.</li>
+  </ol>
+
 
   // 상세 데이터 선택하기
-  // 
   const selData = 
   selDB.find(v => {if(Number(v.idx)===Number(gIdx))return true});
   console.log('선택데이터:', selData);
@@ -77,7 +82,9 @@ export default function GoodsDetail({selItem, gIdx}) {
             padding: "15px",
           }}
         >
+          {/* setViewList로 viewList 상태변수값을 true로 변경하여 다시 리스트가 보이게 함 */}
           <button
+            onClick={()=>setViewList(true)}
             style={{
               fontSize: "24px",
             }}

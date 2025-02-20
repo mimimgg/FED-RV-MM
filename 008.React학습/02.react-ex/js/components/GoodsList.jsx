@@ -13,7 +13,23 @@ import hjData from "../data/hj_data";
 // 공통함수 불러오기
 import * as comFn from "./common/com_fn";
 
-export default function GoodsList() {
+export default function GoodsList({selItem, setGIdx, setViewList}) {
+  // selItem - 대분류(공유/효진) -> 데이터선택
+  // setGIdx - 부모의 상태관리변수 gIdx 업데이트 메서드
+  // setViewList - 부모의 상태관리변수 viewList 업데이트 메서드
+
+  // 데이터 종류 선택하기
+  const selDB = 
+  selItem === '공유' ? 
+  guData : 
+  selData === '효진' ? 
+  hjData : null;
+
+  // 조건 랜더링 : Null값일 경우
+  if(!selDB) return <ul>
+    <li>데이터가 없습니다.</li>
+  </ul>
+
   // 리턴 코드 구역
   // ⭐️ ul 아래 li가 표현식 구역이 된다. (반복될 데이터를 붙여넣으면 된다.)
   // ⭐️ 데이터를 상단에 선언하고 데이터.map((v) => { 여기에 표현식 작성 })
@@ -21,9 +37,22 @@ export default function GoodsList() {
     <ul>
       {
         // 반복 데이터로 li태그 만들기
-        guData.map((v) => (
-          <li>
-            <a href="#">
+        // 반복 요소를 만들때 필수로 key속성을 세팅할 것
+        // 반복 요소 구분을 위한 필수키로 리액트에서 설정할 것을 강제하고 있음(cdn에서는 에러나지 않음)
+        selDB.map((v, i) => (
+          <li key={i}>
+            <a href="#" 
+            onClick={(e)=>{
+              // 기본이동막기
+              e.preventDefault();
+              // 확인 - idx값 찍기
+              console.log("나는클릭이다", v.idx);
+              // 상태관리변수 gIdx를 업데이트하기
+              setGIdx(v.idx);
+              // viewList 업데이트하기
+              setViewList(false);
+              // false값으로 변경시 상세페이지만 보임
+            }}>
               <ol className="glist">
                 <li>
                   <img 
