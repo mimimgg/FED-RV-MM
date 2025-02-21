@@ -1,9 +1,37 @@
 // 상단영역 컴포넌트 : TopArea.jsx
-export default function TopArea(){
+
+import { Link } from "react-router-dom";
+
+// GNB 메뉴 데이터 불러오기 (gnb.js)
+import { menu } from "../../js/data/gnb";
+
+// 상단영역 scss 불러오기 
+import "../../css/common/top_area.scss";
+
+export default function TopArea() {
   // 리턴코드구역
   return (
     <>
-      <h1>컴포넌트영역</h1>
+      {/* 1.상단영역 */}
+      <header className="top-area">
+        {/* 로그인 환영메시지 박스 */}
+        <div className="logmsg"></div>
+        {/* 네비게이션 GNB파트 */}
+        <nav className="gnb">
+          <ul>
+            {/* 1. 로고 컴포넌트 */}
+            {
+              menu.map((v, i) =>
+                <li key={i}>
+                  <Link to={v.link}>{v.txt}</Link>
+                </li>
+              )
+            }  
+          </ul>
+        </nav>
+        {/* 모바일용 햄버거 버튼 */}
+        <button className="hambtn"></button>
+      </header>
     </>
   );
 } // TopArea 컴포넌트 //

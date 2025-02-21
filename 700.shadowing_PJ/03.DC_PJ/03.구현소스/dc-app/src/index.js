@@ -6,6 +6,9 @@ import Layout from "./components/layout/Layout";
 import Main from "./components/pages/Main";
 import Character from "./components/pages/Character";
 
+// 전체 PJ 공통 CSS 최상위에서 불러오기
+import "./css/index.scss";
+
 /********************************************* 
     [ 리액트 라우터 ]
     -> 컴포넌트를 연결하여 특정 이벤트에 모듈을 변경해주는 중계역할을 함
