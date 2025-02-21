@@ -1,9 +1,41 @@
 // 하단영역 컴포넌트 : FooterArea.jsx
-export default function FooterArea(){
+
+// 하단메뉴 데이터 불러오기
+import { bmData } from "../../js/data/bmenu";
+
+// 하단영역 scss 불러오기 
+import "../../css/common/footer_area.scss";
+
+export default function FooterArea() {
   // 리턴코드구역
   return (
     <>
-      <h1>여기에 작성하면 됩니다.</h1>
+      <footer className="info">
+        <ul>
+          {/* 하단로고 컴포넌트 넣기 */}
+          <li>
+            하단로고
+          </li>
+          <li>
+            {/* 하단링크박스 */}
+            <ol className="bmenu">
+              {
+                bmData.map((v, i) => 
+                  <li key={i}>
+                    <a 
+                    href={v.link} 
+                    target="_blank" 
+                    rel="noreferrer">
+                      {v.txt.toUpperCase()}
+                    </a>
+                  </li>
+                )
+              }
+            </ol>
+          </li>
+          <li>© & ™ DC. ALL RIGHTS RESERVED</li>
+        </ul>
+      </footer>
     </>
   );
 } // FooterArea 컴포넌트 //

@@ -4,7 +4,14 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Main from "./components/pages/Main";
+// 서브 카테고리 컴포넌트 
 import Character from "./components/pages/Character";
+import Comics from "./components/pages/Comics";
+import Movies from "./components/pages/Movies";
+import Games from "./components/pages/Games";
+import News from "./components/pages/News";
+import Video from "./components/pages/Video";
+import Board from "./components/pages/Board";
 
 // 전체 PJ 공통 CSS 최상위에서 불러오기
 import "./css/index.scss";
@@ -51,7 +58,15 @@ export default function MainComponent() {
         <Route path="/" element={<Layout />}>
           {/* 하위 중 첫페이지는 index라고 속성을 쓴다 */}
           <Route index element={<Main />} />
+
+          {/* 서브메뉴 */}
           <Route path="character" element={<Character />} />
+          <Route path="comics" element={<Comics/>} />
+          <Route path="movies" element={<Movies/>} />
+          <Route path="games" element={<Games/>} />
+          <Route path="news" element={<News/>} />
+          <Route path="video" element={<Video/>} />
+          <Route path="board" element={<Board/>} />
         </Route>
       </Routes>
     </BrowserRouter>
