@@ -56,7 +56,9 @@ export default function GoodsDetail({selItem, gIdx, setViewList}) {
         <br />
         가격 : {selData.gprice}
         <br />
-        <div>
+        {
+          selItem === "공유" &&
+          <div>
           소재 : {selData.소재}
           <br />
           색상 : {selData.색상}
@@ -75,6 +77,7 @@ export default function GoodsDetail({selItem, gIdx, setViewList}) {
           Model : {selData.Model}
           <br />
         </div>
+        }
         <div
           className="btnbx"
           style={{
