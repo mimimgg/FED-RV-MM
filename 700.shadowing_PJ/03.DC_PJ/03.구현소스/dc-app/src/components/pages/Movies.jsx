@@ -1,12 +1,11 @@
 import React from 'react';
+import Banner from "../modules/Banner"
 
 function Movies(props) {
   return (
-    <div>
-      <h1>
-        영화나 봅시다잉
-      </h1>
-    </div>
+    <>
+      <Banner catName="MOVIES" />
+    </>
   );
 }
 

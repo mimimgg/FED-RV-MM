@@ -1,12 +1,11 @@
 import React from 'react';
+import Banner from "../modules/Banner"
 
 function Games(props) {
   return (
-    <div>
-      <h1>
-        나 게임인데 롤 잘하냐
-      </h1>
-    </div>
+    <>
+      <Banner catName="GAMES" />
+    </>
   );
 }
 

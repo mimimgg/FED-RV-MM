@@ -4,6 +4,8 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Main from "./components/pages/Main";
+// 전체 PJ 공통 CSS 최상위에서 불러오기
+import "./css/index.scss";
 // 서브 카테고리 컴포넌트 
 import Character from "./components/pages/Character";
 import Comics from "./components/pages/Comics";
@@ -13,8 +15,6 @@ import News from "./components/pages/News";
 import Video from "./components/pages/Video";
 import Board from "./components/pages/Board";
 
-// 전체 PJ 공통 CSS 최상위에서 불러오기
-import "./css/index.scss";
 
 /********************************************* 
     [ 리액트 라우터 ]

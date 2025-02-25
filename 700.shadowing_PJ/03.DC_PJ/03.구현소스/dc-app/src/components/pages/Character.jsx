@@ -5,11 +5,10 @@ import Banner from '../modules/Banner';
 
 function Character(props) {
   return (
-    <div>
-      <h1>캐릭터소개</h1>
+    <>
       {/* 1. 배너컴포넌트 */}
-      <Banner />
-    </div>
+      <Banner catName="CHARACTERS" />
+    </>
   );
 }
 
