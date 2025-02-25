@@ -29,15 +29,15 @@ export default function GoodsList({ selItem, setGIdx, setViewList }) {
       </ul>
     );
 
-    // [ useEffect 코드구역 : 화면 업데이트 후 실행구역 ]
-    React.useEffect(()=>{
-      console.log("⭕️ 리스트컴포넌트")
+  // [ useEffect 코드구역 : 화면 업데이트 후 실행구역 ]
+  React.useEffect(() => {
+    console.log("⭕️ 리스트컴포넌트");
 
-      // 컴포넌트 소멸시 실행구역은 useEffect 함수안에 return() 메서드를 만들어준다.
-      return(()=>{
-        console.log("❌ 리스트 컴포넌트 소멸 시 실행되는 것")
-      });
-    }); // useEffect //
+    // 컴포넌트 소멸시 실행구역은 useEffect 함수안에 return() 메서드를 만들어준다.
+    return () => {
+      console.log("❌ 리스트 컴포넌트 소멸 시 실행되는 것");
+    };
+  }); // useEffect //
 
   // 리턴 코드 구역
   // ⭐️ ul 아래 li가 표현식 구역이 된다. (반복될 데이터를 붙여넣으면 된다.)

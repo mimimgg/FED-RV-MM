@@ -6,28 +6,40 @@ import guData from "../data/gu_data";
 import hjData from "../data/hj_data";
 // console.log(guData);
 
-export default function GoodsDetail({selItem, gIdx, setViewList}) {
+// 공통함수 불러오기
+import * as comFn from "./common/com_fn";
+
+export default function GoodsDetail({ selItem, gIdx, setViewList }) {
   // selItem - 대분류(공유/효진) -> 데이터선택
   // gIdx - 구체적인 선택 데이터 idx값
-  console.log('selItem', selItem, '\ngIdx', gIdx);
+  console.log("selItem", selItem, "\ngIdx", gIdx);
 
   // 데이터 종류 선택하기
-  const selDB = 
-  selItem === '공유' ? 
-  guData : 
-  selData === '효진' ? 
-  hjData : null;
+  const selDB = selItem === "공유" ? guData : selData === "효진" ? hjData : null;
 
   // 조건 랜더링 : Null값일 경우
-    if(!selDB) return <ol>
-    <li>데이터가 없습니다.</li>
-  </ol>
-
+  if (!selDB)
+    return (
+      <ol>
+        <li>데이터가 없습니다.</li>
+      </ol>
+    );
 
   // 상세 데이터 선택하기
-  const selData = 
-  selDB.find(v => {if(Number(v.idx)===Number(gIdx))return true});
-  console.log('선택데이터:', selData);
+  const selData = selDB.find((v) => {
+    if (Number(v.idx) === Number(gIdx)) return true;
+  });
+  console.log("선택데이터:", selData);
+
+  // [ useEffect 코드구역 : 화면 업데이트 후 실행구역 ]
+  React.useEffect(() => {
+    console.log("⭕️ 디테일 컴포넌트");
+
+    // 컴포넌트 소멸시 실행구역은 useEffect 함수안에 return() 메서드를 만들어준다.
+    return () => {
+      console.log("❌ 디테일 컴포넌트 소멸 시 실행되는 것");
+    };
+  }); // useEffect //
 
   // 리턴 코드구역
   return (
@@ -39,11 +51,7 @@ export default function GoodsDetail({selItem, gIdx, setViewList}) {
       }}
     >
       <li>
-        <img
-          src={"./images/vans/vans_"+selData.idx+".jpg"}
-          alt="반스신발"
-          style={{ width: "100%" }}
-        />
+        <img src={"./images/vans/vans_" + selData.idx + ".jpg"} alt="반스신발" style={{ width: "100%" }} />
       </li>
       <li
         style={{
@@ -54,30 +62,29 @@ export default function GoodsDetail({selItem, gIdx, setViewList}) {
       >
         상품명 : {selData.gname}
         <br />
-        가격 : {selData.gprice}
+        가격 : {comFn.addCommas(selData.gprice)}원
         <br />
-        {
-          selItem === "공유" &&
+        {selItem === "공유" && (
           <div>
-          소재 : {selData.소재}
-          <br />
-          색상 : {selData.색상}
-          <br />
-          치수 : {selData.치수}
-          <br />
-          제조자/수입자 :{selData["제조자/수입자"]}
-          <br />
-          제조국 : {selData.제조국}
-          <br />
-          제조연월 : {selData.제조연월}
-          <br />
-          A/S 책임자와 전화번호 : <br />
-          {selData["A/S 책임자와 전화번호"]}
-          <br />
-          Model : {selData.Model}
-          <br />
-        </div>
-        }
+            소재 : {selData.소재}
+            <br />
+            색상 : {selData.색상}
+            <br />
+            치수 : {selData.치수}
+            <br />
+            제조자/수입자 :{selData["제조자/수입자"]}
+            <br />
+            제조국 : {selData.제조국}
+            <br />
+            제조연월 : {selData.제조연월}
+            <br />
+            A/S 책임자와 전화번호 : <br />
+            {selData["A/S 책임자와 전화번호"]}
+            <br />
+            Model : {selData.Model}
+            <br />
+          </div>
+        )}
         <div
           className="btnbx"
           style={{
@@ -87,7 +94,7 @@ export default function GoodsDetail({selItem, gIdx, setViewList}) {
         >
           {/* setViewList로 viewList 상태변수값을 true로 변경하여 다시 리스트가 보이게 함 */}
           <button
-            onClick={()=>setViewList(true)}
+            onClick={() => setViewList(true)}
             style={{
               fontSize: "24px",
             }}

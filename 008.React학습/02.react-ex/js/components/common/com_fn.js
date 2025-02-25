@@ -26,8 +26,6 @@ const choiceIntroAni = () => {
   // (3) 소제목 애니
   $('.stit')
   .delay(1500).fadeTo(1000, 1);
-
-
 }; ///////////// choiceIntroAni 함수 ///////////////
 
 // [ 3. 로고 애니 함수 ] ///
