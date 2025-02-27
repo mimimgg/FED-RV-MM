@@ -1,6 +1,6 @@
 import Banner from "../modules/Banner";
 import SecIntro from "../modules/SecIntro";
-
+import VidIntro from "../modules/VidIntro";
 
 // 메인페이지 컴포넌트 : Main.jsx
 export default function Main(){
@@ -17,6 +17,8 @@ export default function Main(){
       <Banner catName={"main" + (Math.ceil(Math.random()*3))} />
       {/* 2. 섹션 인트로 컴포넌트 */}
       <SecIntro />
+      {/* 3. 비디오 컴포넌트 */}
+      <VidIntro />
     </>
   );
 } // Main 컴포넌트 //
