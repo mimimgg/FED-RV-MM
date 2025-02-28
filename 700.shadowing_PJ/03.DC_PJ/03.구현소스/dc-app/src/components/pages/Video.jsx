@@ -1,13 +1,12 @@
 import React from 'react';
 import Banner from '../modules/Banner';
+import VidIntro from '../modules/VidIntro';
 
-function Video(props) {
+function Video({catName}) {
   return (
-    <div>
-      <h1>
-        언제쩍 비디오여
-      </h1>
-    </div>
+    <>
+      <VidIntro catName={catName} clsName="on"/>
+    </>
   );
 }
 

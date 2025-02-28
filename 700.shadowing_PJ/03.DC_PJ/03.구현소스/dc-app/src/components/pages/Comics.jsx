@@ -1,10 +1,13 @@
 import React from 'react';
 import Banner from "../modules/Banner"
+import VidIntro from "../modules/VidIntro";
 
-function Comics(props) {
+function Comics({catName}) {
+
   return (
     <>
-      <Banner catName="COMICS" />
+      <Banner catName={catName} />
+      <VidIntro catName={catName} clsName="on" />
     </>
   );
 }

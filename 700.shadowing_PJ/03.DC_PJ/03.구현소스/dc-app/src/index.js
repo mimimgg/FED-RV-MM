@@ -57,15 +57,15 @@ export default function MainComponent() {
         {/* 최상위 route는 쌍으로 태그를 만든다 */}
         <Route path="/" element={<Layout />}>
           {/* 하위 중 첫페이지는 index라고 속성을 쓴다 */}
-          <Route index element={<Main />} />
+          <Route index element={<Main catName="main"/>} />
 
           {/* 서브메뉴 */}
           <Route path="character" element={<Character />} />
-          <Route path="comics" element={<Comics/>} />
-          <Route path="movies" element={<Movies/>} />
-          <Route path="games" element={<Games/>} />
+          <Route path="comics" element={<Comics catName="COMICS"/>} />
+          <Route path="movies" element={<Movies catName="MOVIES"/>} />
+          <Route path="games" element={<Games catName="GAMES"/>} />
           <Route path="news" element={<News/>} />
-          <Route path="video" element={<Video/>} />
+          <Route path="video" element={<Video catName="VIDEO"/>} />
           <Route path="board" element={<Board/>} />
         </Route>
       </Routes>
