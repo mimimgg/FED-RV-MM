@@ -2,6 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 // 라우터를 사용하고 싶다면 컴포넌트 모듈을 사용해라 //
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// 공통 SCSS 불러오기
+import "./css/index.scss";
+
 import Layout from "./components/layout/Layout";
 import Main from "./components/pages/Main";
 

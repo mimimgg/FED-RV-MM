@@ -2,10 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 // 라우터를 사용하고 싶다면 컴포넌트 모듈을 사용해라 //
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/layout/Layout";
-import Main from "./components/pages/Main";
 // 전체 PJ 공통 CSS 최상위에서 불러오기
 import "./css/index.scss";
+
+// 컴포넌트 불러오기
+import Layout from "./components/layout/Layout";
+import Main from "./components/pages/Main";
 // 서브 카테고리 컴포넌트 
 import Character from "./components/pages/Character";
 import Comics from "./components/pages/Comics";
@@ -14,6 +16,7 @@ import Games from "./components/pages/Games";
 import News from "./components/pages/News";
 import Video from "./components/pages/Video";
 import Board from "./components/pages/Board";
+import SwiperApp from "./components/plugin/SwiperApp";
 
 
 /********************************************* 
@@ -67,6 +70,7 @@ export default function MainComponent() {
           <Route path="news" element={<News/>} />
           <Route path="video" element={<Video catName="VIDEO"/>} />
           <Route path="board" element={<Board/>} />
+          {/* <Route index element={<SwiperApp/>} /> */}
         </Route>
       </Routes>
     </BrowserRouter>

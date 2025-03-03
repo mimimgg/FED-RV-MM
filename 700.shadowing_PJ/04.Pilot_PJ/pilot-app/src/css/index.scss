@@ -1,0 +1,8 @@
+// 전체 공통 scss - index.scss //
+// ⭐️ index.scss에는 common.scss, reset.scss, core.scss 를 불러온다.
+
+// 공통 CSS 불러오기
+@import './common.scss';
+@import './reset.scss';
+@import './core.scss';
+
