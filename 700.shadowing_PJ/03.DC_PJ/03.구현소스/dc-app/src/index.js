@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import ReactDOM from "react-dom/client";
 // 라우터를 사용하고 싶다면 컴포넌트 모듈을 사용해라 //
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 // 전체 PJ 공통 CSS 최상위에서 불러오기
 import "./css/index.scss";
 
@@ -17,6 +17,7 @@ import News from "./components/pages/News";
 import Video from "./components/pages/Video";
 import Board from "./components/pages/Board";
 import SwiperApp from "./components/plugin/SwiperApp";
+import CatDetail from "./components/pages/CatDetail";
 
 
 /********************************************* 
@@ -55,8 +56,12 @@ export default function MainComponent() {
   // 리턴 코드 구역
   return (
     <BrowserRouter>
-      {/* routes로 route를 감싼다. */}
+    {/* 라우터 경로 변경시 최상단 이동 컴포넌트 */}
+    <ScrollTop />
+    
+      {/* 라우터 경로 및 컴포넌트 매칭셋팅 */}
       <Routes>
+      {/* routes로 route를 감싼다. */}
         {/* 최상위 route는 쌍으로 태그를 만든다 */}
         <Route path="/" element={<Layout />}>
           {/* 하위 중 첫페이지는 index라고 속성을 쓴다 */}
@@ -70,12 +75,37 @@ export default function MainComponent() {
           <Route path="news" element={<News/>} />
           <Route path="video" element={<Video catName="VIDEO"/>} />
           <Route path="board" element={<Board/>} />
+          <Route path="detail" element={<CatDetail/>} />
           {/* <Route index element={<SwiperApp/>} /> */}
         </Route>
       </Routes>
     </BrowserRouter>
   );
 } // MainComponent //
+
+/*************************************
+ * 컴포넌트로 만들고 라우터 안에 넣고 
+ * 라우터 경로 변경 시 스크롤 최상단 이동
+*************************************/
+const ScrollTop = () => {
+  // 라우터 경로 변경 시 path값 읽어오기
+  // pathname 객체 속성에 담긴다
+  const { pathname } = useLocation();
+
+  // 화면 랜더링 구역에 스크롤 상단이동 코드 넣기
+  useLayoutEffect(() => {
+    // 스크롤 상단 이동 코드 넣기
+    window.scrollTo(0, 0);
+    // 변경된 라우터 경로 확인
+    console.log('라우터 경로', pathname);
+    
+    // 의종성을 라우터 경로로 등록함
+  }, [pathname]);
+
+  // 컴포넌트 리턴구역 : 리턴할게 없어서 null flxjs
+  return null;
+}; // ScrollTop 컴포넌트 //
+
 
 /// 컴포넌트 출력 ///
 // 먼저 root 객체 만들기
