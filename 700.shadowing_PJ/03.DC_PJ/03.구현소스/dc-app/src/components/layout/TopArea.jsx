@@ -1,6 +1,6 @@
 // 상단영역 컴포넌트 : TopArea.jsx
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // GNB 메뉴 데이터 불러오기 (gnb.js)
 import { menu } from "../../js/data/gnb";
@@ -17,19 +17,29 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import $ from "jquery";
 
 export default function TopArea() {
+  // [ 라우터 이동함수 객체 생성하기 ]
+  const goPage = useNavigate();
+  // 사용시 goPage(라우터주소, {전달객체})
+  // 전달객체가 없으면 쓰지 않는다
+  // 사용법 : 반드시 useNavigate() 생성자메서드를 변수에 할당
+  // 이동할 라우터 주소를 쓰면 이동한다.
+  // 예) goPage('/news') -> 뉴스페이지로 이동
+  // 예) goPage('/') -> 첫페이지로 이동
+  // 예) goPage('') -> 첫페이지로 이동
+  // -> 이동주소는 대소문자를 구분하지 않는다.
+  // -> 슬래쉬 없이 빈값을 써도 루트로 이동한다.
 
-  // 검색관련 함수들
+  // [ 검색관련 함수들 ]
   // 1. 검색창 보이기 함수
   const showSearch = (e) => {
     // 기본기능막기
     e.preventDefault();
-    
+
     // 1. 검색입력값 보이기
-    $('.searchingGnb').show();
+    $(".searchingGnb").show();
 
     // 2. 입력창에 포커스 보내기
-    $('#schinGnb').focus();
-
+    $("#schinGnb").focus();
   }; // showSearch 함수 //
 
   // 2. 검색창에 엔터키 누르면 검색함수 호출
@@ -38,27 +48,32 @@ export default function TopArea() {
     // console.log(e.key, e.keyCode);
 
     // (1) 엔터키일 경우 입력값 읽어서 검색함수 호출하기
-    if (e.key === "Enter"){
+    if (e.key === "Enter") {
       // (1) 입력창의 입력값 읽어오기 : val() 사용!
       let txt = $(e.target).val().trim();
       console.log(txt);
 
       // (2) 빈값이 아니면 검색함수 호출
-      if(txt !== ""){
+      if (txt !== "") {
+        // 입력창 비우고 부모박스 닫기
+        $(e.target).val('').parent().hide();
+
+        // 검색보내기
         goSearch(txt);
       } // if //
       // (3) 빈값이면 메시지 출력
       else {
-        alert('please write letters for searching')
+        alert("please write letters for searching");
       }
     } // if //
   }; // enterKey 함수 //
 
   // 3. 검색페이지로 검색어와 함께 이동하기 함수
-  const goSearch = () => {
-    console.log("검색한다");
+  const goSearch = (txt) => {
+    console.log("검색한다", txt);
     // 라우터 이동함수로 검색페이지로 이동하기
-    
+    goPage("search", { state: { keyword: txt } });
+    // 네비게이트 메서드(라우터주소, {state:{보낼객체}})
   };
 
   // 리턴코드구역
@@ -106,27 +121,18 @@ export default function TopArea() {
             ))}
 
             {/* 3. 검색, 회원가입, 로그인 메뉴 */}
-            <li style={{
-              marginLeft: "auto",
-              marginRight: "25px"
-            }}>
+            <li
+              style={{
+                marginLeft: "auto",
+                marginRight: "25px",
+              }}
+            >
               {/* 검색 입력 박스 */}
               <div className="searchingGnb">
                 {/* 검색버튼 돋보기 아이콘 */}
-                <FontAwesomeIcon 
-                  icon={faSearch}
-                  className="schbtnGnb" 
-                  title="Open search"
-                  onClick={() => {}}
-                />
+                <FontAwesomeIcon icon={faSearch} className="schbtnGnb" title="Open search" onClick={() => {}} />
                 {/* 입력창 */}
-                <input 
-                  type="text" 
-                  placeholder="Filter by Keyword"
-                  name="schinGnb"
-                  id="schinGnb"
-                  onKeyUp={enterKey}
-                />
+                <input type="text" placeholder="Filter by Keyword" name="schinGnb" id="schinGnb" onKeyUp={enterKey} />
               </div>
 
               {/* 검색기능링크 클릭 시 검색창 보이기 */}
