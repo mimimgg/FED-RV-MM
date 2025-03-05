@@ -31,7 +31,7 @@ export default function SwiperVid({ catName }) {
 
   // 선택데이터 변수할당
   const selData = swVidData[catName];
-  console.log(selData);
+  // console.log(selData);
 
   // 리턴코드구역
   return (

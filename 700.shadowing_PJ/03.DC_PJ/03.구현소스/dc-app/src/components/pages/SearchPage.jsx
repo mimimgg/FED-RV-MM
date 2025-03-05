@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import Searching from "../modules/Searching";
 
 function SearchPage() {
 
@@ -15,6 +16,8 @@ function SearchPage() {
   return (
     <>
       <h1 className='tit'>Search Result ({keyword})</h1>
+      {/* 검색모듈 */}
+      <Searching kword = {keyword}/>
     </>
   );
 }

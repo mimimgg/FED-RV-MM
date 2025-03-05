@@ -59,13 +59,13 @@ export function SwiperCat() {
           숫자형변환해줌! Number(변수) */
             Number(v.idx) <= 7 && (
               <SwiperSlide key={i}>
-                <Link 
-                to="/detail"
-                state={{
-                  cname: v.cname, // 캐릭터이름
-                  cdesc: v.cdesc, // 캐릭터설명
-                  facts: v.facts  // 캐릭터상세
-                }}
+                <Link
+                  to="/detail"
+                  state={{
+                    cname: v.cname, // 캐릭터이름
+                    cdesc: v.cdesc, // 캐릭터설명
+                    facts: v.facts, // 캐릭터상세
+                  }}
                 >
                   <section className="sw-inbox2">
                     {/* 캐릭터이미지영역 */}
