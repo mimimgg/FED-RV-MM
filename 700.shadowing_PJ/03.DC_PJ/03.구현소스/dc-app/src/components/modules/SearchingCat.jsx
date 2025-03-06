@@ -20,7 +20,7 @@ function SearchingCat({ selData }) {
         // 데이터가 있을 경우
         total > 0 && (
           <ul className="clist">
-            {selData.map((v, i) => {
+            {selData.map((v, i) => (
               <li key={i}>
                 <Link
                   to="/detail"
@@ -36,8 +36,8 @@ function SearchingCat({ selData }) {
                   {/* 캐릭터 타이틀 */}
                   <h3>{v.cname}</h3>
                 </Link>
-              </li>;
-            })}
+              </li>
+            ))}
           </ul>
         )
       }
