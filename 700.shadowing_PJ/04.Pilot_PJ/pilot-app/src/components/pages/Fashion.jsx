@@ -1,22 +1,48 @@
-// 파일럿PJ 패션페이지(남성 / 여성 / 스타일 공통) - Fashion.jsx
+// 파일럿 PJ -  패션 페이지(남성/여성/스타일 공통) - Fashion.jsx
 
-import React from 'react';
-import { useLocation } from'react-router-dom';
+import React, { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
-function Fashion(props) {
+// 제이쿼리 불러오기 //////
+import $ from "jquery";
+import SwiperBan from "../plugin/SwiperBan";
 
-  // 라우터 전달객체 받기
+function Fashion() {
+  // 라우터 전달객체 받기 ///
   const { state } = useLocation();
-  const catName = state ? state.catName : "아무거나"
 
-  // // 카테고리 이름 가져오기 
-  // const catName = state.catName || "아무거나" ;
+  // 라우터 이동 객체 생성하기 ////
+  const goPage = useNavigate();
+  // 사용시 goPage(라우터주소, {전달객체})
 
+  // 카테고리 이름 가져오기 ///
+  const catName = state ? state.catName : "아무거나";
+
+  // 랜더링후 실행구역 : 한번만실행 /////////
+  useEffect(()=>{
+
+    // 스크롤바 생성하기 ///
+    $('html,body').css({overflow:'visible'});
+
+    // 스크롤바 위치 최상위
+    window.scrollTo(0,0);
+
+    // 홈버튼 첫 페이지로 이동기능 셋팅하기
+    $("#logo a").on('click',(e) => {
+      e.preventDefault();
+      // 라우터이동 : 첫페이지로!
+      goPage('/');      
+    }); //////// click ////////
+
+  },[]); //// useEffect : 한번만실행 ////////
+
+  // 리턴 코드 구역 ////////////////
   return (
     <>
-    <div className="
-      <h1 style={{}}>여기는 {catName}패션페이지다 이말썸이야</h1>
-    "></div>
+      {/* 1. 배너영역 */}
+      <section id="ban" className="page">
+        <SwiperBan catName={catName} />
+      </section>
     </>
   );
 }

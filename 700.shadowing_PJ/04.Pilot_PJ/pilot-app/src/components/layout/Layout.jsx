@@ -2,12 +2,18 @@
 import TopArea from "./TopArea";
 import MainArea from "./MainArea";
 import FooterArea from "./FooterArea";
+import { useState } from "react";
 
 export default function Layout(){
+
+  // 상태변수 세팅
+  // [1] 분류명 상태변수
+  const [catName, setCatName] = useState("main")
+
   // 리턴코드구역
   return (
     <>
-      <TopArea />
+      <TopArea catName={catName} />
       <MainArea />
       <FooterArea />
     </>
