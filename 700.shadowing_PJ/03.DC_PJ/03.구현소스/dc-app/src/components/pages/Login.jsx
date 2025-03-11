@@ -1,11 +1,20 @@
 // DC.com - 로그인 페이지 컴포넌트 - Login.jsx
 
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 // 모듈 CSS 불러오기 : member.scss와 동일
 import "../../css/pages/member.scss";
 
+// 로컬스토리지 생성 JS ////
+import { initData } from "../../js/func/mem_fn";
+import { dCon } from "../modules/dCon";
+
+
 function Login() {
+  // 컨텍스트 API 사용하기
+  const myCon = useContext(dCon);
+  console.log(myCon);
+
   // [ 상태관리변수 ] /////////////
   // [1] 입력요소 상태변수
   // 1. 아이디변수
@@ -106,7 +115,7 @@ function Login() {
       // [회원정보를 로컬스토리지에 저장하기]
 
       // 1. 로컬스 체크함수호출(없으면 생성!)
-      // initData();
+      initData();
 
       // 2. 로컬스 변수할당
       let memData = localStorage.getItem("mem-data");

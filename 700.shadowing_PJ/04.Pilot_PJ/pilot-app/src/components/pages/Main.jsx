@@ -1,6 +1,6 @@
 // Pilot PJ 메인 페이지 컴포넌트 - Main.jsx
 
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 
 // 자동스크롤 기능 JS 불러오기
 import * as autoFn from "../../js/func/jquery-autoScroll";
@@ -8,12 +8,24 @@ import * as autoFn from "../../js/func/jquery-autoScroll";
 // 드래그배너 기능 js 불러오기
 import { dragBanner } from "../../js/func/drag_banner";
 
-import Banner from "../modules/Banner";
+import { Banner } from "../modules/Banner";
 import { FashionIntro } from "../modules/FashionIntro";
 
+import $ from "jquery";
+import { pCon } from "../modules/pCon";
+
 function Main() {
+  // 컨텍스트 API 사용하기
+  const myCon = useContext(pCon);
+
   // 컴포넌트 로딩 후 실행구역 : 한번만 실행(빈 의존성[])
   useEffect(() => {
+    // 메인페이지 로딩후 한번실행에서 메뉴 변경 상태변수를 업데이트함
+    myCon.setCatName('main');
+
+        // 스크롤바 없애기 ///
+        $('html,body').css({overflow:'hidden'});
+
     // 자동스크롤 이벤트 설정
     window.addEventListener("wheel", autoFn.wheelFn);
     // -> window 이벤트 설정을 여기서 한 이유는?
@@ -30,6 +42,19 @@ function Main() {
 
     // 드래그배너 기능함수 호출하기
     dragBanner();
+
+    // 컴포넌트 제거시 실행구역 ////////
+    return () => {
+      console.log("메인제거됨!!!");
+
+      // 자동스크롤 이벤트 제거하기
+      window.removeEventListener("wheel", autoFn.wheelFn);
+      // -> 이 구역에서 window이벤트 설정을 했으므로
+      // 등록된 함수와 동일한 이름으로 셋팅된 함수를 해제할 수 있다!
+
+      // 기존 이벤트 제거하기 함수호출
+      autoFn.removeEvtFn();
+    }; ////// 제거시 실행 구역 ///////////
 
   }, []); // usedEffect : 한번만 호출한다 //
 

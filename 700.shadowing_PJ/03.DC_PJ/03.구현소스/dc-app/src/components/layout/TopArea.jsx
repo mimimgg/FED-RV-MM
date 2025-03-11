@@ -16,7 +16,12 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 // 제이쿼리 불러오기
 import $ from "jquery";
 
-export default function TopArea() {
+export default function TopArea({ loginMsg, loginSts, logoutFn }) {
+  // 전달값 
+  // 1. loginMsg - 로그인 메시지 변수 게터
+  // 2. loginSts - 로그인 상태변수 게터
+  // 3. logoutFn - 로그아웃 처리함수
+
   // [ 라우터 이동함수 객체 생성하기 ]
   const goPage = useNavigate();
   // 사용시 goPage(라우터주소, {전달객체})
@@ -56,7 +61,7 @@ export default function TopArea() {
       // (2) 빈값이 아니면 검색함수 호출
       if (txt !== "") {
         // 입력창 비우고 부모박스 닫기
-        $(e.target).val('').parent().hide();
+        $(e.target).val("").parent().hide();
 
         // 검색보내기
         goSearch(txt);
@@ -82,7 +87,7 @@ export default function TopArea() {
       {/* 1.상단영역 */}
       <header className="top-area">
         {/* 로그인 환영메시지 박스 */}
-        <div className="logmsg"></div>
+        <div className="logmsg">{loginMsg}</div>
         {/* 네비게이션 GNB파트 */}
         <nav className="gnb">
           <ul>
@@ -140,12 +145,40 @@ export default function TopArea() {
                 <FontAwesomeIcon icon={faSearch} />
               </a>
             </li>
-            <li>
-              <Link to="/member">JOIN US</Link>
-            </li>
-            <li>
-              <Link to="/login">LOGIN</Link>
-            </li>
+
+            {/* 
+              회원가입, 로그인 버튼은 로그인 상태값 loginSts값이 null일때만 나오게 한다.
+              -> null이면 false 처리되므로 !loginSts로 써서 false일때 true 처리되게 조건문을 작성함.
+              */}
+            {!loginSts && (
+              <>
+                <li>
+                  <Link to="/member">JOIN US</Link>
+                </li>
+                <li>
+                  <Link to="/login">LOGIN</Link>
+                </li>
+              </>
+            )}
+
+            { 
+              // 로그인 상태이면 로그아웃버튼 보이기!
+              loginSts && (
+                <li>
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      // 기본이동막기
+                      e.preventDefault();
+                      // 로그아웃 처리함수 호출
+                      logoutFn();
+                    }}
+                  >
+                    LOGOUT
+                  </a>
+                </li>
+              )
+            }
           </ul>
         </nav>
         {/* 모바일용 햄버거 버튼 */}
