@@ -15,15 +15,23 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 // 제이쿼리 불러오기
 import $ from "jquery";
+import { memo } from "react";
 
-export default function TopArea({ loginMsg, loginSts, logoutFn }) {
-  // 전달값 
+// 상단영역 메모이제이션을 위한 주의사항
+// 1. 전역변수로 사용하지 말것
+// 2. 이동함수를 직접 사용하지 말것
+// 3. 전달하는 함수를 콜백처리 할 것
+// 4. 메모처리하는 컴포넌트로 만들것
+export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage}) => {
+  console.log("상단영역 랜더링");
+  // 전달값
   // 1. loginMsg - 로그인 메시지 변수 게터
   // 2. loginSts - 로그인 상태변수 게터
   // 3. logoutFn - 로그아웃 처리함수
+  // 4. goPage - 라우터 이동 함수
 
   // [ 라우터 이동함수 객체 생성하기 ]
-  const goPage = useNavigate();
+  // const goPage = useNavigate();
   // 사용시 goPage(라우터주소, {전달객체})
   // 전달객체가 없으면 쓰지 않는다
   // 사용법 : 반드시 useNavigate() 생성자메서드를 변수에 할당
@@ -161,7 +169,7 @@ export default function TopArea({ loginMsg, loginSts, logoutFn }) {
               </>
             )}
 
-            { 
+            {
               // 로그인 상태이면 로그아웃버튼 보이기!
               loginSts && (
                 <li>
@@ -186,4 +194,4 @@ export default function TopArea({ loginMsg, loginSts, logoutFn }) {
       </header>
     </>
   );
-} // TopArea 컴포넌트 //
+}); // TopArea 컴포넌트 //
