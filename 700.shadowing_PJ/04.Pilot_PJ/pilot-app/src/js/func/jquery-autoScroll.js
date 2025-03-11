@@ -240,7 +240,15 @@ function evtFn() {
   }); //////// click ////////
 } /////////// evtFn 함수 /////////////////
 
+// [ 이벤트 제거함수 ] /////////////
+function removeEvtFn() {
+  // off(이벤트명) ->  제이쿼리 이벤트 제거 메서드
+  $("#logo a").off("click");
+  $(".gnb li, .indic li").off("click");
+  $(document).off("keydown");
+} ///////// removeEvtFn 함수 /////////////
+
 // 사용할 함수만 내보냄!
-export { wheelFn, evtFn, initSet, zeroPno };
+export { wheelFn, evtFn, removeEvtFn, initSet, zeroPno };
 
 // } ///////////// autoScroll 함수 //////////

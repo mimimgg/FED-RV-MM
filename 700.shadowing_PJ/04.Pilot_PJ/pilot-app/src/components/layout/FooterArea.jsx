@@ -1,6 +1,9 @@
 // 하단영역 컴포넌트 : FooterArea.jsx
 
-export default function FooterArea() {
+import { memo } from "react";
+
+// React.memo()를 메모이제이션 처리하기
+export const FooterArea = memo (() => {
   // 리턴코드구역
   return (
     <>
@@ -25,4 +28,4 @@ export default function FooterArea() {
       </footer>
     </>
   );
-} // FooterArea 컴포넌트 //
+}) // FooterArea 컴포넌트 //

@@ -3,9 +3,16 @@
 // GNB [데이터] 가져오기
 import { gnbData } from "../../js/data/gnb";
 
-// 전체 메뉴 [컴포넌트] 불러오기
+import { memo } from "react";
 
-export default function TopArea({catName}) {
+// 제이쿼리 불러오기
+import $ from "jquery";
+
+// 전체 메뉴 [컴포넌트] 불러오기
+import { TotalMenu } from "../modules/TotalMenu";
+
+// React.memo()를 메모이제이션 처리하기
+export const TopArea = memo (({catName}) => {
   
   /// GNB메뉴 리스트 만들기 함수
   const makeList = (dataName) => {
@@ -33,12 +40,30 @@ export default function TopArea({catName}) {
               {makeList(catName)}
             </ul>
           </nav>
-          <div className="ham">
+          <div className="ham" 
+            onClick={(e) => {
+              // toggle()은 show(), hide()전환
+
+              // 1. 전체 메뉴박스 보이기 / 숨기기
+              $('.mbox').toggle();
+              // 2. 햄버거 메뉴에 모양변경 클래스 넣기/빼기
+              $(e.currentTarget).toggleClass('on');
+              // 3. 배경 동영상 재생 멈춤
+              // 제이쿼리 동영상은 get(0)까지 선택해야함
+              let bgm = $('.bgm').get(0);
+              if(bgm.paused) { // (1) 멈춤상태면 재생
+                bgm.play();
+              } else { // (2) 멈춤상태 아니면 멈춤
+                bgm.pause();
+              }
+            }}
+          >
             <span></span> <span></span> <span></span>
           </div>
           {/* 전체메뉴 컴포넌트 */}
+          <TotalMenu/>
         </header>
       </div>
     </>
   );
-} // TopArea 컴포넌트 //
+}) // TopArea 컴포넌트 //

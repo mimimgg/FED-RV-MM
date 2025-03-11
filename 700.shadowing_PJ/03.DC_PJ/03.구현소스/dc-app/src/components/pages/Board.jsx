@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // 제이쿼리
 import $ from "jquery";
@@ -10,66 +10,146 @@ import "../../css/pages/board.scss";
 import { initBoardData } from "../../js/func/board_fn";
 
 function Board() {
+  // [ 상태관리 변수 구역 ]
+  // [1] 기능모드
+  const [mode, setMode] = useState("L");
+  // (1) 리스트모드 (L) : List Mode
+  // (2) 글보기모드 (R) : Read Mode
+  // (3) 글쓰기모드 (W) : Write Mode
+  // (4) 수정모드 (M) : Modify Mode (삭제포함)
+
   // 로컬스토리지 게시판 데이터 정보확인 함수 호출
   initBoardData();
 
   // 로컬스토리지 데이터 변수 할당하기
   const baseData = JSON.parse(localStorage.getItem("board-data"));
 
+  // 데이터 설정 : 기준 -> 최신날짜로 내림차순
+  baseData.sort((a, b) => (a.date > b.data ? -1 : a.date < b.date ? 1 : 0));
+
+  // 일부 데이터만 선택하기
+  const selData = [];
+  for (let i = 0; i < 10; i++) {
+    selData.push(baseData[i]);
+  }
+
+  // 리턴코드구역
   return (
     <>
-      <main className="cont">
-        <h1 className="tit">OPINION</h1>
-        <div className="selbx">
-          <select name="cta" id="cta" className="cta">
-            <option value="tit">Title</option>
-            <option value="cont">Contents</option>
-            <option value="unm">Writer</option>
-          </select>
-          <select name="sel" id="sel" className="sel">
-            <option value="0">Descending</option>
-            <option value="1">Ascending</option>
-          </select>
-          <input id="stxt" type="text" maxlength="50" />
-          <button className="sbtn">Search</button>
-          <select name="sort_cta" id="sort_cta" className="sort_cta">
-            <option value="idx">Recent</option>
-            <option value="tit">Title</option>
-          </select>
-        </div>
-        <table className="dtbl" id="board">
-          <thead>
-            <tr>
-              <th>Number</th>
-              <th>Title</th>
-              <th>Writer</th>
-              <th>Date</th>
-              <th>Hits</th>
-            </tr>
-          </thead>
-          <tbody>
-            {baseData.map((v) => (
-              <tr>
-                <td>{v.idx}</td>
-                <td>
-                  <a href="#">{v.tit}</a>
-                </td>
-                <td>{v.unm}</td>
-                <td>{v.date}</td>
-                <td>{v.cnt}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <br />
-        <table className="dtbl btngrp">
-          <tbody>
-            <tr>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </main>
+      {
+        // [1] 리스트 모드 출력하기 : mode -> "L"
+        mode === "L" && (
+          <main classNameName="cont">
+            <h1 classNameName="tit">OPINION</h1>
+            <div classNameName="selbx">
+              <select name="cta" id="cta" classNameName="cta">
+                <option value="tit">Title</option>
+                <option value="cont">Contents</option>
+                <option value="unm">Writer</option>
+              </select>
+              <select name="sel" id="sel" classNameName="sel">
+                <option value="0">Descending</option>
+                <option value="1">Ascending</option>
+              </select>
+              <input id="stxt" type="text" maxlength="50" />
+              <button classNameName="sbtn">Search</button>
+              <select name="sort_cta" id="sort_cta" classNameName="sort_cta">
+                <option value="idx">Recent</option>
+                <option value="tit">Title</option>
+              </select>
+            </div>
+            <table classNameName="dtbl" id="board">
+              <thead>
+                <tr>
+                  <th>Number</th>
+                  <th>Title</th>
+                  <th>Writer</th>
+                  <th>Date</th>
+                  <th>Hits</th>
+                </tr>
+              </thead>
+              <tbody>
+                {selData.map((v, i) => (
+                  <tr>
+                    <td>{i + 1}</td>
+                    <td>
+                      <a href="#" onClick={e => {
+                        // 기본이동 막기
+                        e.preventDefault();
+                        // 글보기모드 ('R')로 변경하기
+                        setMode('R');
+                      }}>{v.tit}</a>
+                    </td>
+                    <td>{v.unm}</td>
+                    <td>{v.date}</td>
+                    <td>{v.cnt}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <br />
+            <table classNameName="dtbl btngrp">
+              <tbody>
+                <tr>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </main>
+        )
+      }
+
+      {
+        // [2] 보기모드 출력하기 : mode -> "R"
+        mode === "R" && (
+          <main className="cont">
+            <h1 className="tit">OPINION</h1>
+            <table className="dtblview readone">
+              <caption>OPINION : Read</caption>
+              <tbody>
+                <tr>
+                  <td>Name</td>
+                  <td>
+                    <input type="text" className="name" size="20" readonly="" value="Tom" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Title</td>
+                  <td>
+                    <input type="text" className="subject" size="60" readonly="" value="오늘나는 좋아~!" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Content</td>
+                  <td>
+                    <textarea className="content" cols="60" rows="10" readonly="">
+                      너는 누구니? 난 좋아~! ㅎㅎㅎㅎㅎ
+                    </textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Attachment</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <table className="dtbl btngrp">
+              <tbody>
+                <tr>
+                  <td>
+                    <button onClick={e => {
+                        // 리스트모드 ('L')로 변경하기
+                        setMode('L');
+                      }}>List</button>
+                    <button>Modify</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </main>
+        )
+      }
     </>
   );
 }
