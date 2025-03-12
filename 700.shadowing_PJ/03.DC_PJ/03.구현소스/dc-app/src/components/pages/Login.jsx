@@ -2,6 +2,7 @@
 
 import React, { useContext, useEffect, useState } from "react";
 
+
 // 모듈 CSS 불러오기 : member.scss와 동일
 import "../../css/pages/member.scss";
 
@@ -9,11 +10,10 @@ import "../../css/pages/member.scss";
 import { initData } from "../../js/func/mem_fn";
 import { dCon } from "../modules/dCon";
 
-
 function Login() {
-  // 컨텍스트 API 사용하기
+  // 컨텍스트 API 사용하기 /////
   const myCon = useContext(dCon);
-  console.log(myCon);
+  console.log('로그인페이지 dCon:',myCon);
 
   // [ 상태관리변수 ] /////////////
   // [1] 입력요소 상태변수
@@ -152,23 +152,25 @@ function Login() {
           // -> 서버 세션을 대신하여 사용함!
           // -> 결과가 result에 배열로 담김
           // -> 넣을때는 JSON.stringify()
-          sessionStorage.setItem("minfo", JSON.stringify(result));
+          sessionStorage.setItem("minfo", 
+            JSON.stringify(result));
 
           // 2. 컨텍스트 API의 로그인상태 업데이트
-          // myCon.setLoginSts(sessionStorage.getItem("minfo"));
-          // -> 업데이트된 minfo 세션스값을 넣음!
+          myCon.setLoginSts(result);
+          // -> 객체로된 사용자 정보를 담아준다!
 
           // 3. 로그인 환영메시지 셋팅함수 호출
-          // myCon.makeMsg(result.unm);
+          myCon.makeMsg(result.unm);
 
           // 4. 로그인 성공 메시지 버튼에 출력하기
-          document.querySelector(".sbtn").innerText = "넌 로그인 된거야~!";
+          document.querySelector(".sbtn").innerText = 
+          "넌 로그인 된거야~!";
 
           // 5. 라우팅 페이지 이동
           // 1초후 메인 페이지로 이동
-          // setTimeout(() => {
-          //   myCon.goPage("/");
-          // }, 1000);
+          setTimeout(() => {
+            myCon.goPage("/");
+          }, 1000);
         } //// if /////
         // 로그인 실패시 메시지 출력!
         else {
@@ -199,7 +201,7 @@ function Login() {
     document.querySelector("#user-id").focus();
   }, []);
 
-  // 코드리턴구역
+  // 코드 리턴구역 //////////////////////
   return (
     <div className="outbx">
       <section className="membx" style={{ minHeight: "300px" }}>
@@ -208,16 +210,23 @@ function Login() {
           <ul>
             <li>
               <label>ID : </label>
-              <input id="user-id" type="text" maxLength="20" placeholder="Please enter your ID" value={userId} onChange={changeUserId} />
+              <input
+                id="user-id"
+                type="text"
+                maxLength="20"
+                placeholder="Please enter your ID"
+                value={userId}
+                onChange={changeUserId}
+              />
               {
                 // 에러일 경우 메시지 출력
                 // 조건문 && 출력요소
-                userIdError &&
+                userIdError && 
                 <div className="msg">
                   <small
                     style={{
-                      color:"red",
-                      fontSize: "10px"
+                      color: "red",
+                      fontSize: "10px",
                     }}
                   >
                     {idMsg}
@@ -227,17 +236,22 @@ function Login() {
             </li>
             <li>
               <label>Password : </label>
-              <input type="password" maxLength="20" placeholder="Please enter your Password" 
-              value={pwd} onChange={changePwd}/>
+              <input
+                type="password"
+                maxLength="20"
+                placeholder="Please enter your Password"
+                value={pwd}
+                onChange={changePwd}
+              />
               {
                 // 에러일 경우 메시지 출력
                 // 조건문 && 출력요소
-                pwdError &&
+                pwdError && 
                 <div className="msg">
                   <small
                     style={{
-                      color:"red",
-                      fontSize: "10px"
+                      color: "red",
+                      fontSize: "10px",
                     }}
                   >
                     {pwdMsg}
@@ -246,7 +260,9 @@ function Login() {
               }
             </li>
             <li style={{ overflow: "hidden" }}>
-              <button className="sbtn" onClick={onSubmit}>Submit</button>
+              <button className="sbtn" onClick={onSubmit}>
+                Submit
+                </button>
             </li>
           </ul>
         </form>

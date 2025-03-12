@@ -1,18 +1,18 @@
-// DC.com 섹션소개 컴포넌트 - SecIntro.jsx //
+// DC.com 섹션소개 컴포넌트 - SecIntro.jsx ///
 import React from "react";
 
-// 섹션 소개 모듈 데이터 불러오기
+// 섹션 소개 모듈용 데이터 불러오기
 import { secIntroData } from "../../js/data/sec_intro";
 
-// 섹션 소개 모듈용 scss 불러오기 //
+// 섹션 소개 모듈용 CSS 불러오기
 import "../../css/modules/sec_intro.scss";
 import { Link } from "react-router-dom";
 
 function SecIntro(props) {
-  // 불러온 데이터 변수 할당
+  // 불러온 데이터 변수할당 ////
   const selData = secIntroData;
 
-  // 리턴코드 구역
+  // 리턴 코드구역 ///////////
   return (
     <section className="sec-intro">
       {/* 반복단위박스 */}
@@ -31,7 +31,7 @@ function SecIntro(props) {
           <div className="btnbx">
             <Link to={v.link}>
               <button>{v.btn}</button>
-            </Link>
+            </Link>           
           </div>
         </div>
       ))}

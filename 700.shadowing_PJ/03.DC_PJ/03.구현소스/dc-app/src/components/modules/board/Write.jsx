@@ -1,0 +1,106 @@
+// DC PJ 게시판 쓰기 모드 모듈 - Write.jsx
+
+import React, { useContext } from "react";
+import { dCon } from "../dCon";
+
+// 제이쿼리 불러오기
+import $ from "jquery";
+
+function Write({ setMode }) {
+  // setMode - 모든 변경 상태변수 setter
+
+  // 전역 컨텍스트 API 사용하기!!
+  const myCon = useContext(dCon);
+  console.log("Write에서 loginSts:", myCon.loginSts);
+
+  // 글쓰기 저장 서브밋 함수
+  const submitFn = () => {
+    // 제목입력항목
+    let title = $(".subject").val().trim();
+    // 내용입력항목
+    let content = $(".content").val().trim();
+    // trim()으로 앞뒤공백 제거 후 검사하기
+    
+    // (1) 공통 유효성검사
+    // - 제목, 내용 모두 비어있으면 리턴
+    if (title === '' || content === ''){
+      alert("Insert title and content!");
+      return;
+    } // if //
+    // (2) 서브밋 처리하기
+    else { 
+      // 입력할 객체 데이터 만들기
+      let data = {
+        "idx": 1,
+        "tit": title,
+        "cont": content,
+        "att": "",
+        "date": "2024-11-30",
+        "uid": myCon.loginSts.uid,
+        "unm": myCon.loginSts.unm,
+        "cnt": 0
+      };
+    } // else //
+  }; // submitFn 함수 //
+
+  // 리턴 코드구역 ///////////////////
+  return (
+    <main className="cont">
+      <h1 className="tit">OPINION</h1>
+      <table className="dtblview readone">
+        <caption>OPINION : Write</caption>
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td>
+              <input
+                type="text"
+                className="name"
+                size="20"
+                readOnly={true}
+                // 로그인한 사람이름
+                defaultValue={myCon.loginSts.unm}
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Title</td>
+            <td>
+              <input type="text" className="subject" size="60" />
+            </td>
+          </tr>
+          <tr>
+            <td>Content</td>
+            <td>
+              <textarea className="content" cols="60" rows="10"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>Attachment</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <table className="dtbl btngrp">
+        <tbody>
+          <tr>
+            <td>
+              <button>Submit</button>
+              <button
+                onClick={() => {
+                  // 리스트 모드('L')로 변경하기
+                  setMode("L");
+                }}
+              >
+                List
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  );
+}
+
+export default Write;

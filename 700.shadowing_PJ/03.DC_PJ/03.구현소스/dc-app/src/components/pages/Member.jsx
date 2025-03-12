@@ -1,21 +1,21 @@
 // DC.com - 회원가입 페이지 컴포넌트 - Member.jsx
 
-import React, { useId, useState } from "react";
+import React, { useState } from "react";
 
 // 모듈 CSS 불러오기 ///
 import "../../css/pages/member.scss";
 import { Link, useNavigate } from "react-router-dom";
 
-// 로컬스토리지 생성 JS
+// 로컬스토리지 생성 JS ////
 import { initData } from "../../js/func/mem_fn";
 
-// 제이쿼리 추가하기
+// 제이쿼리 불러오기 ////
 import $ from "jquery";
 
 function Member() {
-  // 라우터이동 객체 생성하기
+  // 라우터이동 객체 생성하기 ///
   const goPage = useNavigate();
-  // 사용시 : goPage(라우터주소, state변수)
+  // 사용시: goPage(라우터주소,state변수)
 
   // [ 상태관리변수 ] /////////////
   // [1] 입력요소 상태변수
@@ -308,7 +308,7 @@ function Member() {
     } //// else ///////////
   }; /////////// onSubmit 함수 //////////
 
-  // 리턴코드구역
+  // 리턴 코드구역 ///////////////
   return (
     <div className="outbx">
       <section className="membx">
@@ -343,9 +343,10 @@ function Member() {
                 )
               }
               {
-                // 통과일 경우 메시지 출력
+                // 통과시 메시지 출력
                 // 조건문 && 출력요소
-                // 조건추가 : userId가 입력 전일때 안보임 처리 / userId가 입력전엔 false로 리턴된다.
+                // 조건추가 : userId가 입력전일때 안보임처리
+                // userId가 입력전엔 false로 리턴됨!
                 !userIdError && userId && (
                   <div className="msg">
                     <small
@@ -471,12 +472,10 @@ function Member() {
                 )
               }
             </li>
-
             <li style={{ overflow: "hidden" }}>
-              <button 
-              className="sbtn"
-              onClick={onSubmit}
-              >Submit</button>
+              <button className="sbtn" onClick={onSubmit}>
+                Submit
+              </button>
             </li>
             <li>
               Are you already a Member?
