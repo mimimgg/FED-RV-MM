@@ -13,4 +13,4 @@ export default function MainArea(){
         </main>
     );
 
-} // MainArea 컴포넌트 //
+} //////////// MainArea 컴포넌트 ///////////

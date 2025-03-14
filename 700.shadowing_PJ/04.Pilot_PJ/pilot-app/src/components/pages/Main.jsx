@@ -2,42 +2,50 @@
 
 import React, { useContext, useEffect } from "react";
 
-// 자동스크롤 기능 JS 불러오기
+// 자동스크롤 기능 JS 불러오기 ///
 import * as autoFn from "../../js/func/jquery-autoScroll";
 
-// 드래그배너 기능 js 불러오기
+// 드래그배너 기능 JS 불러오기 ////
 import { dragBanner } from "../../js/func/drag_banner";
 
 import { Banner } from "../modules/Banner";
 import { FashionIntro } from "../modules/FashionIntro";
 
+// 제이쿼리 불러오기 //////
 import $ from "jquery";
 import { pCon } from "../modules/pCon";
 
 function Main() {
-  // 컨텍스트 API 사용하기
+  // 컨텍스트 API 사용하기 ////
   const myCon = useContext(pCon);
 
-  // 컴포넌트 로딩 후 실행구역 : 한번만 실행(빈 의존성[])
-  useEffect(() => {
-    // 메인페이지 로딩후 한번실행에서 메뉴 변경 상태변수를 업데이트함
+
+  // 컴포넌트 로딩후 실행구역 : 한번만 (빈의존성[]) /////
+  useEffect(() => {   
+    // 메인페이지 로딩후 한번실행에서
+    // 메뉴 변경 상태변수를 업데이트 함!
     myCon.setCatName('main');
 
-        // 스크롤바 없애기 ///
-        $('html,body').css({overflow:'hidden'});
+    // 스크롤바 없애기 ///
+    $('html,body').css({overflow:'hidden'});
 
-    // 자동스크롤 이벤트 설정
+    
+    // 스크롤바 위치 최상위
+    window.scrollTo(0,0);
+
+    // 자동스크롤 이벤트 설정하기
     window.addEventListener("wheel", autoFn.wheelFn);
-    // -> window 이벤트 설정을 여기서 한 이유는?
-    // -> 소멸자를 통해 이벤트를 다른 페이지가 나올때 해제해주기 위해 여기서 세팅한다.
+    // -> window 이벤트 설정을 여기서한 이유는?
+    // ->>> 소멸자를 통해 이벤트를 다른 페이지가 나올때
+    // 해재해 주기 위해 여기서 셋팅함!
 
-    // 메뉴 + 인디케이터 이벤트 기능 설정함수 호출
+    // 메뉴+인디케이터 이벤트 기능 설정함수 호출 ///
     autoFn.evtFn();
 
     // 초기화 함수 호출
     autoFn.initSet();
 
-    // 페이지 번호 초기화 함수 호출
+    // 페이지번호 초기화 함수 호출
     autoFn.zeroPno();
 
     // 드래그배너 기능함수 호출하기
@@ -55,14 +63,18 @@ function Main() {
       // 기존 이벤트 제거하기 함수호출
       autoFn.removeEvtFn();
     }; ////// 제거시 실행 구역 ///////////
+  }, []); ///////// useEffect : 한번만 //////////////
 
-  }, []); // usedEffect : 한번만 호출한다 //
-
-  // 리턴코드구역
+  // 리턴 코드구역 //////////////
   return (
     <>
       {/* 1. 배너 페이지 */}
-      <section id="ban" className="page none-sel" style={{ background: "lightblue" }}>
+      <section
+        id="ban"
+        className="page none-sel"
+        style={{ background: "lightblue" }}
+      >
+        {/* 배너모듈 */}
         <Banner />
       </section>
 

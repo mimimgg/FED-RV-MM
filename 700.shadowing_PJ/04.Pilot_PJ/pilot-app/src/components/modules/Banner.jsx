@@ -1,6 +1,4 @@
-// 파일럿 PJ 메인 페이지 배너 컴포넌트 - Banner.jsx //
-
-import React from "react";
+// Pilot PJ 메인 페이지 배너 컴포넌트
 
 // 배너용 CSS 불러오기
 import "../../css/banner.scss";
@@ -60,5 +58,3 @@ export function Banner() {
     </>
   );
 } //////////// Banner 컴포넌트 ///////////
-
-export default Banner;
