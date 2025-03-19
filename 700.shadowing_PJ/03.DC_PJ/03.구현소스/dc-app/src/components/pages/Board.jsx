@@ -31,9 +31,21 @@ function Board() {
   // [2] 페이징을 위한 페이지 번호 ////
   const [pageNum, setPageNum] = useState(1);
 
-  // [3] 검색어 저장변수 : 배열 [기준, 검색어]
-  const [keyword, setKeyword] = useState(['','']);
-  console.log('[기준, 검색어]',keyword);
+  // [3] 검색어 저장변수 : 객체 {cta:기준값,kw:검색어}
+  const [keyword, setKeyword] = useState({
+    cta: "tit",
+    kw: "",
+  });
+  console.log("{cta:기준값,kw:검색어}", keyword);
+  // cta - creteria / kw -  keyword
+
+  // [4] 정렬 기준값 상태변수 : 값(asc(-1) / desc(1))
+  const [order, setOrder] = useState(1);
+
+  // [5] 정렬 항목값 상태변수 : 값 -> 정렬할 DB 컬럼명
+  const [sortCta, setSortCta] = useState("date");
+  // 초기값은 날짜를 기준한 desc정렬임!
+  // sortCta는 sort Criteria (정렬기준)의 줄임말!
 
   // [ ★★ 리액트 참조변수 셋팅구역 ★★ ] //////
 
@@ -75,32 +87,70 @@ function Board() {
   // 시작수(5*(2-1)) = 5 / 한계수 (5*2) = 10
   // 시작수(5*(3-1)) = 10 / 한계수 (5*3) = 15
 
-
   // ★★★★★★★★★★★★★★★★★★★★★★★★ //
   // ★★★★★★ [ 데이터 필터링 하기 ] ★★★★★★ //
   // ★★★★★★★★★★★★★★★★★★★★★★★★ //
 
+  // 최종 데이터 담을 변수
+  let finalData;
+
   // [ 전체 데이터 검색 및 정렬 ] /////////////
-  // if(keyword == '')
-  baseData
-    // ((기준1))-> 최신날짜로 내림차순
-    .sort((a, b) => (a.date > b.date ? -1 : a.date < b.date ? 1 : 0))
-    // ((기준2))-> idx로 내림차순
-    .sort((a, b) => (a.idx > b.idx ? -1 : a.idx < b.idx ? 1 : 0));
+  // [1] 검색어가 있는 경우 ////////
+  if (keyword.kw !== "") {
+    finalData = baseData
+      // ((기준1))-> sortCta값에 따른 정렬
+      // 내림차순은 -1 * order변수값이 1일 경우
+      // 오름차순은 -1 * order변수값이 -1일 경우
+      //
+      .sort((a, b) =>
+        a[sortCta] > b[sortCta]
+          ? -1 * order
+          : a[sortCta] < b[sortCta]
+          ? 1 * order
+          : // 그밖의 경우 idx(번호유일키)로 다시 정렬
+            // ((기준2))-> idx로 내림차순
+            (a, b) =>
+              a.idx > b.idx ? -1 * order : a.idx < b.idx ? 1 * order : 0
+      )
+      // 여기부터 검색어로 리스트 만들기
+      .filter((v) => {
+        if (
+          v[keyword.cta].toLowerCase().indexOf(keyword.kw.toLowerCase()) !== -1
+        )
+          return true;
+      }); ////// filter ////////
+  } ///// if : 검색어가 있는 경우 /////////
+  else {
+    finalData = baseData
+      // ((기준1))-> sortCta값에 따른 정렬
+      // 내림차순은 -1 * order변수값이 1일 경우
+      // 오름차순은 -1 * order변수값이 -1일 경우
+      //
+      .sort((a, b) =>
+        a[sortCta] > b[sortCta]
+          ? -1 * order
+          : a[sortCta] < b[sortCta]
+          ? 1 * order
+          : // 그밖의 경우 idx(번호유일키)로 다시 정렬
+            (a, b) =>
+              a.idx > b.idx ? -1 * order : a.idx < b.idx ? 1 * order : 0
+      );
+  } ///// else : 검색어가 없는 경우 ////////
 
+  // 전체 데이터 개수 업데이트 하기 /////
+  totalCount.current = finalData.length;
 
-  console.log('slice를 위한 시작값/끝값', initNum,'/',limitNum);
+  console.log("slice를 위한 시작값/끝값", initNum, "/", limitNum);
 
   // [ slice() 배열 메서드를 이용한 부분값 가져오기 ]
-  const selData = baseData.slice(initNum, limitNum);
+  const selData = finalData.slice(initNum, limitNum);
   // 배열 메서드 slice(시작순번, 끝순번)
   // (1) 시작순번 : 시작할 배열값 첫번째 순번
   // (2) 끝순번 : 출력에 포함되지 않는 마지막째 배열순번
-  // (3) slice 중요특징 : 
+  // (3) slice 중요특징 :
   //    1) 배열원본을 보존하여 새로운 배열생성!
   //    2) 끝순번 배열번호가 실제 배열번호보다 커도 에러나지 않고
   //      자동으로 없는 순번을 빠져나가준다!(내부 break셋팅됨!)
-
 
   // [ 선택 데이터 담을 배열변수 : for문을 사용한 경우 ] ///
   // const selData = [];
@@ -115,18 +165,19 @@ function Board() {
   //   selData.push(baseData[i]);
   // } //////////// for : 선택데이터 담기 ///////////
 
-
-  
-
-  
-
   /************************************** 
-    함수명 : bindList
-    기능 : 페이지별 데이터 리스트를 생성
+    함수명 : searchFn
+    기능 : 검색어 넣고 검색을 실행하도록
+      검색어 상태변수값을 업데이트 한다!
+    작동조건 : 검색버튼 클릭시(검색어 입력 후 엔터)
   **************************************/
- const bindList = () => {
-  
- };
+  const searchFn = () => {
+    // 검색어 조건과 검색문자열을 담은 상태변수를 업데이트 한다
+    setKeyword({
+      cta: $('#cta').val(),
+      kw: $("#stxt").val(),
+    });
+  }; /////// searchFn 함수 ////////////////////
 
   // DOM 랜더링 실행구역 ///////
   useEffect(() => {
@@ -151,6 +202,14 @@ function Board() {
             totalCount={totalCount} // 전체 개수 참조변수
             pgPgSize={pgPgSize} // 페이징의 페이징 개수
             pgPgNum={pgPgNum} // 페이징의 페이징 번호
+            // 검색, 정렬 관련 전달속성 셋팅 /////
+            searchFn={searchFn} // 검색함수
+            keyword={keyword} // 검색어 상태변수 getter
+            setKeyword={setKeyword} // 검색어 상태변수 setter
+            order={order} // 정렬 상태변수
+            setOrder={setOrder} // 정렬 상태변수 setter
+            sortCta={sortCta} // 정렬기준 상태변수 getter
+            setSortCta={setSortCta} // 정렬기준 상태변수 setter
           />
         )
       }
