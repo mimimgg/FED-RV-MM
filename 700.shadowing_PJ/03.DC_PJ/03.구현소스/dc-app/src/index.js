@@ -1,14 +1,14 @@
 import React, { useLayoutEffect } from "react";
 import ReactDOM from "react-dom/client";
 // 라우터를 사용하고 싶다면 컴포넌트 모듈을 사용해라 //
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, HashRouter } from "react-router-dom";
 // 전체 PJ 공통 CSS 최상위에서 불러오기
 import "./css/index.scss";
 
 // 컴포넌트 불러오기
 import Layout from "./components/layout/Layout";
 import Main from "./components/pages/Main";
-// 서브 카테고리 컴포넌트 
+// 서브 카테고리 컴포넌트
 import Character from "./components/pages/Character";
 import Comics from "./components/pages/Comics";
 import Movies from "./components/pages/Movies";
@@ -21,7 +21,6 @@ import CatDetail from "./components/pages/CatDetail";
 import SearchPage from "./components/pages/SearchPage";
 import Login from "./components/pages/Login";
 import Member from "./components/pages/Member";
-
 
 /********************************************* 
     [ 리액트 라우터 ]
@@ -58,42 +57,48 @@ import Member from "./components/pages/Member";
 export default function MainComponent() {
   // 리턴 코드 구역
   return (
-    <BrowserRouter>
-    {/* 라우터 경로 변경시 최상단 이동 컴포넌트 */}
-    <ScrollTop />
-    
+
+    // [ HashRouter 사용하기 ]
+    // 해쉬라우터는 Url 가상경로에 '/#/경로명'형식으로 만들어줘서 새로고침시 현재위치에 그대로 404에러 없이 머물 수 있다.
+    // basename 속성은 해쉬라우터에서는 사용하지 않아도 된다.
+    <HashRouter>
+      {/* <BrowserRouter basename={process.env.PUBLIC_URL}> */}
+      {/* 라우터 경로 변경시 최상단 이동 컴포넌트 */}
+      <ScrollTop />
+
       {/* 라우터 경로 및 컴포넌트 매칭셋팅 */}
       <Routes>
-      {/* routes로 route를 감싼다. */}
+        {/* routes로 route를 감싼다. */}
         {/* 최상위 route는 쌍으로 태그를 만든다 */}
         <Route path="/" element={<Layout />}>
           {/* 하위 중 첫페이지는 index라고 속성을 쓴다 */}
-          <Route index element={<Main catName="main"/>} />
+          <Route index element={<Main catName="main" />} />
 
           {/* 서브메뉴 */}
           <Route path="character" element={<Character />} />
-          <Route path="comics" element={<Comics catName="COMICS"/>} />
-          <Route path="movies" element={<Movies catName="MOVIES"/>} />
-          <Route path="games" element={<Games catName="GAMES"/>} />
-          <Route path="news" element={<News/>} />
-          <Route path="video" element={<Video catName="VIDEO"/>} />
-          <Route path="board" element={<Board/>} />
-          <Route path="detail" element={<CatDetail/>} />
-          <Route path="search" element={<SearchPage/>} />
-          <Route path="member" element={<Member/>} />
-          <Route path="login" element={<Login/>} />
+          <Route path="comics" element={<Comics catName="COMICS" />} />
+          <Route path="movies" element={<Movies catName="MOVIES" />} />
+          <Route path="games" element={<Games catName="GAMES" />} />
+          <Route path="news" element={<News />} />
+          <Route path="video" element={<Video catName="VIDEO" />} />
+          <Route path="board" element={<Board />} />
+          <Route path="detail" element={<CatDetail />} />
+          <Route path="search" element={<SearchPage />} />
+          <Route path="member" element={<Member />} />
+          <Route path="login" element={<Login />} />
 
           {/* <Route index element={<SwiperApp/>} /> */}
         </Route>
       </Routes>
-    </BrowserRouter>
+      {/* </BrowserRouter> */}
+    </HashRouter>
   );
 } // MainComponent //
 
 /*************************************
- * 컴포넌트로 만들고 라우터 안에 넣고 
+ * 컴포넌트로 만들고 라우터 안에 넣고
  * 라우터 경로 변경 시 스크롤 최상단 이동
-*************************************/
+ *************************************/
 const ScrollTop = () => {
   // 라우터 경로 변경 시 path값 읽어오기
   // pathname 객체 속성에 담긴다
@@ -104,8 +109,8 @@ const ScrollTop = () => {
     // 스크롤 상단 이동 코드 넣기
     window.scrollTo(0, 0);
     // 변경된 라우터 경로 확인
-    console.log('라우터 경로', pathname);
-    
+    console.log("라우터 경로", pathname);
+
     // 의종성을 라우터 경로로 등록함
   }, [pathname]);
 
@@ -113,10 +118,8 @@ const ScrollTop = () => {
   return null;
 }; // ScrollTop 컴포넌트 //
 
-
 /// 컴포넌트 출력 ///
 // 먼저 root 객체 만들기
-const root = ReactDOM.createRoot(
-  document.querySelector("#root"));
+const root = ReactDOM.createRoot(document.querySelector("#root"));
 // 출력하기
 root.render(<MainComponent />);
